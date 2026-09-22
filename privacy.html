@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy — Lumen Anima Labs</title>
-  <meta name="description" content="Privacy information for the Lumen Anima Labs website and Marketplace Sync Guard.">
+  <title>Privacy Policy — Marketplace Sync Guard | Lumen Anima Labs</title>
+  <meta name="description" content="Privacy policy for Marketplace Sync Guard by Lumen Anima Labs.">
   <link rel="canonical" href="https://lumenanima.com/privacy.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lumen Anima Labs">
-  <meta property="og:title" content="Privacy — Lumen Anima Labs">
-  <meta property="og:description" content="How Lumen Anima Labs approaches website and product privacy.">
+  <meta property="og:title" content="Privacy Policy — Marketplace Sync Guard">
+  <meta property="og:description" content="How Marketplace Sync Guard handles local audit data, licensing information, and payments.">
   <meta property="og:url" content="https://lumenanima.com/privacy.html">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Privacy — Lumen Anima Labs">
-  <meta name="twitter:description" content="How Lumen Anima Labs approaches website and product privacy.">
+  <meta name="twitter:title" content="Privacy Policy — Marketplace Sync Guard">
+  <meta name="twitter:description" content="How Marketplace Sync Guard handles local audit data, licensing information, and payments.">
   <meta name="theme-color" content="#0d3b2a">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -26,35 +26,49 @@
       <nav aria-label="Primary navigation"><a href="/#products">Products</a><a href="/#principles">Principles</a><a href="/#about">About</a></nav>
     </div>
   </header>
+
   <main class="legal-main" id="main-content">
     <article class="legal-wrap">
       <p class="eyebrow">Policy</p>
-      <h1>Privacy</h1>
-      <p class="legal-meta">Last updated: September 20, 2026</p>
+      <h1>Privacy Policy</h1>
+      <p class="legal-meta">Last updated: September 22, 2026</p>
 
-      <p>Lumen Anima Labs builds products with data minimization and user control in mind. This page describes the current pre-launch website and the intended privacy boundaries of Marketplace Sync Guard. It does not claim that internet use or third-party services can provide absolute anonymity.</p>
+      <p>This policy explains how Lumen Anima Labs handles information in connection with Marketplace Sync Guard and the lumenanima.com website.</p>
 
-      <h2>Institutional website</h2>
-      <p>This website does not need to collect personal information for ordinary browsing. This version has no forms, account system, analytics, advertising trackers or marketing cookies. GitHub Pages, the hosting and delivery provider, may process technical request information according to its own terms and policies.</p>
+      <h2>Marketplace Sync Guard's purpose</h2>
+      <p>Marketplace Sync Guard is a local-first, read-only browser extension for comparing inventory, price, SKU, presence, duplicate and status information across user-selected CSV and XLSX files. It does not automatically change marketplace listings, prices or inventory.</p>
 
-      <h2>Marketplace Sync Guard</h2>
-      <p>Marketplace Sync Guard is designed to process operational files locally on the user's device. CSV and XLSX files, SKUs, product prices, stock levels and audit results are not sent to Lumen Anima Labs for auditing.</p>
-      <p>The product is read-only: it does not automatically change inventory, prices or listings. Local history, mappings and settings remain on the device unless the user explicitly exports them.</p>
+      <h2>Operational data processed locally</h2>
+      <p>Files selected for an audit, including catalog fields such as SKUs, prices, stock levels and statuses, are processed locally in the browser. Lumen Anima Labs does not receive those imported operational files or their audit contents.</p>
+      <p>The extension may store settings, mapping profiles, custom presets, price-tolerance settings and audit history on the user's device so that requested features work across sessions. Original imported files and raw file rows are not stored by the extension as part of audit history.</p>
 
-      <h2>Pro licensing and payments</h2>
-      <p>A future production release may contact a Lumen Anima Labs licensing service to validate Pro access. That service is intended to receive only the minimum information needed for entitlement, such as a signed license token and subscription identifiers. Operational files and seller data are outside the licensing payload.</p>
-      <p>Payments will be processed by an external payment provider. The provider will process payment and account information under its own privacy terms. Final provider details and production practices will be published before Live sales begin.</p>
+      <h2>Pro licensing data</h2>
+      <p>Free auditing does not require marketplace credentials or a Marketplace Sync Guard account. If a user chooses to activate or revalidate Pro access, the extension may request optional access to the Lumen Anima Labs licensing service.</p>
+      <p>For the current Hotmart purchase flow, the user may provide the Hotmart transaction code associated with the purchase. The licensing service sends that transaction code to Hotmart's API to verify the purchased product and transaction status. Hotmart may return purchase metadata as part of that verification response; the licensing service uses the minimum fields needed to determine entitlement and does not persist buyer profile data, payment-card data, imported marketplace files, SKUs, prices, stock levels, mappings or audit results.</p>
+      <p>After successful validation, the extension stores a signed Marketplace Sync Guard license token and minimum entitlement metadata locally on the user's device. The licensing service is designed without an application database for storing audit data or catalog data. Infrastructure providers may process ordinary technical request metadata as part of operating and securing their services.</p>
 
-      <h2>Data sharing and retention</h2>
-      <p>This pre-launch website does not sell personal information or build advertising profiles. Because it does not collect form submissions, analytics or user accounts, Lumen Anima Labs does not maintain a website visitor database in this version.</p>
+      <h2>Payments and delivery</h2>
+      <p>Paid checkout and digital product delivery are handled by Hotmart, outside the extension. Marketplace Sync Guard and the Lumen Anima Labs licensing service do not collect or process payment card details. Hotmart handles payment, transaction and buyer-account information under its own terms and privacy practices.</p>
+
+      <h2>Data sharing and Limited Use</h2>
+      <p>Lumen Anima Labs does not sell user data, use extension data for personalized advertising, or build advertising profiles from Marketplace Sync Guard data. Data handled by the extension is used only to provide and support the extension's disclosed auditing and licensing functionality.</p>
+      <p>Marketplace Sync Guard's handling of user data is intended to comply with the Chrome Web Store User Data Policy, including its Limited Use requirements. User data is not transferred except where necessary to provide the requested licensing functionality, comply with applicable law, or protect the security and integrity of the service. Human access to user data is not part of normal operation and would occur only when necessary for security, support requested by the user, legal compliance, or with the user's explicit consent.</p>
+
+      <h2>Retention and user control</h2>
+      <p>Local extension data remains on the user's device until the user clears it or the browser removes the extension's stored data. Marketplace Sync Guard provides controls to clear audit history, clear Pro configuration and export supported local configuration or license data where those features apply.</p>
+      <p>The licensing service does not maintain a catalog-data or audit-history database. A transaction code submitted for validation is used to verify entitlement with Hotmart and is represented inside the signed local license token so later validations can confirm continued entitlement.</p>
+
+      <h2>Website</h2>
+      <p>The Lumen Anima Labs website does not require personal information for ordinary browsing and currently has no account system, advertising trackers or marketing cookies. GitHub Pages, which hosts and delivers the website, may process technical request information according to its own terms and policies.</p>
 
       <h2>Changes to this policy</h2>
-      <p>This policy may be updated as Marketplace Sync Guard enters production, licensing becomes operational or the website gains new functionality. Material changes will be reflected on this page with a new revision date.</p>
+      <p>This policy may be updated when Marketplace Sync Guard's data practices, licensing flow, payment provider or website functionality changes. Material changes will be reflected on this page with a revised update date.</p>
 
       <h2>Questions</h2>
-      <p>Current public project and publisher information is available through the <a href="https://github.com/cesaroliv" rel="noreferrer">Lumen Anima Labs GitHub presence</a>. Formal support and privacy contact details will be published before Live sales.</p>
+      <p>Current public publisher information is available through the <a href="https://github.com/cesaroliv" rel="noreferrer">Lumen Anima Labs GitHub presence</a>.</p>
     </article>
   </main>
+
   <footer class="site-footer"><div class="shell footer-inner"><a class="brand footer-brand" href="/" aria-label="Lumen Anima Labs home"><span class="brand-mark" aria-hidden="true"><span></span></span><span>Lumen Anima Labs</span></a><nav aria-label="Legal and social links"><a href="privacy.html" aria-current="page">Privacy</a><a href="terms.html">Terms</a><a href="https://github.com/cesaroliv" rel="me noreferrer">GitHub <span aria-hidden="true">↗</span></a></nav><p>Focused software for real-world problems.</p></div></footer>
 </body>
 </html>
