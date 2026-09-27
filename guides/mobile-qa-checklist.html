@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile web QA checklist: responsive behavior, input and real-device risk | Lumen Anima Labs</title>
+<meta name="description" content="A manual mobile-web testing checklist covering layout, input, orientation, network constraints and evidence capture.">
+<link rel="canonical" href="https://lumenanima.com/guides/mobile-qa-checklist.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/institutional.css"><link rel="stylesheet" href="/guides.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header"><div class="shell header-inner"><a class="brand" href="/" aria-label="Lumen Anima Labs home"><span class="brand-mark" aria-hidden="true"><span></span></span><span>Lumen Anima Labs</span></a><nav aria-label="Primary navigation"><a href="/guides/">Guides</a><a href="/qa-bug-hunt-lab.html">QA Lab</a><a href="/support.html">Support</a></nav></div></header>
+<main id="main-content" class="guide-main"><div class="guide-shell">
+<section class="guide-hero"><p class="eyebrow">QA guide · Mobile web</p><h1>Mobile web QA checklist: responsive behavior, input and real-device risk</h1><p class="lead">Responsive testing is more than shrinking the browser window. Use emulation for fast coverage, then remember that emulation is only an approximation of a real mobile device.</p></section>
+
+<section class="guide-section"><h2>Fast browser pass</h2><ul class="checklist"><li>Test narrow and wide viewports; look for clipping, overflow and unreachable controls.</li><li>Check portrait and landscape layouts.</li><li>Verify tap targets, sticky headers, menus, dialogs and fixed-position elements.</li><li>Test forms with realistic text lengths and validation errors.</li><li>Check zoom and text resizing; important content should remain usable.</li></ul></section>
+<section class="guide-section"><h2>Performance and environment pass</h2><ul class="checklist"><li>Use Chrome DevTools device mode to approximate mobile viewport behavior.</li><li>Throttle network/CPU to expose loading and interaction problems.</li><li>Test offline/error states if the product promises resilience.</li><li>Remember: device emulation does not execute your code on an actual phone.</li></ul></section>
+<section class="guide-section"><h2>Evidence fields for mobile bugs</h2><div class="artifact"><pre>Viewport/device:
+Orientation:
+Browser/version:
+Network condition:
+Input method:
+Steps:
+Expected:
+Actual:
+Screenshot/video:
+Reproduces on real device? yes / no / not checked</pre></div></section>
+<section class="guide-section"><h2>Practice task</h2><p>Open the QA Lab at two viewport widths. Find one responsive/usability issue and report the exact viewport, orientation, expected layout and evidence.</p></section>
+<section class="guide-cta"><p class="eyebrow">Practice it</p><h2>Use a real browser exercise, not only a definition.</h2><p>The QA + Security Bug Hunt Lab gives you a self-contained storefront with intentional findings, reporting templates, scoring and an answer key.</p><a class="button" href="https://crispim34.gumroad.com/l/xgznrn?utm_source=lumenanima&utm_medium=organic_content&utm_campaign=qa_lab&utm_content=mobile_qa_checklist" rel="noreferrer">Open the QA Lab on Gumroad ↗</a></section>
+<section class="guide-section guide-sources"><h2>Primary references</h2><ul><li><a href="https://developer.chrome.com/docs/devtools/device-mode" rel="noreferrer">Chrome DevTools — Device Mode</a></li></ul></section>
+<p><a class="text-link" href="/guides/">← All QA guides</a></p>
+</div></main>
+<footer class="site-footer"><div class="shell footer-inner"><a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true"><span></span></span><span>Lumen Anima Labs</span></a><nav><a href="/guides/">Guides</a><a href="/support.html">Support</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav><p>Products, automation and applied software.</p></div></footer>
+</body></html>
