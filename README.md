@@ -4,6 +4,14 @@ Institutional website for **Lumen Anima Labs**, published as a static site with 
 
 The site has no framework, build step, runtime dependency, analytics, cookies, remote JavaScript or backend. It uses semantic HTML and a single local stylesheet.
 
+## Live QA practice product
+
+The public site also includes **QA + Security Bug Hunt Lab**, a browser-based practice product for evidence-first manual QA and defensive security awareness.
+
+- Product landing page: https://lumenanima.com/qa-bug-hunt-lab.html
+- Gumroad: https://crispim34.gumroad.com/l/xgznrn?utm_source=github&utm_medium=profile&utm_campaign=qa_lab_launch&utm_content=lumen_repo_readme
+- Free supporting QA guides: https://lumenanima.com/guides/
+
 ## Structure
 
 - `index.html` — home, product, principles and about sections
