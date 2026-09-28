@@ -12,6 +12,14 @@ The public site also includes **QA + Security Bug Hunt Lab**, a browser-based pr
 - Gumroad: https://crispim34.gumroad.com/l/xgznrn?utm_source=github&utm_medium=profile&utm_campaign=qa_lab_launch&utm_content=lumen_repo_readme
 - Free supporting QA guides: https://lumenanima.com/guides/
 
+## Free Shopee seller pricing tool
+
+**Shopee Price Rescue** maps fee-boundary price cliffs and shows the recovery price at which net profit returns to the pre-boundary level.
+
+- Free tool: https://lumenanima.com/tools/shopee-price-rescue.html?utm_source=github&utm_medium=profile&utm_campaign=price_rescue_finishmode_20260928&utm_content=lumen_repo_readme
+- Practical seller guides: https://lumenanima.com/guides/
+- No signup required; sellers should confirm account-specific fees in Shopee Seller Center.
+
 ## Structure
 
 - `index.html` — home, product, principles and about sections
