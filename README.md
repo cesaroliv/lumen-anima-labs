@@ -2,7 +2,7 @@
 
 Institutional website for **Lumen Anima Labs**, published as a static site with GitHub Pages at [lumenanima.com](https://lumenanima.com/).
 
-The site has no framework, build step, runtime dependency, analytics, cookies, remote JavaScript or backend. It uses semantic HTML and a single local stylesheet.
+The site has no framework, build step, runtime dependency, remote analytics, marketing cookies or backend. Interactive tools use local JavaScript; QA Evidence Generator keeps its usage counters and report content on the visitor's device.
 
 ## Live QA practice product
 
@@ -11,6 +11,14 @@ The public site also includes **QA + Security Bug Hunt Lab**, a browser-based pr
 - Product landing page: https://lumenanima.com/qa-bug-hunt-lab.html
 - Gumroad: https://crispim34.gumroad.com/l/xgznrn?utm_source=github&utm_medium=profile&utm_campaign=qa_lab_launch&utm_content=lumen_repo_readme
 - Free supporting QA guides: https://lumenanima.com/guides/
+
+## Free QA evidence tool
+
+**QA Evidence Generator** is a local-first bug-report quality coach for QA learners, freelancers and crowdtesters. It scores report completeness, warns about possible sensitive evidence, and exports PT-BR/EN Markdown or PDF-ready HTML.
+
+- Free tool: https://lumenanima.com/tools/qa-evidence-generator.html?utm_source=github&utm_medium=profile&utm_campaign=qa_evidence_finishmode_20260928&utm_content=lumen_repo_readme
+- QA practice lab: https://lumenanima.com/qa-bug-hunt-lab.html
+- Report text, attachments and local counters are not transmitted by the tool.
 
 ## Free Shopee seller pricing tool
 
@@ -23,6 +31,8 @@ The public site also includes **QA + Security Bug Hunt Lab**, a browser-based pr
 ## Structure
 
 - `index.html` — home, product, principles and about sections
+- `tools/qa-evidence-generator.html` — local-first QA report scorer/export tool
+- `tools/qa-evidence-core.js` — deterministic scoring/export logic shared by the public tool
 - `styles.css` — responsive visual system and accessibility states
 - `favicon.svg` — original local browser icon
 - `privacy.html` — website and Marketplace Sync Guard privacy information
@@ -42,7 +52,7 @@ python -m http.server 8080
 
 Open port `8080` on the machine running the command. Development addresses are not referenced by the published site.
 
-Before publishing, check keyboard navigation, responsive layouts, relative links, metadata and the privacy pages. The site should work with JavaScript disabled because it does not include JavaScript.
+Before publishing, check keyboard navigation, responsive layouts, relative links, metadata and the privacy pages. Core informational pages remain readable without JavaScript. Interactive tools such as Price Rescue and QA Evidence Generator require local JavaScript for their calculations and exports.
 
 ## Publish with GitHub Pages
 

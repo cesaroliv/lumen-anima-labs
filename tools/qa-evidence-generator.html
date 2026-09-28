@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QA Evidence Generator — score e exporte bug reports | Lumen Anima Labs</title>
+<meta name="description" content="Ferramenta local-first para revisar completude de bug reports, detectar lacunas de evidência e exportar relatórios em Markdown ou HTML pronto para PDF.">
+<link rel="canonical" href="https://lumenanima.com/tools/qa-evidence-generator.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/institutional.css">
+<style>
+.tool-main{padding:64px 0 96px;background:#f6f9f7}.tool-shell{width:min(calc(100% - 32px),1120px);margin:auto}.tool-hero{max-width:860px;margin-bottom:28px}.tool-hero h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:.98;letter-spacing:-.045em}.tool-hero .lead{font-size:1.08rem;color:#506159}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:start}.panel{padding:24px;background:#fff;border:1px solid #dfe8e2;border-radius:20px;box-shadow:0 14px 40px rgba(18,70,50,.06)}label{display:block;margin-top:13px;font-weight:800;font-size:.84rem;color:#30483d}input,textarea,select{width:100%;box-sizing:border-box;padding:11px 12px;margin-top:6px;border:1px solid #cad8cf;border-radius:10px;background:#fff;font:inherit}textarea{min-height:88px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.button.secondary{background:#fff;color:#0d3b2a;border:1px solid #9ab7a7}.button.ghost{background:#eef5f1;color:#0d3b2a}.score{font-size:3rem;font-weight:900;letter-spacing:-.04em}.score.ok{color:#147447}.score.warn{color:#a14b00}.score.bad{color:#a03224}.muted{color:#65776e;font-size:.87rem}.tips{padding-left:20px}.notice{padding:14px 16px;border-radius:12px;background:#fff6df;border:1px solid #efd38a}.good{background:#eaf8ef;border-color:#9ed2af}.local{background:#f4f7f5;border:1px dashed #a8b9b0;padding:14px;border-radius:12px;font-size:.86rem}.files{font-size:.85rem;color:#506159}.lens{margin-top:18px;padding:14px;border-left:4px solid #78a98f;background:#f7faf8}.cta{margin-top:20px}.cta a{font-weight:800}.metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}.metric{padding:10px;background:#f2f6f3;border-radius:10px}.metric strong{display:block;font-size:1.2rem}.metric span{font-size:.72rem;color:#65776e}.tiny{font-size:.76rem;color:#6d7e75}.hidden{display:none}
+@media(max-width:840px){.grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}.tool-main{padding-top:42px}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+<header class="site-header"><div class="shell header-inner"><a class="brand" href="/" aria-label="Lumen Anima Labs"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-copy">Lumen Anima <strong>Labs</strong></span></a><nav aria-label="Navegação principal"><a href="/guides/">Guias</a><a href="/qa-bug-hunt-lab.html">QA Lab</a><a href="/support.html">Suporte</a></nav></div></header>
+
+<main id="main-content" class="tool-main"><div class="tool-shell">
+<section class="tool-hero">
+<p class="eyebrow">Ferramenta gratuita · QA local-first</p>
+<h1>QA Evidence Generator</h1>
+<p class="lead">Cole seu bug report, receba um score determinístico de completude, veja o que está faltando e exporte uma versão limpa para revisão, portfólio de estudo ou entrega. <strong>Nenhum conteúdo do relatório é enviado para servidor.</strong></p>
+</section>
+
+<div class="grid">
+<section class="panel" aria-labelledby="report-title">
+<h2 id="report-title">Seu relatório</h2>
+
+<label for="title">Título do bug
+<input id="title" autocomplete="off" placeholder="Ex.: Checkout permite finalizar sem endereço">
+</label>
+
+<label for="preconditions">Precondições / estado inicial
+<textarea id="preconditions" placeholder="Ex.: Usuário autenticado, carrinho com 1 item, endereço removido"></textarea>
+</label>
+
+<label for="steps">Passos para reproduzir
+<textarea id="steps" placeholder="1. Abra o checkout&#10;2. Remova o endereço&#10;3. Clique em Finalizar"></textarea>
+</label>
+
+<div class="row">
+<label for="expected">Resultado esperado
+<textarea id="expected"></textarea>
+</label>
+<label for="actual">Resultado atual
+<textarea id="actual"></textarea>
+</label>
+</div>
+
+<div class="row">
+<label for="env">Ambiente / versão
+<input id="env" placeholder="Chrome 153 / Windows 11 / 1920x1080">
+</label>
+<label for="sev">Severidade
+<select id="sev"><option value="">Selecione</option><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select>
+</label>
+</div>
+
+<label for="why">Justificativa da severidade / impacto
+<textarea id="why" placeholder="Explique o impacto observável sem adivinhar causa raiz."></textarea>
+</label>
+
+<label for="evidence">Evidência / observações
+<textarea id="evidence" placeholder="Screenshot, vídeo, console, request ID de teste, horário, dados já mascarados..."></textarea>
+</label>
+
+<label for="files">Arquivos de evidência locais
+<input id="files" type="file" multiple accept="image/*,video/*,.txt,.log,.har,.json">
+</label>
+<p id="fileNames" class="files">Nenhum arquivo selecionado. Os arquivos nunca são enviados; apenas os nomes entram no export.</p>
+
+<div class="lens">
+<strong>Lentes opcionais</strong>
+<p class="muted">Use apenas quando forem relevantes ao bug; elas não aumentam o score automaticamente.</p>
+<label for="accessibility">Observação de acessibilidade
+<textarea id="accessibility" placeholder="Ex.: foco não chega ao botão; contraste insuficiente; label ausente..."></textarea>
+</label>
+<label for="security">Observação defensiva de segurança / privacidade
+<textarea id="security" placeholder="Ex.: sessão, permissão, exposição de dado ou comportamento defensivo observado. Não cole segredos reais."></textarea>
+</label>
+</div>
+
+<div class="row">
+<label for="exportLang">Idioma do export
+<select id="exportLang"><option value="pt-BR">Português (Brasil)</option><option value="en">English</option></select>
+</label>
+<label for="sourceView">Fonte desta sessão
+<input id="sourceView" readonly value="direct">
+</label>
+</div>
+
+<div class="actions">
+<button class="button" id="scoreBtn" type="button">Avaliar relatório</button>
+<button class="button secondary" id="mdBtn" type="button">Exportar Markdown</button>
+<button class="button secondary" id="printBtn" type="button">Abrir versão para PDF</button>
+</div>
+</section>
+
+<aside>
+<section class="panel" aria-labelledby="score-title">
+<h2 id="score-title">Qualidade do relatório</h2>
+<div id="result"><p><strong>Preencha o relatório e clique em Avaliar.</strong></p><p class="muted">O score mede completude e clareza estrutural. Não confirma que o bug existe nem substitui revisão humana.</p></div>
+</section>
+
+<section class="panel cta">
+<p class="eyebrow">Pratique com um caso realista</p>
+<h2>Quer treinar antes de usar em trabalho real?</h2>
+<p>O QA + Security Bug Hunt Lab oferece uma aplicação com achados intencionais para você praticar descoberta, evidência e triagem.</p>
+<p><a id="qaLabCta" class="text-link" href="https://crispim34.gumroad.com/l/xgznrn?utm_source=qa_evidence_generator&utm_medium=cross_product&utm_campaign=qa_lab_launch&utm_content=tool_cta" rel="noreferrer">Abrir QA Lab no Gumroad ↗</a></p>
+</section>
+
+<section class="panel" style="margin-top:20px" aria-labelledby="measure-title">
+<h2 id="measure-title">Medição local</h2>
+<p class="muted">Para validar a ferramenta sem rastrear seu relatório, os contadores abaixo ficam só neste navegador. Nenhum texto do bug report ou contador é transmitido.</p>
+<div id="metrics" class="metric-grid"></div>
+<div class="actions">
+<button class="button ghost" id="copyMetrics" type="button">Copiar snapshot</button>
+<button class="button ghost" id="resetMetrics" type="button">Zerar contadores locais</button>
+</div>
+<p class="tiny">Sessão qualificada = você executou um score com título, passos, esperado e atual preenchidos. “Concluído” exige estrutura mínima e score ≥70.</p>
+</section>
+</aside>
+</div>
+
+<section class="panel" style="margin-top:20px">
+<h2>O que esta ferramenta verifica</h2>
+<ul>
+<li>título específico, precondições, passos reproduzíveis, esperado versus atual;</li>
+<li>ambiente, severidade e justificativa de impacto;</li>
+<li>evidência objetiva e alerta de possível dado sensível;</li>
+<li>passos numerados e prompts extras quando o texto sugere contexto de acessibilidade ou segurança;</li>
+<li>export PT-BR ou EN em Markdown e HTML pronto para imprimir/salvar como PDF.</li>
+</ul>
+<p class="muted">Ela não tenta adivinhar root cause, não usa IA remota e não envia screenshots, vídeos, logs ou texto para nenhum backend.</p>
+</section>
+</div></main>
+
+<footer class="site-footer"><div class="shell footer-main"><a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-copy">Lumen Anima <strong>Labs</strong></span></a><p>Ferramentas, automação, QA e software aplicado.</p></div><div class="shell footer-bottom"><span>&copy; 2026 Lumen Anima Labs</span><nav><a href="/support.html">Suporte</a><a href="/privacy.html">Privacidade</a><a href="/terms.html">Termos</a></nav></div></footer>
+
+<script src="/tools/qa-evidence-core.js"></script>
+<script>
+(function(){
+  "use strict";
+  const FIELDS=["title","preconditions","steps","expected","actual","env","sev","why","evidence","accessibility","security"];
+  const METRIC_KEY="lumen.qaEvidence.metrics.v1";
+  const SESSION_KEY="lumen.qaEvidence.sessionCounted.v1";
+  const QUALIFIED_KEY="lumen.qaEvidence.qualifiedThisSession.v1";
+  const sourceParams=["utm_source","utm_medium","utm_campaign","utm_content"];
+  const el=id=>document.getElementById(id);
+  const source=new URLSearchParams(location.search);
+  const attribution=Object.fromEntries(sourceParams.map(k=>[k,source.get(k)||""]));
+  const sourceLabel=attribution.utm_source||source.get("source")||"direct";
+  el("sourceView").value=sourceLabel;
+
+  function metricBase(){
+    return{session_starts:0,qualified_sessions:0,score_runs:0,completed_scores:0,exports_markdown:0,exports_pdf_ready:0,qa_lab_clicks:0,first_source:"",last_source:"",last_campaign:"",updated_at:""};
+  }
+  function getMetrics(){
+    try{return Object.assign(metricBase(),JSON.parse(localStorage.getItem(METRIC_KEY)||"{}"));}
+    catch{return metricBase();}
+  }
+  function saveMetrics(m){m.updated_at=new Date().toISOString();localStorage.setItem(METRIC_KEY,JSON.stringify(m));renderMetrics();}
+  function bump(name){
+    const m=getMetrics();m[name]=(Number(m[name])||0)+1;
+    if(!m.first_source)m.first_source=sourceLabel;
+    m.last_source=sourceLabel;m.last_campaign=attribution.utm_campaign||m.last_campaign||"";
+    saveMetrics(m);
+  }
+  if(!sessionStorage.getItem(SESSION_KEY)){bump("session_starts");sessionStorage.setItem(SESSION_KEY,"1");}
+
+  function renderMetrics(){
+    const m=getMetrics();
+    const items=[
+      ["Sessões locais",m.session_starts],
+      ["Sessões qualificadas",m.qualified_sessions],
+      ["Scores executados",m.score_runs],
+      ["Scores concluídos",m.completed_scores],
+      ["Exports Markdown",m.exports_markdown],
+      ["Exports PDF-ready",m.exports_pdf_ready],
+      ["Cliques no QA Lab",m.qa_lab_clicks],
+      ["Última fonte",m.last_source||sourceLabel]
+    ];
+    el("metrics").innerHTML=items.map(([k,v])=>'<div class="metric"><strong>'+QAEvidenceCore.escapeHtml(v)+'</strong><span>'+QAEvidenceCore.escapeHtml(k)+'</span></div>').join("");
+  }
+
+  function fileNames(){return Array.from(el("files").files||[]).map(f=>f.name);}
+  function input(){
+    const o=Object.fromEntries(FIELDS.map(k=>[k,el(k).value.trim()]));
+    o.evidenceNames=fileNames();
+    return o;
+  }
+  function markQualified(a){
+    const i=input();
+    const core=["title","steps","expected","actual"].every(k=>String(i[k]||"").trim().length>=8);
+    if(core&&!sessionStorage.getItem(QUALIFIED_KEY)){
+      bump("qualified_sessions");sessionStorage.setItem(QUALIFIED_KEY,"1");
+    }
+    if(a.completed)bump("completed_scores");
+  }
+  function renderScore(a){
+    const cls=a.pts>=80?"ok":a.pts>=60?"warn":"bad";
+    const msg=a.pts>=80?"Boa evidência estrutural: pronta para revisão humana.":a.pts>=60?"Está utilizável, mas ainda há lacunas importantes.":"Ainda há lacunas que podem gerar rejeição ou retrabalho.";
+    const tips=a.tips.length?a.tips:["Nenhuma lacuna básica detectada."];
+    const privacy=a.privacyWarning?'<div class="notice"><strong>Atenção:</strong> a evidência parece conter dado sensível. Mascare antes de exportar ou compartilhar.</div>':"";
+    el("result").innerHTML='<div class="score '+cls+'">'+a.pts+'/100</div><p>'+msg+'</p>'+privacy+'<b>Melhorias sugeridas:</b><ul class="tips">'+tips.map(x=>'<li>'+QAEvidenceCore.escapeHtml(x)+'</li>').join("")+'</ul><p class="muted">Score determinístico de completude. Ele não prova existência, severidade ou causa raiz do bug.</p>';
+  }
+  function doScore(){
+    const a=QAEvidenceCore.assess(input());
+    bump("score_runs");markQualified(a);renderScore(a);return a;
+  }
+  function download(name,type,content){
+    const b=new Blob([content],{type}),u=URL.createObjectURL(b),a=document.createElement("a");
+    a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),0);
+  }
+
+  el("scoreBtn").addEventListener("click",doScore);
+  el("mdBtn").addEventListener("click",()=>{
+    const a=doScore();
+    const lang=el("exportLang").value;
+    download("qa-bug-report.md","text/markdown;charset=utf-8",QAEvidenceCore.buildMarkdown(input(),lang));
+    bump("exports_markdown");
+  });
+  el("printBtn").addEventListener("click",()=>{
+    const w=window.open("","_blank");
+    if(!w){alert("O navegador bloqueou a nova janela. Permita pop-ups apenas para gerar a versão de impressão.");return;}
+    doScore();
+    w.document.open();w.document.write(QAEvidenceCore.buildPrintHtml(input(),el("exportLang").value));w.document.close();
+    bump("exports_pdf_ready");
+  });
+  el("files").addEventListener("change",()=>{
+    const names=fileNames();
+    el("fileNames").textContent=names.length?names.length+" arquivo(s): "+names.join(", "):"Nenhum arquivo selecionado. Os arquivos nunca são enviados; apenas os nomes entram no export.";
+  });
+  el("qaLabCta").addEventListener("click",()=>bump("qa_lab_clicks"));
+  el("copyMetrics").addEventListener("click",async()=>{
+    const m=getMetrics();
+    const snapshot={tool:"QA Evidence Generator",at:new Date().toISOString(),source:sourceLabel,campaign:attribution.utm_campaign||"",metrics:m};
+    const txt=JSON.stringify(snapshot,null,2);
+    try{await navigator.clipboard.writeText(txt);el("copyMetrics").textContent="Snapshot copiado ✓";setTimeout(()=>el("copyMetrics").textContent="Copiar snapshot",1500);}
+    catch{prompt("Copie o snapshot:",txt);}
+  });
+  el("resetMetrics").addEventListener("click",()=>{
+    if(confirm("Zerar apenas os contadores locais desta ferramenta neste navegador?")){
+      localStorage.removeItem(METRIC_KEY);sessionStorage.removeItem(SESSION_KEY);sessionStorage.removeItem(QUALIFIED_KEY);bump("session_starts");
+    }
+  });
+
+  renderMetrics();
+})();
+</script>
+</body>
+</html>
