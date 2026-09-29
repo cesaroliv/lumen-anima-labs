@@ -5,15 +5,11 @@
   const paymentId=new URLSearchParams(location.search).get("payment_id")||"";
   const money=n=>Number(n).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
   const visuals={
-    "obsidian-regalia":"/assets/digital-art/v2/bundle-obsidian.webp",
+    "obsidian-regalia":"/assets/digital-art/v3/approved-skull-office.png",
     "luxury-wallpapers":"/assets/digital-art/v2/mockup-wallpapers-grid.webp",
     "professional-office":"/assets/digital-art/v2/mockup-professional-law.webp"
   };
-  const allProducts=[
-    {id:"obsidian-regalia",name:"Obsidian Regalia",desc:"22 PNGs preto e dourado",img:"/assets/digital-art/v2/mockup-obsidian-shirt.webp"},
-    {id:"luxury-wallpapers",name:"Luxury White & Gold",desc:"55 wallpapers",img:"/assets/digital-art/v2/mockup-wallpapers-desk.webp"},
-    {id:"professional-office",name:"Professional Office Symbols",desc:"Justiça & Medicina",img:"/assets/digital-art/v2/mockup-professional-medical.webp"}
-  ];
+  const allProducts=[];
 
   function show(id){$(id)?.classList.remove("hidden")}
   function hide(id){$(id)?.classList.add("hidden")}
@@ -21,11 +17,7 @@
     const mb=Number(bytes||0)/1048576;
     return mb>=1?mb.toFixed(mb>=100?0:1)+" MB":Math.max(1,Math.round(Number(bytes||0)/1024))+" KB";
   }
-  function renderCross(productId){
-    const rows=allProducts.filter(p=>p.id!==productId);
-    $("#crossSellGrid").innerHTML=rows.map(p=>'<a href="/digital-art.html#colecoes"><img src="'+p.img+'" alt=""><div><strong>'+p.name+'</strong><p>'+p.desc+'</p><span>Ver coleção →</span></div></a>').join("");
-    show("#crossSell");
-  }
+  function renderCross(){ hide("#crossSell"); }
   async function load(){
     if(!paymentId||!/^\d+$/.test(paymentId)){hide("#loadingCard");show("#errorCard");$("#errorText").textContent="Identificador de pagamento ausente ou inválido.";return;}
     if(!API){hide("#loadingCard");show("#errorCard");$("#errorText").textContent="A entrega está temporariamente indisponível.";return;}

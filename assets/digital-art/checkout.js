@@ -53,7 +53,7 @@
   }
 
   function thankYouUrl(paymentId){
-    return "/digital-art-thank-you.html?payment_id="+encodeURIComponent(paymentId);
+    return new URL("/digital-art-thank-you.html?payment_id="+encodeURIComponent(paymentId),location.origin).href;
   }
 
   async function pollApproval(paymentId){
