@@ -166,7 +166,7 @@
             fetch(API_BASE+"/api/payments",{
               method:"POST",
               headers:{"content-type":"application/json","x-idempotency-key":idem},
-              body:JSON.stringify({productId,selectedPaymentMethod,formData})
+              body:JSON.stringify({productId,selectedPaymentMethod,formData,locale:lang})
             }).then(async r=>{
               const data=await r.json().catch(()=>({}));
               if(!r.ok||!data.id)throw new Error(data.message||data.error||"payment_failed");
