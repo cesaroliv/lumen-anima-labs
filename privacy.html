@@ -47,8 +47,10 @@
       <p>For the current Hotmart purchase flow, the user may provide the Hotmart transaction code associated with the purchase. The licensing service sends that transaction code to Hotmart's API to verify the purchased product and transaction status. Hotmart may return purchase metadata as part of that verification response; the licensing service uses the minimum fields needed to determine entitlement and does not persist buyer profile data, payment-card data, imported marketplace files, SKUs, prices, stock levels, mappings or audit results.</p>
       <p>After successful validation, the extension stores a signed Marketplace Sync Guard license token and minimum entitlement metadata locally on the user's device. The licensing service is designed without an application database for storing audit data or catalog data. Infrastructure providers may process ordinary technical request metadata as part of operating and securing their services.</p>
 
-      <h2>Payments and delivery</h2>
-      <p>Paid checkout and digital product delivery are handled by Hotmart, outside the extension. Marketplace Sync Guard and the Lumen Anima Labs licensing service do not collect or process payment card details. Hotmart handles payment, transaction and buyer-account information under its own terms and privacy practices.</p>
+      <h2>Payments and digital delivery</h2>
+      <p>Different Lumen Anima Labs products may use different payment flows. Marketplace Sync Guard may use Hotmart for its licensing flow. Lumen Digital Art uses Mercado Pago Checkout Bricks for payment processing.</p>
+      <p>For Lumen Digital Art, payment fields are rendered by Mercado Pago and payment authorization is handled by Mercado Pago. Lumen Anima Labs does not intentionally store full payment-card numbers or card security codes. The Lumen checkout backend receives transaction status and the minimum order metadata needed to validate the purchased product and release protected downloads.</p>
+      <p>After Mercado Pago confirms an approved payment, the Lumen checkout backend can generate protected download links. The digital art files are served only after a fresh payment-status check. Payment and buyer information processed by Mercado Pago is also subject to Mercado Pago's own terms and privacy practices.</p>
 
       <h2>Data sharing and Limited Use</h2>
       <p>Lumen Anima Labs does not sell user data, use extension data for personalized advertising, or build advertising profiles from Marketplace Sync Guard data. Data handled by the extension is used only to provide and support the extension's disclosed auditing and licensing functionality.</p>
@@ -65,7 +67,9 @@
       <h2>Website</h2>
       <p>The Lumen Anima Labs website does not require personal information for ordinary browsing and currently has no account system, advertising trackers or marketing cookies. GitHub Pages, which hosts and delivers the website, may process technical request information according to its own terms and policies.</p>
 
-      <h2>Changes to this policy</h2>
+            <p>The Digital Art checkout loads Mercado Pago scripts only on the store page where payment is offered. Transaction identifiers may be used temporarily to display order status, unlock downloads and support a buyer who asks for help.</p>
+
+<h2>Changes to this policy</h2>
       <p>This policy may be updated when Marketplace Sync Guard's data practices, licensing flow, payment provider or website functionality changes. Material changes will be reflected on this page with a revised update date.</p>
 
       <h2>Questions</h2>

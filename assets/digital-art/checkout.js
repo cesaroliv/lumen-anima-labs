@@ -13,14 +13,12 @@
   const money=n=>Number(n).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
   const backdrop=$("#checkoutBackdrop");
   const closeBtn=$("#checkoutClose");
-  const notice=$("#checkoutActivationNotice");
   const message=$("#checkoutMessage");
   const statusArea=$("#statusArea");
-  const deliveryArea=$("#deliveryArea");
-  const deliveryLinks=$("#deliveryLinks");
-  let cfg=null,mp=null,bricks=null,paymentController=null,statusController=null,current=null;
+  let cfg=null,mp=null,bricks=null,paymentController=null,statusController=null,current=null,currentId="";
 
   function setMessage(text,type=""){
+    if(!message)return;
     message.textContent=text||"";
     message.className="status-box"+(type?" "+type:"")+(text?"":" hidden");
   }
@@ -28,18 +26,18 @@
     try{if(paymentController)await paymentController.unmount();}catch{}
     try{if(statusController)await statusController.unmount();}catch{}
     paymentController=null;statusController=null;
-    $("#paymentBrick_container").innerHTML="";
-    $("#statusScreenBrick_container").innerHTML="";
+    const p=$("#paymentBrick_container"),s=$("#statusScreenBrick_container");
+    if(p)p.innerHTML=""; if(s)s.innerHTML="";
   }
   async function close(){
     await unmount();
-    backdrop.classList.remove("open");
+    backdrop?.classList.remove("open");
     document.body.style.overflow="";
-    current=null;
+    current=null;currentId="";
   }
-  closeBtn.addEventListener("click",close);
-  backdrop.addEventListener("click",e=>{if(e.target===backdrop)close();});
-  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&backdrop.classList.contains("open"))close();});
+  closeBtn?.addEventListener("click",close);
+  backdrop?.addEventListener("click",e=>{if(e.target===backdrop)close();});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&backdrop?.classList.contains("open"))close();});
 
   async function loadConfig(){
     if(!API_BASE)throw new Error("checkout_not_configured");
@@ -54,23 +52,11 @@
     return cfg;
   }
 
-  async function renderStatus(paymentId){
-    statusArea.classList.remove("hidden");
-    $("#paymentBrick_container").classList.add("hidden");
-    statusController=await bricks.create("statusScreen","statusScreenBrick_container",{
-      initialization:{paymentId:String(paymentId)},
-      customization:{
-        backUrls:{return:location.href,error:location.href},
-        visual:{showExternalReference:true}
-      },
-      callbacks:{
-        onReady:()=>pollDelivery(paymentId),
-        onError:error=>console.error("Mercado Pago Status Screen",error)
-      }
-    });
+  function thankYouUrl(paymentId){
+    return "/digital-art-thank-you.html?payment_id="+encodeURIComponent(paymentId);
   }
 
-  async function pollDelivery(paymentId){
+  async function pollApproval(paymentId){
     let attempts=0;
     async function tick(){
       attempts++;
@@ -78,37 +64,50 @@
         const r=await fetch(API_BASE+"/api/payments/"+encodeURIComponent(paymentId),{headers:{accept:"application/json"}});
         const data=await r.json().catch(()=>({}));
         if(r.ok&&data.status==="approved"){
-          if(Array.isArray(data.downloads)&&data.downloads.length){
-            deliveryLinks.innerHTML=data.downloads.map(x=>'<a href="'+String(x.url).replace(/"/g,"&quot;")+'" rel="nofollow">'+String(x.label||"Baixar arquivo")+' ↓</a>').join("");
-            deliveryArea.classList.remove("hidden");
-          } else {
-            setMessage("Pagamento aprovado. A entrega automática ainda está sendo conectada; guarde o ID "+paymentId+" para suporte.","good");
-          }
+          setMessage("Pagamento aprovado. Preparando sua página de download…","good");
+          setTimeout(()=>location.assign(thankYouUrl(paymentId)),700);
           return;
         }
         if(["rejected","cancelled","refunded","charged_back"].includes(data.status))return;
       }catch{}
-      if(attempts<60)setTimeout(tick,5000);
+      if(attempts<90)setTimeout(tick,3000);
     }
     tick();
+  }
+
+  async function renderStatus(paymentId){
+    currentId=String(paymentId);
+    statusArea?.classList.remove("hidden");
+    $("#paymentBrick_container")?.classList.add("hidden");
+    statusController=await bricks.create("statusScreen","statusScreenBrick_container",{
+      initialization:{paymentId:String(paymentId)},
+      customization:{
+        backUrls:{return:thankYouUrl(paymentId),error:location.href},
+        visual:{showExternalReference:true}
+      },
+      callbacks:{
+        onReady:()=>pollApproval(paymentId),
+        onError:error=>console.error("Mercado Pago Status Screen",error)
+      }
+    });
   }
 
   async function open(productId){
     current=products[productId];
     if(!current)return;
-    backdrop.classList.add("open");
+    backdrop?.classList.add("open");
     document.body.style.overflow="hidden";
     $("#checkoutProductName").textContent=current.name;
     $("#checkoutProductPrice").textContent=money(current.price);
-    statusArea.classList.add("hidden");deliveryArea.classList.add("hidden");
-    $("#paymentBrick_container").classList.remove("hidden");
+    statusArea?.classList.add("hidden");
+    $("#paymentBrick_container")?.classList.remove("hidden");
     setMessage("Carregando checkout seguro…");
 
     try{
       await loadConfig();
       setMessage("");
       await unmount();
-      $("#paymentBrick_container").classList.remove("hidden");
+      $("#paymentBrick_container")?.classList.remove("hidden");
       paymentController=await bricks.create("payment","paymentBrick_container",{
         initialization:{amount:current.price},
         customization:{
@@ -128,7 +127,7 @@
             setMessage("Não foi possível carregar uma opção de pagamento. Tente novamente.","error");
           },
           onSubmit:({selectedPaymentMethod,formData})=>new Promise((resolve,reject)=>{
-            const idem=(crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now())+"-"+Math.random().toString(16).slice(2);
+            const idem=(globalThis.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now())+"-"+Math.random().toString(16).slice(2);
             fetch(API_BASE+"/api/payments",{
               method:"POST",
               headers:{"content-type":"application/json","x-idempotency-key":idem},
@@ -147,19 +146,13 @@
       });
     }catch(err){
       console.error(err);
-      setMessage("O checkout ainda não está ativado nesta página. Nenhuma cobrança foi feita.","error");
+      setMessage("Checkout temporariamente indisponível. Nenhuma cobrança foi feita.","error");
     }
   }
 
   $$(".buy").forEach(b=>b.addEventListener("click",()=>open(b.dataset.product)));
 
-  if(!API_BASE){
-    notice.classList.remove("hidden");
-    $$(".buy").forEach(b=>{b.disabled=true;b.textContent="Checkout em ativação";});
-  } else {
-    loadConfig().catch(()=>{
-      notice.classList.remove("hidden");
-      $$(".buy").forEach(b=>{b.disabled=true;b.textContent="Checkout temporariamente indisponível";});
-    });
-  }
+  loadConfig().catch(()=>{
+    $$(".buy").forEach(b=>{b.disabled=true;b.textContent="Checkout temporariamente indisponível";});
+  });
 })();

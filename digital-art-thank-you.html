@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Obrigado pela compra — Lumen Digital Art</title>
+<meta name="description" content="Seu pedido Lumen Digital Art e seus downloads protegidos.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/institutional.css">
+<style>
+:root{--ink:#142119;--muted:#607067;--gold:#b18745;--paper:#f5f1e8;--line:#ddd8cb;--green:#0c704b;--dark:#111511}
+*{box-sizing:border-box}body{background:var(--paper);color:var(--ink)}
+.wrap{width:min(calc(100% - 32px),980px);margin:0 auto;padding:52px 0 90px}
+.success{background:linear-gradient(120deg,#111511,#283129 64%,#59431f);color:#fff;border-radius:28px;padding:38px;display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center;box-shadow:0 24px 70px rgba(21,31,24,.18)}
+.success h1{font-size:clamp(2.5rem,6vw,4.9rem);line-height:.93;letter-spacing:-.055em;margin:.2em 0}.success p{color:#d8ddd8;line-height:1.65}.check{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#13a667;font-size:2rem;font-weight:900}.visual img{width:100%;display:block;border-radius:18px;box-shadow:0 20px 55px rgba(0,0,0,.3)}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;margin-top:18px;box-shadow:0 12px 36px rgba(25,32,27,.055)}
+.order-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.meta{padding:13px;background:#f5f7f5;border-radius:12px}.meta span{display:block;font-size:.75rem;color:var(--muted);margin-bottom:4px}.meta strong{font-size:.95rem;word-break:break-word}
+.downloads{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}.download{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px;border-radius:16px;background:#132019;color:#fff;text-decoration:none}.download:hover{background:#1a3024}.download b{display:block;font-size:1.05rem}.download span{display:block;color:#cdd6d0;font-size:.8rem;margin-top:3px}.arrow{font-size:1.6rem}
+.notice{padding:14px 16px;border-radius:12px;background:#fff8dc;border:1px solid #ead58e;margin-top:14px}.good{background:#e9f7ef;border-color:#9fd0b0}.error{background:#fff0ed;border-color:#efb5aa;color:#8b3025}
+.help{display:grid;grid-template-columns:1fr 1fr;gap:14px}.help article{padding:18px;background:#fff;border:1px solid var(--line);border-radius:16px}.help h3{margin:.2em 0}.help p{color:var(--muted)}
+.cross{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.cross a{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px;text-decoration:none;color:var(--ink)}.cross img{width:120px;height:100px;object-fit:cover;border-radius:12px}.cross p{margin:4px 0;color:var(--muted);font-size:.86rem}
+.btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;padding:12px 16px;border-radius:11px;font-weight:900}
+.small{font-size:.8rem;color:var(--muted)}
+.hidden{display:none!important}
+@media(max-width:760px){.success{grid-template-columns:1fr}.order-grid{grid-template-columns:1fr 1fr}.downloads,.help,.cross{grid-template-columns:1fr}.cross a{grid-template-columns:95px 1fr}.cross img{width:95px;height:82px}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="shell header-inner"><a class="brand" href="/" aria-label="Lumen Anima Labs"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-copy">Lumen Anima <strong>Labs</strong></span></a><nav><a href="/digital-art.html">Loja</a><a href="/support.html">Suporte</a></nav></div></header>
+
+<main class="wrap">
+<section class="success">
+<div><div class="check">✓</div><p class="eyebrow" style="color:#d9b771;margin-top:20px">Pagamento confirmado</p><h1>Obrigado pela sua compra.</h1><p>Seu pedido foi aprovado e seus arquivos já estão prontos. Organizamos a entrega em pacotes para você baixar sem aquela lista interminável de arquivos soltos.</p></div>
+<div class="visual"><img id="productVisual" src="/assets/digital-art/v2/bundle-obsidian.webp" alt="Prévia da coleção comprada"></div>
+</section>
+
+<section class="card" id="loadingCard"><strong>Preparando seu pedido…</strong><p class="small">Estamos confirmando o pagamento com o Mercado Pago e gerando seus links protegidos.</p></section>
+
+<section class="card hidden" id="orderCard">
+<h2 style="margin-top:0">Seu pedido</h2>
+<div class="order-grid">
+<div class="meta"><span>Produto</span><strong id="productName">—</strong></div>
+<div class="meta"><span>Valor</span><strong id="amount">—</strong></div>
+<div class="meta"><span>Pedido</span><strong id="orderId">—</strong></div>
+<div class="meta"><span>Pagamento</span><strong id="paymentId">—</strong></div>
+</div>
+<div class="notice good" id="approvedNote"><strong>Download liberado.</strong> Os links abaixo são validados pelo pagamento aprovado.</div>
+<h2>Baixe seus arquivos</h2>
+<div class="downloads" id="downloadButtons"></div>
+<p class="small">Pacotes grandes podem levar alguns minutos para começar ou concluir o download, dependendo da sua conexão. Não feche a aba até o navegador iniciar o arquivo.</p>
+</section>
+
+<section class="card hidden" id="pendingCard"><h2 style="margin-top:0">Pagamento em processamento</h2><div class="notice">O Mercado Pago ainda não marcou esta compra como aprovada. Esta página verifica novamente de forma automática.</div></section>
+<section class="card hidden" id="errorCard"><h2 style="margin-top:0">Não conseguimos liberar o download</h2><div class="notice error" id="errorText">Verifique o pedido ou fale com o suporte.</div><p><a class="btn" href="/support.html">Abrir suporte</a></p></section>
+
+<section style="margin-top:34px">
+<p class="eyebrow">Guarde esta página</p><h2>Se precisar de ajuda, o pedido identifica sua compra.</h2>
+<div class="help"><article><h3>Problema no download?</h3><p>Abra o suporte e informe o número do pagamento ou do pedido exibido acima.</p><a href="/support.html">Ir para suporte →</a></article><article><h3>Licença dentro do pacote</h3><p>O ZIP inclui README e licença. Consulte antes de usar a arte comercialmente.</p><a href="/digital-art.html#como-funciona">Entender a entrega →</a></article></div>
+</section>
+
+<section class="hidden" id="crossSell" style="margin-top:34px">
+<p class="eyebrow">Você também pode gostar</p><h2>Complete sua biblioteca.</h2><div class="cross" id="crossSellGrid"></div>
+</section>
+</main>
+
+<footer class="site-footer"><div class="shell footer-main"><a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-copy">Lumen Anima <strong>Labs</strong></span></a><p>Arte digital, ferramentas e software aplicado.</p></div><div class="shell footer-bottom"><span>&copy; 2026 Lumen Anima Labs</span><nav><a href="/support.html">Suporte</a><a href="/privacy.html">Privacidade</a><a href="/terms.html">Termos</a></nav></div></footer>
+
+<script src="/assets/digital-art/checkout-config.js"></script>
+<script src="/assets/digital-art/thank-you.js"></script>
+</body>
+</html>
