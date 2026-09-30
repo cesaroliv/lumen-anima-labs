@@ -28,9 +28,18 @@ The public site also includes **QA + Security Bug Hunt Lab**, a browser-based pr
 - Practical seller guides: https://lumenanima.com/guides/
 - No signup required; sellers should confirm account-specific fees in Shopee Seller Center.
 
+## Brand routing
+
+- `/` — Lumen Arts / Obsidian Regalia global entry (PT/ES browsers route to localized art pages)
+- `/labs/` — Lumen Anima Labs technical/software home
+- `/digital-art.html` — PT-BR art landing
+- `/en/digital-art.html` — explicit English art landing
+- `/es/digital-art.html` — Spanish art landing
+
 ## Structure
 
-- `index.html` — home, product, principles and about sections
+- `index.html` — global Lumen Arts / Obsidian Regalia entry
+- `labs/index.html` — preserved Lumen Anima Labs technical/software home
 - `tools/qa-evidence-generator.html` — local-first QA report scorer/export tool
 - `tools/qa-evidence-core.js` — deterministic scoring/export logic shared by the public tool
 - `styles.css` — responsive visual system and accessibility states
