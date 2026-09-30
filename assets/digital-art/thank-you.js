@@ -10,7 +10,7 @@
 
   const T={
     pt:{
-      title:"Obrigado pela compra — Lumen Digital Art",store:"Loja",support:"Suporte",
+      title:"Seu pedido Obsidian Regalia — Lumen Arts",store:"Loja",support:"Suporte",
       confirmed:"Pagamento confirmado",thanks:"Obrigado pela sua compra.",
       success:"Seu pedido foi aprovado e seus arquivos já estão prontos. Organizamos a entrega em pacotes para você baixar sem aquela lista interminável de arquivos soltos.",
       loading:"Preparando seu pedido…",loadingP:"Estamos confirmando o pagamento com o Mercado Pago e gerando seus links protegidos.",
@@ -21,13 +21,13 @@
       keep:"Guarde esta página",helpHead:"Se precisar de ajuda, o pedido identifica sua compra.",
       help1:"Problema no download?",help1p:"Abra o suporte e informe o número do pagamento ou do pedido exibido acima.",help1a:"Ir para suporte →",
       help2:"Licença dentro do pacote",help2p:"O ZIP inclui README e licença. Consulte antes de usar a arte comercialmente.",help2a:"Entender a coleção →",
-      footer:"Arte digital, ferramentas e software aplicado.",privacy:"Privacidade",terms:"Termos",
+      footer:"Arte digital Black & Gold — by Lumen Anima.",privacy:"Privacidade",terms:"Termos",
       missing:"Identificador de pagamento ausente ou inválido.",temp:"A entrega está temporariamente indisponível.",queryFail:"Não foi possível consultar este pagamento.",
       digital:"Obsidian Regalia — 30 obras Black & Gold",approvedNoBundle:"Pagamento aprovado, mas o pacote ainda não foi montado. Informe o pagamento ",notApproved:'O pagamento está com status “{status}”. O download só é liberado após aprovação.',loadFail:"Falha ao consultar o pedido. Tente recarregar a página ou use o suporte.",
       package:"Pacote",protected:"ZIP protegido"
     },
     en:{
-      title:"Thank you for your purchase — Lumen Digital Art",store:"Store",support:"Support",
+      title:"Your Obsidian Regalia order — Lumen Arts",store:"Store",support:"Support",
       confirmed:"Payment confirmed",thanks:"Thank you for your purchase.",
       success:"Your order has been approved and your files are ready. We organized the delivery into packages so you can download them without dealing with an endless list of loose files.",
       loading:"Preparing your order…",loadingP:"We are confirming the payment with Mercado Pago and generating your protected download links.",
@@ -38,13 +38,13 @@
       keep:"Keep this page",helpHead:"If you need help, the order identifies your purchase.",
       help1:"Download problem?",help1p:"Open support and include the payment or order number shown above.",help1a:"Go to support →",
       help2:"License inside the package",help2p:"The ZIP includes the README and license. Review them before using the artwork commercially.",help2a:"Understand the collection →",
-      footer:"Digital art, tools and applied software.",privacy:"Privacy",terms:"Terms",
+      footer:"Black & Gold digital art — by Lumen Anima.",privacy:"Privacy",terms:"Terms",
       missing:"Missing or invalid payment identifier.",temp:"Delivery is temporarily unavailable.",queryFail:"We couldn't retrieve this payment.",
       digital:"Obsidian Regalia — 30 Black & Gold artworks",approvedNoBundle:"Payment approved, but the package is not ready yet. Send payment ",notApproved:'The payment status is “{status}”. Downloads are released only after approval.',loadFail:"We couldn't retrieve the order. Reload this page or contact support.",
       package:"Package",protected:"Protected ZIP"
     },
     es:{
-      title:"Gracias por tu compra — Lumen Digital Art",store:"Tienda",support:"Soporte",
+      title:"Tu pedido Obsidian Regalia — Lumen Arts",store:"Tienda",support:"Soporte",
       confirmed:"Pago confirmado",thanks:"Gracias por tu compra.",
       success:"Tu pedido fue aprobado y tus archivos ya están listos. Organizamos la entrega en paquetes para que puedas descargarlos sin enfrentarte a una lista interminable de archivos sueltos.",
       loading:"Preparando tu pedido…",loadingP:"Estamos confirmando el pago con Mercado Pago y generando tus enlaces de descarga protegidos.",
@@ -55,7 +55,7 @@
       keep:"Guarda esta página",helpHead:"Si necesitas ayuda, el pedido identifica tu compra.",
       help1:"¿Problema con la descarga?",help1p:"Abre soporte e informa el número de pago o pedido mostrado arriba.",help1a:"Ir a soporte →",
       help2:"Licencia dentro del paquete",help2p:"El ZIP incluye README y licencia. Revísalos antes de usar el arte comercialmente.",help2a:"Entender la colección →",
-      footer:"Arte digital, herramientas y software aplicado.",privacy:"Privacidad",terms:"Términos",
+      footer:"Arte digital Black & Gold — by Lumen Anima.",privacy:"Privacidad",terms:"Términos",
       missing:"Identificador de pago ausente o inválido.",temp:"La entrega está temporalmente no disponible.",queryFail:"No pudimos consultar este pago.",
       digital:"Obsidian Regalia — 30 obras Black & Gold",approvedNoBundle:"Pago aprobado, pero el paquete todavía no está listo. Informa el pago ",notApproved:'El pago tiene estado “{status}”. La descarga solo se libera después de la aprobación.',loadFail:"No pudimos consultar el pedido. Recarga la página o utiliza soporte.",
       package:"Paquete",protected:"ZIP protegido"
@@ -123,7 +123,7 @@
         const bundles=Array.isArray(data.bundles)?data.bundles:[];
         if(!bundles.length){show("#errorCard");$("#errorText").textContent=T.approvedNoBundle+paymentId+(lang==="en"?" to support.":lang==="es"?" a soporte.":" ao suporte.");return;}
         $("#downloadButtons").innerHTML=bundles.map((b,i)=>'<a class="download" href="'+String(b.url).replace(/"/g,"&quot;")+'" rel="nofollow"><div><b>'+T.package+" "+(i+1)+'</b><span>'+sizeLabel(b.size)+" · "+T.protected+'</span></div><span class="arrow">↓</span></a>').join("");
-        show("#orderCard");renderCross(data.product.id);return;
+        show("#successHero");show("#orderCard");renderCross(data.product.id);return;
       }
       if(["pending","in_process","authorized"].includes(data.status)){
         show("#pendingCard");setTimeout(load,3500);return;
