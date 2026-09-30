@@ -5,6 +5,14 @@
   const pageLang=(document.documentElement.lang||"pt-BR").toLowerCase();
   const lang=pageLang.startsWith("en")?"en":pageLang.startsWith("es")?"es":"pt";
   const locale=document.documentElement.dataset.checkoutLocale||(lang==="en"?"en-US":lang==="es"?"es":"pt-BR");
+  // Campaign attribution uses only explicit, allowlisted UTM strings: no cookies or personal data.
+  const ATTRIBUTION_KEYS=["utm_source","utm_medium","utm_campaign","utm_content","utm_term"];
+  const params=new URLSearchParams(location.search);
+  const attribution={};
+  for(const key of ATTRIBUTION_KEYS){
+    const value=String(params.get(key)||"").trim();
+    if(/^[A-Za-z0-9_.-]{1,64}$/.test(value))attribution[key]=value;
+  }
   const copy={
     pt:{
       product:"Obsidian Regalia — 30 obras Black & Gold",
@@ -166,7 +174,7 @@
             fetch(API_BASE+"/api/payments",{
               method:"POST",
               headers:{"content-type":"application/json","x-idempotency-key":idem},
-              body:JSON.stringify({productId,selectedPaymentMethod,formData,locale:lang})
+              body:JSON.stringify({productId,selectedPaymentMethod,formData,locale:lang,attribution})
             }).then(async r=>{
               const data=await r.json().catch(()=>({}));
               if(!r.ok||!data.id)throw new Error(data.message||data.error||"payment_failed");
