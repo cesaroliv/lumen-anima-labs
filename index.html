@@ -16,7 +16,7 @@
 <meta property="og:description" content="30 premium Black & Gold artworks, 16K vertical masters and a commercial license.">
 <meta property="og:image" content="https://lumenanima.com/assets/digital-art/v5/environments/obsidian-lion-livingroom.webp">
 <script>
-(()=>{const p=location.pathname;if(p!=="/"&&p!=="/index.html")return;const l=(navigator.language||"").toLowerCase();if(l.startsWith("pt"))location.replace("/digital-art.html");else if(l.startsWith("es"))location.replace("/es/digital-art.html");})();
+(()=>{const p=location.pathname;if(p!=="/"&&p!=="/index.html")return;const l=(navigator.language||"").toLowerCase();const suffix=location.search+location.hash;if(l.startsWith("pt"))location.replace("/digital-art.html"+suffix);else if(l.startsWith("es"))location.replace("/es/digital-art.html"+suffix);})();
 </script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/institutional.css">
