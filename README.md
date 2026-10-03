@@ -72,3 +72,18 @@ Before publishing, check keyboard navigation, responsive layouts, relative links
 5. Configure the domain DNS with the records GitHub currently documents for apex domains.
 
 The `CNAME` file must contain only `lumenanima.com`. License and checkout services will use separate infrastructure in the future; no backend belongs in this repository.
+## ChatGPT Ads QuickLaunch
+
+Independent productized launch service for businesses entering ChatGPT Ads.
+
+- Service page: https://lumenanima.com/labs/chatgpt-ads-quicklaunch.html
+- Includes campaign structure, context hints, measurement preflight and launch QA.
+- Independent service; not affiliated with or endorsed by OpenAI.
+
+## Commerce Feed Doctor
+
+Free local-first beta for product-feed readiness and cross-source catalog drift.
+
+- Tool: https://lumenanima.com/tools/commerce-feed-doctor.html
+- Checks ChatGPT Ads feed requirements and baseline Google Merchant feed quality.
+- CSV/TXT files stay in the browser.
