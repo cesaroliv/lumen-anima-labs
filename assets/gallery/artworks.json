@@ -1,0 +1,152 @@
+[
+  {
+    "sku": "art-01-lion",
+    "name": "Lion",
+    "preview": "/assets/digital-art/v4/published-mockups/01-lion-living.jpg"
+  },
+  {
+    "sku": "art-02-eagle",
+    "name": "Eagle",
+    "preview": "/assets/digital-art/v4/published-mockups/02-eagle-office.jpg"
+  },
+  {
+    "sku": "art-03-owl",
+    "name": "Owl",
+    "preview": "/assets/digital-art/v5/artworks/legacy-owl.webp"
+  },
+  {
+    "sku": "art-04-serpent",
+    "name": "Serpent",
+    "preview": "/assets/digital-art/v4/published-mockups/04-serpent-library.jpg"
+  },
+  {
+    "sku": "art-05-dragon",
+    "name": "Dragon",
+    "preview": "/assets/digital-art/v5/artworks/legacy-dragon.webp"
+  },
+  {
+    "sku": "art-06-black-rose",
+    "name": "Black Rose",
+    "preview": "/assets/digital-art/v4/published-mockups/06-black-rose-lounge.jpg"
+  },
+  {
+    "sku": "art-07-skull",
+    "name": "Skull",
+    "preview": "/assets/digital-art/v4/published-mockups/07-skull-dining.jpg"
+  },
+  {
+    "sku": "art-08-tiger",
+    "name": "Tiger",
+    "preview": "/assets/digital-art/v5/artworks/legacy-tiger.webp"
+  },
+  {
+    "sku": "art-09-panther",
+    "name": "Panther",
+    "preview": "/assets/digital-art/v4/published-mockups/09-panther-foyer.jpg"
+  },
+  {
+    "sku": "art-10-wolf",
+    "name": "Wolf",
+    "preview": "/assets/digital-art/v4/published-mockups/10-wolf-salon.jpg"
+  },
+  {
+    "sku": "art-11-harpy-eagle",
+    "name": "Harpy Eagle",
+    "preview": "/assets/digital-art/v4/published-mockups/11-harpy-eagle-bedroom.jpg"
+  },
+  {
+    "sku": "art-12-bull",
+    "name": "Bull",
+    "preview": "/assets/digital-art/v4/published-mockups/12-bull-office.jpg"
+  },
+  {
+    "sku": "art-13-horse",
+    "name": "Horse",
+    "preview": "/assets/digital-art/v4/published-mockups/13-horse-salon.jpg"
+  },
+  {
+    "sku": "art-16-elephant",
+    "name": "Elephant",
+    "preview": "/assets/digital-art/v4/published-mockups/16-elephant-living.jpg"
+  },
+  {
+    "sku": "art-17-buffalo",
+    "name": "Buffalo",
+    "preview": "/assets/digital-art/v4/published-mockups/17-buffalo-office.jpg"
+  },
+  {
+    "sku": "art-18-german-shepherd",
+    "name": "German Shepherd",
+    "preview": "/assets/digital-art/v4/published-mockups/18-german-shepherd-foyer.jpg"
+  },
+  {
+    "sku": "art-19-rottweiler",
+    "name": "Rottweiler",
+    "preview": "/assets/digital-art/v4/published-mockups/19-rottweiler-living.jpg"
+  },
+  {
+    "sku": "art-20-doberman",
+    "name": "Doberman",
+    "preview": "/assets/digital-art/v5/artworks/legacy-doberman.jpg"
+  },
+  {
+    "sku": "art-21-cane-corso",
+    "name": "Cane Corso",
+    "preview": "/assets/digital-art/v4/published-mockups/21-cane-corso-office.jpg"
+  },
+  {
+    "sku": "art-22-american-bully",
+    "name": "American Bully",
+    "preview": "/assets/digital-art/v4/published-mockups/22-american-bully-foyer.jpg"
+  },
+  {
+    "sku": "art-23-siberian-husky",
+    "name": "Siberian Husky",
+    "preview": "/assets/digital-art/v4/published-mockups/23-siberian-husky-living.jpg"
+  },
+  {
+    "sku": "art-24-akita",
+    "name": "Akita",
+    "preview": "/assets/digital-art/v4/published-mockups/24-akita-lounge.jpg"
+  },
+  {
+    "sku": "art-25-panther-eclipse",
+    "name": "Panther Eclipse",
+    "preview": "/assets/digital-art/v5/artworks/panther-eclipse.webp"
+  },
+  {
+    "sku": "art-26-imperial-lion",
+    "name": "Imperial Lion",
+    "preview": "/assets/digital-art/v5/artworks/imperial-lion.webp"
+  },
+  {
+    "sku": "art-27-serpent-nocturne",
+    "name": "Serpent Nocturne",
+    "preview": "/assets/digital-art/v5/artworks/serpent-nocturne.webp"
+  },
+  {
+    "sku": "art-28-skull-and-black-roses",
+    "name": "Skull and Black Roses",
+    "preview": "/assets/digital-art/v5/artworks/skull-black-roses.webp"
+  },
+  {
+    "sku": "art-29-classical-kintsugi-bust",
+    "name": "Classical Kintsugi Bust",
+    "preview": "/assets/digital-art/v5/artworks/classical-kintsugi.webp"
+  },
+  {
+    "sku": "art-30-gothic-angel",
+    "name": "Gothic Angel",
+    "preview": "/assets/digital-art/v5/artworks/gothic-angel.webp"
+  },
+  {
+    "sku": "art-31-dark-goddess",
+    "name": "Dark Goddess",
+    "preview": "/assets/digital-art/v5/artworks/dark-goddess.webp"
+  },
+  {
+    "sku": "art-32-obsidian-horse",
+    "name": "Obsidian Horse",
+    "preview": "/assets/digital-art/v5/artworks/obsidian-horse.webp"
+  }
+]

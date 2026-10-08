@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR" data-checkout-locale="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>Obra digital individual — Lumen Arts</title>
+<meta name="description" content="Pagamento seguro para uma obra digital da galeria Lumen Arts.">
+<link rel="canonical" href="https://lumenanima.com/checkout-artwork.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/gallery/gallery.css">
+<link rel="stylesheet" href="/assets/gallery/artwork-checkout.css">
+<script>const q=new URLSearchParams(location.search);const l=q.get("lang");const p=l==="en"?"en-US":l==="pt"?"pt-BR":(navigator.language||"pt-BR").toLowerCase().startsWith("pt")?"pt-BR":"en-US";document.documentElement.lang=p;document.documentElement.dataset.checkoutLocale=p;</script>
+</head>
+<body>
+<header class="head"><div class="wrap"><a class="logo" href="/">Lumen <b>Arts</b></a><nav class="links"><a href="/" id="backLink">Voltar à galeria</a><a href="/digital-art.html#oferta">Obsidian Regalia</a></nav></div></header>
+<main class="wrap buycard">
+<figure><img id="artworkPreview" src="/assets/digital-art/v5/artworks/imperial-lion.webp" alt="Prévia Lumen Arts"></figure>
+<section>
+<div class="eyebrow">LUMEN ARTS · EDIÇÃO DIGITAL</div>
+<h1 id="artworkName">Obra individual</h1>
+<p id="pageTitle">Sua obra digital</p>
+<p id="features">PNG individual e licença de uso no arquivo protegido. Download somente após aprovação do pagamento.</p>
+<div class="price"><span id="priceLabel">Preço por obra</span> · <strong>R$ 14,90</strong></div>
+<div class="notice" id="availability" role="status">Verificando disponibilidade...</div>
+<div class="actions"><button class="btn buy" id="buySelected" type="button" disabled>Verificando checkout…</button><a class="btn secondary" href="/digital-art.html#oferta">Ver pacote completo · R$ 49,90</a></div>
+<p>Entrega digital automatizada via Mercado Pago após confirmação. Confira a licença no arquivo adquirido.</p>
+</section>
+</main>
+<div class="checkout-backdrop" id="checkoutBackdrop" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+<div class="checkout">
+<div class="checkout-head"><h2 id="checkoutTitle">Pagamento seguro</h2><button class="close" id="checkoutClose" aria-label="Fechar">×</button></div>
+<div class="checkout-body">
+<div class="checkout-summary"><div><strong id="checkoutProductName">Obra digital</strong><div class="small">Lumen Arts</div></div><strong id="checkoutProductPrice">R$ 14,90</strong></div>
+<div id="checkoutMessage" class="status-box hidden"></div>
+<div id="paymentBrick_container"></div>
+<div id="statusArea" class="hidden"><div id="statusScreenBrick_container"></div></div>
+</div>
+</div></div>
+<footer class="foot"><div class="wrap"><a class="logo" href="/">Lumen <b>Arts</b></a><nav><a href="/support.html">Suporte</a><a href="/terms.html">Termos</a><a href="/privacy.html">Privacidade</a></nav></div></footer>
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+<script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
+<script src="/assets/digital-art/checkout-config.js"></script>
+<script src="/assets/digital-art/checkout.js"></script>
+<script src="/assets/gallery/artwork-checkout.js"></script>
+</body></html>

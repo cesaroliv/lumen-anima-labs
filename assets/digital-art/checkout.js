@@ -85,10 +85,17 @@
     const data=await r.json().catch(()=>({}));
     if(!r.ok||!data.publicKey)throw new Error(data.error||"checkout_config_error");
     cfg=data;
+    for(const [id,p] of Object.entries(data.products||{})){
+      if(/^art-[0-9]{2}-[a-z0-9-]+$/.test(id)&&p&&Number(p.price)===14.90){
+        products[id]={name:String(p.name||id),price:14.90};
+      }
+    }
     if(!mp){
       mp=new MercadoPago(cfg.publicKey,{locale});
       bricks=mp.bricks();
     }
+    window.LUMEN_CHECKOUT_READY=true;
+    window.dispatchEvent(new CustomEvent("lumen:checkout-ready",{detail:{individualProducts:Object.keys(products).filter(id=>id.startsWith("art-"))}}));
     return cfg;
   }
 
