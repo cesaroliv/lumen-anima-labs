@@ -5,6 +5,12 @@
   const lang=['pt','en'].includes(qs.get('lang'))?qs.get('lang'):(navigator.language||'').toLowerCase().startsWith('pt')?'pt':'en';
   const display=(key)=>key==='pt'?'pt':'en';
   document.querySelectorAll('[data-pt][data-en]').forEach(el=>el.textContent=el.dataset[display(lang)]);
+  // Accessible image context stays in the selected site language, never invents product affiliation.
+  document.querySelectorAll('.showcase-open').forEach(button=>{
+    const art=button.dataset.title||'';const collection=button.dataset.collection||'';
+    button.setAttribute('aria-label',lang==='pt'?'Ampliar prévia: '+art:'Expand preview: '+art);
+    const im=button.querySelector('img');if(im)im.alt=lang==='pt'?art+' — ambientação da série '+collection:art+' — styled interior from '+collection;
+  });
   const dialog=document.getElementById('gallery-dialog');
   const preview=document.getElementById('dialog-artwork');
   const title=document.getElementById('dialog-title');
