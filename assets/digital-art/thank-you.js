@@ -4,6 +4,11 @@
   const $=s=>document.querySelector(s);
   const params=new URLSearchParams(location.search);
   const paymentId=params.get("payment_id")||"";
+  const hashParams=new URLSearchParams((location.hash||"").replace(/^#/,""));
+  let orderAccess=String(hashParams.get("order_access")||"");
+  if(!/^[a-f0-9]{64}$/.test(orderAccess)){try{orderAccess=sessionStorage.getItem("lumen-order-access:"+paymentId)||"";}catch{}}
+  if(!/^[a-f0-9]{64}$/.test(orderAccess))orderAccess="";
+  if(location.hash.includes("order_access="))history.replaceState(null,"",location.pathname+location.search);
   const lang=["en","es"].includes(params.get("lang"))?params.get("lang"):"pt";
   const locale=lang==="en"?"en-US":lang==="es"?"es-ES":"pt-BR";
   document.documentElement.lang=lang==="pt"?"pt-BR":lang;
@@ -110,7 +115,8 @@
     if(!paymentId||!/^\d+$/.test(paymentId)){hide("#loadingCard");show("#errorCard");$("#errorText").textContent=T.missing;return;}
     if(!API){hide("#loadingCard");show("#errorCard");$("#errorText").textContent=T.temp;return;}
     try{
-      const r=await fetch(API+"/api/payments/"+encodeURIComponent(paymentId),{headers:{accept:"application/json"}});
+      const headers={accept:"application/json"};if(orderAccess)headers["x-order-access"]=orderAccess;
+      const r=await fetch(API+"/api/payments/"+encodeURIComponent(paymentId),{headers});
       const data=await r.json().catch(()=>({}));
       hide("#loadingCard");
       if(!r.ok){show("#errorCard");$("#errorText").textContent=T.queryFail;return;}

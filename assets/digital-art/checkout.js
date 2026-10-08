@@ -55,7 +55,7 @@
   const closeBtn=$("#checkoutClose");
   const message=$("#checkoutMessage");
   const statusArea=$("#statusArea");
-  let cfg=null,mp=null,bricks=null,paymentController=null,statusController=null,current=null,currentId="";
+  let cfg=null,mp=null,bricks=null,paymentController=null,statusController=null,current=null,currentId="",orderAccess="";
 
   function setMessage(text,type=""){
     if(!message)return;
@@ -73,7 +73,7 @@
     await unmount();
     backdrop?.classList.remove("open");
     document.body.style.overflow="";
-    current=null;currentId="";
+    current=null;currentId="";orderAccess="";
   }
   closeBtn?.addEventListener("click",close);
   backdrop?.addEventListener("click",e=>{if(e.target===backdrop)close();});
@@ -103,6 +103,7 @@
     const u=new URL("/digital-art-thank-you.html",location.origin);
     u.searchParams.set("payment_id",paymentId);
     u.searchParams.set("lang",lang);
+    if(orderAccess)u.hash="order_access="+encodeURIComponent(orderAccess);
     return u.href;
   }
 
@@ -111,7 +112,8 @@
     async function tick(){
       attempts++;
       try{
-        const r=await fetch(API_BASE+"/api/payments/"+encodeURIComponent(paymentId),{headers:{accept:"application/json"}});
+        const headers={accept:"application/json"};if(orderAccess)headers["x-order-access"]=orderAccess;
+        const r=await fetch(API_BASE+"/api/payments/"+encodeURIComponent(paymentId),{headers});
         const data=await r.json().catch(()=>({}));
         if(r.ok&&data.status==="approved"){
           setMessage(copy.approved,"good");
@@ -185,6 +187,8 @@
             }).then(async r=>{
               const data=await r.json().catch(()=>({}));
               if(!r.ok||!data.id)throw new Error(data.message||data.error||"payment_failed");
+              orderAccess=typeof data.order_access==="string"&&/^[a-f0-9]{64}$/.test(data.order_access)?data.order_access:"";
+              try{if(orderAccess)sessionStorage.setItem("lumen-order-access:"+data.id,orderAccess);}catch{}
               resolve();
               await renderStatus(data.id);
             }).catch(err=>{
