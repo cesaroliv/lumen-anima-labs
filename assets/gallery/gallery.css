@@ -10,9 +10,9 @@
 #pacotes .bundle-grid{grid-template-columns:minmax(0,1fr)}
 
 /* Premium editorial hero: composite built from all four collections, not one blown-up portrait */
-.hero:before{background:linear-gradient(90deg,rgba(11,11,10,.80),rgba(11,11,10,.45) 43%,rgba(11,11,10,.01) 85%),url('/assets/gallery/editorial/gallery-editorial-hero.webp') center/cover}
+.hero:before{background:linear-gradient(90deg,rgba(11,11,10,.80),rgba(11,11,10,.45) 43%,rgba(11,11,10,.01) 85%),url('/assets/gallery/editorial/gallery-editorial-hero-unique-20261009.webp') center/cover}
 .bundle.obsidian{background:linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.14)),url('/assets/gallery/editorial/gallery-editorial-hero.webp') right center/cover}
-@media(max-width:720px){.hero:before{background:linear-gradient(0deg,rgba(11,11,10,.97),rgba(11,11,10,.76) 67%,rgba(11,11,10,.52)),url('/assets/gallery/editorial/gallery-editorial-hero.webp') 67% center/cover}}
+@media(max-width:720px){.hero:before{background:linear-gradient(0deg,rgba(11,11,10,.97),rgba(11,11,10,.76) 67%,rgba(11,11,10,.52)),url('/assets/gallery/editorial/gallery-editorial-hero-unique-20261009.webp') 67% center/cover}}
 
 /* Catalog and bundle remain faithful to the purchasable series. */
 .art img{object-fit:cover;object-position:center;background:#171513}
