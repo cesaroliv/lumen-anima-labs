@@ -148,5 +148,50 @@
     "sku": "art-32-obsidian-horse",
     "name": "Obsidian Horse",
     "preview": "/assets/digital-art/v5/artworks/obsidian-horse.webp"
+  },
+  {
+    "sku": "art-gesso-01-lotus-de-ouro",
+    "name": "Lótus de Ouro",
+    "preview": "/assets/gallery/collections/gesso-ouro/01-lotus-de-ouro-view.webp"
+  },
+  {
+    "sku": "art-gesso-02-liberdade-esculpida",
+    "name": "Liberdade Esculpida",
+    "preview": "/assets/gallery/collections/gesso-ouro/02-liberdade-esculpida-view.webp"
+  },
+  {
+    "sku": "art-gesso-03-esquadro-e-compasso",
+    "name": "Esquadro e Compasso",
+    "preview": "/assets/gallery/collections/gesso-ouro/03-esquadro-e-compasso-view.webp"
+  },
+  {
+    "sku": "art-gesso-04-balanca-dourada",
+    "name": "Balança Dourada",
+    "preview": "/assets/gallery/collections/gesso-ouro/04-balanca-dourada-view.webp"
+  },
+  {
+    "sku": "art-gesso-05-big-ben-em-relevo",
+    "name": "Big Ben em Relevo",
+    "preview": "/assets/gallery/collections/gesso-ouro/05-big-ben-em-relevo-view.webp"
+  },
+  {
+    "sku": "art-gesso-06-coliseu-eterno",
+    "name": "Coliseu Eterno",
+    "preview": "/assets/gallery/collections/gesso-ouro/06-coliseu-eterno-view.webp"
+  },
+  {
+    "sku": "art-gesso-07-clave-de-sol",
+    "name": "Clave de Sol",
+    "preview": "/assets/gallery/collections/gesso-ouro/07-clave-de-sol-view.webp"
+  },
+  {
+    "sku": "art-gesso-08-catedral-dourada",
+    "name": "Catedral Dourada",
+    "preview": "/assets/gallery/collections/gesso-ouro/08-catedral-dourada-view.webp"
+  },
+  {
+    "sku": "art-gesso-09-medusa-marinha",
+    "name": "Medusa Marinha",
+    "preview": "/assets/gallery/collections/gesso-ouro/09-medusa-marinha-view.webp"
   }
 ]
