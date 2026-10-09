@@ -1,0 +1,222 @@
+{
+  "schema": 1,
+  "count": 27,
+  "rows": [
+    {
+      "id": "art-gesso-01-lotus-de-ouro",
+      "format": "A4",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-01-lotus-de-ouro_A4.webp",
+      "sha256": "44203e6b5d1ee2ea8ce42ff520952ce29fe73e85df9f587c7f4a4078044bd2b9",
+      "bytes": 81240
+    },
+    {
+      "id": "art-gesso-01-lotus-de-ouro",
+      "format": "A3",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-01-lotus-de-ouro_A3.webp",
+      "sha256": "6fe4aa46ef3eb203a0a75355a9c14d60242e60ad6cee34a67d89e844e6b603c9",
+      "bytes": 82674
+    },
+    {
+      "id": "art-gesso-01-lotus-de-ouro",
+      "format": "A2",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-01-lotus-de-ouro_A2.webp",
+      "sha256": "f91bc5648d195f10e34da7cc6849bb7bed48239638f7ab51fd61f879b12d1c95",
+      "bytes": 82518
+    },
+    {
+      "id": "art-gesso-02-liberdade-esculpida",
+      "format": "A4",
+      "orientation": "vertical",
+      "file": "/assets/gallery/gesso-physical/art-gesso-02-liberdade-esculpida_A4.webp",
+      "sha256": "5c8cc7483838babcdcc856b69f4db954e01834131094ba9420dab25a33686e44",
+      "bytes": 55558
+    },
+    {
+      "id": "art-gesso-02-liberdade-esculpida",
+      "format": "A3",
+      "orientation": "vertical",
+      "file": "/assets/gallery/gesso-physical/art-gesso-02-liberdade-esculpida_A3.webp",
+      "sha256": "afc0dc62009893942bd87e79456a202220b618256d52ea7735a14a21af84c4aa",
+      "bytes": 55424
+    },
+    {
+      "id": "art-gesso-02-liberdade-esculpida",
+      "format": "A2",
+      "orientation": "vertical",
+      "file": "/assets/gallery/gesso-physical/art-gesso-02-liberdade-esculpida_A2.webp",
+      "sha256": "a38b498f8f6dbb9c97207fe32f84191c6a32e398cd9c12f82881eb4be4d0212e",
+      "bytes": 56494
+    },
+    {
+      "id": "art-gesso-03-esquadro-e-compasso",
+      "format": "A4",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-03-esquadro-e-compasso_A4.webp",
+      "sha256": "bf95d20d9f480076bbb3f72d3655c30ba0e03dcaf6d08cfcb99ea6b04ed42ad1",
+      "bytes": 43260
+    },
+    {
+      "id": "art-gesso-03-esquadro-e-compasso",
+      "format": "A3",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-03-esquadro-e-compasso_A3.webp",
+      "sha256": "46ec23c2478a3a9ed79de5e9cb0825ff9e463ba18b8456755972dcbb98eb69fd",
+      "bytes": 43266
+    },
+    {
+      "id": "art-gesso-03-esquadro-e-compasso",
+      "format": "A2",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-03-esquadro-e-compasso_A2.webp",
+      "sha256": "c98e98d29091402b20be366201a4b93df259373201004c7f43b4d965c22ad0d1",
+      "bytes": 43422
+    },
+    {
+      "id": "art-gesso-04-balanca-dourada",
+      "format": "A4",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-04-balanca-dourada_A4.webp",
+      "sha256": "fd4ea94111e88367e4a6bf7623d6b2964b8fc70d9db499ae9a3bd7ee03da9c56",
+      "bytes": 42796
+    },
+    {
+      "id": "art-gesso-04-balanca-dourada",
+      "format": "A3",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-04-balanca-dourada_A3.webp",
+      "sha256": "ffd3dc884c978405b3b3e36da8412d2242c0a4fb7da947f135eef48cbba12a5c",
+      "bytes": 43036
+    },
+    {
+      "id": "art-gesso-04-balanca-dourada",
+      "format": "A2",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-04-balanca-dourada_A2.webp",
+      "sha256": "6388264da31dd8ce9835ba0e909aa053d19400f664a735f0497811b8f1c01f72",
+      "bytes": 43112
+    },
+    {
+      "id": "art-gesso-05-big-ben-em-relevo",
+      "format": "A4",
+      "orientation": "vertical",
+      "file": "/assets/gallery/gesso-physical/art-gesso-05-big-ben-em-relevo_A4.webp",
+      "sha256": "bdadb7d819a51cdfe85f5d2ccb27fcf880f3c2a8a182263b0b538a03bdbedf24",
+      "bytes": 84706
+    },
+    {
+      "id": "art-gesso-05-big-ben-em-relevo",
+      "format": "A3",
+      "orientation": "vertical",
+      "file": "/assets/gallery/gesso-physical/art-gesso-05-big-ben-em-relevo_A3.webp",
+      "sha256": "e8375bc2e7d96f81e0ab19d14ef92d583dacd479068c3cbedbbfae2ab0915b91",
+      "bytes": 84814
+    },
+    {
+      "id": "art-gesso-05-big-ben-em-relevo",
+      "format": "A2",
+      "orientation": "vertical",
+      "file": "/assets/gallery/gesso-physical/art-gesso-05-big-ben-em-relevo_A2.webp",
+      "sha256": "0059a908c69c5ff56481af764bfac816f77adcc583182b72863a8611ba507371",
+      "bytes": 85962
+    },
+    {
+      "id": "art-gesso-06-coliseu-eterno",
+      "format": "A4",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-06-coliseu-eterno_A4.webp",
+      "sha256": "1962c3b339b3de5b4e3a907254416433248ef8db65cc150eae1c1ee0d744eb0c",
+      "bytes": 96026
+    },
+    {
+      "id": "art-gesso-06-coliseu-eterno",
+      "format": "A3",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-06-coliseu-eterno_A3.webp",
+      "sha256": "6c9026f4237b789de4549f574f885da1a16b0cbfad3b25c76be201d13d1e1431",
+      "bytes": 96036
+    },
+    {
+      "id": "art-gesso-06-coliseu-eterno",
+      "format": "A2",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-06-coliseu-eterno_A2.webp",
+      "sha256": "a25d14e7d9fc4ae8c993f0a8e184f3844e969d864bdc754ab735a861dd8d4720",
+      "bytes": 97598
+    },
+    {
+      "id": "art-gesso-07-clave-de-sol",
+      "format": "A4",
+      "orientation": "vertical",
+      "file": "/assets/gallery/gesso-physical/art-gesso-07-clave-de-sol_A4.webp",
+      "sha256": "a8822ada3417da2b9e0db28e9d08852b92f672883da5ac355b76dbd6c19d3b35",
+      "bytes": 52620
+    },
+    {
+      "id": "art-gesso-07-clave-de-sol",
+      "format": "A3",
+      "orientation": "vertical",
+      "file": "/assets/gallery/gesso-physical/art-gesso-07-clave-de-sol_A3.webp",
+      "sha256": "a81a676fc4f123d1028b765fb50f47fbadda52f661b9d625c4cb76bbf8d8c2b5",
+      "bytes": 52864
+    },
+    {
+      "id": "art-gesso-07-clave-de-sol",
+      "format": "A2",
+      "orientation": "vertical",
+      "file": "/assets/gallery/gesso-physical/art-gesso-07-clave-de-sol_A2.webp",
+      "sha256": "a2961410f8a6b397c58cbe6f26c78538b75edaa6610e146165649d21f71bc215",
+      "bytes": 53204
+    },
+    {
+      "id": "art-gesso-08-catedral-dourada",
+      "format": "A4",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-08-catedral-dourada_A4.webp",
+      "sha256": "ff40610fcd93d51834610033c3ccba8bd1af9f7aea84931c4843c59f93703e1f",
+      "bytes": 130966
+    },
+    {
+      "id": "art-gesso-08-catedral-dourada",
+      "format": "A3",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-08-catedral-dourada_A3.webp",
+      "sha256": "dc5d0634da399999eacfc9ba2c642550f3e406d8246a13aceb68532144a19e5f",
+      "bytes": 129600
+    },
+    {
+      "id": "art-gesso-08-catedral-dourada",
+      "format": "A2",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-08-catedral-dourada_A2.webp",
+      "sha256": "67aa9e771220ae3ec1b0619cc7a8ed44774b58e88707903ebf08865fe0fd4bae",
+      "bytes": 133402
+    },
+    {
+      "id": "art-gesso-09-medusa-marinha",
+      "format": "A4",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-09-medusa-marinha_A4.webp",
+      "sha256": "f2b6c619aef79e6774b79f6f771299be3cb9fd75b9e884713f8f1c9dad93464f",
+      "bytes": 59618
+    },
+    {
+      "id": "art-gesso-09-medusa-marinha",
+      "format": "A3",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-09-medusa-marinha_A3.webp",
+      "sha256": "55c0c220852a91d84717acd7526eb3af853d0acfe2c09c1b83323329c97e4ec7",
+      "bytes": 59782
+    },
+    {
+      "id": "art-gesso-09-medusa-marinha",
+      "format": "A2",
+      "orientation": "horizontal",
+      "file": "/assets/gallery/gesso-physical/art-gesso-09-medusa-marinha_A2.webp",
+      "sha256": "dbd257af4026f9d0a2ecbf7b381eb71eddb70eb703d17abd910f8a06d472bdff",
+      "bytes": 60262
+    }
+  ]
+}

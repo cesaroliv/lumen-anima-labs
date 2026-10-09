@@ -1,0 +1,10 @@
+(()=>{"use strict";
+const m=location.pathname.match(/\/artworks\/(gesso-[0-9]{2}-[a-z0-9-]+)\.html$/);if(!m)return;
+const sku="art-"+m[1],info=document.querySelector(".detail-info"),actions=info?.querySelector(".actions");if(!info||!actions)return;
+const pt=(navigator.language||"").toLowerCase().startsWith("pt")||new URLSearchParams(location.search).get("lang")==="pt";
+const card=document.createElement("div");card.className="physical-option-card";
+const u=new URL("/checkout-gesso.html",location.origin);u.searchParams.set("sku",sku);u.searchParams.set("lang",pt?"pt":"en");
+card.innerHTML=pt?'<strong>Também como quadro físico</strong><p>Escolha A4, A3 ou A2 e moldura Tradicional nas cores preta, branca, natural ou marrom.</p>':'<strong>Also available as framed art</strong><p>Choose A4, A3 or A2 and a Traditional frame in black, white, natural or brown.</p>';
+const a=document.createElement("a");a.className="btn";a.href=u.pathname+u.search;a.textContent=pt?"Configurar quadro físico":"Configure framed art";card.appendChild(a);
+actions.parentNode.insertBefore(card,actions);
+})();
