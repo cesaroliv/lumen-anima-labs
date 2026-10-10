@@ -1,4 +1,4 @@
-.obsidian-unified .gesso-preview-stage:not(.digital-mode){background:radial-gradient(ellipse at 50% 42%,#383a3c 0%,#303234 55%,#252729 100%)!important;border:1px solid #48494b!important;box-shadow:inset 0 0 32px rgba(0,0,0,.20)!important;padding:clamp(19px,3.4vw,42px)}
+.obsidian-unified .gesso-preview-stage:not(.digital-mode){background:linear-gradient(145deg,#d8d6d1 0%,#c9c7c2 50%,#b7b5b0 100%)!important;border:1px solid #aaa7a0!important;box-shadow:inset 0 0 18px rgba(0,0,0,.065)!important;padding:clamp(19px,3.4vw,42px)}
 .obsidian-unified .gesso-preview-stage .physical-art-surface,.obsidian-unified .gesso-preview-stage .physical-art-surface img{background:#000!important}
 .obsidian-unified .gesso-preview-stage .supplier-native-frame img{background:#000!important;object-fit:contain!important}
 .obsidian-unified .gesso-preview-stage.digital-mode{padding:0!important;border:0!important;background:#000!important}
@@ -7,4 +7,4 @@
 @media(max-width:700px){.obsidian-unified .gesso-preview-stage:not(.digital-mode){padding:14px}}
 
 /* Keep the black supplier frame black while separating its silhouette from the graphite stage. */
-.obsidian-unified .gesso-preview-stage:not(.digital-mode) .supplier-native-frame:not(.white):not(.natural):not(.brown){box-shadow:0 22px 42px -12px rgba(0,0,0,.78),0 0 0 1px rgba(230,232,235,.22)!important}
+.obsidian-unified .gesso-preview-stage:not(.digital-mode) .supplier-native-frame:not(.white):not(.natural):not(.brown){background-color:#161616!important;box-shadow:0 24px 42px -14px rgba(0,0,0,.45),0 3px 9px rgba(0,0,0,.24)!important}
