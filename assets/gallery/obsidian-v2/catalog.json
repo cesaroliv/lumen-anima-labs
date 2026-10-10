@@ -1,0 +1,343 @@
+{
+  "schema": 2,
+  "collection": "Obsidian Regalia",
+  "asset_stage": "illustrative_preview_only_not_print_file",
+  "source_integrity": "no_mat_black_background_preserves_sources",
+  "artworks": {
+    "art-01-lion": {
+      "title": "Lion",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-01-lion_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-01-lion_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-01-lion_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "ecb9532fce5ef24f"
+    },
+    "art-02-eagle": {
+      "title": "Eagle",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-02-eagle_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-02-eagle_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-02-eagle_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "55cc8f14acc41b3d"
+    },
+    "art-03-owl": {
+      "title": "Owl",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-03-owl_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-03-owl_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-03-owl_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "271e39bb1814796c"
+    },
+    "art-04-serpent": {
+      "title": "Serpent",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-04-serpent_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-04-serpent_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-04-serpent_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "f41a2867057dfbb2"
+    },
+    "art-05-dragon": {
+      "title": "Dragon",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-05-dragon_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-05-dragon_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-05-dragon_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "b1f6ad666cc941ae"
+    },
+    "art-06-black-rose": {
+      "title": "Black Rose",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-06-black-rose_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-06-black-rose_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-06-black-rose_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "405ec936b7fa2a79"
+    },
+    "art-07-skull": {
+      "title": "Skull",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-07-skull_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-07-skull_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-07-skull_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "292b444e40b98ef8"
+    },
+    "art-08-tiger": {
+      "title": "Tiger",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-08-tiger_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-08-tiger_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-08-tiger_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "60bb409fc76d6dfa"
+    },
+    "art-09-panther": {
+      "title": "Panther",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-09-panther_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-09-panther_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-09-panther_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "f17bcd0a94d7a3ca"
+    },
+    "art-10-wolf": {
+      "title": "Wolf",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-10-wolf_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-10-wolf_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-10-wolf_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "9ca1efb1724a95c5"
+    },
+    "art-11-harpy-eagle": {
+      "title": "Harpy Eagle",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-11-harpy-eagle_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-11-harpy-eagle_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-11-harpy-eagle_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "42a78013b9c0230e"
+    },
+    "art-12-bull": {
+      "title": "Bull",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-12-bull_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-12-bull_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-12-bull_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "ba4fb3974d14d4fc"
+    },
+    "art-13-horse": {
+      "title": "Horse",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-13-horse_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-13-horse_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-13-horse_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "f659ff8050b8a8a6"
+    },
+    "art-16-elephant": {
+      "title": "Elephant",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-16-elephant_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-16-elephant_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-16-elephant_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "6042104b98bfa569"
+    },
+    "art-17-buffalo": {
+      "title": "Buffalo",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-17-buffalo_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-17-buffalo_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-17-buffalo_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "6392f2830305fdc3"
+    },
+    "art-18-german-shepherd": {
+      "title": "German Shepherd",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-18-german-shepherd_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-18-german-shepherd_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-18-german-shepherd_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "771c519a73134e21"
+    },
+    "art-19-rottweiler": {
+      "title": "Rottweiler",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-19-rottweiler_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-19-rottweiler_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-19-rottweiler_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "0e8e65d1181699c7"
+    },
+    "art-20-doberman": {
+      "title": "Doberman",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-20-doberman_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-20-doberman_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-20-doberman_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "128a3c3fdd11386c"
+    },
+    "art-21-cane-corso": {
+      "title": "Cane Corso",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-21-cane-corso_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-21-cane-corso_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-21-cane-corso_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "56268ab4f5e94b3b"
+    },
+    "art-22-american-bully": {
+      "title": "American Bully",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-22-american-bully_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-22-american-bully_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-22-american-bully_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "8c7a6a27911b3e54"
+    },
+    "art-23-siberian-husky": {
+      "title": "Siberian Husky",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-23-siberian-husky_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-23-siberian-husky_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-23-siberian-husky_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "e6603442b0b35306"
+    },
+    "art-24-akita": {
+      "title": "Akita",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-24-akita_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-24-akita_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-24-akita_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "5744d8361a574dd5"
+    },
+    "art-25-panther-eclipse": {
+      "title": "Panther Eclipse",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-25-panther-eclipse_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-25-panther-eclipse_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-25-panther-eclipse_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "46ba0ef737b25e0c"
+    },
+    "art-26-imperial-lion": {
+      "title": "Imperial Lion",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-26-imperial-lion_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-26-imperial-lion_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-26-imperial-lion_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "399dd324da356134"
+    },
+    "art-27-serpent-nocturne": {
+      "title": "Serpent Nocturne",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-27-serpent-nocturne_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-27-serpent-nocturne_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-27-serpent-nocturne_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "9c7c415ec5587dfa"
+    },
+    "art-28-skull-and-black-roses": {
+      "title": "Skull and Black Roses",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-28-skull-and-black-roses_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-28-skull-and-black-roses_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-28-skull-and-black-roses_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "dee34b576961b30f"
+    },
+    "art-29-classical-kintsugi-bust": {
+      "title": "Classical Kintsugi Bust",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-29-classical-kintsugi-bust_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-29-classical-kintsugi-bust_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-29-classical-kintsugi-bust_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "57815978d758ae0b"
+    },
+    "art-30-gothic-angel": {
+      "title": "Gothic Angel",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-30-gothic-angel_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-30-gothic-angel_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-30-gothic-angel_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "258ab7942dfdb6d8"
+    },
+    "art-31-dark-goddess": {
+      "title": "Dark Goddess",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-31-dark-goddess_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-31-dark-goddess_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-31-dark-goddess_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "548e88e1795b62aa"
+    },
+    "art-32-obsidian-horse": {
+      "title": "Obsidian Horse",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-32-obsidian-horse_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-32-obsidian-horse_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-32-obsidian-horse_A2.webp"
+      },
+      "review_status": "preview_only",
+      "original_sha256": "a4c95b4df4a32b53"
+    }
+  },
+  "sizes": [
+    "A4",
+    "A3",
+    "A2"
+  ]
+}

@@ -118,3 +118,27 @@
 
 /* Keep product-section deep links visible under the sticky navigation. */
 #obsidian-originais{scroll-margin-top:94px}
+
+/* Obsidian V2 — artworks, not boxed mockups */
+.obsidian-originals{border-top:1px solid #333;margin-top:44px;padding-top:45px}
+.obsidian-originals .originals-header{max-width:900px;margin-bottom:30px}
+.obsidian-originals .originals-header h3{font-size:clamp(37px,4.3vw,66px);letter-spacing:-.05em}
+.obsidian-originals .originals-grid{gap:24px}
+.obsidian-originals .obsidian-original-card{border:0;background:transparent;color:#f1ebe1;box-shadow:none;transform:none}
+.obsidian-originals .obsidian-original-card:hover{border:0;transform:none}
+.obsidian-originals .obsidian-original-card img{
+ box-sizing:border-box;display:block;width:100%;height:390px;aspect-ratio:auto;
+ background:#000;object-fit:contain;object-position:center;padding:0;
+ transition:transform .24s ease,filter .24s ease;
+}
+.obsidian-originals .obsidian-original-card:hover img{filter:brightness(1.08);transform:scale(1.015)}
+.obsidian-originals .original-card-meta{padding:17px 2px 20px;gap:7px}
+.obsidian-originals .original-card-meta strong{font-size:clamp(24px,2.15vw,35px);line-height:1.12}
+.obsidian-originals .original-card-meta small{font-size:12px;color:#a69c8e}
+.obsidian-originals .original-card-cta{border:0;padding-top:10px;margin-top:3px;color:#e3b970;font-size:11px}
+.obsidian-originals .originals-more{border-top:1px solid #39332b;margin-top:30px}
+.obsidian-originals .originals-more summary{border-radius:0}
+@media(max-width:980px){.obsidian-originals .originals-grid{gap:18px}.obsidian-originals .obsidian-original-card img{height:340px}}
+@media(max-width:600px){.obsidian-originals .originals-grid{gap:14px}.obsidian-originals .obsidian-original-card img{height:260px;padding:0}.obsidian-originals .original-card-meta{padding:12px 1px 17px}.obsidian-originals .original-card-meta strong{font-size:22px}}
+@media(max-width:390px){.obsidian-originals .originals-grid{grid-template-columns:1fr}.obsidian-originals .obsidian-original-card img{height:370px}}
+@media(prefers-reduced-motion:reduce){.obsidian-originals .obsidian-original-card img{transition:none}}

@@ -21,10 +21,10 @@ help:{
 "Tradicional com vidro acrílico":"Moldura tradicional com proteção em vidro acrílico (prévia simulada).",
 "Caixa":"Moldura tipo caixa, com perfil intermediário, sem vidro.",
 "Caixa com vidro acrílico":"Moldura tipo caixa com vidro acrílico (prévia simulada).",
-"Filete":"Moldura de perfil fino. O filete dourado na prévia é ilustrativo.",
+"Filete":"Moldura de perfil fino. Sem filete gráfico interno nesta coleção.",
 "Filete com vidro acrílico":"Moldura física de perfil fino com vidro acrílico (prévia simulada).",
-"Placa Decorativa":"Placa decorativa sem moldura externa. Passe-partout e filete dourado continuam impressos.",
-"Poster":"Pôster sem moldura externa. Passe-partout e filete dourado continuam impressos."
+"Placa Decorativa":"Placa decorativa sem moldura externa. Sem passe-partout ou bordas gráficas internas.",
+"Poster":"Pôster sem moldura externa. Sem passe-partout ou bordas gráficas internas."
 }
 }:{
 invalid:"Invalid printed artwork.",loading:"Loading Printile finishes…",
@@ -37,10 +37,10 @@ help:{
 "Tradicional com vidro acrílico":"Traditional frame with acrylic glazing (simulated preview).",
 "Caixa":"Box frame, medium profile, without glazing.",
 "Caixa com vidro acrílico":"Box frame with acrylic glazing (simulated preview).",
-"Filete":"Slim physical frame. The gold line in this preview is illustrative.",
+"Filete":"Slim physical frame. No inner gold line in this series.",
 "Filete com vidro acrílico":"Slim physical frame with acrylic glazing (simulated preview).",
-"Placa Decorativa":"Decorative panel, without an outer frame. The ivory mat and gold line remain printed.",
-"Poster":"Poster without an outer frame. The ivory mat and gold line remain printed."
+"Placa Decorativa":"Decorative panel, without an outer frame. No digital mat or gold line is added.",
+"Poster":"Poster without an outer frame. No digital mat or gold line is added."
 }
 };
 if(!embedded){document.documentElement.lang=pt?"pt-BR":"en-US";document.querySelectorAll("[data-pt][data-en]").forEach(el=>{el.textContent=pt?el.dataset.pt:el.dataset.en});}
@@ -56,7 +56,7 @@ const frameClass={Preta:"",Branca:"white",Natural:"natural",Marrom:"brown"};
 const unframed=new Set(["Poster","Placa Decorativa"]);
 const stylesWithGlass=new Set(["Tradicional com vidro acrílico","Caixa com vidro acrílico","Filete com vidro acrílico"]);
 function cmWidth(type){if(type.startsWith("Tradicional"))return 2;if(type.startsWith("Caixa"))return 1.5;if(type.startsWith("Filete"))return .5;return 0;}
-let config=null,art=null,offers=null,size="A2",color="Preta",finish="Filete";
+let config=null,art=null,offers=null,size="A2",color="Branca",finish="Tradicional";
 if(!frame.querySelector(".physical-art-surface")){
  const surf=document.createElement("div");surf.className="physical-art-surface";
  frame.insertBefore(surf,img);surf.appendChild(img);
@@ -92,7 +92,7 @@ function render(){
  if(finishHelp)finishHelp.textContent=labels.help[finish]||"";
  if(name)name.textContent=art.title;
  if(!embedded||window.LUMEN_GESSO_UNIFIED.getMode()==="physical"){
-  img.src="/assets/gallery/obsidian-physical/"+sku+"_"+size+".webp";
+  img.src="/assets/gallery/obsidian-v2/"+sku+"_"+size+".webp";
   img.alt=art.title+" — "+size+" — "+labels.physical;
  }
  frame.className="physical-frame "+(noFrame?(finish==="Poster"?"printile-unframed printile-poster":"printile-unframed printile-panel"):
@@ -112,7 +112,7 @@ colorButtons.forEach(b=>b.addEventListener("click",()=>{if(b.disabled)return;col
 if(finishSelect)finishSelect.addEventListener("change",()=>{finish=finishSelect.value;render()});
 /* No supplier ordering API is contacted by this preview. */
 Promise.all([
- fetch('/assets/gallery/obsidian-physical/catalog.json',{headers:{accept:'application/json'}}).then(r=>r.ok?r.json():null),
+ fetch('/assets/gallery/obsidian-v2/catalog.json',{headers:{accept:'application/json'}}).then(r=>r.ok?r.json():null),
  fetch('/assets/gallery/gesso-physical-offers.json?v=20ad1d60d13f',{headers:{accept:'application/json'}}).then(r=>r.ok?r.json():null)
 ]).then(([data,manifest])=>{
  const a=data?.artworks?.[sku];
