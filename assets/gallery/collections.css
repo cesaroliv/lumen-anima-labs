@@ -144,3 +144,16 @@
 @media(prefers-reduced-motion:reduce){.obsidian-originals .obsidian-original-card img{transition:none}}
 
 html:has(#obsidian-originais:target){scroll-behavior:auto!important}
+
+/* Source-backed galleries, distinct from ambient editorial studies */
+.original-series{scroll-margin-top:100px;margin-top:44px}
+.original-series .originals-header p{max-width:780px}
+.original-series .originals-grid{gap:24px}
+.original-series .obsidian-original-card img{object-fit:contain;background:#000}
+.original-series.black-originals .obsidian-original-card img{background:#000}
+.original-series.juridica-originals .obsidian-original-card img{background:#eee7dd}
+.original-series .obsidian-original-card:hover img{filter:brightness(1.05)}
+.original-series.juridica-originals{border-top:1px solid #655440}
+.original-series .originals-header .eyebrow{color:#d1ac70}
+@media(max-width:600px){.original-series .originals-grid{gap:12px}.original-series .obsidian-original-card img{height:270px}}
+html:has(.original-series:target){scroll-behavior:auto!important}

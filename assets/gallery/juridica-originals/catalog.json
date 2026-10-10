@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "collection": "juridica",
+  "asset_stage": "illustrative_not_print_master",
+  "artworks": {
+    "art-juridica-01-balanca-da-justica-dourada": {
+      "title": "Balança da Justiça Dourada",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-01-balanca-da-justica-dourada_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-01-balanca-da-justica-dourada_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-01-balanca-da-justica-dourada_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-juridica-02-balanca-dourada-sobre-livro-juridico": {
+      "title": "Balança Dourada sobre Livro Jurídico",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-02-balanca-dourada-sobre-livro-juridico_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-02-balanca-dourada-sobre-livro-juridico_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-02-balanca-dourada-sobre-livro-juridico_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-juridica-03-emblema-dourado-da-justica": {
+      "title": "Emblema Dourado da Justiça",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-03-emblema-dourado-da-justica_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-03-emblema-dourado-da-justica_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-03-emblema-dourado-da-justica_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-juridica-04-justica-classica-i": {
+      "title": "Justiça Clássica I",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-04-justica-classica-i_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-04-justica-classica-i_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-04-justica-classica-i_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-juridica-05-justica-classica-ii": {
+      "title": "Justiça Clássica II",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-05-justica-classica-ii_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-05-justica-classica-ii_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-05-justica-classica-ii_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-juridica-06-justica-classica-iii": {
+      "title": "Justiça Clássica III",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-06-justica-classica-iii_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-06-justica-classica-iii_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-06-justica-classica-iii_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-juridica-07-justica-dourada-em-marmore-branco-ii": {
+      "title": "Justiça Dourada em Mármore Branco II",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-07-justica-dourada-em-marmore-branco-ii_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-07-justica-dourada-em-marmore-branco-ii_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-07-justica-dourada-em-marmore-branco-ii_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-juridica-08-justica-dourada-em-marmore-branco": {
+      "title": "Justiça Dourada em Mármore Branco",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-08-justica-dourada-em-marmore-branco_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-08-justica-dourada-em-marmore-branco_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-08-justica-dourada-em-marmore-branco_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-juridica-09-martelo-de-juiz-em-marmore-e-ouro": {
+      "title": "Martelo de Juiz em Mármore e Ouro",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-09-martelo-de-juiz-em-marmore-e-ouro_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-09-martelo-de-juiz-em-marmore-e-ouro_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-09-martelo-de-juiz-em-marmore-e-ouro_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    }
+  }
+}

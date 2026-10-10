@@ -1,0 +1,467 @@
+{
+  "schema": 1,
+  "items": [
+    {
+      "sku": "art-black-01-aguia",
+      "slug": "black-01-aguia",
+      "title": "Águia",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-01-aguia_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-01-aguia_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-01-aguia_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-02-akita",
+      "slug": "black-02-akita",
+      "title": "Akita",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-02-akita_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-02-akita_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-02-akita_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-03-american-bully",
+      "slug": "black-03-american-bully",
+      "title": "American Bully",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-03-american-bully_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-03-american-bully_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-03-american-bully_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-04-bufalo",
+      "slug": "black-04-bufalo",
+      "title": "Búfalo",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-04-bufalo_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-04-bufalo_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-04-bufalo_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-05-cane-corso",
+      "slug": "black-05-cane-corso",
+      "title": "Cane Corso",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-05-cane-corso_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-05-cane-corso_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-05-cane-corso_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-06-cavalo",
+      "slug": "black-06-cavalo",
+      "title": "Cavalo",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-06-cavalo_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-06-cavalo_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-06-cavalo_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-07-cavalo-ii",
+      "slug": "black-07-cavalo-ii",
+      "title": "Cavalo II",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-07-cavalo-ii_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-07-cavalo-ii_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-07-cavalo-ii_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-08-caveira",
+      "slug": "black-08-caveira",
+      "title": "Caveira",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-08-caveira_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-08-caveira_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-08-caveira_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-09-cobra",
+      "slug": "black-09-cobra",
+      "title": "Cobra",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-09-cobra_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-09-cobra_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-09-cobra_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-10-coruja",
+      "slug": "black-10-coruja",
+      "title": "Coruja",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-10-coruja_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-10-coruja_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-10-coruja_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-11-doberman",
+      "slug": "black-11-doberman",
+      "title": "Doberman",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-11-doberman_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-11-doberman_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-11-doberman_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-12-dragao",
+      "slug": "black-12-dragao",
+      "title": "Dragão",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-12-dragao_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-12-dragao_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-12-dragao_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-13-harpia",
+      "slug": "black-13-harpia",
+      "title": "Harpia",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-13-harpia_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-13-harpia_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-13-harpia_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-14-husky",
+      "slug": "black-14-husky",
+      "title": "Husky",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-14-husky_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-14-husky_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-14-husky_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-15-leao",
+      "slug": "black-15-leao",
+      "title": "Leão",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-15-leao_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-15-leao_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-15-leao_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-16-lobo",
+      "slug": "black-16-lobo",
+      "title": "Lobo",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-16-lobo_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-16-lobo_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-16-lobo_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-17-pantera",
+      "slug": "black-17-pantera",
+      "title": "Pantera",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-17-pantera_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-17-pantera_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-17-pantera_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-18-pastor-alemao",
+      "slug": "black-18-pastor-alemao",
+      "title": "Pastor Alemão",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-18-pastor-alemao_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-18-pastor-alemao_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-18-pastor-alemao_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-19-rinoceronte",
+      "slug": "black-19-rinoceronte",
+      "title": "Rinoceronte",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-19-rinoceronte_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-19-rinoceronte_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-19-rinoceronte_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-20-rosa-negra",
+      "slug": "black-20-rosa-negra",
+      "title": "Rosa Negra",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-20-rosa-negra_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-20-rosa-negra_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-20-rosa-negra_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-21-rottweiler",
+      "slug": "black-21-rottweiler",
+      "title": "Rottweiler",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-21-rottweiler_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-21-rottweiler_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-21-rottweiler_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-22-tigre",
+      "slug": "black-22-tigre",
+      "title": "Tigre",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-22-tigre_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-22-tigre_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-22-tigre_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-23-touro",
+      "slug": "black-23-touro",
+      "title": "Touro",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-23-touro_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-23-touro_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-23-touro_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-black-24-touro-ii",
+      "slug": "black-24-touro-ii",
+      "title": "Touro II",
+      "orientation": "vertical",
+      "collection": "black",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-24-touro-ii_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-24-touro-ii_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-24-touro-ii_A2.webp"
+      },
+      "source_type": "original_png",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-juridica-01-balanca-da-justica-dourada",
+      "slug": "juridica-01-balanca-da-justica-dourada",
+      "title": "Balança da Justiça Dourada",
+      "orientation": "vertical",
+      "collection": "juridica",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-01-balanca-da-justica-dourada_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-01-balanca-da-justica-dourada_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-01-balanca-da-justica-dourada_A2.webp"
+      },
+      "source_type": "verified_16k_master",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-juridica-02-balanca-dourada-sobre-livro-juridico",
+      "slug": "juridica-02-balanca-dourada-sobre-livro-juridico",
+      "title": "Balança Dourada sobre Livro Jurídico",
+      "orientation": "vertical",
+      "collection": "juridica",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-02-balanca-dourada-sobre-livro-juridico_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-02-balanca-dourada-sobre-livro-juridico_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-02-balanca-dourada-sobre-livro-juridico_A2.webp"
+      },
+      "source_type": "verified_16k_master",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-juridica-03-emblema-dourado-da-justica",
+      "slug": "juridica-03-emblema-dourado-da-justica",
+      "title": "Emblema Dourado da Justiça",
+      "orientation": "vertical",
+      "collection": "juridica",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-03-emblema-dourado-da-justica_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-03-emblema-dourado-da-justica_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-03-emblema-dourado-da-justica_A2.webp"
+      },
+      "source_type": "verified_16k_master",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-juridica-04-justica-classica-i",
+      "slug": "juridica-04-justica-classica-i",
+      "title": "Justiça Clássica I",
+      "orientation": "vertical",
+      "collection": "juridica",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-04-justica-classica-i_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-04-justica-classica-i_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-04-justica-classica-i_A2.webp"
+      },
+      "source_type": "verified_16k_master",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-juridica-05-justica-classica-ii",
+      "slug": "juridica-05-justica-classica-ii",
+      "title": "Justiça Clássica II",
+      "orientation": "vertical",
+      "collection": "juridica",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-05-justica-classica-ii_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-05-justica-classica-ii_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-05-justica-classica-ii_A2.webp"
+      },
+      "source_type": "verified_16k_master",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-juridica-06-justica-classica-iii",
+      "slug": "juridica-06-justica-classica-iii",
+      "title": "Justiça Clássica III",
+      "orientation": "vertical",
+      "collection": "juridica",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-06-justica-classica-iii_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-06-justica-classica-iii_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-06-justica-classica-iii_A2.webp"
+      },
+      "source_type": "verified_16k_master",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-juridica-07-justica-dourada-em-marmore-branco-ii",
+      "slug": "juridica-07-justica-dourada-em-marmore-branco-ii",
+      "title": "Justiça Dourada em Mármore Branco II",
+      "orientation": "vertical",
+      "collection": "juridica",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-07-justica-dourada-em-marmore-branco-ii_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-07-justica-dourada-em-marmore-branco-ii_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-07-justica-dourada-em-marmore-branco-ii_A2.webp"
+      },
+      "source_type": "verified_16k_master",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-juridica-08-justica-dourada-em-marmore-branco",
+      "slug": "juridica-08-justica-dourada-em-marmore-branco",
+      "title": "Justiça Dourada em Mármore Branco",
+      "orientation": "vertical",
+      "collection": "juridica",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-08-justica-dourada-em-marmore-branco_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-08-justica-dourada-em-marmore-branco_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-08-justica-dourada-em-marmore-branco_A2.webp"
+      },
+      "source_type": "verified_16k_master",
+      "purchase_enabled": false
+    },
+    {
+      "sku": "art-juridica-09-martelo-de-juiz-em-marmore-e-ouro",
+      "slug": "juridica-09-martelo-de-juiz-em-marmore-e-ouro",
+      "title": "Martelo de Juiz em Mármore e Ouro",
+      "orientation": "vertical",
+      "collection": "juridica",
+      "previews": {
+        "A4": "/assets/gallery/juridica-originals/art-juridica-09-martelo-de-juiz-em-marmore-e-ouro_A4.webp",
+        "A3": "/assets/gallery/juridica-originals/art-juridica-09-martelo-de-juiz-em-marmore-e-ouro_A3.webp",
+        "A2": "/assets/gallery/juridica-originals/art-juridica-09-martelo-de-juiz-em-marmore-e-ouro_A2.webp"
+      },
+      "source_type": "verified_16k_master",
+      "purchase_enabled": false
+    }
+  ]
+}

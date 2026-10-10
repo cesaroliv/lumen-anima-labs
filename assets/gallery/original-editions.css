@@ -1,0 +1,12 @@
+/* Lumen Arts: original source-backed editions, separated from editorial mockups.
+   Only the presentation is enabled; no digital or physical checkout. */
+.original-edition-unified .gesso-preview-stage:not(.digital-mode){background:#141414!important;border:1px solid #292721!important;padding:clamp(16px,3.3vw,42px)!important}
+.original-edition-unified .gesso-preview-stage .physical-art-surface,.original-edition-unified .gesso-preview-stage .physical-art-surface img{background:#000}
+.original-edition-unified .gesso-preview-stage .supplier-native-frame img{object-fit:contain!important}
+.original-edition-unified .gesso-preview-stage.digital-mode{background:transparent!important;border:0!important;padding:0!important}
+.original-edition-unified .gesso-digital-details .actions .btn[aria-disabled="true"]{opacity:.75;pointer-events:none;cursor:default}
+.original-edition-unified .gesso-physical-details .physical-note{max-width:63ch}
+.original-edition-unified.juridica-edition .gesso-preview-stage:not(.digital-mode){background:#ded6cb!important;border:1px solid #d1c3b1!important}
+.original-edition-unified.juridica-edition .gesso-preview-stage .physical-art-surface,.original-edition-unified.juridica-edition .gesso-preview-stage .physical-art-surface img{background:#f5f1e9}
+.original-edition-unified.juridica-edition .gesso-preview-stage.digital-mode{background:#f5f1e9!important}
+@media(max-width:700px){.original-edition-unified .gesso-preview-stage:not(.digital-mode){padding:14px!important}}

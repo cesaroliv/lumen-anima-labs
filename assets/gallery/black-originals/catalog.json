@@ -1,0 +1,247 @@
+{
+  "schema": 1,
+  "collection": "black",
+  "asset_stage": "illustrative_not_print_master",
+  "artworks": {
+    "art-black-01-aguia": {
+      "title": "Águia",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-01-aguia_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-01-aguia_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-01-aguia_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-02-akita": {
+      "title": "Akita",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-02-akita_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-02-akita_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-02-akita_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-03-american-bully": {
+      "title": "American Bully",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-03-american-bully_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-03-american-bully_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-03-american-bully_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-04-bufalo": {
+      "title": "Búfalo",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-04-bufalo_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-04-bufalo_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-04-bufalo_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-05-cane-corso": {
+      "title": "Cane Corso",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-05-cane-corso_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-05-cane-corso_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-05-cane-corso_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-06-cavalo": {
+      "title": "Cavalo",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-06-cavalo_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-06-cavalo_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-06-cavalo_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-07-cavalo-ii": {
+      "title": "Cavalo II",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-07-cavalo-ii_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-07-cavalo-ii_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-07-cavalo-ii_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-08-caveira": {
+      "title": "Caveira",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-08-caveira_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-08-caveira_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-08-caveira_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-09-cobra": {
+      "title": "Cobra",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-09-cobra_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-09-cobra_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-09-cobra_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-10-coruja": {
+      "title": "Coruja",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-10-coruja_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-10-coruja_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-10-coruja_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-11-doberman": {
+      "title": "Doberman",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-11-doberman_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-11-doberman_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-11-doberman_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-12-dragao": {
+      "title": "Dragão",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-12-dragao_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-12-dragao_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-12-dragao_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-13-harpia": {
+      "title": "Harpia",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-13-harpia_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-13-harpia_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-13-harpia_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-14-husky": {
+      "title": "Husky",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-14-husky_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-14-husky_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-14-husky_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-15-leao": {
+      "title": "Leão",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-15-leao_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-15-leao_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-15-leao_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-16-lobo": {
+      "title": "Lobo",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-16-lobo_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-16-lobo_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-16-lobo_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-17-pantera": {
+      "title": "Pantera",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-17-pantera_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-17-pantera_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-17-pantera_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-18-pastor-alemao": {
+      "title": "Pastor Alemão",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-18-pastor-alemao_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-18-pastor-alemao_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-18-pastor-alemao_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-19-rinoceronte": {
+      "title": "Rinoceronte",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-19-rinoceronte_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-19-rinoceronte_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-19-rinoceronte_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-20-rosa-negra": {
+      "title": "Rosa Negra",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-20-rosa-negra_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-20-rosa-negra_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-20-rosa-negra_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-21-rottweiler": {
+      "title": "Rottweiler",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-21-rottweiler_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-21-rottweiler_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-21-rottweiler_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-22-tigre": {
+      "title": "Tigre",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-22-tigre_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-22-tigre_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-22-tigre_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-23-touro": {
+      "title": "Touro",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-23-touro_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-23-touro_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-23-touro_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    },
+    "art-black-24-touro-ii": {
+      "title": "Touro II",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-24-touro-ii_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-24-touro-ii_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-24-touro-ii_A2.webp"
+      },
+      "review_status": "illustrative_preview_only"
+    }
+  }
+}
