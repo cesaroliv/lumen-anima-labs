@@ -56,7 +56,7 @@ const frameClass={Preta:"",Branca:"white",Natural:"natural",Marrom:"brown"};
 const unframed=new Set(["Poster","Placa Decorativa"]);
 const stylesWithGlass=new Set(["Tradicional com vidro acrílico","Caixa com vidro acrílico","Filete com vidro acrílico"]);
 function cmWidth(type){if(type.startsWith("Tradicional"))return 2;if(type.startsWith("Caixa"))return 1.5;if(type.startsWith("Filete"))return .5;return 0;}
-let config=null,art=null,offers=null,size=embedded?"A3":"A2",color=embedded?"Branca":"Preta",finish="Tradicional";
+let config=null,art=null,offers=null,size="A2",color="Preta",finish="Filete";
 if(!frame.querySelector(".physical-art-surface")){
  const surf=document.createElement("div");surf.className="physical-art-surface";
  frame.insertBefore(surf,img);surf.appendChild(img);

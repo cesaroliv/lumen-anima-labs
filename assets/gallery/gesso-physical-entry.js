@@ -49,8 +49,8 @@ physical.innerHTML=[
 '<p class="gesso-physical-lead">',copy.lead,'</p>',
 '<div class="physical-field"><h2>1. ',copy.size,'</h2><div class="option-row" role="group" aria-label="',copy.size,'">',
 '<button type="button" class="option" data-size="A4" aria-pressed="false">A4</button>',
-'<button type="button" class="option" data-size="A3" aria-pressed="true">A3</button>',
-'<button type="button" class="option" data-size="A2" aria-pressed="false">A2</button></div></div>',
+'<button type="button" class="option" data-size="A3" aria-pressed="false">A3</button>',
+'<button type="button" class="option" data-size="A2" aria-pressed="true">A2</button></div></div>',
 '<div class="physical-field"><h2>2. ',copy.finish,'</h2>',
 '<label class="visually-hidden" for="physicalFinish">',copy.finish,'</label>',
 '<select id="physicalFinish" class="physical-finish-select" aria-label="',copy.finish,'">',
@@ -58,20 +58,20 @@ physical.innerHTML=[
 '<option value="Tradicional com vidro acrílico">',pt?'Tradicional com vidro acrílico':'Traditional with acrylic glazing','</option>',
 '<option value="Caixa">',pt?'Caixa':'Box frame','</option>',
 '<option value="Caixa com vidro acrílico">',pt?'Caixa com vidro acrílico':'Box frame with acrylic glazing','</option>',
-'<option value="Filete">',pt?'Filete':'Slim frame','</option>',
+'<option value="Filete" selected>',pt?'Filete':'Slim frame','</option>',
 '<option value="Filete com vidro acrílico">',pt?'Filete com vidro acrílico':'Slim frame with acrylic glazing','</option>',
 '<option value="Placa Decorativa">',pt?'Placa Decorativa':'Decorative panel','</option>',
 '<option value="Poster">',pt?'Pôster':'Poster','</option></select>',
 '<p id="physicalFinishHelp" class="physical-finish-help"></p></div>',
 '<div class="physical-field" id="physicalColorField"><h2>3. ',copy.color,'</h2><div class="option-row" role="group" aria-label="',copy.color,'">',
-'<button type="button" class="option color-option" data-color="Preta" aria-pressed="false"><span class="swatch black"></span><span>',pt?'Preta':'Black','</span></button>',
-'<button type="button" class="option color-option" data-color="Branca" aria-pressed="true"><span class="swatch white"></span><span>',pt?'Branca':'White','</span></button>',
+'<button type="button" class="option color-option" data-color="Preta" aria-pressed="true"><span class="swatch black"></span><span>',pt?'Preta':'Black','</span></button>',
+'<button type="button" class="option color-option" data-color="Branca" aria-pressed="false"><span class="swatch white"></span><span>',pt?'Branca':'White','</span></button>',
 '<button type="button" class="option color-option" data-color="Natural" aria-pressed="false"><span class="swatch natural"></span><span>Natural</span></button>',
 '<button type="button" class="option color-option" data-color="Marrom" aria-pressed="false"><span class="swatch brown"></span><span>',pt?'Marrom':'Brown','</span></button></div></div>',
 '<div class="physical-summary" aria-live="polite">',
 '<div><span>',copy.summarySize,'</span><strong id="summarySize">—</strong></div>',
-'<div><span>',copy.frame,'</span><strong id="summaryFrame">',copy.frameValue,'</strong></div>',
-'<div><span>',copy.color,'</span><strong id="summaryColor">',pt?'Branca':'White','</strong></div>',
+'<div><span>',copy.frame,'</span><strong id="summaryFrame">Filete</strong></div>',
+'<div><span>',copy.color,'</span><strong id="summaryColor">',pt?'Preta':'Black','</strong></div>',
 '<div><span>',copy.price,'</span><strong id="summaryPrice">—</strong></div></div>',
 '<p id="physicalStatus" class="gesso-availability" role="status">',copy.defaultStatus,'</p>',
 '<button id="physicalBuy" type="button" class="physical-buy" disabled>',copy.prep,'</button>',
@@ -80,10 +80,10 @@ physical.innerHTML=[
 info.appendChild(physical);
 const originalSrc=originalImage.getAttribute("src"),originalAlt=originalImage.getAttribute("alt");
 const stage=document.createElement("div");stage.className="gesso-preview-stage";
-const frame=document.createElement("div");frame.id="physicalFrame";frame.className="physical-frame white";
+const frame=document.createElement("div");frame.id="physicalFrame";frame.className="physical-frame";
 imageRegion.insertBefore(stage,originalImage);stage.appendChild(frame);const artSurface=document.createElement("div");artSurface.className="physical-art-surface";frame.appendChild(artSurface);artSurface.appendChild(originalImage);
 originalImage.id="physicalArtwork";
-let mode="digital";
+let mode="physical";
 const tabDigital=picker.querySelector("#gessoTabDigital"),tabPhysical=picker.querySelector("#gessoTabPhysical");
 function choose(next){
   mode=next;const framed=next==="physical";
@@ -94,7 +94,7 @@ function choose(next){
     originalImage.src=originalSrc;originalImage.alt=originalAlt;
   }
   const u=new URL(location.href);
-  if(framed)u.searchParams.set("formato","quadro");else u.searchParams.delete("formato");
+  if(framed)u.searchParams.set("formato","quadro");else u.searchParams.set("formato","digital");
   history.replaceState(null,"",u.pathname+u.search+u.hash);
 }
 tabDigital.addEventListener("click",()=>choose("digital"));
@@ -104,6 +104,6 @@ picker.addEventListener("keydown",e=>{
   e.preventDefault();const other=mode==="digital"?"physical":"digital";
   choose(other);(other==="digital"?tabDigital:tabPhysical).focus();
 });
-choose(new URLSearchParams(location.search).get("formato")==="quadro"?"physical":"digital");
+choose(new URLSearchParams(location.search).get("formato")==="digital"?"digital":"physical");
 window.LUMEN_GESSO_UNIFIED={sku,getMode:()=>mode,showDigital:()=>choose("digital"),showPhysical:()=>choose("physical")};
 })();
