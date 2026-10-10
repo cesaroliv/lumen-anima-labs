@@ -21,10 +21,10 @@ help:{
 "Tradicional com vidro acrílico":"Moldura tradicional com proteção em vidro acrílico (prévia simulada).",
 "Caixa":"Moldura tipo caixa, com perfil intermediário, sem vidro.",
 "Caixa com vidro acrílico":"Moldura tipo caixa com vidro acrílico (prévia simulada).",
-"Filete":"Moldura de perfil fino. Sem filete gráfico interno nesta coleção.",
+"Filete":"Moldura física de perfil fino; diferente do filete discreto integrado à prévia da arte.",
 "Filete com vidro acrílico":"Moldura física de perfil fino com vidro acrílico (prévia simulada).",
-"Placa Decorativa":"Placa decorativa sem moldura externa. Sem passe-partout ou bordas gráficas internas.",
-"Poster":"Pôster sem moldura externa. Sem passe-partout ou bordas gráficas internas."
+"Placa Decorativa":"Placa sem moldura externa. A margem e o filete ilustrados são impressos, não um passe-partout físico.",
+"Poster":"Pôster sem moldura. A margem e o filete ilustrados são gráficos, não uma moldura física."
 }
 }:{
 invalid:"Invalid printed artwork.",loading:"Loading Printile finishes…",
@@ -37,10 +37,10 @@ help:{
 "Tradicional com vidro acrílico":"Traditional frame with acrylic glazing (simulated preview).",
 "Caixa":"Box frame, medium profile, without glazing.",
 "Caixa com vidro acrílico":"Box frame with acrylic glazing (simulated preview).",
-"Filete":"Slim physical frame. No inner gold line in this series.",
+"Filete":"Slim physical frame, separate from the subtle line printed in the artwork.",
 "Filete com vidro acrílico":"Slim physical frame with acrylic glazing (simulated preview).",
-"Placa Decorativa":"Decorative panel, without an outer frame. No digital mat or gold line is added.",
-"Poster":"Poster without an outer frame. No digital mat or gold line is added."
+"Placa Decorativa":"Decorative panel, no external frame. The illustrated mat and line are printed, not a physical mat board.",
+"Poster":"Poster without a frame. The illustrated margin and line are printed rather than physical."
 }
 };
 if(!embedded){document.documentElement.lang=pt?"pt-BR":"en-US";document.querySelectorAll("[data-pt][data-en]").forEach(el=>{el.textContent=pt?el.dataset.pt:el.dataset.en});}
