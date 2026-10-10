@@ -142,3 +142,5 @@
 @media(max-width:600px){.obsidian-originals .originals-grid{gap:14px}.obsidian-originals .obsidian-original-card img{height:260px;padding:0}.obsidian-originals .original-card-meta{padding:12px 1px 17px}.obsidian-originals .original-card-meta strong{font-size:22px}}
 @media(max-width:390px){.obsidian-originals .originals-grid{grid-template-columns:1fr}.obsidian-originals .obsidian-original-card img{height:370px}}
 @media(prefers-reduced-motion:reduce){.obsidian-originals .obsidian-original-card img{transition:none}}
+
+html:has(#obsidian-originais:target){scroll-behavior:auto!important}
