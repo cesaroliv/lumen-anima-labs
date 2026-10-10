@@ -88,3 +88,30 @@
 /* Gesso & Ouro: editorial previews remain viewable while protected editions have explicit product details. */
 .gesso-item-buy{display:inline-flex;margin-top:6px;padding:9px 12px;border:1px solid #a88a5a;color:inherit;background:rgba(168,138,90,.1);font-size:12px;font-weight:700;letter-spacing:.04em;text-decoration:none;align-items:center;min-height:42px}
 .gesso-item-buy:hover,.gesso-item-buy:focus-visible{background:#dac19b;color:#1a1510;outline-offset:3px}
+
+/* Original Obsidian artworks — curated commercial grid, separate from styled editorial previews. */
+.obsidian-originals{
+  margin:48px 0 0;padding:42px 0 8px;border-top:1px solid rgba(212,173,106,.3);
+}
+.obsidian-originals .originals-header{max-width:850px;margin:0 0 28px}
+.obsidian-originals .originals-header .eyebrow{color:#d7b77d;font-size:11px;letter-spacing:.17em;font-weight:700}
+.obsidian-originals .originals-header h3{font:400 clamp(32px,3.4vw,53px)/1.1 var(--serif);letter-spacing:-.035em;margin:12px 0 14px;color:#f6eee5}
+.obsidian-originals .originals-header p{max-width:720px;font-size:14px;line-height:1.75;color:#c7bbaa;margin:0}
+.obsidian-originals .originals-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.obsidian-originals .obsidian-original-card{display:flex;flex-direction:column;min-width:0;background:#1d1b19;border:1px solid rgba(203,168,108,.24);color:#eee6db;text-decoration:none;overflow:hidden;transition:border-color .24s,transform .24s}
+.obsidian-originals .obsidian-original-card:hover{border-color:#cca66d;transform:translateY(-3px)}
+.obsidian-originals .obsidian-original-card:focus-visible{outline:3px solid #d9b175;outline-offset:2px}
+.obsidian-originals .obsidian-original-card img{display:block;aspect-ratio:2/3;width:100%;height:300px;object-fit:contain;object-position:center;background:#262321;padding:14px 15px 0;box-sizing:border-box}
+.obsidian-originals .original-card-meta{display:flex;flex:1;flex-direction:column;gap:8px;padding:17px 19px 19px}
+.obsidian-originals .original-card-meta strong{font:400 clamp(20px,1.75vw,27px)/1.2 var(--serif);color:#fbf4e9}
+.obsidian-originals .original-card-meta small{font-size:12px;line-height:1.4;color:#cbbda8}
+.obsidian-originals .original-card-cta{margin-top:auto;border-top:1px solid rgba(203,168,108,.22);padding-top:12px;color:#dcb87e;font-weight:700;letter-spacing:.06em;font-size:11px;text-transform:uppercase}
+.obsidian-originals .originals-more{margin:26px 0 0;border-top:1px solid rgba(203,168,108,.22);padding:20px 0 0}
+.obsidian-originals .originals-more summary{display:block;max-width:340px;padding:16px 20px;min-height:19px;border:1px solid #d7b47d;text-align:center;background:#cda96f;color:#18130d;font-weight:750;letter-spacing:.07em;font-size:12px;text-transform:uppercase;cursor:pointer;list-style:none}
+.obsidian-originals .originals-more summary::-webkit-details-marker{display:none}
+.obsidian-originals .originals-more summary:hover{background:#e0c18e}
+.obsidian-originals .originals-more[open] summary{margin-bottom:26px;background:transparent;color:#e7d2aa}
+@media(max-width:980px){.obsidian-originals .originals-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.obsidian-originals{margin-top:30px;padding-top:28px}.obsidian-originals .originals-grid{gap:12px}.obsidian-originals .obsidian-original-card img{height:210px;padding:12px 9px 0}.obsidian-originals .original-card-meta{padding:13px 12px;gap:7px}.obsidian-originals .original-card-meta strong{font-size:21px}.obsidian-originals .original-card-meta small{font-size:11px}.obsidian-originals .original-card-cta{font-size:10px;letter-spacing:.02em}.obsidian-originals .originals-more summary{max-width:none}}
+@media(max-width:390px){.obsidian-originals .originals-grid{grid-template-columns:1fr}.obsidian-originals .obsidian-original-card img{height:280px}}
+@media(prefers-reduced-motion:reduce){.obsidian-originals .obsidian-original-card{transition:none}}
