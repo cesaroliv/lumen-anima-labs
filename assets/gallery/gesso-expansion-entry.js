@@ -12,7 +12,7 @@ const copy=pt?{
   physical:"Arte impressa",physicalSub:"Quadros, placas e pôsteres",
   lead:"Explore tamanho, acabamento e cor da moldura. As opções seguem o catálogo Printile; arquivos finais e pedidos estão em revisão.",
   size:"Tamanho",finish:"Acabamento",color:"Cor da moldura",summarySize:"Medidas",frame:"Acabamento",price:"Preço",frameValue:"Tradicional",
-  prep:"Encomendas em preparação",notice:"Prévia da obra original, diferente das ambientações editoriais. Arquivos finais, preço e entrega dependem de revisão. Ambas as compras estão desativadas.",
+  prep:"Encomendas em preparação",notice:"Arte original sem a foto de ambiente. Downloads e quadros estão em preparação; compras desativadas.",
   defaultStatus:"Carregando opções do quadro…"
 }:{
   selection:"CHOOSE YOUR ARTWORK FORMAT",
@@ -20,7 +20,7 @@ const copy=pt?{
   physical:"Printed artwork",physicalSub:"Frames, panels and posters",
   lead:"Explore Printile sizes, finishes and frame colors. Final production files and orders await review.",
   size:"Size",finish:"Finish",color:"Frame color",summarySize:"Dimensions",frame:"Finish",price:"Price",frameValue:"Traditional",
-  prep:"Framed orders coming soon",notice:"Original artwork preview, separate from editorial interior mockups. Final files, prices and delivery await review. All purchases are disabled.",
+  prep:"Framed orders coming soon",notice:"Clean original art, separate from styled-room photos. Digital and printed editions await review; purchases disabled.",
   defaultStatus:"Loading framed options…"
 };
 document.body.classList.add("gesso-unified","original-edition-unified");
@@ -75,7 +75,7 @@ physical.innerHTML=[
 '<p class="physical-note">',copy.notice,'</p>'
 ].join('');
 info.appendChild(physical);
-const originalSrc=originalImage.getAttribute("src"),originalAlt=originalImage.getAttribute("alt");
+const originalSrc="/assets/gallery/gesso-expansion-v2/"+sku+"_digital.webp",originalAlt=originalImage.getAttribute("alt")+" — arte original sem moldura nem passe-partout";
 const stage=document.createElement("div");stage.className="gesso-preview-stage";
 const frame=document.createElement("div");frame.id="physicalFrame";frame.className="physical-frame";
 imageRegion.insertBefore(stage,originalImage);stage.appendChild(frame);const artSurface=document.createElement("div");artSurface.className="physical-art-surface";frame.appendChild(artSurface);artSurface.appendChild(originalImage);

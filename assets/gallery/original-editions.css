@@ -10,3 +10,10 @@
 .original-edition-unified.juridica-edition .gesso-preview-stage .physical-art-surface,.original-edition-unified.juridica-edition .gesso-preview-stage .physical-art-surface img{background:#f5f1e9}
 .original-edition-unified.juridica-edition .gesso-preview-stage.digital-mode{background:#f5f1e9!important}
 @media(max-width:700px){.original-edition-unified .gesso-preview-stage:not(.digital-mode){padding:14px!important}}
+
+/* Gesso: display clean original in configurator; interior photo appears separately. */
+.gesso-expansion-edition .gesso-ambient-study{max-width:1100px;margin:25px auto 20px;border:1px solid #40372b;background:#171511;color:#e8decd;padding:16px 20px}
+.gesso-expansion-edition .gesso-ambient-study summary{cursor:pointer;color:#d9b879;font-size:13px}
+.gesso-expansion-edition .gesso-ambient-study figure{margin:18px 0 0}
+.gesso-expansion-edition .gesso-ambient-study img{width:min(100%,780px);max-height:520px;object-fit:contain;display:block}
+.gesso-expansion-edition .gesso-ambient-study figcaption{font-size:12px;opacity:.76;margin-top:8px}

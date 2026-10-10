@@ -13,7 +13,7 @@ const embedded=!!window.LUMEN_GESSO_UNIFIED;
 const labels=pt?{
 invalid:"Obra física inválida.",loading:"Carregando acabamentos da Printile…",
 unavailable:"As opções de produção não puderam ser verificadas. Tente novamente mais tarde.",
-ready:"Prévia ilustrativa com opções do catálogo Printile. Produção ainda não aprovada; compra desativada.",
+ready:"Arte limpa com moldura simulada. Produção Printile e preços não aprovados; compra desativada.",
 buy:"Encomendas em preparação",price:"Em definição",na:"Não se aplica",physical:"Arte impressa",
 colors:{Preta:"Preta",Branca:"Branca",Natural:"Natural",Marrom:"Marrom"},
 help:{
@@ -29,7 +29,7 @@ help:{
 }:{
 invalid:"Invalid printed artwork.",loading:"Loading Printile finishes…",
 unavailable:"Production options could not be verified. Please try again later.",
-ready:"Illustrative preview with Printile catalog options. Production unapproved; purchase disabled.",
+ready:"Clean artwork with simulated frame. Printile production and prices unapproved; purchase disabled.",
 buy:"Physical orders coming soon",price:"To be confirmed",na:"Not applicable",physical:"Printed artwork",
 colors:{Preta:"Black",Branca:"White",Natural:"Natural",Marrom:"Brown"},
 help:{
@@ -47,7 +47,7 @@ if(!embedded){document.documentElement.lang=pt?"pt-BR":"en-US";document.querySel
 status.textContent=labels.loading;buy.textContent=labels.buy;priceOut.textContent=labels.price;
 if(!valid){status.textContent=labels.invalid;return;}
 const collection="gesso-expansion";
-const previewBase="/assets/gallery/gesso-expansion/";
+const previewBase="/assets/gallery/gesso-expansion-v2/";
 const printileTextures=Object.freeze({
 Preta:"https://printile.me/assets/preta-oLfoE6I6.jpg",
 Branca:"https://printile.me/assets/branca-DariJVCM.jpg",
@@ -115,7 +115,7 @@ colorButtons.forEach(b=>b.addEventListener("click",()=>{if(b.disabled)return;col
 if(finishSelect)finishSelect.addEventListener("change",()=>{finish=finishSelect.value;render()});
 /* No supplier ordering API is contacted by this preview. */
 Promise.all([
- fetch('/assets/gallery/gesso-expansion/catalog.json',{headers:{accept:'application/json'}}).then(r=>r.ok?r.json():null),
+ fetch('/assets/gallery/gesso-expansion-v2/catalog.json',{headers:{accept:'application/json'}}).then(r=>r.ok?r.json():null),
  fetch('/assets/gallery/gesso-physical-offers.json?v=20ad1d60d13f',{headers:{accept:'application/json'}}).then(r=>r.ok?r.json():null)
 ]).then(([data,manifest])=>{
  const a=data?.artworks?.[sku];

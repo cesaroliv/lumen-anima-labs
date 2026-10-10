@@ -1,0 +1,662 @@
+{
+  "schema": 2,
+  "collection": "gesso-ouro",
+  "source_type": "visually_matched_clean_originals_not_manufacture_approved",
+  "printile_catalog_source": "assets/gallery/gesso-physical-offers.json",
+  "payment_enabled": false,
+  "physical_orders_enabled": false,
+  "retail_prices_confirmed": false,
+  "artworks": {
+    "art-gesso-10-cavalo-marinho": {
+      "title": "Cavalo-Marinho",
+      "slug": "gesso-10-cavalo-marinho",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-10-cavalo-marinho_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-10-cavalo-marinho_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-10-cavalo-marinho_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "0fd3070c093b9a73ae2ca6796a0749306a423882af1b667a33de663045d9b84c",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-10-cavalo-marinho_digital.webp"
+    },
+    "art-gesso-11-concha-atlantica": {
+      "title": "Concha Atlântica",
+      "slug": "gesso-11-concha-atlantica",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-11-concha-atlantica_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-11-concha-atlantica_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-11-concha-atlantica_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "0c32291d559cfdaf155a3f560fc08d5db64684c87d0f646927dde998c9a79a9b",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-11-concha-atlantica_digital.webp"
+    },
+    "art-gesso-12-circulos-de-conchas": {
+      "title": "Círculos de Conchas",
+      "slug": "gesso-12-circulos-de-conchas",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-12-circulos-de-conchas_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-12-circulos-de-conchas_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-12-circulos-de-conchas_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "921defb4eef356733bc3d389d7d6766ef67c40f7bb259659f17abcc78eadd3e0",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-12-circulos-de-conchas_digital.webp"
+    },
+    "art-gesso-13-nautilo-vivo": {
+      "title": "Náutilo Vivo",
+      "slug": "gesso-13-nautilo-vivo",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-13-nautilo-vivo_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-13-nautilo-vivo_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-13-nautilo-vivo_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "abb4e2a53b5a08192b3899c5ca45cfdf1281beccc221321e7c6767df5d92c7f5",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-13-nautilo-vivo_digital.webp"
+    },
+    "art-gesso-14-concha-nautilo": {
+      "title": "Concha Náutilo",
+      "slug": "gesso-14-concha-nautilo",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-14-concha-nautilo_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-14-concha-nautilo_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-14-concha-nautilo_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "60815747197fec6dc5a8fe13f26af25d17892cff248a69eee75708b28cb01ba3",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-14-concha-nautilo_digital.webp"
+    },
+    "art-gesso-15-mares-em-relevo": {
+      "title": "Marés em Relevo",
+      "slug": "gesso-15-mares-em-relevo",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-15-mares-em-relevo_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-15-mares-em-relevo_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-15-mares-em-relevo_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "8fc9fc0cef429c606befedc5bc4dc064fda55235a353d14c8eb84eb41198405c",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-15-mares-em-relevo_digital.webp"
+    },
+    "art-gesso-16-coral-branco": {
+      "title": "Coral Branco",
+      "slug": "gesso-16-coral-branco",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-16-coral-branco_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-16-coral-branco_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-16-coral-branco_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "90f1ff18adead39a0ce5eedeff17f7cb98102941fda63e9cdd73a846e6774147",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-16-coral-branco_digital.webp"
+    },
+    "art-gesso-17-estrela-do-mar": {
+      "title": "Estrela do Mar",
+      "slug": "gesso-17-estrela-do-mar",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-17-estrela-do-mar_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-17-estrela-do-mar_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-17-estrela-do-mar_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "fd5c1bd8e769d07195ea249c4fec7b0f6bf671aaf8aaa5feb642c30e6912d733",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-17-estrela-do-mar_digital.webp"
+    },
+    "art-gesso-18-flora-marinha": {
+      "title": "Flora Marinha",
+      "slug": "gesso-18-flora-marinha",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-18-flora-marinha_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-18-flora-marinha_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-18-flora-marinha_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "c23ed04cbcf7c32bc54768fd206148a580d9345a0b44187f199089a9fd1b8c0d",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-18-flora-marinha_digital.webp"
+    },
+    "art-gesso-19-saturno": {
+      "title": "Saturno",
+      "slug": "gesso-19-saturno",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-19-saturno_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-19-saturno_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-19-saturno_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "b2517b969019bd420aa12c54546a2b91a334f29e97b48b5a9bd105909dd75339",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-19-saturno_digital.webp"
+    },
+    "art-gesso-20-arvore-da-vida": {
+      "title": "Árvore da Vida",
+      "slug": "gesso-20-arvore-da-vida",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-20-arvore-da-vida_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-20-arvore-da-vida_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-20-arvore-da-vida_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "12d190ba2253449ade2d69a2014883e242b24426481fbf94a687e803eaa06cfd",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-20-arvore-da-vida_digital.webp"
+    },
+    "art-gesso-21-flores-geometricas": {
+      "title": "Constelações Douradas",
+      "slug": "gesso-21-flores-geometricas",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-21-flores-geometricas_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-21-flores-geometricas_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-21-flores-geometricas_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "a0e5b355a99daefa3dab82ba492bb4eeefd4a4ad52e04cff4c8dc57d33d1f9bb",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-21-flores-geometricas_digital.webp"
+    },
+    "art-gesso-22-cometa-dourado": {
+      "title": "Cometa Dourado",
+      "slug": "gesso-22-cometa-dourado",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-22-cometa-dourado_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-22-cometa-dourado_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-22-cometa-dourado_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "1d88dcc8124e74092ea95ff56892156ce87521a2ddfcfcec470881550eaee363",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-22-cometa-dourado_digital.webp"
+    },
+    "art-gesso-23-folha-em-leque": {
+      "title": "Folha em Leque",
+      "slug": "gesso-23-folha-em-leque",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-23-folha-em-leque_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-23-folha-em-leque_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-23-folha-em-leque_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "1a2bcd968ffc999533600e121fb02881aeb7e4a4e517b3446bab576d7d0e9398",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-23-folha-em-leque_digital.webp"
+    },
+    "art-gesso-24-bambuzal-dourado": {
+      "title": "Bambuzal Dourado",
+      "slug": "gesso-24-bambuzal-dourado",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-24-bambuzal-dourado_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-24-bambuzal-dourado_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-24-bambuzal-dourado_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "0540a504e4679eadfabc6a7404a91c68f0a1eeef690b0b096d961b0a52f91b53",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-24-bambuzal-dourado_digital.webp"
+    },
+    "art-gesso-25-jardim-de-rosas": {
+      "title": "Jardim de Suculentas",
+      "slug": "gesso-25-jardim-de-rosas",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-25-jardim-de-rosas_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-25-jardim-de-rosas_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-25-jardim-de-rosas_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "b946476eb9ca752b92b8d81b545dc18f554e13035e619ab4d625ab271a023fc7",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-25-jardim-de-rosas_digital.webp"
+    },
+    "art-gesso-26-ramo-botanico": {
+      "title": "Ramo Botânico",
+      "slug": "gesso-26-ramo-botanico",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-26-ramo-botanico_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-26-ramo-botanico_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-26-ramo-botanico_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "fa5d036cdf0ae944a0ec6ab9e7647f2f56a8c8b12e0dd367b101b00a44d7e03c",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-26-ramo-botanico_digital.webp"
+    },
+    "art-gesso-27-magnolia-branca": {
+      "title": "Folhas de Ginkgo",
+      "slug": "gesso-27-magnolia-branca",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-27-magnolia-branca_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-27-magnolia-branca_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-27-magnolia-branca_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "0817662226562400318c8cd97e19ca1a2cbef37d04b7da459b4347cb775164a2",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-27-magnolia-branca_digital.webp"
+    },
+    "art-gesso-28-ramo-de-oliveira": {
+      "title": "Ramo de Oliveira",
+      "slug": "gesso-28-ramo-de-oliveira",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-28-ramo-de-oliveira_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-28-ramo-de-oliveira_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-28-ramo-de-oliveira_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "aacc5bacbdf4b2bb28e0448e22032e1fbb635f44cdd4b574bfa4e8d281cce611",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-28-ramo-de-oliveira_digital.webp"
+    },
+    "art-gesso-29-florada-de-primavera": {
+      "title": "Hera Esculpida",
+      "slug": "gesso-29-florada-de-primavera",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-29-florada-de-primavera_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-29-florada-de-primavera_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-29-florada-de-primavera_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "d3591820860d919464ac530394f09570fbbf4e7367a085cfbcf09e9d327d9df8",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-29-florada-de-primavera_digital.webp"
+    },
+    "art-gesso-30-trigo-de-ouro": {
+      "title": "Trigo de Ouro",
+      "slug": "gesso-30-trigo-de-ouro",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-30-trigo-de-ouro_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-30-trigo-de-ouro_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-30-trigo-de-ouro_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "cdf62b6f82fc77523295983ab11655bd05e36d2084ea811cf26b0d0d4a354eab",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-30-trigo-de-ouro_digital.webp"
+    },
+    "art-gesso-31-samambaias": {
+      "title": "Samambaias",
+      "slug": "gesso-31-samambaias",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-31-samambaias_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-31-samambaias_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-31-samambaias_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "b31c6f048a1f003a9ae1bc270a22bd40dcff1f3af0ce44545f4ae31a38f1e547",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-31-samambaias_digital.webp"
+    },
+    "art-gesso-32-montanhas-brancas": {
+      "title": "Montanhas Brancas",
+      "slug": "gesso-32-montanhas-brancas",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-32-montanhas-brancas_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-32-montanhas-brancas_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-32-montanhas-brancas_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "24bcdfeda3df889d75123f844edf23f373b9e418a8813bef20078c8a2fa6e286",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-32-montanhas-brancas_digital.webp"
+    },
+    "art-gesso-33-seda-em-movimento": {
+      "title": "Seda em Movimento",
+      "slug": "gesso-33-seda-em-movimento",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-33-seda-em-movimento_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-33-seda-em-movimento_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-33-seda-em-movimento_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "d477c42ec2ac7ffe1d0644ea990095f67de879b94abae3f87b97bc18fe9b906c",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-33-seda-em-movimento_digital.webp"
+    },
+    "art-gesso-34-ondas-sinuosas": {
+      "title": "Ondas Sinuosas",
+      "slug": "gesso-34-ondas-sinuosas",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-34-ondas-sinuosas_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-34-ondas-sinuosas_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-34-ondas-sinuosas_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "26ba8a01d40a3479ca7fc2b8672174f00f7d5841e4376aa9c414ed8824ca233e",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-34-ondas-sinuosas_digital.webp"
+    },
+    "art-gesso-35-origem-celular": {
+      "title": "Origem Celular",
+      "slug": "gesso-35-origem-celular",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-35-origem-celular_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-35-origem-celular_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-35-origem-celular_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "1a08c204b0b067e8242e8f37b6869398ca0adf0171d70acf08e1da3f505aabda",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-35-origem-celular_digital.webp"
+    },
+    "art-gesso-36-caminho-das-dunas": {
+      "title": "Fluxo de Ouro",
+      "slug": "gesso-36-caminho-das-dunas",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-36-caminho-das-dunas_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-36-caminho-das-dunas_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-36-caminho-das-dunas_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "05e18116b61a11b40ed1a679b1d9712c8e5e47ef1ff853255a76af4d13433f65",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-36-caminho-das-dunas_digital.webp"
+    },
+    "art-gesso-37-relevo-de-areia": {
+      "title": "Relevo de Areia",
+      "slug": "gesso-37-relevo-de-areia",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-37-relevo-de-areia_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-37-relevo-de-areia_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-37-relevo-de-areia_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "361e858d5088f382b8284b6e790b69b7fbbc8c3a9c8632cd07e4932b9e094325",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-37-relevo-de-areia_digital.webp"
+    },
+    "art-gesso-38-flor-de-pedra": {
+      "title": "Kintsugi Dourado",
+      "slug": "gesso-38-flor-de-pedra",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-38-flor-de-pedra_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-38-flor-de-pedra_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-38-flor-de-pedra_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "3f273095b522c40e1b7927a2f198859e7f07164384a908c19def5b219dc9623d",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-38-flor-de-pedra_digital.webp"
+    },
+    "art-gesso-39-ondas-concentricas": {
+      "title": "Ondas Concêntricas",
+      "slug": "gesso-39-ondas-concentricas",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-39-ondas-concentricas_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-39-ondas-concentricas_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-39-ondas-concentricas_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        2048,
+        1143
+      ],
+      "source_hash_sha256": "599d396643eef94ef2d0cb7564a02a3cf12747f1168346ede43d04650b32c6f8",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-39-ondas-concentricas_digital.webp"
+    },
+    "art-gesso-40-serpente-dourada": {
+      "title": "Serpente Dourada",
+      "slug": "gesso-40-serpente-dourada",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-40-serpente-dourada_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-40-serpente-dourada_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-40-serpente-dourada_A2.webp"
+      },
+      "source_status": "visually_matched_clean_source_pending_supplier_print_approval",
+      "source_resolution": [
+        1143,
+        2048
+      ],
+      "source_hash_sha256": "68b2595fb7eaff48acb94f454d7fc25f41824c28deba1ee02ef29774c82a69ed",
+      "printable_proof_status": "REVIEW_ONLY_NOT_PRINTILE_APPROVED",
+      "purchase_enabled": false,
+      "printile_catalog_option_source": "gesso-physical-offers.json",
+      "is_editorial_mockup": false,
+      "digital": "/assets/gallery/gesso-expansion-v2/art-gesso-40-serpente-dourada_digital.webp"
+    }
+  }
+}
