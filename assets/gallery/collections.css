@@ -115,3 +115,6 @@
 @media(max-width:600px){.obsidian-originals{margin-top:30px;padding-top:28px}.obsidian-originals .originals-grid{gap:12px}.obsidian-originals .obsidian-original-card img{height:210px;padding:12px 9px 0}.obsidian-originals .original-card-meta{padding:13px 12px;gap:7px}.obsidian-originals .original-card-meta strong{font-size:21px}.obsidian-originals .original-card-meta small{font-size:11px}.obsidian-originals .original-card-cta{font-size:10px;letter-spacing:.02em}.obsidian-originals .originals-more summary{max-width:none}}
 @media(max-width:390px){.obsidian-originals .originals-grid{grid-template-columns:1fr}.obsidian-originals .obsidian-original-card img{height:280px}}
 @media(prefers-reduced-motion:reduce){.obsidian-originals .obsidian-original-card{transition:none}}
+
+/* Keep product-section deep links visible under the sticky navigation. */
+#obsidian-originais{scroll-margin-top:94px}
