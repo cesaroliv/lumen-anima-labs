@@ -157,3 +157,16 @@ html:has(#obsidian-originais:target){scroll-behavior:auto!important}
 .original-series .originals-header .eyebrow{color:#d1ac70}
 @media(max-width:600px){.original-series .originals-grid{gap:12px}.original-series .obsidian-original-card img{height:270px}}
 html:has(.original-series:target){scroll-behavior:auto!important}
+
+/* Arte Jurídica: accessible dark typography against the collection's ivory backdrop. */
+.original-series.juridica-originals{color:#2c241b;border-top-color:#bdaa90}
+.original-series.juridica-originals .originals-header h3{color:#291f17}
+.original-series.juridica-originals .originals-header p{color:#55493b}
+.original-series.juridica-originals .originals-header .eyebrow{color:#7e5926}
+.original-series.juridica-originals .original-card-meta strong{color:#2a2119}
+.original-series.juridica-originals .original-card-meta small{color:#635745}
+.original-series.juridica-originals .original-card-cta{color:#79521c}
+.original-series.juridica-originals .originals-more{border-top-color:#b8a688}
+.original-series.juridica-originals .originals-more summary{border-color:#8b6835;background:#bf9962;color:#23180f}
+.original-series.juridica-originals .originals-more[open] summary{background:transparent;color:#6b4b20}
+.original-series.juridica-originals .obsidian-original-card:focus-visible{outline:3px solid #805a21}
