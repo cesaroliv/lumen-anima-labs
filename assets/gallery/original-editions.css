@@ -17,3 +17,7 @@
 .gesso-expansion-edition .gesso-ambient-study figure{margin:18px 0 0}
 .gesso-expansion-edition .gesso-ambient-study img{width:min(100%,780px);max-height:520px;object-fit:contain;display:block}
 .gesso-expansion-edition .gesso-ambient-study figcaption{font-size:12px;opacity:.76;margin-top:8px}
+
+/* Arte Black: readable black frame on charcoal stage, without changing artwork pixels. */
+.original-edition-unified.black-edition .gesso-preview-stage:not(.digital-mode){background:radial-gradient(ellipse at 50% 42%,#383a3c 0%,#303234 55%,#252729 100%)!important;border:1px solid #48494b!important;box-shadow:inset 0 0 32px rgba(0,0,0,.20)!important}
+.original-edition-unified.black-edition .gesso-preview-stage:not(.digital-mode) .supplier-native-frame:not(.white):not(.natural):not(.brown){box-shadow:0 22px 42px -12px rgba(0,0,0,.78),0 0 0 1px rgba(230,232,235,.22)!important}
