@@ -23,6 +23,24 @@ status.textContent=strings.loading;buy.textContent=strings.buy;priceOut.textCont
 if(!valid){status.textContent=strings.invalid;return;}
 let config=null,art=null,size=embedded?"A3":"A2",color=embedded?"Branca":"Preta";
 const frameClass={Preta:"",Branca:"white",Natural:"natural",Marrom:"brown"};
+/* Supplier public frame textures. Direct preview reference, no local asset copy.
+   Source URLs can change: this is not an official mockup API. */
+const printileTextures=Object.freeze({
+ Preta:"https://printile.me/assets/preta-oLfoE6I6.jpg",
+ Branca:"https://printile.me/assets/branca-DariJVCM.jpg",
+ Natural:"https://printile.me/assets/natural-D8CTLK3U.jpg",
+ Marrom:"https://printile.me/assets/marrom-CNKlrD7h.jpg"
+});
+function supplierFrameScale(){
+ if(!art||!embedded)return;
+ const stage=frame.closest(".gesso-preview-stage");if(!stage)return;
+ const width=Math.max(160,stage.clientWidth-34);
+ const inner=art.orientation==="vertical"?Math.min(420,width):Math.min(680,width);
+ const rim=Math.max(9,Math.min(42,inner*2/42));
+ frame.style.setProperty("--supplier-rim",rim.toFixed(2)+"px");
+ frame.dataset.orientation=art.orientation;
+}
+
 function render(){
   if(!art)return;
   if(name)name.textContent=art.title;
@@ -30,13 +48,16 @@ function render(){
     img.src="/assets/gallery/gesso-physical/"+sku+"_"+size+".webp";
     img.alt=art.title+" — "+size+" — "+strings.physical;
   }
-  frame.className="physical-frame "+(frameClass[color]||"");
+  frame.className="physical-frame supplier-native-frame "+(frameClass[color]||"");
+  frame.style.setProperty("--supplier-texture","url("+JSON.stringify(printileTextures[color])+")");
+  supplierFrameScale();
   sizeButtons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.size===size)));
   colorButtons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.color===color)));
   const key=art.orientation+"|"+size;
   sizeOut.textContent=config.dimensions[key]||size;
   colorOut.textContent=strings.colors[color]||color;
 }
+window.addEventListener("resize",()=>{if(art)supplierFrameScale()},{passive:true});
 window.LUMEN_GESSO_PHYSICAL={render,getSelection:()=>({sku,size,color})};
 sizeButtons.forEach(b=>b.addEventListener("click",()=>{size=b.dataset.size;render()}));
 colorButtons.forEach(b=>b.addEventListener("click",()=>{color=b.dataset.color;render()}));

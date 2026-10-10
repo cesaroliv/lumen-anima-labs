@@ -49,3 +49,38 @@
 .physical-frame img{outline:1px solid #b9b0a4}
 @media(max-width:720px){.gesso-preview-stage{min-height:290px;padding:20px}.gesso-unified .detail-info h1{margin-bottom:15px}}
 @media(max-width:400px){.gesso-format-tabs{gap:7px}.gesso-format-tab{padding:11px 10px;min-height:75px}.gesso-format-tab strong{font-size:13px}.gesso-format-tab small{font-size:11px}}
+
+/* Printile frame texture preview, 2cm traditional profile, reference URLs in JS. */
+.gesso-unified .gesso-preview-stage:not(.digital-mode){
+ background:linear-gradient(140deg,#dfdedb,#eeece9 48%,#ddd9d3);
+ border:1px solid #b7b0a5;
+}
+.physical-frame.supplier-native-frame{
+ box-sizing:border-box;
+ border:0!important;border-radius:0;
+ background-color:#ddd9d2;
+ background-image:var(--supplier-texture)!important;
+ background-size:100% 100%!important;
+ background-position:center!important;
+ background-repeat:no-repeat!important;
+ padding:var(--supplier-rim,22px)!important;
+ box-shadow:0 22px 42px -14px rgba(35,28,18,.48),0 3px 9px rgba(35,28,18,.18)!important;
+ max-width:100%;
+}
+.gesso-preview-stage .supplier-native-frame{width:min(100%,730px);min-width:0}
+.gesso-preview-stage .supplier-native-frame[data-orientation="vertical"]{width:min(100%,475px)}
+.gesso-preview-stage .supplier-native-frame img{
+ display:block;width:100%;max-height:none;height:auto;
+ outline:none!important;object-fit:cover;
+ background:#f4eee6;
+}
+.gesso-preview-stage.digital-mode .supplier-native-frame{
+ padding:0!important;width:100%;
+ background-image:none!important;background-color:transparent!important;
+ box-shadow:none!important;
+}
+.gesso-preview-stage.digital-mode .supplier-native-frame img{max-height:740px;object-fit:contain}
+@media(max-width:720px){
+ .gesso-unified .gesso-preview-stage:not(.digital-mode){padding:16px}
+ .gesso-preview-stage .supplier-native-frame{max-width:100%}
+}
