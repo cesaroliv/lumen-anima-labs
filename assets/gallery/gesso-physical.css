@@ -16,3 +16,36 @@
 .physical-option-card{margin:20px 0;padding:18px;border:1px solid #6b5738;background:linear-gradient(135deg,#221d17,#181613)}.physical-option-card strong{display:block;font:400 22px Georgia,serif;margin-bottom:4px}.physical-option-card p{margin:4px 0 14px!important}.physical-option-card .btn{margin-right:8px}
 @media(max-width:900px){.physical-grid{grid-template-columns:1fr}.physical-preview-stage{position:static;min-height:420px;padding:28px}.physical-panel{padding:22px}}
 @media(max-width:520px){.physical-checkout{padding-top:28px}.physical-preview-stage{min-height:330px;padding:20px}.physical-frame{padding:10px}.option{flex:1 1 92px}.physical-panel{padding:18px}}
+
+/* Gesso & Ouro unified commerce: two formats, one artwork page. */
+.gesso-unified .detail-grid{gap:clamp(24px,4vw,60px)}
+.gesso-unified .detail-img{background:transparent}
+.gesso-preview-stage{display:grid;place-items:center;min-height:450px;padding:clamp(22px,4vw,48px);background:linear-gradient(135deg,#b8afa2,#d8d0c4 50%,#b0a699);border:1px solid #4f493f;box-shadow:inset 0 0 35px #0001}
+.gesso-preview-stage.digital-mode{background:#25211d;border:0;padding:0;min-height:0}
+.gesso-preview-stage .physical-frame{width:fit-content;max-width:100%;margin:auto}
+.gesso-preview-stage .physical-frame img{display:block;max-width:100%;max-height:620px;width:auto;height:auto;object-fit:contain}
+.gesso-preview-stage.digital-mode .physical-frame{padding:0;background:transparent;border:0;box-shadow:none;max-width:100%;width:100%}
+.gesso-preview-stage.digital-mode img{width:100%;max-height:740px}
+.gesso-unified .detail-info h1{margin-bottom:18px}
+.gesso-format-tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 25px}
+.gesso-format-tab{appearance:none;border:1px solid #5f523f;background:#201c17;color:#f4eee3;padding:14px 16px;text-align:left;cursor:pointer;min-height:78px;display:flex;flex-direction:column;justify-content:center;gap:3px}
+.gesso-format-tab strong{font-size:15px;line-height:1.2}
+.gesso-format-tab small{color:#b6aa98;font-size:12px;line-height:1.35}
+.gesso-format-tab[aria-selected="true"]{border-color:#d2af77;box-shadow:inset 0 0 0 1px #d2af77;background:#2b251b}
+.gesso-format-tab[aria-selected="true"] small{color:#e7cfa8}
+.gesso-physical-details .gesso-physical-lead{font-size:14px;color:#c9bdad;margin:0 0 17px}
+.gesso-physical-details .physical-field{padding:16px 0}
+.gesso-physical-details .physical-summary{margin-top:15px}
+.gesso-physical-details .gesso-availability{color:#d8c5a4;font-size:13px;line-height:1.55}
+.gesso-physical-details .physical-buy{cursor:not-allowed}
+.gesso-unified [hidden]{display:none!important}
+.physical-frame.white{
+  --frame:#f9f8f5;
+  background:linear-gradient(130deg,#fff 0%,#f8f7f3 45%,#e6e3dd 80%,#fff 100%);
+  border:1px solid #8d8881;
+  box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 4px #e2ded6,0 22px 40px #25201944,0 2px 4px #24201955
+}
+.physical-frame{border:1px solid #484139}
+.physical-frame img{outline:1px solid #b9b0a4}
+@media(max-width:720px){.gesso-preview-stage{min-height:290px;padding:20px}.gesso-unified .detail-info h1{margin-bottom:15px}}
+@media(max-width:400px){.gesso-format-tabs{gap:7px}.gesso-format-tab{padding:11px 10px;min-height:75px}.gesso-format-tab strong{font-size:13px}.gesso-format-tab small{font-size:11px}}

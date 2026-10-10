@@ -9,6 +9,8 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/gallery/gallery.css">
 <link rel="stylesheet" href="/assets/gallery/gesso-physical.css">
+<!-- Legacy route: one-page Gesso product configuration -->
+<script>(function(){const u=new URL(location.href),sku=u.searchParams.get("sku");if(!/^art-gesso-\d{2}-[a-z0-9-]+$/.test(sku||""))return;const dest=new URL("/artworks/"+sku.slice(4)+".html",location.origin);dest.searchParams.set("formato","quadro");for(const k of ["lang","utm_source","utm_medium","utm_campaign","utm_content","utm_term"]){const v=u.searchParams.get(k);if(v&&/^[a-zA-Z0-9_.-]{1,64}$/.test(v))dest.searchParams.set(k,v);}location.replace(dest.pathname+dest.search);})();</script>
 </head>
 <body>
 <header class="head"><div class="wrap"><a class="logo" href="/">Lumen <b>Arts</b></a><nav class="links"><a href="/#colecao-gesso-ouro">Gesso & Ouro</a><a href="/" data-pt="Galeria" data-en="Gallery">Galeria</a><a href="/support.html" data-pt="Suporte" data-en="Support">Suporte</a></nav></div></header>
