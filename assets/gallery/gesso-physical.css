@@ -84,3 +84,26 @@
  .gesso-unified .gesso-preview-stage:not(.digital-mode){padding:16px}
  .gesso-preview-stage .supplier-native-frame{max-width:100%}
 }
+
+/* Printile additional physical finishes: supplier catalog options A4/A3/A2. */
+.visually-hidden{position:absolute!important;clip:rect(0,0,0,0)!important;width:1px!important;height:1px!important;overflow:hidden!important;white-space:nowrap!important}
+.gesso-unified .physical-finish-select{appearance:none;display:block;width:100%;border:1px solid #75664e;border-radius:2px;background:#201c17;color:#f4eee3;padding:13px 42px 13px 14px;font:inherit;line-height:1.4;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23d2af77' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.gesso-unified .physical-finish-select:focus-visible{outline:2px solid #d2af77;outline-offset:2px}
+.gesso-unified .physical-finish-select option{background:#1d1a17;color:#f4eee3}
+.gesso-unified .physical-finish-help{font-size:12px;color:#bcb09e;margin:9px 0 0;line-height:1.55}
+.gesso-unified .physical-field[hidden]{display:none!important}
+.gesso-unified .option:disabled{opacity:.35;cursor:not-allowed;box-shadow:none;border-color:#4c463f}
+.gesso-preview-stage .physical-art-surface{position:relative;display:block;overflow:hidden;width:100%}
+.gesso-preview-stage .physical-art-surface>img{display:block;width:100%;max-height:none!important;height:auto;object-fit:contain}
+.gesso-preview-stage .supplier-native-frame.has-acrylic-glass .physical-art-surface::after{
+content:"";position:absolute;inset:0;pointer-events:none;
+background-image:url("https://printile.me/assets/acrilico-CSnDb034.png");
+background-position:center;background-size:100% 100%;background-repeat:no-repeat;
+opacity:.35;mix-blend-mode:screen
+}
+.gesso-preview-stage .printile-unframed{width:min(100%,730px);max-width:100%;padding:0!important;background-image:none!important;box-sizing:border-box}
+.gesso-preview-stage .printile-unframed[data-orientation="vertical"]{width:min(100%,475px)}
+.gesso-preview-stage .printile-poster{border:1px solid #cec7be!important;background:#faf7f0!important;box-shadow:0 13px 27px -8px #2b211d55,0 2px 5px #2b211d33!important}
+.gesso-preview-stage .printile-panel{border:1px solid #ded6cd!important;background:#f8f4ed!important;box-shadow:3px 4px 0 #bbb3ab,0 17px 31px -9px #2b211d66!important}
+.gesso-preview-stage.digital-mode .physical-art-surface::after{display:none!important}
+.gesso-preview-stage.digital-mode .printile-unframed{padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;width:100%!important}

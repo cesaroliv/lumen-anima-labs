@@ -1,0 +1,296 @@
+{
+  "schema": 1,
+  "source": "Printile API v1 catalog snapshot",
+  "snapshot_at": "2026-10-09T19:33:46.860Z",
+  "styles": [
+    "Tradicional",
+    "Tradicional com vidro acrílico",
+    "Caixa",
+    "Caixa com vidro acrílico",
+    "Filete",
+    "Filete com vidro acrílico",
+    "Placa Decorativa",
+    "Poster"
+  ],
+  "sizes": [
+    "A4",
+    "A3",
+    "A2"
+  ],
+  "colors": [
+    "Preta",
+    "Branca",
+    "Natural",
+    "Marrom"
+  ],
+  "byOrientation": {
+    "horizontal": {
+      "A4": {
+        "Tradicional": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Tradicional com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Caixa": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Caixa com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Filete": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Filete com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Placa Decorativa": [
+          "none"
+        ],
+        "Poster": [
+          "none"
+        ]
+      },
+      "A3": {
+        "Tradicional": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Tradicional com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Caixa": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Caixa com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Filete": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Filete com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Placa Decorativa": [
+          "none"
+        ],
+        "Poster": [
+          "none"
+        ]
+      },
+      "A2": {
+        "Tradicional": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Tradicional com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Caixa": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Caixa com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Filete": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Filete com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Placa Decorativa": [
+          "none"
+        ],
+        "Poster": [
+          "none"
+        ]
+      }
+    },
+    "vertical": {
+      "A4": {
+        "Tradicional": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Tradicional com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Caixa": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Caixa com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Filete": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Filete com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Placa Decorativa": [
+          "none"
+        ],
+        "Poster": [
+          "none"
+        ]
+      },
+      "A3": {
+        "Tradicional": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Tradicional com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Caixa": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Caixa com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Filete": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Filete com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Placa Decorativa": [
+          "none"
+        ],
+        "Poster": [
+          "none"
+        ]
+      },
+      "A2": {
+        "Tradicional": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Tradicional com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Caixa": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Caixa com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Filete": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Filete com vidro acrílico": [
+          "Preta",
+          "Branca",
+          "Natural",
+          "Marrom"
+        ],
+        "Placa Decorativa": [
+          "none"
+        ],
+        "Poster": [
+          "none"
+        ]
+      }
+    }
+  }
+}

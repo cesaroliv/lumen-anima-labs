@@ -9,17 +9,17 @@ const params=new URLSearchParams(location.search),pt=params.get("lang")==="pt"||
 const copy=pt?{
   selection:"ESCOLHA COMO QUER SUA OBRA",
   digital:"Arte digital",digitalSub:"Download · R$ 14,90",
-  physical:"Quadro físico",physicalSub:"Personalize · em breve",
-  lead:"Escolha tamanho e cor da moldura. O passe-partout marfim e o filete dourado estão impressos na arte; a moldura externa é física.",
-  size:"Tamanho",color:"Cor da moldura",summarySize:"Medidas",frame:"Moldura",price:"Preço",frameValue:"Tradicional",
+  physical:"Arte impressa",physicalSub:"Quadros, placas e pôsteres",
+  lead:"Personalize tamanho, acabamento e cor quando houver moldura. O passe-partout marfim e o filete dourado já fazem parte da impressão.",
+  size:"Tamanho",finish:"Acabamento",color:"Cor da moldura",summarySize:"Medidas",frame:"Acabamento",price:"Preço",frameValue:"Tradicional",
   prep:"Encomendas em preparação",notice:"Prévia ilustrativa. Preço e frete serão informados antes de habilitarmos pedidos. Nenhuma cobrança ou encomenda acontece aqui.",
   defaultStatus:"Carregando opções do quadro…"
 }:{
   selection:"CHOOSE YOUR ARTWORK FORMAT",
   digital:"Digital artwork",digitalSub:"Download · R$ 14.90",
-  physical:"Framed print",physicalSub:"Customize · coming soon",
-  lead:"Choose the size and frame color. The ivory mat and gold fillet are printed into the artwork; the outer frame is physical.",
-  size:"Size",color:"Frame color",summarySize:"Dimensions",frame:"Frame",price:"Price",frameValue:"Traditional",
+  physical:"Printed artwork",physicalSub:"Frames, panels and posters",
+  lead:"Choose size, finish and frame color when applicable. The ivory mat and gold line are already part of the printed artwork.",
+  size:"Size",finish:"Finish",color:"Frame color",summarySize:"Dimensions",frame:"Finish",price:"Price",frameValue:"Traditional",
   prep:"Framed orders coming soon",notice:"Illustrative preview. Price and shipping will be shown before orders are enabled. No payment or order is made here.",
   defaultStatus:"Loading framed options…"
 };
@@ -51,7 +51,19 @@ physical.innerHTML=[
 '<button type="button" class="option" data-size="A4" aria-pressed="false">A4</button>',
 '<button type="button" class="option" data-size="A3" aria-pressed="true">A3</button>',
 '<button type="button" class="option" data-size="A2" aria-pressed="false">A2</button></div></div>',
-'<div class="physical-field"><h2>2. ',copy.color,'</h2><div class="option-row" role="group" aria-label="',copy.color,'">',
+'<div class="physical-field"><h2>2. ',copy.finish,'</h2>',
+'<label class="visually-hidden" for="physicalFinish">',copy.finish,'</label>',
+'<select id="physicalFinish" class="physical-finish-select" aria-label="',copy.finish,'">',
+'<option value="Tradicional">',pt?'Tradicional':'Traditional','</option>',
+'<option value="Tradicional com vidro acrílico">',pt?'Tradicional com vidro acrílico':'Traditional with acrylic glazing','</option>',
+'<option value="Caixa">',pt?'Caixa':'Box frame','</option>',
+'<option value="Caixa com vidro acrílico">',pt?'Caixa com vidro acrílico':'Box frame with acrylic glazing','</option>',
+'<option value="Filete">',pt?'Filete':'Slim frame','</option>',
+'<option value="Filete com vidro acrílico">',pt?'Filete com vidro acrílico':'Slim frame with acrylic glazing','</option>',
+'<option value="Placa Decorativa">',pt?'Placa Decorativa':'Decorative panel','</option>',
+'<option value="Poster">',pt?'Pôster':'Poster','</option></select>',
+'<p id="physicalFinishHelp" class="physical-finish-help"></p></div>',
+'<div class="physical-field" id="physicalColorField"><h2>3. ',copy.color,'</h2><div class="option-row" role="group" aria-label="',copy.color,'">',
 '<button type="button" class="option color-option" data-color="Preta" aria-pressed="false"><span class="swatch black"></span><span>',pt?'Preta':'Black','</span></button>',
 '<button type="button" class="option color-option" data-color="Branca" aria-pressed="true"><span class="swatch white"></span><span>',pt?'Branca':'White','</span></button>',
 '<button type="button" class="option color-option" data-color="Natural" aria-pressed="false"><span class="swatch natural"></span><span>Natural</span></button>',
@@ -69,7 +81,7 @@ info.appendChild(physical);
 const originalSrc=originalImage.getAttribute("src"),originalAlt=originalImage.getAttribute("alt");
 const stage=document.createElement("div");stage.className="gesso-preview-stage";
 const frame=document.createElement("div");frame.id="physicalFrame";frame.className="physical-frame white";
-imageRegion.insertBefore(stage,originalImage);stage.appendChild(frame);frame.appendChild(originalImage);
+imageRegion.insertBefore(stage,originalImage);stage.appendChild(frame);const artSurface=document.createElement("div");artSurface.className="physical-art-surface";frame.appendChild(artSurface);artSurface.appendChild(originalImage);
 originalImage.id="physicalArtwork";
 let mode="digital";
 const tabDigital=picker.querySelector("#gessoTabDigital"),tabPhysical=picker.querySelector("#gessoTabPhysical");
