@@ -7,7 +7,7 @@ if(sku.startsWith("art-gesso-")){const back=document.querySelector(".buycard .ac
 const phrases=pt?{title:"Sua obra digital",price:"Preço por obra",waiting:"Verificando disponibilidade da edição individual…",notReady:"A compra desta obra ainda não está disponível. Nenhuma cobrança será iniciada.",buy:"Comprar obra · R$ 14,90",features:"PNG individual e licença de uso no arquivo protegido. Download somente após aprovação do pagamento.",back:"Voltar à galeria"}:{title:"Your digital artwork",price:"Price per artwork",waiting:"Checking availability for this individual edition…",notReady:"Individual checkout is not available for this artwork yet. No charge will be initiated.",buy:"Buy artwork · R$ 14.90",features:"Individual PNG and license in a protected download. Released only after payment approval.",back:"Back to gallery"};
 document.documentElement.lang=pt?"pt-BR":"en-US";document.documentElement.dataset.checkoutLocale=pt?"pt-BR":"en-US";
 $("#pageTitle").textContent=phrases.title;$("#priceLabel").textContent=phrases.price;$("#features").textContent=phrases.features;$("#backLink").textContent=phrases.back;status.textContent=phrases.waiting;
-if(!/^art-(?:[0-9]{2}|gesso-[0-9]{2})-[a-z0-9-]+$/.test(sku)){status.textContent=phrases.notReady;return;}
+if(!/^art-(?:[0-9]{2}|gesso-[0-9]{2}|justice-[0-9]{2})-[a-z0-9-]+$/.test(sku)){status.textContent=phrases.notReady;return;}
 let entry=null,serverProduct=null,checkoutReady=Boolean(window.LUMEN_CHECKOUT_READY);
 function activate(){if(!entry||!serverProduct||!checkoutReady)return;btn.dataset.product=sku;btn.disabled=false;btn.textContent=phrases.buy;status.textContent=phrases.features;}
 window.addEventListener("lumen:checkout-ready",()=>{checkoutReady=true;activate()});

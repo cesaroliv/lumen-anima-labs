@@ -193,5 +193,29 @@
     "sku": "art-gesso-09-medusa-marinha",
     "name": "Medusa Marinha",
     "preview": "/assets/gallery/collections/gesso-ouro/09-medusa-marinha-view.webp"
+  },
+  {
+    "sku": "art-justice-01-dama-em-relevo",
+    "name": "Dama da Justiça em Relevo Dourado",
+    "preview": "/assets/gallery/justice-four-v2/art-justice-01-dama-em-relevo_A2.webp",
+    "image": "/assets/gallery/justice-four-v2/art-justice-01-dama-em-relevo_A2.webp"
+  },
+  {
+    "sku": "art-justice-02-equilibrio-dourado",
+    "name": "Equilíbrio Dourado",
+    "preview": "/assets/gallery/justice-four-v2/art-justice-02-equilibrio-dourado_A2.webp",
+    "image": "/assets/gallery/justice-four-v2/art-justice-02-equilibrio-dourado_A2.webp"
+  },
+  {
+    "sku": "art-justice-03-guardia-da-lei",
+    "name": "Guardiã da Lei",
+    "preview": "/assets/gallery/justice-four-v2/art-justice-03-guardia-da-lei_A2.webp",
+    "image": "/assets/gallery/justice-four-v2/art-justice-03-guardia-da-lei_A2.webp"
+  },
+  {
+    "sku": "art-justice-04-justica-soberana",
+    "name": "Justiça Soberana",
+    "preview": "/assets/gallery/justice-four-v2/art-justice-04-justica-soberana_A2.webp",
+    "image": "/assets/gallery/justice-four-v2/art-justice-04-justica-soberana_A2.webp"
   }
 ]
