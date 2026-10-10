@@ -1,0 +1,52 @@
+{
+  "schema": 3,
+  "category": "arte-juridica",
+  "artworks": {
+    "art-justice-01-dama-em-relevo": {
+      "title": "Dama da Justiça em Relevo Dourado",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/justice-four-v3/art-justice-01-dama-em-relevo_A4.webp",
+        "A3": "/assets/gallery/justice-four-v3/art-justice-01-dama-em-relevo_A3.webp",
+        "A2": "/assets/gallery/justice-four-v3/art-justice-01-dama-em-relevo_A2.webp"
+      },
+      "review_status": "preview_only"
+    },
+    "art-justice-02-equilibrio-dourado": {
+      "title": "Equilíbrio Dourado",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/justice-four-v3/art-justice-02-equilibrio-dourado_A4.webp",
+        "A3": "/assets/gallery/justice-four-v3/art-justice-02-equilibrio-dourado_A3.webp",
+        "A2": "/assets/gallery/justice-four-v3/art-justice-02-equilibrio-dourado_A2.webp"
+      },
+      "review_status": "preview_only"
+    },
+    "art-justice-03-guardia-da-lei": {
+      "title": "Guardiã da Lei",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/justice-four-v3/art-justice-03-guardia-da-lei_A4.webp",
+        "A3": "/assets/gallery/justice-four-v3/art-justice-03-guardia-da-lei_A3.webp",
+        "A2": "/assets/gallery/justice-four-v3/art-justice-03-guardia-da-lei_A2.webp"
+      },
+      "review_status": "preview_only"
+    },
+    "art-justice-04-justica-soberana": {
+      "title": "Justiça Soberana",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/justice-four-v3/art-justice-04-justica-soberana_A4.webp",
+        "A3": "/assets/gallery/justice-four-v3/art-justice-04-justica-soberana_A3.webp",
+        "A2": "/assets/gallery/justice-four-v3/art-justice-04-justica-soberana_A2.webp"
+      },
+      "review_status": "preview_only"
+    }
+  },
+  "sizes": [
+    "A4",
+    "A3",
+    "A2"
+  ],
+  "render": "single_warm_bronze_hairline_flush_at_original_art_edge_ivory_mat_no_outer_keyline_no_crop"
+}

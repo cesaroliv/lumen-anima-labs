@@ -10,7 +10,7 @@ const copy=pt?{
   selection:"ESCOLHA COMO QUER SUA OBRA",
   digital:"Arte digital",digitalSub:"Download · R$ 14,90",
   physical:"Arte impressa",physicalSub:"Quadros, placas e pôsteres",
-  lead:"Personalize tamanho, acabamento e cor quando houver moldura. O passe-partout marfim e o filete dourado já fazem parte da impressão.",
+  lead:"Personalize tamanho, acabamento e cor quando houver moldura. O passe-partout marfim e o filete fino em tom bronze suave fazem parte da impressão.",
   size:"Tamanho",finish:"Acabamento",color:"Cor da moldura",summarySize:"Medidas",frame:"Acabamento",price:"Preço",frameValue:"Filete",
   prep:"Encomendas em preparação",notice:"Quadro físico em preparação: preços e frete ainda não disponíveis. A edição digital pode ser adquirida separadamente na aba Arte digital.",
   defaultStatus:"Carregando opções do quadro…"
@@ -18,7 +18,7 @@ const copy=pt?{
   selection:"CHOOSE YOUR ARTWORK FORMAT",
   digital:"Digital artwork",digitalSub:"Download · R$ 14.90",
   physical:"Printed artwork",physicalSub:"Frames, panels and posters",
-  lead:"Choose size, finish and frame color when applicable. The ivory mat and gold line are already part of the printed artwork.",
+  lead:"Choose size, finish and frame color when applicable. The ivory mat and subtle warm-bronze hairline are part of the printed artwork.",
   size:"Size",finish:"Finish",color:"Frame color",summarySize:"Dimensions",frame:"Finish",price:"Price",frameValue:"Slim frame",
   prep:"Framed orders coming soon",notice:"Physical printing is not yet available: pricing and shipping are pending. The digital edition can be purchased separately on the Digital artwork tab.",
   defaultStatus:"Loading framed options…"
@@ -78,7 +78,7 @@ physical.innerHTML=[
 '<p class="physical-note">',copy.notice,'</p>'
 ].join('');
 info.appendChild(physical);
-const originalSrc=originalImage.getAttribute("src"),originalAlt=originalImage.getAttribute("alt");
+const originalSrc="/assets/gallery/justice-four-v3/"+sku+"_digital.webp",originalAlt=originalImage.getAttribute("alt")+" — arquivo original sem passe-partout";
 const stage=document.createElement("div");stage.className="gesso-preview-stage";
 const frame=document.createElement("div");frame.id="physicalFrame";frame.className="physical-frame";
 imageRegion.insertBefore(stage,originalImage);stage.appendChild(frame);const artSurface=document.createElement("div");artSurface.className="physical-art-surface";frame.appendChild(artSurface);artSurface.appendChild(originalImage);

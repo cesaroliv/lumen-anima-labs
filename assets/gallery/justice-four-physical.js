@@ -21,10 +21,10 @@ help:{
 "Tradicional com vidro acrílico":"Moldura tradicional com proteção em vidro acrílico (prévia simulada).",
 "Caixa":"Moldura tipo caixa, com perfil intermediário, sem vidro.",
 "Caixa com vidro acrílico":"Moldura tipo caixa com vidro acrílico (prévia simulada).",
-"Filete":"Moldura física de perfil fino. Diferente do filete dourado impresso na arte.",
+"Filete":"Moldura física de perfil fino. Diferente do filete fino impresso em tom bronze na arte.",
 "Filete com vidro acrílico":"Moldura física de perfil fino com vidro acrílico (prévia simulada).",
-"Placa Decorativa":"Placa decorativa sem moldura externa. Passe-partout e filete dourado continuam impressos.",
-"Poster":"Pôster sem moldura externa. Passe-partout e filete dourado continuam impressos."
+"Placa Decorativa":"Placa decorativa sem moldura externa. Passe-partout e filete fino em tom bronze continuam impressos.",
+"Poster":"Pôster sem moldura externa. Passe-partout e filete fino em tom bronze continuam impressos."
 }
 }:{
 invalid:"Invalid printed artwork.",loading:"Loading Printile finishes…",
@@ -37,10 +37,10 @@ help:{
 "Tradicional com vidro acrílico":"Traditional frame with acrylic glazing (simulated preview).",
 "Caixa":"Box frame, medium profile, without glazing.",
 "Caixa com vidro acrílico":"Box frame with acrylic glazing (simulated preview).",
-"Filete":"Slim physical frame, separate from the printed gold line.",
+"Filete":"Slim physical frame, separate from the printed warm-bronze hairline.",
 "Filete com vidro acrílico":"Slim physical frame with acrylic glazing (simulated preview).",
-"Placa Decorativa":"Decorative panel, without an outer frame. The ivory mat and gold line remain printed.",
-"Poster":"Poster without an outer frame. The ivory mat and gold line remain printed."
+"Placa Decorativa":"Decorative panel, without an outer frame. The ivory mat and subtle warm-bronze line remain printed.",
+"Poster":"Poster without an outer frame. The ivory mat and subtle warm-bronze line remain printed."
 }
 };
 if(!embedded){document.documentElement.lang=pt?"pt-BR":"en-US";document.querySelectorAll("[data-pt][data-en]").forEach(el=>{el.textContent=pt?el.dataset.pt:el.dataset.en});}
@@ -92,7 +92,7 @@ function render(){
  if(finishHelp)finishHelp.textContent=labels.help[finish]||"";
  if(name)name.textContent=art.title;
  if(!embedded||window.LUMEN_GESSO_UNIFIED.getMode()==="physical"){
-  img.src="/assets/gallery/justice-four-v2/"+sku+"_"+size+".webp";
+  img.src="/assets/gallery/justice-four-v3/"+sku+"_"+size+".webp";
   img.alt=art.title+" — "+size+" — "+labels.physical;
  }
  frame.className="physical-frame "+(noFrame?(finish==="Poster"?"printile-unframed printile-poster":"printile-unframed printile-panel"):
@@ -112,7 +112,7 @@ colorButtons.forEach(b=>b.addEventListener("click",()=>{if(b.disabled)return;col
 if(finishSelect)finishSelect.addEventListener("change",()=>{finish=finishSelect.value;render()});
 /* Justice preview uses a verified local manifest; print checkout remains disabled. */
 Promise.all([
-fetch('/assets/gallery/justice-four-v2/catalog.json').then(r=>r.ok?r.json():null),
+fetch('/assets/gallery/justice-four-v3/catalog.json').then(r=>r.ok?r.json():null),
 fetch('/assets/gallery/gesso-physical-offers.json?v=20ad1d60d13f').then(r=>r.ok?r.json():null)
 ]).then(([source,manifest])=>{
 const item=source?.artworks?.[sku];
