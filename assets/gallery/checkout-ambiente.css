@@ -29,3 +29,20 @@
 .printile-config #printileSummary{display:block;margin:18px 0;padding:14px;background:#34291e;color:#f3d5a8;border:1px solid #88704e;font:650 13px/1.6 system-ui,Arial,sans-serif}
 .printile-config #printileColorArea[hidden]{display:none}
 .printile-config .printile-honest-note{font-size:12px;opacity:.9}
+
+/* 2026-10-11: isolated framed artwork on checkout; never repeat furniture/room photos. */
+.product-preview-stage{display:flex;justify-content:center;align-items:center;min-height:430px;padding:32px 24px;box-sizing:border-box;overflow:hidden;background:linear-gradient(155deg,#494847,#303334 54%,#242629)}
+.product-preview-stage[data-collection="gesso-ouro"],.product-preview-stage[data-collection="arte-juridica"]{background:linear-gradient(150deg,#ded9ce,#b4b1a9 70%,#9a9994)}
+.product-preview-frame{position:relative;max-width:100%;width:max-content;margin:auto;background:var(--frame-color,#171717);padding:6px;box-shadow:0 10px 26px #0008,0 0 0 1px #9d9a93}
+.product-preview-frame img{display:block;width:auto;max-width:100%;height:auto;max-height:650px;object-fit:contain;box-sizing:border-box;background:#eeeae2}
+.product-preview-frame[data-size="A3"]{max-width:83%}
+.product-preview-frame[data-size="A4"]{max-width:68%}
+.product-preview-frame[data-size="A2"]{max-width:100%}
+.product-preview-frame[data-finish="traditional"]{padding:17px;box-shadow:0 16px 24px #0009,inset 0 0 0 4px #ffffff44,0 0 0 1px #b9a889}
+.product-preview-frame[data-finish="box"]{padding:23px;box-shadow:12px 16px 16px #0009,inset 0 0 0 4px #ffffff33,0 0 0 1px #b9a889}
+.product-preview-frame[data-finish="filete"]{padding:5px;box-shadow:0 12px 24px #0009,0 0 0 1px #b9a889}
+.product-preview-frame[data-finish="poster"]{padding:0;box-shadow:0 7px 20px #0004}
+.product-preview-frame[data-finish="panel"]{padding:0;box-shadow:0 7px 18px #0007,7px 10px 0 #5d554b}
+.product-preview-frame[data-glass="true"]::after{content:"";pointer-events:none;position:absolute;inset:0;background:linear-gradient(118deg,#fff0 43%,#ffffff1b 47%,#fff0 55%);mix-blend-mode:screen}
+.single-order-image figcaption{background:#28241f;color:#e2caab;padding:12px 6px;line-height:1.5;font-size:12px}
+@media(max-width:760px){.product-preview-stage{min-height:290px;padding:17px 12px}.product-preview-frame img{max-height:500px}}

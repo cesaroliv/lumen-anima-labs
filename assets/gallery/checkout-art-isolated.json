@@ -1,0 +1,679 @@
+{
+  "schema": "lumen-checkout-clean-product-preview-v1",
+  "created": "2026-10-11",
+  "description": "Checkout-only lookup; gallery immutable. All print orders OFF.",
+  "items": {
+    "obsidian-02": {
+      "id": "obsidian-02",
+      "title": "Classical Kintsugi Bust",
+      "sourceId": "art-29-classical-kintsugi-bust",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/obsidian-physical/art-29-classical-kintsugi-bust_A4.webp",
+        "A3": "/assets/gallery/obsidian-physical/art-29-classical-kintsugi-bust_A3.webp",
+        "A2": "/assets/gallery/obsidian-physical/art-29-classical-kintsugi-bust_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-01": {
+      "id": "arte-black-01",
+      "title": "Águia",
+      "sourceId": "art-black-01-aguia",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-01-aguia_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-01-aguia_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-01-aguia_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-02": {
+      "id": "arte-black-02",
+      "title": "Leão",
+      "sourceId": "art-black-15-leao",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-15-leao_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-15-leao_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-15-leao_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-03": {
+      "id": "arte-black-03",
+      "title": "Rosa Negra",
+      "sourceId": "art-black-20-rosa-negra",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-20-rosa-negra_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-20-rosa-negra_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-20-rosa-negra_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-04": {
+      "id": "arte-black-04",
+      "title": "Coruja",
+      "sourceId": "art-black-10-coruja",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-10-coruja_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-10-coruja_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-10-coruja_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-05": {
+      "id": "arte-black-05",
+      "title": "Cobra",
+      "sourceId": "art-black-09-cobra",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-09-cobra_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-09-cobra_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-09-cobra_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-06": {
+      "id": "arte-black-06",
+      "title": "Dragão",
+      "sourceId": "art-black-12-dragao",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-12-dragao_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-12-dragao_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-12-dragao_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-07": {
+      "id": "arte-black-07",
+      "title": "Lobo",
+      "sourceId": "art-black-16-lobo",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-16-lobo_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-16-lobo_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-16-lobo_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-08": {
+      "id": "arte-black-08",
+      "title": "Caveira",
+      "sourceId": "art-black-08-caveira",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-08-caveira_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-08-caveira_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-08-caveira_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-09": {
+      "id": "arte-black-09",
+      "title": "Tigre",
+      "sourceId": "art-black-22-tigre",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-22-tigre_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-22-tigre_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-22-tigre_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-10": {
+      "id": "arte-black-10",
+      "title": "Pantera",
+      "sourceId": "art-black-17-pantera",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-17-pantera_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-17-pantera_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-17-pantera_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-11": {
+      "id": "arte-black-11",
+      "title": "Rinoceronte",
+      "sourceId": "art-black-19-rinoceronte",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-19-rinoceronte_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-19-rinoceronte_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-19-rinoceronte_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-12": {
+      "id": "arte-black-12",
+      "title": "Harpia",
+      "sourceId": "art-black-13-harpia",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-13-harpia_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-13-harpia_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-13-harpia_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-13": {
+      "id": "arte-black-13",
+      "title": "Touro",
+      "sourceId": "art-black-23-touro",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-23-touro_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-23-touro_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-23-touro_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-14": {
+      "id": "arte-black-14",
+      "title": "Cavalo II",
+      "sourceId": "art-black-07-cavalo-ii",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-07-cavalo-ii_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-07-cavalo-ii_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-07-cavalo-ii_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-15": {
+      "id": "arte-black-15",
+      "title": "Doberman",
+      "sourceId": "art-black-11-doberman",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-11-doberman_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-11-doberman_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-11-doberman_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-16": {
+      "id": "arte-black-16",
+      "title": "Búfalo",
+      "sourceId": "art-black-04-bufalo",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-04-bufalo_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-04-bufalo_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-04-bufalo_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-17": {
+      "id": "arte-black-17",
+      "title": "Pastor Alemão",
+      "sourceId": "art-black-18-pastor-alemao",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-18-pastor-alemao_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-18-pastor-alemao_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-18-pastor-alemao_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-18": {
+      "id": "arte-black-18",
+      "title": "Rottweiler",
+      "sourceId": "art-black-21-rottweiler",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-21-rottweiler_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-21-rottweiler_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-21-rottweiler_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-19": {
+      "id": "arte-black-19",
+      "title": "Akita",
+      "sourceId": "art-black-02-akita",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-02-akita_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-02-akita_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-02-akita_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-20": {
+      "id": "arte-black-20",
+      "title": "Cane Corso",
+      "sourceId": "art-black-05-cane-corso",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-05-cane-corso_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-05-cane-corso_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-05-cane-corso_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-21": {
+      "id": "arte-black-21",
+      "title": "American Bully",
+      "sourceId": "art-black-03-american-bully",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-03-american-bully_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-03-american-bully_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-03-american-bully_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-22": {
+      "id": "arte-black-22",
+      "title": "Husky",
+      "sourceId": "art-black-14-husky",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-14-husky_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-14-husky_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-14-husky_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-black-23": {
+      "id": "arte-black-23",
+      "title": "Cavalo",
+      "sourceId": "art-black-06-cavalo",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/black-originals/art-black-06-cavalo_A4.webp",
+        "A3": "/assets/gallery/black-originals/art-black-06-cavalo_A3.webp",
+        "A2": "/assets/gallery/black-originals/art-black-06-cavalo_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-08": {
+      "id": "gesso-ouro-08",
+      "title": "Bambuzal Dourado",
+      "sourceId": "art-gesso-24-bambuzal-dourado",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-24-bambuzal-dourado_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-24-bambuzal-dourado_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-24-bambuzal-dourado_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-09": {
+      "id": "gesso-ouro-09",
+      "title": "Samambaias",
+      "sourceId": "art-gesso-31-samambaias",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-31-samambaias_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-31-samambaias_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-31-samambaias_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-10": {
+      "id": "gesso-ouro-10",
+      "title": "Jardim de Suculentas",
+      "sourceId": "art-gesso-25-jardim-de-rosas",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-25-jardim-de-rosas_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-25-jardim-de-rosas_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-25-jardim-de-rosas_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-11": {
+      "id": "gesso-ouro-11",
+      "title": "Trigo de Ouro",
+      "sourceId": "art-gesso-30-trigo-de-ouro",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-30-trigo-de-ouro_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-30-trigo-de-ouro_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-30-trigo-de-ouro_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-12": {
+      "id": "gesso-ouro-12",
+      "title": "Cavalo-Marinho",
+      "sourceId": "art-gesso-10-cavalo-marinho",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-10-cavalo-marinho_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-10-cavalo-marinho_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-10-cavalo-marinho_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-13": {
+      "id": "gesso-ouro-13",
+      "title": "Seda em Movimento",
+      "sourceId": "art-gesso-33-seda-em-movimento",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-33-seda-em-movimento_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-33-seda-em-movimento_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-33-seda-em-movimento_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-14": {
+      "id": "gesso-ouro-14",
+      "title": "Círculos de Conchas",
+      "sourceId": "art-gesso-12-circulos-de-conchas",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-12-circulos-de-conchas_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-12-circulos-de-conchas_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-12-circulos-de-conchas_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-15": {
+      "id": "gesso-ouro-15",
+      "title": "Montanhas Brancas",
+      "sourceId": "art-gesso-32-montanhas-brancas",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-32-montanhas-brancas_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-32-montanhas-brancas_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-32-montanhas-brancas_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-16": {
+      "id": "gesso-ouro-16",
+      "title": "Concha Atlântica",
+      "sourceId": "art-gesso-11-concha-atlantica",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-11-concha-atlantica_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-11-concha-atlantica_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-11-concha-atlantica_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-17": {
+      "id": "gesso-ouro-17",
+      "title": "Náutilo Vivo",
+      "sourceId": "art-gesso-13-nautilo-vivo",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-13-nautilo-vivo_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-13-nautilo-vivo_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-13-nautilo-vivo_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-18": {
+      "id": "gesso-ouro-18",
+      "title": "Origem Celular",
+      "sourceId": "art-gesso-35-origem-celular",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-35-origem-celular_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-35-origem-celular_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-35-origem-celular_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-19": {
+      "id": "gesso-ouro-19",
+      "title": "Concha Náutilo",
+      "sourceId": "art-gesso-14-concha-nautilo",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-14-concha-nautilo_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-14-concha-nautilo_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-14-concha-nautilo_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-20": {
+      "id": "gesso-ouro-20",
+      "title": "Ondas Sinuosas",
+      "sourceId": "art-gesso-34-ondas-sinuosas",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-34-ondas-sinuosas_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-34-ondas-sinuosas_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-34-ondas-sinuosas_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-21": {
+      "id": "gesso-ouro-21",
+      "title": "Coral Branco",
+      "sourceId": "art-gesso-16-coral-branco",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-16-coral-branco_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-16-coral-branco_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-16-coral-branco_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-22": {
+      "id": "gesso-ouro-22",
+      "title": "Fluxo de Ouro",
+      "sourceId": "art-gesso-36-caminho-das-dunas",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-36-caminho-das-dunas_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-36-caminho-das-dunas_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-36-caminho-das-dunas_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-23": {
+      "id": "gesso-ouro-23",
+      "title": "Marés em Relevo",
+      "sourceId": "art-gesso-15-mares-em-relevo",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-15-mares-em-relevo_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-15-mares-em-relevo_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-15-mares-em-relevo_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-24": {
+      "id": "gesso-ouro-24",
+      "title": "Relevo de Areia",
+      "sourceId": "art-gesso-37-relevo-de-areia",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-37-relevo-de-areia_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-37-relevo-de-areia_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-37-relevo-de-areia_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-25": {
+      "id": "gesso-ouro-25",
+      "title": "Ondas Concêntricas",
+      "sourceId": "art-gesso-39-ondas-concentricas",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-39-ondas-concentricas_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-39-ondas-concentricas_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-39-ondas-concentricas_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-26": {
+      "id": "gesso-ouro-26",
+      "title": "Flora Marinha",
+      "sourceId": "art-gesso-18-flora-marinha",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-18-flora-marinha_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-18-flora-marinha_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-18-flora-marinha_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-27": {
+      "id": "gesso-ouro-27",
+      "title": "Kintsugi Dourado",
+      "sourceId": "art-gesso-38-flor-de-pedra",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-38-flor-de-pedra_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-38-flor-de-pedra_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-38-flor-de-pedra_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-28": {
+      "id": "gesso-ouro-28",
+      "title": "Estrela do Mar",
+      "sourceId": "art-gesso-17-estrela-do-mar",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-17-estrela-do-mar_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-17-estrela-do-mar_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-17-estrela-do-mar_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-29": {
+      "id": "gesso-ouro-29",
+      "title": "Saturno",
+      "sourceId": "art-gesso-19-saturno",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-19-saturno_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-19-saturno_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-19-saturno_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "gesso-ouro-30": {
+      "id": "gesso-ouro-30",
+      "title": "Serpente Dourada",
+      "sourceId": "art-gesso-40-serpente-dourada",
+      "previewKind": "clean_catalog_artwork",
+      "orientation": "vertical",
+      "previews": {
+        "A4": "/assets/gallery/gesso-expansion-v2/art-gesso-40-serpente-dourada_A4.webp",
+        "A3": "/assets/gallery/gesso-expansion-v2/art-gesso-40-serpente-dourada_A3.webp",
+        "A2": "/assets/gallery/gesso-expansion-v2/art-gesso-40-serpente-dourada_A2.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    },
+    "arte-juridica-01": {
+      "id": "arte-juridica-01",
+      "title": "Balança Dourada — estudo visual",
+      "sourceId": "arte-juridica-01-visual-only",
+      "previewKind": "extracted_from_editorial_photo_NOT_PRINT_MASTER",
+      "orientation": "horizontal",
+      "previews": {
+        "A4": "/assets/gallery/checkout-art-isolated/arte-juridica-01-illustrative-only.webp",
+        "A3": "/assets/gallery/checkout-art-isolated/arte-juridica-01-illustrative-only.webp",
+        "A2": "/assets/gallery/checkout-art-isolated/arte-juridica-01-illustrative-only.webp"
+      },
+      "saleApproved": false,
+      "manufacturingApproved": false
+    }
+  }
+}
