@@ -7,12 +7,12 @@
       "id": "obsidian-02",
       "title": "Classical Kintsugi Bust",
       "sourceId": "art-29-classical-kintsugi-bust",
-      "previewKind": "clean_catalog_artwork",
+      "previewKind": "clean_digital_artwork_unframed",
       "orientation": "vertical",
       "previews": {
-        "A4": "/assets/gallery/obsidian-physical/art-29-classical-kintsugi-bust_A4.webp",
-        "A3": "/assets/gallery/obsidian-physical/art-29-classical-kintsugi-bust_A3.webp",
-        "A2": "/assets/gallery/obsidian-physical/art-29-classical-kintsugi-bust_A2.webp"
+        "A4": "/assets/digital-art/v5/artworks/classical-kintsugi.webp",
+        "A3": "/assets/digital-art/v5/artworks/classical-kintsugi.webp",
+        "A2": "/assets/digital-art/v5/artworks/classical-kintsugi.webp"
       },
       "saleApproved": false,
       "manufacturingApproved": false
@@ -668,9 +668,9 @@
       "previewKind": "extracted_from_editorial_photo_NOT_PRINT_MASTER",
       "orientation": "horizontal",
       "previews": {
-        "A4": "/assets/gallery/checkout-art-isolated/arte-juridica-01-illustrative-only.webp",
-        "A3": "/assets/gallery/checkout-art-isolated/arte-juridica-01-illustrative-only.webp",
-        "A2": "/assets/gallery/checkout-art-isolated/arte-juridica-01-illustrative-only.webp"
+        "A4": "/assets/gallery/checkout-art-isolated/arte-juridica-01-unframed-study-v2.webp",
+        "A3": "/assets/gallery/checkout-art-isolated/arte-juridica-01-unframed-study-v2.webp",
+        "A2": "/assets/gallery/checkout-art-isolated/arte-juridica-01-unframed-study-v2.webp"
       },
       "saleApproved": false,
       "manufacturingApproved": false

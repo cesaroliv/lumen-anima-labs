@@ -46,3 +46,33 @@
 .product-preview-frame[data-glass="true"]::after{content:"";pointer-events:none;position:absolute;inset:0;background:linear-gradient(118deg,#fff0 43%,#ffffff1b 47%,#fff0 55%);mix-blend-mode:screen}
 .single-order-image figcaption{background:#28241f;color:#e2caab;padding:12px 6px;line-height:1.5;font-size:12px}
 @media(max-width:760px){.product-preview-stage{min-height:290px;padding:17px 12px}.product-preview-frame img{max-height:500px}}
+
+/* 2026-10-11. Checkout framing correction: 1 Obsidian, 23 Black, 1 Legal.
+   A visible wall behind the black outer frame; finish/color changes only the virtual frame. */
+.product-preview-stage[data-collection="arte-black"]{background:linear-gradient(135deg,#ddd6ca,#bbb5ab 55%,#a4a19a)!important}
+.product-preview-stage[data-collection="obsidian"]{background:linear-gradient(135deg,#d2cac0,#b4aba0 58%,#a09a91)!important}
+.product-preview-stage[data-collection="arte-juridica"]{background:linear-gradient(135deg,#e0d8cd,#c4b9a9 55%,#afa69a)!important}
+.product-preview-stage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) .product-preview-frame{
+  background:var(--frame-color,#171717);
+  border:3px solid color-mix(in srgb,var(--frame-color,#171717) 76%,white);
+  outline:1px solid #473d2e88;
+  box-shadow:8px 11px 4px #0004,13px 20px 24px #0005,inset 3px 3px 1px #ffffff3a,inset -4px -4px 1px #0008;
+}
+.product-preview-stage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) .product-preview-frame img{
+  width:auto;height:auto;max-width:100%;max-height:625px;box-sizing:border-box;
+}
+.product-preview-stage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) .product-preview-frame[data-finish="traditional"]{padding:18px;border-width:4px;box-shadow:7px 10px 3px #0004,12px 18px 22px #0005,inset 5px 5px 1px #ffffff35,inset -5px -5px 2px #0006}
+.product-preview-stage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) .product-preview-frame[data-finish="box"]{padding:23px;border-width:5px;box-shadow:11px 15px 0 -5px #342f29,17px 22px 22px #0006,inset 5px 5px 1px #ffffff4d,inset -8px -8px 1px #0006}
+.product-preview-stage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) .product-preview-frame[data-finish="filete"]{padding:8px;border-width:2px;box-shadow:5px 8px 4px #0006,10px 14px 15px #0004,inset 1px 1px 1px #ffffff55}
+.product-preview-stage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) .product-preview-frame[data-finish="poster"]{padding:0;border:0;outline:none;background:transparent;box-shadow:0 8px 12px #0003}
+.product-preview-stage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) .product-preview-frame[data-finish="panel"]{padding:0;border:0;outline:none;background:transparent;box-shadow:7px 8px 0 #514c43,11px 14px 15px #0005}
+@media(max-width:760px){
+  .product-preview-stage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) .product-preview-frame[data-finish="box"]{padding:15px;border-width:3px}
+  .product-preview-stage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) .product-preview-frame[data-finish="traditional"]{padding:12px;border-width:3px}
+}
+
+/* Fixed, visibly distinct outer dimensions for A2 > A3 > A4, independent of source pixel size. */
+.product-preview-stage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) .product-preview-frame[data-size="A2"]{width:min(100%,440px);max-width:100%;box-sizing:border-box}
+.product-preview-stage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) .product-preview-frame[data-size="A3"]{width:min(83%,365px);max-width:83%;box-sizing:border-box}
+.product-preview-stage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) .product-preview-frame[data-size="A4"]{width:min(67%,290px);max-width:67%;box-sizing:border-box}
+.product-preview-stage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) .product-preview-frame img{width:100%;max-width:100%;height:auto;max-height:none;object-fit:contain}
