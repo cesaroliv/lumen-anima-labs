@@ -8,6 +8,7 @@ const phrases=pt?{title:"Sua obra digital",price:"Preço por obra",waiting:"Veri
 document.documentElement.lang=pt?"pt-BR":"en-US";document.documentElement.dataset.checkoutLocale=pt?"pt-BR":"en-US";
 $("#pageTitle").textContent=phrases.title;$("#priceLabel").textContent=phrases.price;$("#features").textContent=phrases.features;$("#backLink").textContent=phrases.back;status.textContent=phrases.waiting;
 if(!/^art-(?:[0-9]{2}|gesso-[0-9]{2}|justice-[0-9]{2})-[a-z0-9-]+$/.test(sku)){status.textContent=phrases.notReady;return;}
+const configLink=$("#printileConfigLink");if(configLink){configLink.href="/artworks/"+sku.slice(4)+".html?lang="+(pt?"pt":"en")+"&formato=quadro";configLink.hidden=false;configLink.textContent=pt?"PERSONALIZAR QUADRO IMPRESSO →":"CUSTOMIZE PRINTED ART →";}
 let entry=null,serverProduct=null,checkoutReady=Boolean(window.LUMEN_CHECKOUT_READY);
 let autoOpened=false;
 function activate(){if(!entry||!serverProduct||!checkoutReady)return;btn.dataset.product=sku;btn.disabled=false;btn.textContent=phrases.buy;status.textContent=phrases.features;if(params.get('auto')==='1'&&!autoOpened){autoOpened=true;queueMicrotask(()=>btn.click());}}
