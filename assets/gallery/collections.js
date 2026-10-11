@@ -61,8 +61,8 @@
     });
     rail.appendChild(fragment);
     const anchor=slugToAnchor[slug];
-    explore.href=anchor?'#'+anchor:'#colecoes';
-    explore.textContent=slug==='arte-juridica'?(isPt?'Voltar à coleção →':'Back to collection →'):(isPt?'Explorar obras originais →':'Explore original art →');
+    explore.href='/originais.html?lang='+(isPt?'pt':'en')+'#'+(slug==='arte-juridica'?'arte-juridica':slug);
+    explore.textContent=isPt?'Explorar obras originais →':'Explore original art →';
     dialog.showModal();render();
     dialog.querySelector('[data-close-gallery]')?.focus();
   }
