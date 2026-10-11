@@ -18,7 +18,7 @@
   let trigger=null,active=[],at=0,startX=null;
   const title=button=>button.dataset['title'+(isPt?'Pt':'En')]||button.dataset.title||'';
   const sectionLabel=button=>button.dataset.collection||'';
-  const slugToAnchor={'obsidian':'obsidian-originais','arte-black':'black-originais','gesso-ouro':'gesso-originais','arte-juridica':'juridica-originais'};
+  const slugToAnchor={'obsidian':'obsidian-originais','arte-black':'black-originais','gesso-ouro':'gesso-originais','arte-juridica':'colecao-arte-juridica'};
   document.querySelectorAll('.showcase-open').forEach(button=>{
     button.setAttribute('aria-label',(isPt?'Ampliar ambientação: ':'Expand interior preview: ')+title(button));
     const img=button.querySelector('img');
@@ -62,7 +62,7 @@
     rail.appendChild(fragment);
     const anchor=slugToAnchor[slug];
     explore.href=anchor?'#'+anchor:'#colecoes';
-    explore.textContent=isPt?'Explorar obras originais →':'Explore original art →';
+    explore.textContent=slug==='arte-juridica'?(isPt?'Voltar à coleção →':'Back to collection →'):(isPt?'Explorar obras originais →':'Explore original art →');
     dialog.showModal();render();
     dialog.querySelector('[data-close-gallery]')?.focus();
   }
