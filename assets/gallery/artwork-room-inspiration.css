@@ -1,0 +1,21 @@
+/* Lumen Arts: collection room inspiration, per-product edition. */
+.room-inspiration-link{display:inline-flex;align-items:center;gap:6px;margin:5px 0 17px;padding:8px 0;color:#b99153;background:transparent;border:0;border-bottom:1px solid currentColor;font-weight:600;font-size:12px;line-height:1.4;font-family:inherit;letter-spacing:.04em;cursor:pointer}
+.room-inspiration-link:focus-visible{outline:2px solid #b99153;outline-offset:4px}
+.room-inspiration-dialog{width:min(1020px,calc(100vw - 24px));max-width:min(1020px,calc(100vw - 24px));max-height:95dvh;overflow:auto;margin:auto;padding:22px 24px 18px;color:#f3e7d6;background:#171512;border:1px solid #91754d;box-shadow:0 25px 90px #000a}
+.room-inspiration-dialog::backdrop{background:#080604e8}
+.room-inspiration-dialog h2{margin:4px 50px 12px 0;font-size:clamp(24px,3vw,39px);font-weight:400;line-height:1.15}
+.room-inspiration-close{position:absolute;right:15px;top:12px;z-index:5;width:42px;height:42px;background:#242019;color:#fff;border:1px solid #bb965d;font-size:27px;cursor:pointer}
+.room-inspiration-dialog .room-inspiration-note{max-width:740px;color:#c0b39f;font-size:13px;line-height:1.55;margin:0 40px 16px 0}
+.room-inspiration-stage{position:relative;display:flex;justify-content:center;align-items:center;min-height:170px;max-height:calc(78dvh - 195px);touch-action:pan-y}
+.room-inspiration-stage img{max-height:calc(78dvh - 195px);width:auto;max-width:100%;height:auto;object-fit:contain}
+.room-inspiration-stage>button{position:absolute;z-index:2;top:50%;transform:translateY(-50%);width:43px;height:53px;background:#171512d9;color:#fff;border:1px solid #bb965d;font-size:33px;cursor:pointer}
+.room-inspiration-prev{left:5px}.room-inspiration-next{right:5px}
+.room-inspiration-footer{display:flex;justify-content:space-between;gap:16px;align-items:center;font-size:12px;color:#c7b18a;padding:11px 0}
+.room-inspiration-footer a{color:#e4bf7f;text-decoration:underline;text-underline-offset:3px}
+.room-inspiration-rail{display:flex;gap:7px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 0 12px}
+.room-inspiration-thumb{flex:0 0 64px;width:64px;height:64px;scroll-snap-align:center;padding:0;background:#27231d;border:2px solid transparent;opacity:.65;cursor:pointer}
+.room-inspiration-thumb[aria-current=true]{opacity:1;border-color:#e2bb7d}
+.room-inspiration-thumb img{height:100%;width:100%;object-fit:cover}
+.room-inspiration-dialog button:focus-visible{outline:3px solid #e2bb7d;outline-offset:2px}
+@media(max-width:650px){.room-inspiration-dialog{padding:13px 11px 9px;width:calc(100vw - 10px);max-width:calc(100vw - 10px)}.room-inspiration-stage,.room-inspiration-stage img{max-height:calc(75dvh - 180px)}.room-inspiration-dialog .room-inspiration-note{margin-right:0}.room-inspiration-thumb{flex-basis:55px;width:55px;height:57px}.room-inspiration-stage>button{width:35px;height:45px}}
+@media(prefers-reduced-motion:reduce){.room-inspiration-link,.room-inspiration-thumb{transition:none}}
