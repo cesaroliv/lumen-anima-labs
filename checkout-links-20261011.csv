@@ -1,0 +1,66 @@
+collection,image_id,image_label,checkout_url,payment_state,current_product_sku
+Obsidian Regalia,obsidian-01,Ambiente 01,https://lumenanima.com/checkout-artwork.html?sku=art-32-obsidian-horse&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-32-obsidian-horse
+Obsidian Regalia,obsidian-02,Ambiente 02,https://lumenanima.com/checkout-ambiente.html?id=obsidian-02&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Obsidian Regalia,obsidian-03,Ambiente 03,https://lumenanima.com/checkout-artwork.html?sku=art-30-gothic-angel&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-30-gothic-angel
+Obsidian Regalia,obsidian-04,Ambiente 04,https://lumenanima.com/checkout-artwork.html?sku=art-31-dark-goddess&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-31-dark-goddess
+Obsidian Regalia,obsidian-05,Ambiente 05,https://lumenanima.com/checkout-artwork.html?sku=art-28-skull-and-black-roses&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-28-skull-and-black-roses
+Obsidian Regalia,obsidian-06,Ambiente 06,https://lumenanima.com/checkout-artwork.html?sku=art-25-panther-eclipse&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-25-panther-eclipse
+Obsidian Regalia,obsidian-07,Ambiente 07,https://lumenanima.com/checkout-artwork.html?sku=art-26-imperial-lion&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-26-imperial-lion
+Obsidian Regalia,obsidian-08,Ambiente 08,https://lumenanima.com/checkout-artwork.html?sku=art-27-serpent-nocturne&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-27-serpent-nocturne
+Arte Black,arte-black-01,Ambiente 01,https://lumenanima.com/checkout-ambiente.html?id=arte-black-01&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-02,Ambiente 02,https://lumenanima.com/checkout-ambiente.html?id=arte-black-02&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-03,Ambiente 03,https://lumenanima.com/checkout-ambiente.html?id=arte-black-03&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-04,Ambiente 04,https://lumenanima.com/checkout-ambiente.html?id=arte-black-04&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-05,Ambiente 05,https://lumenanima.com/checkout-ambiente.html?id=arte-black-05&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-06,Ambiente 06,https://lumenanima.com/checkout-ambiente.html?id=arte-black-06&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-07,Ambiente 07,https://lumenanima.com/checkout-ambiente.html?id=arte-black-07&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-08,Ambiente 08,https://lumenanima.com/checkout-ambiente.html?id=arte-black-08&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-09,Ambiente 09,https://lumenanima.com/checkout-ambiente.html?id=arte-black-09&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-10,Ambiente 10,https://lumenanima.com/checkout-ambiente.html?id=arte-black-10&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-11,Ambiente 11,https://lumenanima.com/checkout-ambiente.html?id=arte-black-11&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-12,Ambiente 12,https://lumenanima.com/checkout-ambiente.html?id=arte-black-12&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-13,Ambiente 13,https://lumenanima.com/checkout-ambiente.html?id=arte-black-13&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-14,Ambiente 14,https://lumenanima.com/checkout-ambiente.html?id=arte-black-14&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-15,Ambiente 15,https://lumenanima.com/checkout-ambiente.html?id=arte-black-15&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-16,Ambiente 16,https://lumenanima.com/checkout-ambiente.html?id=arte-black-16&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-17,Ambiente 17,https://lumenanima.com/checkout-ambiente.html?id=arte-black-17&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-18,Ambiente 18,https://lumenanima.com/checkout-ambiente.html?id=arte-black-18&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-19,Ambiente 19,https://lumenanima.com/checkout-ambiente.html?id=arte-black-19&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-20,Ambiente 20,https://lumenanima.com/checkout-ambiente.html?id=arte-black-20&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-21,Ambiente 21,https://lumenanima.com/checkout-ambiente.html?id=arte-black-21&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-22,Ambiente 22,https://lumenanima.com/checkout-ambiente.html?id=arte-black-22&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Black,arte-black-23,Ambiente 23,https://lumenanima.com/checkout-ambiente.html?id=arte-black-23&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-01,Ambiente 01,https://lumenanima.com/checkout-artwork.html?sku=art-gesso-06-coliseu-eterno&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-gesso-06-coliseu-eterno
+Gesso & Ouro,gesso-ouro-02,Ambiente 02,https://lumenanima.com/checkout-artwork.html?sku=art-gesso-05-big-ben-em-relevo&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-gesso-05-big-ben-em-relevo
+Gesso & Ouro,gesso-ouro-03,Ambiente 03,https://lumenanima.com/checkout-artwork.html?sku=art-gesso-02-liberdade-esculpida&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-gesso-02-liberdade-esculpida
+Gesso & Ouro,gesso-ouro-04,Ambiente 04,https://lumenanima.com/checkout-artwork.html?sku=art-gesso-07-clave-de-sol&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-gesso-07-clave-de-sol
+Gesso & Ouro,gesso-ouro-05,Ambiente 05,https://lumenanima.com/checkout-artwork.html?sku=art-gesso-08-catedral-dourada&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-gesso-08-catedral-dourada
+Gesso & Ouro,gesso-ouro-06,Ambiente 06,https://lumenanima.com/checkout-artwork.html?sku=art-gesso-01-lotus-de-ouro&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-gesso-01-lotus-de-ouro
+Gesso & Ouro,gesso-ouro-07,Ambiente 07,https://lumenanima.com/checkout-artwork.html?sku=art-gesso-03-esquadro-e-compasso&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-gesso-03-esquadro-e-compasso
+Gesso & Ouro,gesso-ouro-08,Ambiente 08,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-08&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-09,Ambiente 09,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-09&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-10,Ambiente 10,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-10&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-11,Ambiente 11,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-11&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-12,Ambiente 12,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-12&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-13,Ambiente 13,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-13&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-14,Ambiente 14,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-14&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-15,Ambiente 15,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-15&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-16,Ambiente 16,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-16&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-17,Ambiente 17,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-17&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-18,Ambiente 18,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-18&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-19,Ambiente 19,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-19&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-20,Ambiente 20,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-20&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-21,Ambiente 21,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-21&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-22,Ambiente 22,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-22&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-23,Ambiente 23,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-23&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-24,Ambiente 24,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-24&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-25,Ambiente 25,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-25&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-26,Ambiente 26,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-26&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-27,Ambiente 27,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-27&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-28,Ambiente 28,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-28&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-29,Ambiente 29,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-29&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Gesso & Ouro,gesso-ouro-30,Ambiente 30,https://lumenanima.com/checkout-ambiente.html?id=gesso-ouro-30&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Jurídica,arte-juridica-01,Ambiente 01,https://lumenanima.com/checkout-ambiente.html?id=arte-juridica-01&lang=pt,CHECKOUT_PREPARED_PAYMENT_OFF,
+Arte Jurídica,arte-juridica-02,Ambiente 02,https://lumenanima.com/checkout-artwork.html?sku=art-justice-01-dama-em-relevo&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-justice-01-dama-em-relevo
+Arte Jurídica,arte-juridica-03,Ambiente 03,https://lumenanima.com/checkout-artwork.html?sku=art-justice-03-guardia-da-lei&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-justice-03-guardia-da-lei
+Arte Jurídica,arte-juridica-04,Ambiente 04,https://lumenanima.com/checkout-artwork.html?sku=art-justice-04-justica-soberana&lang=pt&auto=1,ACTIVE_PRODUCT_CHECKOUT,art-justice-04-justica-soberana

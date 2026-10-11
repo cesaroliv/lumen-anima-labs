@@ -1,0 +1,461 @@
+{
+  "schema": "lumen-arts-individual-checkout-v1",
+  "updated": "2026-10-11",
+  "items": [
+    {
+      "id": "obsidian-01",
+      "collection": "Obsidian Regalia",
+      "label": "Ambiente 01",
+      "preview": "/assets/gallery/new-interiors-20261010/obsidian/interior-01-view.webp",
+      "sku": "art-32-obsidian-horse"
+    },
+    {
+      "id": "obsidian-02",
+      "collection": "Obsidian Regalia",
+      "label": "Ambiente 02",
+      "preview": "/assets/gallery/new-interiors-20261010/obsidian/interior-02-view.webp",
+      "sku": null
+    },
+    {
+      "id": "obsidian-03",
+      "collection": "Obsidian Regalia",
+      "label": "Ambiente 03",
+      "preview": "/assets/gallery/new-interiors-20261010/obsidian/interior-03-view.webp",
+      "sku": "art-30-gothic-angel"
+    },
+    {
+      "id": "obsidian-04",
+      "collection": "Obsidian Regalia",
+      "label": "Ambiente 04",
+      "preview": "/assets/gallery/new-interiors-20261010/obsidian/interior-04-view.webp",
+      "sku": "art-31-dark-goddess"
+    },
+    {
+      "id": "obsidian-05",
+      "collection": "Obsidian Regalia",
+      "label": "Ambiente 05",
+      "preview": "/assets/gallery/new-interiors-20261010/obsidian/interior-05-view.webp",
+      "sku": "art-28-skull-and-black-roses"
+    },
+    {
+      "id": "obsidian-06",
+      "collection": "Obsidian Regalia",
+      "label": "Ambiente 06",
+      "preview": "/assets/gallery/new-interiors-20261010/obsidian/interior-06-view.webp",
+      "sku": "art-25-panther-eclipse"
+    },
+    {
+      "id": "obsidian-07",
+      "collection": "Obsidian Regalia",
+      "label": "Ambiente 07",
+      "preview": "/assets/gallery/new-interiors-20261010/obsidian/interior-07-view.webp",
+      "sku": "art-26-imperial-lion"
+    },
+    {
+      "id": "obsidian-08",
+      "collection": "Obsidian Regalia",
+      "label": "Ambiente 08",
+      "preview": "/assets/gallery/new-interiors-20261010/obsidian/interior-08-view.webp",
+      "sku": "art-27-serpent-nocturne"
+    },
+    {
+      "id": "arte-black-01",
+      "collection": "Arte Black",
+      "label": "Ambiente 01",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-01-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-02",
+      "collection": "Arte Black",
+      "label": "Ambiente 02",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-02-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-03",
+      "collection": "Arte Black",
+      "label": "Ambiente 03",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-03-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-04",
+      "collection": "Arte Black",
+      "label": "Ambiente 04",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-04-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-05",
+      "collection": "Arte Black",
+      "label": "Ambiente 05",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-05-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-06",
+      "collection": "Arte Black",
+      "label": "Ambiente 06",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-06-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-07",
+      "collection": "Arte Black",
+      "label": "Ambiente 07",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-07-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-08",
+      "collection": "Arte Black",
+      "label": "Ambiente 08",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-08-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-09",
+      "collection": "Arte Black",
+      "label": "Ambiente 09",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-09-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-10",
+      "collection": "Arte Black",
+      "label": "Ambiente 10",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-10-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-11",
+      "collection": "Arte Black",
+      "label": "Ambiente 11",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-11-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-12",
+      "collection": "Arte Black",
+      "label": "Ambiente 12",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-12-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-13",
+      "collection": "Arte Black",
+      "label": "Ambiente 13",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-13-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-14",
+      "collection": "Arte Black",
+      "label": "Ambiente 14",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-14-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-15",
+      "collection": "Arte Black",
+      "label": "Ambiente 15",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-15-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-16",
+      "collection": "Arte Black",
+      "label": "Ambiente 16",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-16-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-17",
+      "collection": "Arte Black",
+      "label": "Ambiente 17",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-17-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-18",
+      "collection": "Arte Black",
+      "label": "Ambiente 18",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-18-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-19",
+      "collection": "Arte Black",
+      "label": "Ambiente 19",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-19-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-20",
+      "collection": "Arte Black",
+      "label": "Ambiente 20",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-20-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-21",
+      "collection": "Arte Black",
+      "label": "Ambiente 21",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-21-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-22",
+      "collection": "Arte Black",
+      "label": "Ambiente 22",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-22-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-black-23",
+      "collection": "Arte Black",
+      "label": "Ambiente 23",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-black/interior-23-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-01",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 01",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-01-view.webp",
+      "sku": "art-gesso-06-coliseu-eterno"
+    },
+    {
+      "id": "gesso-ouro-02",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 02",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-02-view.webp",
+      "sku": "art-gesso-05-big-ben-em-relevo"
+    },
+    {
+      "id": "gesso-ouro-03",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 03",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-03-view.webp",
+      "sku": "art-gesso-02-liberdade-esculpida"
+    },
+    {
+      "id": "gesso-ouro-04",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 04",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-04-view.webp",
+      "sku": "art-gesso-07-clave-de-sol"
+    },
+    {
+      "id": "gesso-ouro-05",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 05",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-05-view.webp",
+      "sku": "art-gesso-08-catedral-dourada"
+    },
+    {
+      "id": "gesso-ouro-06",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 06",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-06-view.webp",
+      "sku": "art-gesso-01-lotus-de-ouro"
+    },
+    {
+      "id": "gesso-ouro-07",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 07",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-07-view.webp",
+      "sku": "art-gesso-03-esquadro-e-compasso"
+    },
+    {
+      "id": "gesso-ouro-08",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 08",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-08-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-09",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 09",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-09-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-10",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 10",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-10-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-11",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 11",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-11-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-12",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 12",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-12-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-13",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 13",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-13-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-14",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 14",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-14-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-15",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 15",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-15-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-16",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 16",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-16-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-17",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 17",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-17-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-18",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 18",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-18-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-19",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 19",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-19-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-20",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 20",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-20-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-21",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 21",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-21-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-22",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 22",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-22-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-23",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 23",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-23-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-24",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 24",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-24-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-25",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 25",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-25-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-26",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 26",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-26-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-27",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 27",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-27-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-28",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 28",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-28-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-29",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 29",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-29-view.webp",
+      "sku": null
+    },
+    {
+      "id": "gesso-ouro-30",
+      "collection": "Gesso & Ouro",
+      "label": "Ambiente 30",
+      "preview": "/assets/gallery/new-interiors-20261010/gesso-ouro/interior-30-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-juridica-01",
+      "collection": "Arte Jurídica",
+      "label": "Ambiente 01",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-juridica/interior-01-view.webp",
+      "sku": null
+    },
+    {
+      "id": "arte-juridica-02",
+      "collection": "Arte Jurídica",
+      "label": "Ambiente 02",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-juridica/interior-02-view.webp",
+      "sku": "art-justice-01-dama-em-relevo"
+    },
+    {
+      "id": "arte-juridica-03",
+      "collection": "Arte Jurídica",
+      "label": "Ambiente 03",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-juridica/interior-03-view.webp",
+      "sku": "art-justice-03-guardia-da-lei"
+    },
+    {
+      "id": "arte-juridica-04",
+      "collection": "Arte Jurídica",
+      "label": "Ambiente 04",
+      "preview": "/assets/gallery/new-interiors-20261010/arte-juridica/interior-04-view.webp",
+      "sku": "art-justice-04-justica-soberana"
+    }
+  ]
+}

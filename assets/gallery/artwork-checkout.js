@@ -9,7 +9,8 @@ document.documentElement.lang=pt?"pt-BR":"en-US";document.documentElement.datase
 $("#pageTitle").textContent=phrases.title;$("#priceLabel").textContent=phrases.price;$("#features").textContent=phrases.features;$("#backLink").textContent=phrases.back;status.textContent=phrases.waiting;
 if(!/^art-(?:[0-9]{2}|gesso-[0-9]{2}|justice-[0-9]{2})-[a-z0-9-]+$/.test(sku)){status.textContent=phrases.notReady;return;}
 let entry=null,serverProduct=null,checkoutReady=Boolean(window.LUMEN_CHECKOUT_READY);
-function activate(){if(!entry||!serverProduct||!checkoutReady)return;btn.dataset.product=sku;btn.disabled=false;btn.textContent=phrases.buy;status.textContent=phrases.features;}
+let autoOpened=false;
+function activate(){if(!entry||!serverProduct||!checkoutReady)return;btn.dataset.product=sku;btn.disabled=false;btn.textContent=phrases.buy;status.textContent=phrases.features;if(params.get('auto')==='1'&&!autoOpened){autoOpened=true;queueMicrotask(()=>btn.click());}}
 window.addEventListener("lumen:checkout-ready",()=>{checkoutReady=true;activate()});
 Promise.all([fetch("/assets/gallery/artworks.json").then(r=>r.ok?r.json():[]),fetch(String(window.LUMEN_CHECKOUT_API||"").replace(/\/$/,"")+"/api/config").then(r=>r.ok?r.json():null)]).then(([items,config])=>{
 entry=items.find(x=>x.sku===sku)||null;serverProduct=config?.individualSalesEnabled?config?.products?.[sku]:null;

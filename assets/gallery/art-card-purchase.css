@@ -12,3 +12,15 @@
 .gallery-dialog .dialog-actions{justify-content:space-between}
 @media(max-width:720px){.art-card-direct-buy{min-height:49px;font-size:11px;padding:10px 8px}.art-card-edition-caption{font-size:10px}.art-card-status{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.art-card-direct-buy{transition:none}}
+
+/* Sales hotfix 2026-10-11: each artwork has a CTA overlay on its own photograph. */
+.showcase-photo{position:relative;isolation:isolate;line-height:0}
+.showcase-photo .showcase-open{display:block;width:100%;line-height:0;cursor:zoom-in}
+.showcase-photo .showcase-open img{display:block;width:100%;height:auto}
+.showcase-buy-overlay{position:absolute;z-index:3;bottom:14px;left:50%;transform:translateX(-50%);width:calc(100% - 30px);max-width:350px;min-height:46px;padding:12px 8px;box-sizing:border-box;border:1px solid #eacb90;background:rgba(221,180,116,.96);color:#21170d!important;display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font:bold 12px/1.3 system-ui,Arial,sans-serif;letter-spacing:.035em;box-shadow:0 6px 22px rgba(0,0,0,.42)}
+.showcase-buy-overlay:hover{background:#fff0c9;color:#1d140b!important}
+.showcase-buy-overlay:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.showcase-item>.showcase-name-outside{display:block;font:400 clamp(16px,1.5vw,22px)/1.3 var(--serif);padding:12px 1px 0;color:inherit}
+.showcase-purchase-caption{display:block;opacity:.73;font:12px/1.4 system-ui,Arial,sans-serif;margin:4px 0 0}
+.head .links .buy-pill{display:none!important}
+@media(max-width:720px){.showcase-buy-overlay{bottom:8px;width:calc(100% - 16px);min-height:42px;padding:8px 6px;font-size:11px}}

@@ -1,110 +1,69 @@
 (() => {
-  'use strict';
-  // Direct edition purchase belongs to the exact visual artwork, never the collection.
-  const qs = new URLSearchParams(location.search);
-  const lang = ['pt','en'].includes(qs.get('lang')) ? qs.get('lang') : (navigator.language||'pt').toLowerCase().startsWith('pt')?'pt':'en';
-  const pt = lang==='pt';
-  const buttons = [...document.querySelectorAll('[data-gallery-open]')];
-  const anchor = document.getElementById('gallery-explore');
-  const note = document.querySelector('.gallery-buy-note');
-  const skuMap = {
-  "obsidian-01": "art-32-obsidian-horse",
-  "obsidian-03": "art-30-gothic-angel",
-  "obsidian-04": "art-31-dark-goddess",
-  "obsidian-05": "art-28-skull-and-black-roses",
-  "obsidian-06": "art-25-panther-eclipse",
-  "obsidian-07": "art-26-imperial-lion",
-  "obsidian-08": "art-27-serpent-nocturne",
-  "gesso-ouro-01": "art-gesso-06-coliseu-eterno",
-  "gesso-ouro-02": "art-gesso-05-big-ben-em-relevo",
-  "gesso-ouro-03": "art-gesso-02-liberdade-esculpida",
-  "gesso-ouro-04": "art-gesso-07-clave-de-sol",
-  "gesso-ouro-05": "art-gesso-08-catedral-dourada",
-  "gesso-ouro-06": "art-gesso-01-lotus-de-ouro",
-  "gesso-ouro-07": "art-gesso-03-esquadro-e-compasso",
-  "arte-juridica-02": "art-justice-01-dama-em-relevo",
-  "arte-juridica-03": "art-justice-03-guardia-da-lei",
-  "arte-juridica-04": "art-justice-04-justica-soberana"
-};
-  const money = n=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(n);
-  const isSku = x=>/^art-(?:[0-9]{2}|gesso-[0-9]{2}|justice-[0-9]{2})-[a-z0-9-]+$/.test(x);
-  const idFor=(button)=>{
-    const sib=[...button.closest('.showcase-grid').querySelectorAll('[data-gallery-open]')];
-    return button.dataset.gallerySlug+'-'+String(sib.indexOf(button)+1).padStart(2,'0');
-  };
-  const states = new Map();
-  function paintModal(button){
-    if(!anchor||!button)return;
-    const item=states.get(button);if(!item)return;
-    const ready=item.state==='ready';
-    anchor.hidden=!ready;
-    if(ready){
-      anchor.href=item.href;
-      anchor.textContent=pt?'COMPRAR '+item.name+' · '+money(item.price)+' →':'BUY '+item.name+' · '+money(item.price)+' →';
-    }else{anchor.removeAttribute('href');}
-    if(note)note.textContent=ready
-       ?(pt?'Compra digital desta arte. Confira a obra antes do pagamento; quadro impresso ainda não disponível.':'Digital edition of this artwork. Review it before payment; framed prints are not available yet.')
-       :item.state==='verifying'
-        ?(pt?'Verificando o checkout desta obra…':'Checking this artwork checkout…')
-        :(pt?'Esta imagem ainda não possui edição à venda. A compra do quadro impresso está em preparação.':'This image has no purchasable edition yet. Framed prints are coming soon.');
-  }
-  function setState(button,state,details={}){
-    states.set(button,{state,...details});
-    const slot=button.closest('.showcase-item')?.querySelector('.art-card-purchase');
-    if(slot){
-      slot.replaceChildren();
-      if(state==='ready'){
-        const label=button.querySelector('.showcase-name');
-        if(label){label.textContent=details.name;label.dataset.pt=details.name;label.dataset.en=details.name;}
-        button.dataset.title=details.name;button.dataset.titlePt=details.name;button.dataset.titleEn=details.name;
-        button.setAttribute('aria-label',(pt?'Ampliar ambiente de ':'Expand room view of ')+details.name);
-        const link=document.createElement('a');
-        link.className='art-card-direct-buy';
-        link.href=details.href;
-        link.textContent=pt?'COMPRAR DIGITAL · '+money(details.price)+' →':'BUY DIGITAL · '+money(details.price)+' →';
-        link.setAttribute('aria-label',(pt?'Comprar edição digital de ':'Buy digital edition of ')+details.name+' — '+money(details.price));
-        slot.append(link);
-        const caption=document.createElement('span');
-        caption.className='art-card-edition-caption';
-        caption.textContent=details.name+(pt?' · arquivo digital, sem moldura':' · digital file, unframed');
-        slot.append(caption);
-      }else if(state==='verifying'){
-        const span=document.createElement('span');span.className='art-card-status';
-        span.textContent=pt?'Verificando compra…':'Checking purchase…';slot.append(span);
-      }else{
-        const span=document.createElement('span');span.className='art-card-status art-card-unavailable';
-        span.textContent=pt?'EDIÇÃO EM PREPARAÇÃO':'EDITION COMING SOON';slot.append(span);
-      }
-    }
-    const dialog=document.getElementById('gallery-dialog');
-    if(dialog?.open&&document.getElementById('dialog-artwork')?.getAttribute('src')===button.dataset.view)paintModal(button);
-  }
-  for(const button of buttons){
-    const item=document.createElement('div');item.className='art-card-purchase';
-    button.insertAdjacentElement('afterend',item);
-    setState(button,Object.hasOwn(skuMap,idFor(button))?'verifying':'pending');
-  }
-  document.addEventListener('lumen:gallery-item-changed',e=>paintModal(e.detail?.button));
-  const controller=new AbortController();
-  const timeout=setTimeout(()=>controller.abort(),9000);
-  Promise.all([
-    fetch('/assets/gallery/artworks.json',{signal:controller.signal,cache:'force-cache'}).then(r=>{if(!r.ok)throw Error('catalog unavailable');return r.json()}),
-    fetch('https://lumen-digital-checkout.ccoliveira1.workers.dev/api/config',{signal:controller.signal,headers:{accept:'application/json'}}).then(r=>{if(!r.ok)throw Error('checkout unavailable');return r.json()})
-  ]).then(([items,config])=>{
-    if(!Array.isArray(items)||config?.individualSalesEnabled!==true)throw Error('Sales disabled');
-    const registry=new Map(items.map(item=>[item.sku,item]));
-    for(const button of buttons){
-      const sku=skuMap[idFor(button)];
-      if(!sku)continue;
-      const item=registry.get(sku),price=Number(config.products?.[sku]?.price);
-      if(!isSku(sku)||!item||!Number.isFinite(price)||price!==14.9){setState(button,'pending');continue;}
-      const url=new URL('/checkout-artwork.html',location.origin);
-      url.searchParams.set('sku',sku);url.searchParams.set('lang',lang);
-      for(const k of ['utm_source','utm_medium','utm_campaign','utm_content','utm_term']){
-        const v=qs.get(k);if(v&&/^[a-zA-Z0-9_.-]{1,64}$/.test(v))url.searchParams.set(k,v);
-      }
-      setState(button,'ready',{sku,name:item.name,price,href:url.pathname+url.search});
-    }
-  }).catch(()=>{for(const button of buttons)if(states.get(button)?.state==='verifying')setState(button,'pending');})
-    .finally(()=>clearTimeout(timeout));
+ "use strict";
+ const params=new URLSearchParams(location.search);
+ const lang=["pt","en"].includes(params.get("lang"))?params.get("lang"):((navigator.language||"").toLowerCase().startsWith("pt")?"pt":"en");
+ const pt=lang==="pt";
+ const all=[...document.querySelectorAll("[data-gallery-open]")];
+ const states=new Map(),modal=document.getElementById("gallery-explore"),note=document.querySelector(".gallery-buy-note");
+ const money=n=>new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"}).format(n);
+ const keyOf=button=>{
+   const grid=button.closest(".showcase-grid");
+   if(!grid)return "";
+   const index=[...grid.querySelectorAll("[data-gallery-open]")].indexOf(button);
+   return button.dataset.gallerySlug+"-"+String(index+1).padStart(2,"0");
+ };
+ const fallback=id=>"/checkout-ambiente.html?id="+encodeURIComponent(id)+"&lang="+lang;
+ const transferParams=url=>{
+   for(const k of ["utm_source","utm_medium","utm_campaign","utm_content","utm_term"]){
+     const value=params.get(k);if(value&&/^[a-zA-Z0-9_.-]{1,64}$/.test(value))url.searchParams.set(k,value);
+   }
+   return url.pathname+url.search;
+ };
+ function refreshDialog(button){
+   if(!modal)return;
+   const s=states.get(button);if(!s)return;
+   modal.hidden=false;modal.href=s.url;
+   modal.textContent=s.available?(pt?"COMPRAR EDIÇÃO DIGITAL · "+money(14.9)+" →":"BUY DIGITAL ART · "+money(14.9)+" →"):(pt?"VER CHECKOUT DESTA ARTE →":"VIEW ARTWORK CHECKOUT →");
+   if(note)note.textContent=s.available?(pt?"Edição digital individual, sem moldura. Confira a obra exata antes de pagar.":"Individual digital edition, unframed. Review the exact file before paying."):(pt?"Esta ambientação ainda não tem produto liberado para pagamento. O checkout individual está preparado; nenhuma cobrança será realizada.":"This styled image is not yet cleared for payment. Its individual checkout is prepared; no charge will be made.");
+ }
+ for(const button of all){
+   const id=keyOf(button),card=button.closest(".showcase-item");
+   if(!card||!/^(obsidian|arte-black|gesso-ouro|arte-juridica)-\d{2}$/.test(id))continue;
+   const img=button.querySelector("img"),caption=button.querySelector(".showcase-name");
+   if(!img)continue;
+   const stage=document.createElement("div");stage.className="showcase-photo";
+   button.before(stage);stage.append(button);
+   if(caption){card.insertBefore(caption,stage.nextSibling);caption.classList.add("showcase-name-outside");}
+   const link=document.createElement("a");link.className="showcase-buy-overlay";link.href=fallback(id);
+   link.textContent=pt?"VER CHECKOUT →":"VIEW CHECKOUT →";
+   link.setAttribute("aria-label",(pt?"Ver checkout desta obra: ":"View checkout for artwork: ")+id);
+   stage.append(link);
+   const captionInfo=document.createElement("span");captionInfo.className="showcase-purchase-caption";
+   captionInfo.textContent=pt?"Checkout individual da obra":"Individual artwork checkout";
+   card.insertBefore(captionInfo,caption?.nextSibling||stage.nextSibling);
+   states.set(button,{id,url:link.getAttribute("href"),available:false,link,captionInfo});
+ }
+ document.addEventListener("lumen:gallery-item-changed",e=>refreshDialog(e.detail?.button));
+ const aborter=new AbortController(),timeout=setTimeout(()=>aborter.abort(),8500);
+ Promise.all([
+  fetch("/assets/gallery/checkout-manifest.json",{signal:aborter.signal,cache:"no-store"}).then(r=>{if(!r.ok)throw Error("manifest unavailable");return r.json()}),
+  fetch("/assets/gallery/artworks.json",{signal:aborter.signal}).then(r=>{if(!r.ok)throw Error("catalog unavailable");return r.json()}),
+  fetch("https://lumen-digital-checkout.ccoliveira1.workers.dev/api/config",{signal:aborter.signal,headers:{accept:"application/json"}}).then(r=>{if(!r.ok)throw Error("checkout unavailable");return r.json()})
+ ]).then(([manifest,artworks,config])=>{
+   if(!Array.isArray(manifest?.items)||!Array.isArray(artworks)||config?.individualSalesEnabled!==true)return;
+   const inventory=new Map(manifest.items.map(x=>[x.id,x]));
+   const registry=new Map(artworks.map(x=>[x.sku,x]));
+   for(const [button,s] of states){
+     const sku=inventory.get(s.id)?.sku,entry=registry.get(sku),product=config.products?.[sku];
+     if(!sku||!entry||!product||Number(product.price)!==14.9)continue;
+     const u=new URL("/checkout-artwork.html",location.origin);u.searchParams.set("sku",sku);u.searchParams.set("lang",lang);u.searchParams.set("auto","1");
+     const href=transferParams(u);
+     s.link.href=href;s.link.textContent=pt?"COMPRAR DIGITAL · "+money(14.9)+" →":"BUY DIGITAL · "+money(14.9)+" →";
+     s.link.setAttribute("aria-label",(pt?"Comprar arte digital ":"Buy digital artwork ")+entry.name+" · "+money(14.9));
+     s.captionInfo.textContent=entry.name+(pt?" · edição digital, sem moldura":" · digital, unframed");
+     s.url=href;s.available=true;
+     const current=document.getElementById("dialog-artwork");
+     if(document.getElementById("gallery-dialog")?.open&&current?.getAttribute("src")===button.dataset.view)refreshDialog(button);
+   }
+ }).catch(()=>{}).finally(()=>clearTimeout(timeout));
 })();
