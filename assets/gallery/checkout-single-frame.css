@@ -1,0 +1,72 @@
+/* Lumen Arts checkout ONLY — 2026-10-11.
+   This intentionally supersedes legacy stacked frame borders for the 25 affected products.
+   One physical-looking outer rim, with no outline, nested inset rims or fake offset frame. */
+#productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]){
+  background:linear-gradient(140deg,#e0d8ca 0%,#cfc5b7 52%,#bdb4a7 100%)!important;
+  padding:clamp(16px,2.2vw,26px);
+  min-height:320px;
+}
+#productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) #productPreviewFrame{
+  display:block;
+  flex:0 1 auto;
+  box-sizing:border-box;
+  margin:0 auto;
+  border:0!important;
+  outline:0!important;
+  border-radius:0!important;
+  background:var(--frame-color,#171717)!important;
+  box-shadow:0 16px 24px -11px rgba(14,11,8,.47)!important;
+  padding:0!important;
+  width:min(100%,425px)!important;
+  max-width:100%!important;
+}
+#productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) #productPreviewFrame[data-size="A3"]{
+  width:min(83%,355px)!important;
+}
+#productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) #productPreviewFrame[data-size="A4"]{
+  width:min(67%,285px)!important;
+}
+#productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) #productPreviewFrame img{
+  display:block;
+  width:100%!important;
+  height:auto!important;
+  object-fit:contain;
+  border:0!important;
+  outline:0!important;
+  margin:0!important;
+  padding:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+#productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) #productPreviewFrame[data-finish="box"]{
+  padding:15px!important;
+  box-shadow:0 15px 25px -9px rgba(12,10,8,.54),inset 2px 2px 1px rgba(255,255,255,.14),inset -2px -2px 1px rgba(0,0,0,.27)!important;
+}
+#productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) #productPreviewFrame[data-finish="traditional"]{
+  padding:11px!important;
+  box-shadow:0 13px 23px -9px rgba(12,10,8,.46),inset 1px 1px 1px rgba(255,255,255,.15)!important;
+}
+#productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) #productPreviewFrame[data-finish="filete"]{
+  padding:4px!important;
+  box-shadow:0 11px 19px -9px rgba(12,10,8,.48)!important;
+}
+#productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) #productPreviewFrame[data-finish="poster"]{
+  background:transparent!important;
+  padding:0!important;
+  box-shadow:0 10px 16px -10px rgba(12,10,8,.36)!important;
+}
+#productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) #productPreviewFrame[data-finish="panel"]{
+  padding:0!important;
+  box-shadow:5px 5px 0 #645b52,7px 12px 17px -8px rgba(12,10,8,.4)!important;
+}
+#productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) #productPreviewFrame[data-glass="true"]::after{
+  inset:0;
+  opacity:.42;
+  background:linear-gradient(115deg,transparent 37%,rgba(255,255,255,.19) 43%,transparent 48%);
+  pointer-events:none;
+}
+@media(max-width:720px){
+  #productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]){padding:15px 12px}
+  #productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) #productPreviewFrame[data-finish="box"]{padding:11px!important}
+  #productPreviewStage:is([data-collection="arte-black"],[data-collection="obsidian"],[data-collection="arte-juridica"]) #productPreviewFrame[data-finish="traditional"]{padding:8px!important}
+}
