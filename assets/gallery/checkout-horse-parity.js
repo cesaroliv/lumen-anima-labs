@@ -1,6 +1,7 @@
 (()=>{"use strict";
 const query=new URLSearchParams(location.search);
 const id=query.get("id")||"";
+const physicalPurchaseBlocked=id==="arte-juridica-01";
 const pt=query.get("lang")==="pt"||(!query.has("lang")&&(navigator.language||"").toLowerCase().startsWith("pt"));
 const $=selector=>document.querySelector(selector);
 const text=(selector,value)=>{const el=$(selector);if(el)el.textContent=value;};
@@ -61,6 +62,12 @@ if(!pt){
  text("#physicalBuy","Orders in preparation");text("#summaryPrice","To be confirmed");
  text("#backWorks","Back to artworks");
  text("#physicalNote",labels.normal);
+}
+if(physicalPurchaseBlocked){
+ const buy=$("#physicalBuy");
+ buy.disabled=true;
+ buy.dataset.purchaseBlocked="true";
+ buy.textContent=pt?"Compra indisponível para esta obra":"Purchase unavailable for this artwork";
 }
 status.textContent=labels.loading;
 const printileTextures=Object.freeze({
