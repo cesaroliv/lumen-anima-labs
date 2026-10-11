@@ -38,6 +38,7 @@
       button.setAttribute('aria-pressed',String(current));
       if(current)button.scrollIntoView({block:'nearest',inline:'nearest',behavior:'auto'});
     });
+    document.dispatchEvent(new CustomEvent('lumen:gallery-item-changed',{detail:{button:selected}}));
   }
   function step(dir){if(dialog?.open){at+=dir;render();}}
   const close=()=>dialog?.close();
@@ -59,8 +60,8 @@
       fragment.appendChild(thumb);
     });
     rail.appendChild(fragment);
-    explore.href='/comprar.html?colecao='+encodeURIComponent(slug)+'&lang='+lang;
-    explore.textContent=slug==='arte-black'?(isPt?'VER DISPONIBILIDADE →':'CHECK AVAILABILITY →'):(isPt?'ESCOLHER OBRA PARA COMPRAR →':'SELECT ARTWORK TO BUY →');
+    explore.removeAttribute('href');explore.hidden=true;
+    explore.textContent='';
     dialog.showModal();render();
     dialog.querySelector('[data-close-gallery]')?.focus();
   }
