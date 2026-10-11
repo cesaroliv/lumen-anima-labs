@@ -59,8 +59,8 @@
       fragment.appendChild(thumb);
     });
     rail.appendChild(fragment);
-    explore.href='#colecao-'+slug;
-    explore.textContent=isPt?'Voltar à coleção →':'Back to collection →';
+    explore.href='/comprar.html?colecao='+encodeURIComponent(slug)+'&lang='+lang;
+    explore.textContent=slug==='arte-black'?(isPt?'VER DISPONIBILIDADE →':'CHECK AVAILABILITY →'):(isPt?'ESCOLHER OBRA PARA COMPRAR →':'SELECT ARTWORK TO BUY →');
     dialog.showModal();render();
     dialog.querySelector('[data-close-gallery]')?.focus();
   }

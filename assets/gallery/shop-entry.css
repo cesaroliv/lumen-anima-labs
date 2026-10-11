@@ -1,0 +1,12 @@
+/* Purchase actions on editorial preview pages. Do not imply framed/physical purchases. */
+.head .links .buy-pill{display:inline-flex!important;align-items:center;justify-content:center;background:#d6ae73;color:#1c150d;border:1px solid #e3bc83;padding:11px 20px;font-weight:800;letter-spacing:.09em;text-decoration:none;white-space:nowrap}
+.head .links .buy-pill:hover,.buy-hero:hover{background:#eacb95;color:#1a150d}
+.hero .actions .buy-hero{background:#d7b079!important;color:#1d160e!important;border-color:#e7be84;font-weight:800;text-align:center}
+.shop-collection-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:0 0 26px}
+.collection-shop-cta{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:13px 24px;background:#d5ad73;color:#21180e!important;border:1px solid #b88e58;text-decoration:none;font-size:12px;letter-spacing:.065em;font-weight:800}
+.collection-shop-cta:hover,.collection-shop-cta:focus-visible{background:#f1d29c;color:#21180e}
+.shop-collection-caption{font-size:12px;line-height:1.55;opacity:.8}
+.gallery-dialog #gallery-explore{display:inline-flex;align-items:center;justify-content:center;min-height:43px;padding:11px 17px;background:#dab782;color:#20170e!important;text-decoration:none;font-weight:800;font-size:12px!important;letter-spacing:.03em}
+.gallery-dialog #gallery-explore:hover{background:#edce99}
+.gallery-buy-note{margin:0;text-align:center;color:#ddc7a5;font-size:11px;line-height:1.5}
+@media(max-width:720px){.head .links .buy-pill{padding:9px 12px;font-size:12px;min-height:39px}.hero .actions .buy-hero{font-size:12px}.shop-collection-row{gap:12px}.collection-shop-cta{width:100%;min-height:52px}.shop-collection-caption{display:block}.gallery-dialog #gallery-explore{padding:10px;font-size:11px!important}}
