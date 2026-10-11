@@ -13,3 +13,19 @@
 .single-order-footnote{font-size:13px;line-height:1.65;max-width:42ch}
 .single-order-back{display:inline-block;margin-top:24px;color:#e3c18e}
 @media(max-width:760px){.single-order{grid-template-columns:1fr;padding:28px 12px 70px;gap:21px}.single-order-panel{padding:17px}.single-order-details h1{font-size:34px}}
+/* Printile options in the 48 product-preparation checkouts. No prices or orders created. */
+.single-order-image figcaption{font:12px/1.55 system-ui,Arial,sans-serif;color:#dbc5a6;padding:10px 5px 2px}
+.printile-config{padding:18px 0;border-top:1px solid #5c4b36;margin-top:20px}
+.printile-config h3{font:400 24px/1.2 Georgia,serif;color:#f0d1a4}
+.printile-config p{font:13px/1.55 system-ui,Arial,sans-serif;color:#d1c2ab}
+.printile-config fieldset{border:0;padding:0;margin:19px 0}
+.printile-config legend,.printile-config label{display:block;font:700 13px/1.4 system-ui,Arial,sans-serif;color:#f0e1c9;margin:13px 0}
+.printile-config .printile-sizes,.printile-config .printile-colors{display:flex;flex-wrap:wrap;gap:8px}
+.printile-config .printile-sizes button,.printile-config .printile-colors button{border:1px solid #8e7a5b;background:#292218;color:#f0dec2;min-width:57px;min-height:43px;padding:9px 14px;font:600 12px system-ui,Arial,sans-serif;cursor:pointer}
+.printile-config button[aria-pressed=true]{background:#d7b17e;color:#211811;border-color:#eed6aa}
+.printile-config button:focus-visible,.printile-config select:focus-visible{outline:3px solid #e1bc8c;outline-offset:2px}
+.printile-config select{display:block;width:100%;min-height:46px;background:#231d17;color:#f3e5d0;border:1px solid #907956;border-radius:2px;font:14px system-ui,Arial,sans-serif;padding:9px 12px}
+.printile-config select:disabled{opacity:.55}
+.printile-config #printileSummary{display:block;margin:18px 0;padding:14px;background:#34291e;color:#f3d5a8;border:1px solid #88704e;font:650 13px/1.6 system-ui,Arial,sans-serif}
+.printile-config #printileColorArea[hidden]{display:none}
+.printile-config .printile-honest-note{font-size:12px;opacity:.9}
