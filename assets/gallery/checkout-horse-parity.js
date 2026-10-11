@@ -78,7 +78,7 @@ const dimensions={
  "vertical|A4":"20 × 30 cm","vertical|A3":"30 × 40 cm","vertical|A2":"40 × 60 cm"
 };
 let art=null,offers=null,size=["A4","A3","A2"].includes(query.get("size"))?query.get("size"):"A2";
-let finish="Tradicional",color="Branca";
+let finish="Caixa",color="Preta";
 function availableFor(sizeValue,finishValue){const v=offers?.byOrientation?.[art?.orientation]?.[sizeValue]?.[finishValue];return Array.isArray(v)?v:[]}
 function supplierFrameScale(){
  if(!art)return;
@@ -142,8 +142,8 @@ Promise.all([
  text("#physicalNote",record.previewKind==="extracted_from_editorial_photo_NOT_PRINT_MASTER"?labels.notMaster:labels.normal);
  finishSelect.replaceChildren();
  for(const value of offers.styles){const opt=document.createElement("option");opt.value=value;opt.textContent=value;finishSelect.append(opt)}
- finish=offers.styles.includes(query.get("finish"))?query.get("finish"):"Tradicional";
- color=offers.colors?.includes(query.get("color"))?query.get("color"):"Branca";
+ finish=offers.styles.includes(query.get("finish"))?query.get("finish"):"Caixa";
+ color=offers.colors?.includes(query.get("color"))?query.get("color"):"Preta";
  finishSelect.disabled=false;
  render();
  status.textContent=labels.ready;

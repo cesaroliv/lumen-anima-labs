@@ -159,14 +159,14 @@
     },
     "arte-black-11": {
       "id": "arte-black-11",
-      "title": "Rinoceronte",
-      "sourceId": "art-black-19-rinoceronte",
-      "previewKind": "clean_catalog_artwork",
+      "title": "Elefante",
+      "sourceId": "art-16-elephant",
+      "previewKind": "clean_original_matching_gallery",
       "orientation": "vertical",
       "previews": {
-        "A4": "/assets/gallery/black-originals/art-black-19-rinoceronte_A4.webp",
-        "A3": "/assets/gallery/black-originals/art-black-19-rinoceronte_A3.webp",
-        "A2": "/assets/gallery/black-originals/art-black-19-rinoceronte_A2.webp"
+        "A4": "/assets/gallery/obsidian-v2/art-16-elephant_A4.webp",
+        "A3": "/assets/gallery/obsidian-v2/art-16-elephant_A3.webp",
+        "A2": "/assets/gallery/obsidian-v2/art-16-elephant_A2.webp"
       },
       "saleApproved": false,
       "manufacturingApproved": false
