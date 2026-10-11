@@ -1,28 +1,72 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,follow"><title>Quadro personalizado — Lumen Arts</title>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow"><meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Personalizar quadro — Lumen Arts</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/gallery/gallery.css">
-<link rel="stylesheet" href="/assets/gallery/checkout-ambiente.css?v=20261011-frameqa-v1">
-<link rel="stylesheet" href="/assets/gallery/checkout-single-frame.css?v=20261011-single-v1"></head>
-<body><header class="head"><div class="wrap"><a class="logo" href="/">Lumen <b>Arts</b></a><nav class="links"><a href="/#colecoes" id="backLink">Voltar às obras</a></nav></div></header>
-<main class="wrap single-order"><figure class="single-order-image"><div class="product-preview-stage" id="productPreviewStage"><div class="product-preview-frame" id="productPreviewFrame" data-size="A2" data-finish="filete" data-glass="false"><img id="orderPreview" alt="" loading="eager" decoding="async"></div></div><figcaption id="artPreviewDisclaimer">Prévia isolada da obra. Personalização ilustrativa; impressão ainda não aprovada.</figcaption></figure>
-<section class="single-order-details"><span class="eyebrow">LUMEN ARTS · PERSONALIZAR QUADRO</span>
-<h1 id="orderName">Preparando obra…</h1><p id="orderCollection">Coleção</p>
-<div class="single-order-panel"><h2 id="orderHeading">Sua obra</h2>
-<p id="orderInfo">Verificando cadastro da edição…</p>
-<section class="printile-config" id="printileConfig" aria-labelledby="printileTitle">
-<h3 id="printileTitle">Configurações Printile</h3>
-<p id="printileConfigIntro">Escolha tamanho, acabamento e cor para preparar sua preferência. A venda física dependerá da validação da arte final, preço e frete.</p>
-<fieldset><legend>1. Tamanho</legend><div class="printile-sizes" id="printileSizes"><button type="button" data-printile-size="A4" aria-pressed="false">A4</button><button type="button" data-printile-size="A3" aria-pressed="false">A3</button><button type="button" data-printile-size="A2" aria-pressed="true">A2</button></div></fieldset>
-<label for="printileFinish">2. Acabamento</label><select id="printileFinish" disabled><option>Carregando acabamentos…</option></select>
-<fieldset id="printileColorArea"><legend>3. Cor da moldura</legend><div class="printile-colors" id="printileColors"></div></fieldset>
-<output id="printileSummary" aria-live="polite">A2 · Filete · Preta</output>
-<p class="printile-honest-note" id="printileNotice">Seleção ilustrativa, não um pedido. A foto é uma ambientação, não o arquivo final para impressão.</p>
-</section>
-<p class="single-order-price"><span id="priceCaption">Preço</span> <strong id="orderPrice">A confirmar</strong></p>
-<div role="status" id="orderStatus">Verificando disponibilidade.</div>
-<button id="payButton" class="single-order-button" type="button" disabled>Pagamento ainda não liberado</button></div>
-<p class="single-order-footnote" id="orderDisclaimer">A imagem mostra uma ambientação ilustrativa. A edição exata, o formato, a licença e o preço serão apresentados antes de qualquer pagamento.</p>
-<a class="single-order-back" href="/#colecoes" id="backWorks">← Voltar à galeria</a>
-</section></main><footer class="foot"><div class="wrap">Lumen Arts · <a href="/support.html">Suporte</a> · <a href="/terms.html">Termos</a></div></footer>
-<script defer src="/assets/gallery/checkout-ambiente.js?v=20261011-frameqa-v1"></script></body></html>
+<link rel="stylesheet" href="/assets/gallery/gesso-physical.css?v=20261011-printile-source">
+<link rel="stylesheet" href="/assets/gallery/obsidian-v2.css?v=20261011-printile-source">
+<link rel="stylesheet" href="/assets/gallery/checkout-horse-parity.css?v=20261011-parity-v1">
+</head>
+<body class="gesso-unified obsidian-unified checkout-horse-parity">
+<header class="head"><div class="wrap"><a class="logo" href="/">Lumen <b>Arts</b></a><nav class="links"><a href="/#colecoes" id="backWorks">Voltar às obras</a><span class="checkout-lang">PT</span></nav></div></header>
+<main class="detail">
+<div class="wrap">
+ <div class="detail-grid">
+  <div class="detail-img is-physical">
+   <div class="gesso-preview-stage" id="previewStage">
+    <div id="physicalFrame" class="physical-frame supplier-native-frame" data-orientation="vertical">
+     <div class="physical-art-surface"><img id="physicalArtwork" alt="" loading="eager" decoding="async"></div>
+    </div>
+   </div>
+  </div>
+  <div class="detail-info">
+   <div class="eyebrow" id="detailEyebrow">ESCOLHA COMO QUER SUA OBRA</div>
+   <h1 id="detailTitle">Carregando obra…</h1>
+   <a href="/#colecoes" id="collectionBack" class="checkout-return">Ver ambientações da coleção ↗</a>
+   <div class="gesso-format-tabs" role="tablist" aria-label="Formato da obra">
+    <button type="button" id="gessoTabDigital" role="tab" class="gesso-format-tab" disabled aria-selected="false" aria-controls="gessoDigitalContent"><strong>Arte digital</strong><small>Indisponível nesta edição</small></button>
+    <button type="button" id="gessoTabPhysical" role="tab" class="gesso-format-tab" aria-selected="true" aria-controls="gessoPhysicalContent"><strong>Arte impressa</strong><small>Quadros, placas e pôsteres</small></button>
+   </div>
+   <section id="gessoPhysicalContent" class="gesso-physical-details" role="tabpanel" aria-labelledby="gessoTabPhysical">
+    <p id="physicalLead" class="gesso-physical-lead">Personalize tamanho, acabamento e cor quando houver moldura. A prévia usa a obra isolada e os acabamentos Printile.</p>
+    <div class="physical-field"><h2 id="sizeLabel">1. TAMANHO</h2>
+      <div class="option-row" role="group" aria-labelledby="sizeLabel">
+       <button type="button" class="option" data-size="A4" aria-pressed="false">A4</button>
+       <button type="button" class="option" data-size="A3" aria-pressed="false">A3</button>
+       <button type="button" class="option" data-size="A2" aria-pressed="true">A2</button>
+      </div>
+    </div>
+    <div class="physical-field"><h2 id="finishLabel">2. ACABAMENTO</h2>
+     <label class="visually-hidden" for="physicalFinish">Acabamento</label>
+     <select id="physicalFinish" class="physical-finish-select" aria-label="Acabamento" disabled><option>Carregando acabamentos da Printile…</option></select>
+     <p id="physicalFinishHelp" class="physical-finish-help"></p>
+    </div>
+    <div class="physical-field" id="physicalColorField"><h2 id="colorLabel">3. COR DA MOLDURA</h2>
+     <div class="option-row" role="group" aria-labelledby="colorLabel">
+      <button type="button" class="option color-option" data-color="Preta" aria-pressed="false"><span class="swatch black"></span><span>Preta</span></button>
+      <button type="button" class="option color-option" data-color="Branca" aria-pressed="true"><span class="swatch white"></span><span>Branca</span></button>
+      <button type="button" class="option color-option" data-color="Natural" aria-pressed="false"><span class="swatch natural"></span><span>Natural</span></button>
+      <button type="button" class="option color-option" data-color="Marrom" aria-pressed="false"><span class="swatch brown"></span><span>Marrom</span></button>
+     </div>
+    </div>
+    <div class="physical-summary" aria-live="polite">
+     <div><span>Medidas</span><strong id="summarySize">—</strong></div>
+     <div><span>Acabamento</span><strong id="summaryFrame">—</strong></div>
+     <div><span>Cor da moldura</span><strong id="summaryColor">—</strong></div>
+     <div><span>Preço</span><strong id="summaryPrice">Em definição</strong></div>
+    </div>
+    <p id="physicalStatus" class="gesso-availability" role="status">Verificando opções disponíveis…</p>
+    <button id="physicalBuy" type="button" class="physical-buy" disabled>Encomendas em preparação</button>
+    <p class="physical-note" id="physicalNote">Prévia visual. A arte final de impressão, o preço, o frete e a prova física ainda precisam de validação. Nenhuma cobrança será realizada.</p>
+   </section>
+  </div>
+ </div>
+</div>
+</main>
+<footer class="foot"><div class="wrap"><a class="logo" href="/">Lumen <b>Arts</b></a><nav><a href="/support.html">Suporte</a> · <a href="/terms.html">Termos</a></nav></div></footer>
+<script defer src="/assets/gallery/checkout-horse-parity.js?v=20261011-parity-v1"></script>
+</body>
+</html>
