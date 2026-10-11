@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finalizar pedido de quadro | Lumen Arts</title>
+<meta name="description" content="Configure sua obra Lumen Arts, calcule o frete Printile e finalize o pagamento de forma segura.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+:root{--ink:#191b1c;--cream:#f4f1eb;--gold:#977645;--line:#dad5cb;--dark:#1a1d21}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit}.top{padding:20px max(20px,calc((100vw - 1100px)/2));background:#17191c;color:#f9f5eb;display:flex;justify-content:space-between;align-items:center}.logo{text-decoration:none;font:600 22px Georgia,serif;letter-spacing:.05em}.top span{color:#d6b47c}.top .tiny{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:#c8c2b6}.wrap{max-width:1100px;margin:0 auto;padding:35px 18px 70px}h1,h2{font-family:Georgia,'Times New Roman',serif;font-weight:500}h1{font-size:clamp(30px,5vw,46px);margin:0 0 8px}h2{font-size:25px;margin:0 0 15px}.intro{max-width:680px;color:#64605a;margin-bottom:30px}.layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(290px,1fr);gap:23px}.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:23px;box-shadow:0 8px 30px #352a160c}.eyebrow{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:750;margin-bottom:8px}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.group{margin-bottom:18px}.group label{display:block;font-size:13px;color:#5b5852;font-weight:650;margin:0 0 7px}input,select{width:100%;border:1px solid #bfb8ad;background:#fff;border-radius:8px;padding:12px;color:#242424;font:inherit}input:focus,select:focus{outline:2px solid #d4b27d;outline-offset:1px}button{font:inherit;border:0;border-radius:9px;padding:13px 16px;font-weight:680;cursor:pointer}button:disabled{cursor:not-allowed;opacity:.53}.primary{background:#25221c;color:#fff}.secondary{background:#eae5db;color:#30291e}#shippingMethods{display:grid;gap:8px}#shippingMethods label{display:flex;align-items:center;justify-content:space-between;border:1px solid #c8c3b8;padding:11px;border-radius:9px;gap:10px;font-weight:400}#shippingMethods input{width:20px;flex-shrink:0}.small{font-size:12px;color:#6b665f}strong.price{font-size:26px;letter-spacing:-.02em}.summary{position:sticky;top:24px}.summary img{width:100%;max-height:280px;object-fit:contain;border-radius:10px;background:#ece8e0;margin-bottom:15px}.divider{height:1px;background:var(--line);margin:18px 0}.summary-line{display:flex;justify-content:space-between;gap:10px;margin:9px 0}.notice{border-left:3px solid #b08d59;padding:10px 13px;background:#f8f5ed;color:#564b3e;font-size:13px;border-radius:3px}.hint{color:#665e53;font-size:13px}.hidden{display:none!important}.feedback{min-height:20px;margin:12px 0;color:#795125;font-size:13px}.checkout-form fieldset{padding:0;border:0;min-width:0}.checkout-form fieldset:disabled{opacity:.6}footer{padding:30px 20px;text-align:center;color:#797268;font-size:12px}@media(max-width:780px){.layout{grid-template-columns:1fr}.summary{position:static;order:-1}.panel{padding:18px}.row{grid-template-columns:1fr}.top .tiny{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><a href="/" class="logo">Lumen <span>Arts</span></a><span class="tiny">Arte para ambientes singulares</span></header>
+<main class="wrap">
+<span class="eyebrow">Finalizar pedido • Impressão sob demanda</span>
+<h1>A arte certa, para o seu espaço.</h1>
+<p class="intro">Configure sua obra, informe o CEP e confira o valor total antes de pagar. O pagamento é processado pelo Mercado Pago; a produção ocorre após a confirmação do pedido.</p>
+<div class="layout">
+<section class="panel">
+<h2>Seu quadro</h2>
+<div class="row">
+<div class="group"><label for="size">Tamanho</label><select id="size"><option value="A2">A2 · 60 × 40 cm</option><option value="A3">A3 · 40 × 30 cm</option><option value="A4">A4 · 30 × 20 cm</option></select></div>
+<div class="group"><label for="finish">Acabamento</label><select id="finish"><option>Caixa</option><option>Tradicional</option><option>Tradicional com vidro acrílico</option><option>Caixa com vidro acrílico</option><option>Filete</option><option>Filete com vidro acrílico</option><option>Poster</option><option>Placa Decorativa</option></select></div>
+</div>
+<div class="group" id="colorGroup"><label for="color">Cor da moldura</label><select id="color"><option>Preta</option><option>Branca</option><option>Natural</option><option>Marrom</option></select></div>
+<div class="divider"></div>
+<h2>Entrega</h2>
+<div class="row">
+<div class="group"><label for="cep">CEP de entrega</label><input id="cep" autocomplete="postal-code" inputmode="numeric" maxlength="9" placeholder="00000-000" required></div>
+<div class="group" style="display:flex;align-items:end"><button class="secondary" id="calculateShipping" type="button" style="width:100%">Calcular frete</button></div>
+</div>
+<div id="shippingMethods" aria-live="polite"><p class="hint">Informe seu CEP para consultar frete e prazo da Printile.</p></div>
+<div class="divider"></div>
+<form class="checkout-form" id="checkoutForm">
+<fieldset id="customerDetails" disabled>
+<h2>Seus dados</h2>
+<div class="group"><label for="buyerName">Nome completo</label><input required autocomplete="name" id="buyerName" maxlength="110"></div>
+<div class="row">
+<div class="group"><label for="buyerEmail">E-mail</label><input required autocomplete="email" type="email" id="buyerEmail" maxlength="130"></div>
+<div class="group"><label for="buyerPhone">Telefone</label><input required type="tel" autocomplete="tel" id="buyerPhone" maxlength="20"></div>
+</div>
+<div class="group"><label for="buyerDocument">CPF ou CNPJ para o pedido</label><input required id="buyerDocument" inputmode="numeric" autocomplete="off" maxlength="20"></div>
+<h2>Endereço de entrega</h2>
+<div class="row">
+<div class="group"><label for="street">Rua / Avenida</label><input id="street" required autocomplete="address-line1" maxlength="130"></div>
+<div class="group"><label for="number">Número</label><input id="number" required maxlength="20"></div>
+</div>
+<div class="row">
+<div class="group"><label for="complement">Complemento (opcional)</label><input id="complement" maxlength="110"></div>
+<div class="group"><label for="district">Bairro</label><input id="district" required maxlength="95"></div>
+</div>
+<div class="row">
+<div class="group"><label for="city">Cidade</label><input id="city" required autocomplete="address-level2" maxlength="95"></div>
+<div class="group"><label for="state">UF</label><select id="state" required><option value="">Selecione</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div>
+</div>
+<p class="small">Seus dados serão utilizados para emissão do pedido, comunicação e entrega.</p>
+<button type="submit" id="pay" class="primary" style="width:100%" disabled>Continuar para pagamento seguro</button>
+</fieldset>
+</form>
+<p id="feedback" class="feedback" aria-live="polite"></p>
+</section>
+<aside class="panel summary">
+<span class="eyebrow">Sua seleção</span>
+<img id="preview" class="hidden" alt="Prévia ilustrativa da obra escolhida">
+<h2 id="artworkTitle">Carregando obra...</h2>
+<p class="small" id="productDetails">Acabamento a definir</p>
+<div class="divider"></div>
+<div class="summary-line"><span>Obra</span><strong id="artworkPrice">—</strong></div>
+<div class="summary-line"><span>Frete</span><strong id="shippingPrice">A calcular</strong></div>
+<div class="divider"></div>
+<div class="summary-line"><b>Total</b><strong class="price" id="totalPrice">—</strong></div>
+<p class="notice" id="availabilityNotice">O pagamento físico permanece indisponível enquanto concluímos a integração.</p>
+<p class="small">Prévia ilustrativa. As cores podem variar entre a tela e a impressão. Prazo de produção e transporte sujeitos à confirmação do fornecedor.</p>
+</aside>
+</div>
+</main>
+<footer><a href="/support.html">Atendimento</a> · <a href="/terms.html">Termos</a> · <a href="/privacy.html">Privacidade</a></footer>
+<script src="/assets/digital-art/checkout-config.js"></script>
+<script defer src="/assets/gallery/physical-checkout-flow.js?v=20261011-stage-v1"></script>
+</body></html>

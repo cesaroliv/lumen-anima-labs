@@ -18,7 +18,7 @@ const label=pt?{
  quoteHint:"Printile estimate. Checkout payments not yet enabled.",
  total:"Estimated total",expires:"Quote valid until",pending:"Physical checkout is still being prepared",
  invalid:"Enter an eight-digit Brazilian postal code.",noOffer:"Pricing in preparation"};
-const state={sceneId:null,ready:false,selectionKey:"",pendingKey:"",offer:null,box:null,amount:null,output:null,cep:null,calc:null,seq:0};
+const state={sceneId:null,ready:false,salesOpen:false,selectionKey:"",pendingKey:"",offer:null,box:null,amount:null,output:null,cep:null,calc:null,seq:0};
 const current=()=>{
  const size=$('[data-size][aria-pressed="true"]')?.dataset.size||"";
  const finish=$("#physicalFinish")?.value||"";
@@ -27,6 +27,31 @@ const current=()=>{
  return {sceneId:state.sceneId,size,finish,color};
 };
 const key=x=>x?[x.sceneId,x.size,x.finish,x.color].join("|"):"";
+function refreshBuyState(){
+ const buy=$("#physicalBuy"),selection=current();
+ const allowed=!!(buy&&selection&&state.salesOpen&&state.offer&&state.selectionKey===key(selection)&&state.sceneId!=="arte-juridica-01");
+ if(!buy)return;
+ buy.disabled=!allowed;buy.onclick=null;
+ if(allowed){
+  buy.textContent=pt?"Comprar quadro":"Buy printed artwork";
+  buy.onclick=()=>{
+   const now=current();
+   if(!state.salesOpen||!now||state.selectionKey!==key(now))return;
+   const link=new URL("/checkout-fisico.html",location.origin);
+   for(const [k,v] of Object.entries({...now,id:now.sceneId})){
+    if(k!=="sceneId")link.searchParams.set(k,v);
+   }
+   location.assign(link.toString());
+  };
+ }
+}
+async function refreshSalesStatus(){
+ try{
+  const response=await fetch(api+"/api/physical/sales-status",{cache:"no-store"});
+  if(response.ok)state.salesOpen=(await response.json())?.salesOpen===true;
+ }catch{state.salesOpen=false;}
+ refreshBuyState();
+}
 function makeBox(){
  if(state.box)return;
  const parent=$("#physicalBuy")?.parentElement;
@@ -50,7 +75,7 @@ async function updatePrice(){
  const choice=current();if(!choice)return;
  const signature=key(choice);
  if(signature===state.pendingKey||signature===state.selectionKey)return;
- state.seq++;const seq=state.seq;state.pendingKey=signature;
+ state.seq++;const seq=state.seq;state.pendingKey=signature;state.offer=null;refreshBuyState();
  const url=new URL(api+"/api/physical/offer");
  for(const [k,v] of Object.entries(choice))url.searchParams.set(k,v);
  try{
@@ -61,7 +86,7 @@ async function updatePrice(){
   state.offer=json.offer;state.selectionKey=signature;state.pendingKey="";
   $("#summaryPrice").textContent=fmt(json.offer.artworkPriceCents);
   makeBox();if(state.output)state.output.replaceChildren();
-  const buy=$("#physicalBuy");if(buy){buy.disabled=true;}
+  refreshBuyState();
  }catch{if(seq===state.seq)state.pendingKey="";}
 }
 async function estimate(){
@@ -110,8 +135,9 @@ async function boot(){
  }
  const price=$("#summaryPrice"),buy=$("#physicalBuy"),finish=$("#physicalFinish");
  if(!state.sceneId||!price||!buy||!finish)return;
- // Never activate a purchase button regardless of supplier state.
+ // Backend readiness gate keeps purchases OFF until commercial, fiscal and fulfillment checks pass.
  buy.disabled=true;state.ready=true;
+ void refreshSalesStatus();
  let scheduled=false;
  const schedule=()=>{if(scheduled)return;scheduled=true;setTimeout(()=>{scheduled=false;void updatePrice()},35)};
  for(const btn of document.querySelectorAll("[data-size],[data-color]")){
