@@ -1,0 +1,34 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'self'; connect-src https://lumen-digital-checkout.ccoliveira1.workers.dev; img-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+<title>Pedidos físicos | Operação Lumen Arts</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#292820;background:#f1eee9}*{box-sizing:border-box}body{margin:0}header{background:#181b1d;color:#f8f5ed;padding:22px clamp(18px,4vw,70px);display:flex;align-items:center;justify-content:space-between}header b{font:24px Georgia,serif;letter-spacing:.06em}header span{font-size:12px;color:#c6aa81;letter-spacing:.1em;text-transform:uppercase}main{max-width:1170px;padding:35px 20px 80px;margin:auto}h1{font:normal clamp(30px,5vw,43px) Georgia,serif;margin:5px 0 8px}h2{font:normal 23px Georgia,serif}.muted{color:#766e62}.card{background:white;border:1px solid #dcd6ca;box-shadow:0 12px 36px #33290a08;border-radius:15px;padding:20px;margin-top:18px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:#96703c;font-weight:700}button{cursor:pointer;background:#242424;color:white;border:0;border-radius:8px;padding:11px 16px;font:inherit}button:disabled{opacity:.6;cursor:wait}button.secondary{background:#e9e3d8;color:#302b25}input,select{font:inherit;border:1px solid #c7c1b4;padding:10px 12px;background:white;border-radius:8px;max-width:100%}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.cards{display:grid;gap:14px}.order{padding:19px;border:1px solid #dcd6ca;border-radius:11px;background:white}.order h3{font-size:19px;margin:0}.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;font-size:14px;margin:18px 0}.meta span{color:#79746c}.action{margin-top:16px}.warning{background:#fff7e9;border-left:4px solid #ae8046;padding:14px 16px;margin-top:18px}.error{color:#a24835;margin-top:12px}.hidden{display:none!important}textarea{width:100%;font:inherit;padding:10px;border-radius:8px;border:1px solid #c7c1b4;resize:vertical;min-height:70px}@media(max-width:650px){header{display:block}header span{display:block;margin-top:8px}}
+</style></head><body>
+<header><b>Lumen Arts</b><span>Operação interna · Printile</span></header><main>
+<span class="eyebrow">Controle privado de pedidos físicos</span><h1>Produção e acompanhamento</h1>
+<p class="muted">Consulte pedidos pagos e registre o acompanhamento da operação. Este painel não realiza pagamentos nem envia pedidos à gráfica.</p>
+<section class="card">
+<div class="toolbar"><label for="operatorToken"><b>Chave de acesso da operação</b></label><input id="operatorToken" type="password" autocomplete="off" placeholder="Chave privada" style="flex:1;min-width:220px"><button id="connect">Acessar pedidos</button><button class="secondary" id="forget" type="button">Limpar chave</button></div>
+<p class="muted" style="font-size:13px">A chave fica somente nesta aba, em memória. Não é salva no navegador. Sem ela, nenhum dado de cliente é disponibilizado.</p>
+<p class="error" id="error" role="alert"></p>
+</section>
+<div id="workspace" class="hidden">
+<section class="card">
+<div class="toolbar"><strong id="summary">Carregando situação...</strong><span style="flex:1"></span><label for="state">Situação</label>
+<select id="state">
+<option value="paid_awaiting_fulfillment">Pagos · esperando produção</option>
+<option value="manual_review">Revisão manual</option>
+<option value="supplier_payment_pending">Aguardando pagamento à gráfica</option>
+<option value="in_production">Em produção</option>
+<option value="shipped">Enviados</option>
+<option value="delivered">Entregues</option>
+<option value="awaiting_payment">Aguardando pagamento</option>
+</select><button id="refresh" class="secondary">Atualizar</button></div>
+</section>
+<p class="warning"><b>Importante:</b> a Printile só inicia a fabricação depois que a gráfica recebe o pagamento do lojista. Neste painel, nenhuma etapa realiza esse pagamento ou cria encomendas automaticamente.</p>
+<section id="orders" class="cards" aria-live="polite"></section>
+</div>
+</main>
+<script defer src="/assets/gallery/physical-operator-console.js?v=20261011"></script></body></html>
