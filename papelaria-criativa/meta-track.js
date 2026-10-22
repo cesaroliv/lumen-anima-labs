@@ -114,7 +114,7 @@
     isGranted = choice === 'granted';
     safeSave(choice);
     banner.hidden = true;
-    if (choice === 'granted') installPixel();
+    if (choice === 'granted') { if (started && typeof window.fbq === 'function') window.fbq('consent', 'grant'); else installPixel(); }
     else if (started && typeof window.fbq === 'function') window.fbq('consent', 'revoke');
     setCheckoutLinks();
   }
