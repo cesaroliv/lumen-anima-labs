@@ -23,10 +23,25 @@
     }
     const source = (out.searchParams.get('utm_source') || 'landing').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0,20) || 'landing';
     out.searchParams.set('sck', 'pc_' + source);
-    // Click identifiers are forwarded to the payment provider only after marketing consent.
+    // Never forward or store ad click IDs before explicit marketing consent.
     if (isGranted) {
-      const click = from.get('fbclid');
-      if (click && /^[\w.\-]{1,500}$/.test(click)) out.searchParams.set('fbclid', click);
+      const incoming = from.get('fbclid') || '';
+      const validIncoming = /^[\w.\-]{1,500}$/.test(incoming);
+      if (validIncoming) {
+        try { sessionStorage.setItem('papeleria_meta_fbclid_v1', incoming); } catch (_) {}
+      }
+      let click = validIncoming ? incoming : '';
+      if (!click) {
+        try { click = sessionStorage.getItem('papeleria_meta_fbclid_v1') || ''; } catch (_) {}
+      }
+      // Meta sets _fbc on eligible visits. Use its click ID only as a fallback.
+      if (!click) {
+        const cookie = document.cookie.split('; ').find(v => v.startsWith('_fbc='));
+        const fbc = cookie ? cookie.slice(5) : '';
+        const match = /^fb\.1\.\d+\.([\w.\-]{1,500})$/.exec(fbc);
+        if (match) click = match[1];
+      }
+      if (/^[\w.\-]{1,500}$/.test(click)) out.searchParams.set('fbclid', click);
     }
     return out.href;
   }
@@ -115,7 +130,10 @@
     safeSave(choice);
     banner.hidden = true;
     if (choice === 'granted') { if (started && typeof window.fbq === 'function') window.fbq('consent', 'grant'); else installPixel(); }
-    else if (started && typeof window.fbq === 'function') window.fbq('consent', 'revoke');
+    else {
+      try { sessionStorage.removeItem('papeleria_meta_fbclid_v1'); } catch (_) {}
+      if (started && typeof window.fbq === 'function') window.fbq('consent', 'revoke');
+    }
     setCheckoutLinks();
   }
 
