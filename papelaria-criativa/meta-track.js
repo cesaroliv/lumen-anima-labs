@@ -118,7 +118,7 @@
     banner.id = 'pc-meta-consent-banner';
     banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-label', 'Preferencias de privacidad');
-    banner.innerHTML = '<strong>Tu privacidad importa</strong><p>Con tu permiso, usamos el píxel de Meta para medir las visitas y los clics de compra, y mejorar nuestros anuncios. Puedes rechazarlo sin perder acceso al contenido.</p><div class="pc-choices"><button type="button" class="pc-accept">Aceptar medición</button><button type="button" class="pc-decline">Rechazar</button></div>';
+    banner.innerHTML = '<strong>Tu privacidad importa</strong><p>Solo si aceptas, Meta Pixel y Hotmart Analytics medirán visitas, interacciones y clics para entender y mejorar esta página. Puedes rechazar sin perder acceso. <a href="./privacidad-medicion.html" target="_blank" rel="noopener noreferrer">Ver cómo usamos estos datos</a>.</p><div class="pc-choices"><button type="button" class="pc-accept">Aceptar medición</button><button type="button" class="pc-decline">Rechazar</button></div>';
     banner.querySelector('.pc-accept').addEventListener('click', function () { choose('granted'); });
     banner.querySelector('.pc-decline').addEventListener('click', function () { choose('denied'); });
     document.body.appendChild(banner);
@@ -128,6 +128,7 @@
   function choose(choice) {
     isGranted = choice === 'granted';
     safeSave(choice);
+    document.dispatchEvent(new CustomEvent('papeleria:measurement-consent',{detail:{granted:isGranted}}));
     banner.hidden = true;
     if (choice === 'granted') { if (started && typeof window.fbq === 'function') window.fbq('consent', 'grant'); else installPixel(); }
     else {
