@@ -72,7 +72,29 @@
     if (typeof fbq !== 'function') return;
     fbq('consent', 'grant');
     fbq('init', PIXEL_ID);
-    fbq('track', 'PageView');
+    // Pair the existing consented browser PageView with a CAPI PageView by a shared event ID.
+    const pageViewId = window.crypto && typeof window.crypto.randomUUID === 'function'
+      ? 'pv_' + window.crypto.randomUUID() : null;
+    if (pageViewId) fbq('track', 'PageView', {}, {eventID: pageViewId});
+    else fbq('track', 'PageView');
+    if (pageViewId && isGranted) {
+      // Delay briefly for the first-party Pixel cookies to become available.
+      const eventTime = Math.floor(Date.now() / 1000);
+      window.setTimeout(function () {
+        if (!isGranted) return; // Do not send after consent withdrawal.
+        const cookieValue = (name) => {
+          try {
+            const row = document.cookie.split('; ').find(v => v.startsWith(name + '='));
+            return row ? decodeURIComponent(row.slice(name.length + 1)) : null;
+          } catch (_) { return null; }
+        };
+        const payload = {event_id:pageViewId, event_time:eventTime,
+          consent:'granted', page:'/papelaria-criativa/', fbp:cookieValue('_fbp'), fbc:cookieValue('_fbc')};
+        try { window.fetch('https://papeleria-meta-pageview.ccoliveira1.workers.dev/api/pageview', {
+          method:'POST',mode:'cors',keepalive:true,headers:{'Content-Type':'application/json'},
+          body:JSON.stringify(payload)}).catch(()=>{}); } catch (_) {}
+      }, 350);
+    }
     fbq('track', 'ViewContent', {
       content_name: 'Papelería Creativa - Plantillas Editables en Canva',
       content_type: 'product',
@@ -118,7 +140,7 @@
     banner.id = 'pc-meta-consent-banner';
     banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-label', 'Preferencias de privacidad');
-    banner.innerHTML = '<strong>Tu privacidad importa</strong><p>Solo si aceptas, Meta Pixel y Hotmart Analytics medirán visitas, interacciones y clics para entender y mejorar esta página. Puedes rechazar sin perder acceso. <a href="./privacidad-medicion.html" target="_blank" rel="noopener noreferrer">Ver cómo usamos estos datos</a>.</p><div class="pc-choices"><button type="button" class="pc-accept">Aceptar medición</button><button type="button" class="pc-decline">Rechazar</button></div>';
+    banner.innerHTML = '<strong>Tu privacidad importa</strong><p>Solo si aceptas, Meta Pixel, API de Conversiones y Hotmart Analytics medirán visitas, interacciones y clics para entender y mejorar esta página. Puedes rechazar sin perder acceso. <a href="./privacidad-medicion.html" target="_blank" rel="noopener noreferrer">Ver cómo usamos estos datos</a>.</p><div class="pc-choices"><button type="button" class="pc-accept">Aceptar medición</button><button type="button" class="pc-decline">Rechazar</button></div>';
     banner.querySelector('.pc-accept').addEventListener('click', function () { choose('granted'); });
     banner.querySelector('.pc-decline').addEventListener('click', function () { choose('denied'); });
     document.body.appendChild(banner);
@@ -134,6 +156,8 @@
     else {
       try { sessionStorage.removeItem('papeleria_meta_fbclid_v1'); } catch (_) {}
       if (started && typeof window.fbq === 'function') window.fbq('consent', 'revoke');
+      // Stop previously loaded optional measurement scripts on consent withdrawal.
+      if (started) { window.location.reload(); return; }
     }
     setCheckoutLinks();
   }
