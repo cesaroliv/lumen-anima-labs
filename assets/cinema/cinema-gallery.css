@@ -87,3 +87,51 @@ html.arts-motion .arts-reveal.arts-visible{opacity:1;transform:translateY(0)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cinema-hero .cinema-film video{display:none!important}.cinema-hero .cinema-film{background:url('/assets/cinema/lumen-arts-film-poster.jpg') center/cover}.arts-reveal,html.arts-motion .arts-reveal{opacity:1!important;transform:none!important;transition:none!important}.collection-cover img,.showcase-open img{transition:none!important}}
 /* Uniform edge-to-edge collection covers at every aspect ratio. */
 .collection-cover img{position:absolute!important;inset:0;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}
+
+/* FRAMING FIX 2026-11-01 — full artwork in hero and closing cinematic scene.
+   The separate softened ambient layer occupies the aspect-ratio gutters only;
+   the visible master is never cropped or scaled beyond its frame. */
+.cinema-hero .cinema-film{background:#090807;isolation:isolate}
+.cinema-hero .cinema-film::before{
+  content:"";position:absolute;inset:-25px;z-index:-1;
+  background:url('/assets/cinema/lumen-arts-film-poster.jpg') center/cover no-repeat;
+  filter:blur(24px) brightness(.52) saturate(.75);
+  transform:scale(1.025);pointer-events:none
+}
+.cinema-hero .cinema-film video{
+  object-fit:contain;object-position:center center;transform:none;
+  filter:saturate(.85) brightness(.8) contrast(1.045)
+}
+.arts-cinema-interlude{background:#0b0a09!important;isolation:isolate}
+.arts-cinema-interlude::before{
+  content:"";position:absolute;inset:-30px;z-index:-2;
+  background:url('/assets/gallery/new-interiors-20261010/obsidian/interior-03-view.webp') center/cover no-repeat;
+  filter:blur(25px) brightness(.48);transform:scale(1.02);pointer-events:none
+}
+.arts-cinema-interlude::after{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(8,7,7,.63),rgba(8,7,7,.43) 50%,rgba(8,7,7,.63)),linear-gradient(0deg,rgba(8,7,7,.54),transparent 32%,transparent 72%,rgba(8,7,7,.26))
+}
+.arts-cinema-interlude .interlude-art{
+  position:absolute;inset:0;z-index:-1;
+  background:url('/assets/gallery/new-interiors-20261010/obsidian/interior-03-view.webp') center/contain no-repeat
+}
+.arts-cinema-interlude .interlude-inner{position:relative;z-index:1}
+@media(max-width:740px){
+  .cinema-hero .cinema-film video{object-position:center;filter:saturate(.9) brightness(.83)}
+  .arts-cinema-interlude .interlude-art{background-position:center center}
+}
+@media(prefers-reduced-motion:reduce){
+  .cinema-hero .cinema-film video{display:none!important}
+  .cinema-hero .cinema-film{background:url('/assets/cinema/lumen-arts-film-poster.jpg') center/contain no-repeat!important}
+}
+/* Mobile film is a complete 16:9 frame above the editorial title, not behind it. */
+@media(max-width:740px){
+ .cinema-hero,.cinema-hero .hero-inner{min-height:max(925px,100svh)}
+ .cinema-hero .cinema-film{inset:79px 0 auto 0;height:min(57vw,310px)}
+ .cinema-hero .cinema-film video{object-fit:contain;object-position:center}
+ .cinema-hero .hero-inner{justify-content:flex-start;padding-top:clamp(345px,91vw,398px);padding-bottom:130px}
+ .cinema-hero .cinema-shade{background:linear-gradient(180deg,rgba(4,4,4,.12) 0%,rgba(6,6,6,.10) 33%,rgba(4,4,4,.88) 58%,#090807 100%)}
+ .cinema-hero .hero-frame.bottom{bottom:32px}
+ .cinema-hero .cinema-film::before{inset:-8px;filter:blur(16px) brightness(.55)}
+}
