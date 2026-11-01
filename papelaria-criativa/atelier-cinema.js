@@ -1,0 +1,4 @@
+"use strict";
+(()=>{const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!reduce&&"IntersectionObserver"in window){const els=[...document.querySelectorAll(".pc-reveal")];const ob=new IntersectionObserver(items=>items.forEach(x=>{if(x.isIntersecting){x.target.classList.add("pc-in");ob.unobserve(x.target)}}),{threshold:.08,rootMargin:"0px 0px 65px 0px"});els.forEach(x=>ob.observe(x));document.documentElement.classList.add("pc-motion");}
+const hero=document.querySelector(".pc-hero-art");if(!reduce&&hero&&window.matchMedia("(pointer:fine)").matches){hero.addEventListener("pointermove",e=>{const b=hero.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;hero.style.setProperty("--pc-x",(x*7).toFixed(1)+"px");hero.style.setProperty("--pc-y",(y*7).toFixed(1)+"px")},{passive:true});hero.addEventListener("pointerleave",()=>{hero.style.setProperty("--pc-x","0px");hero.style.setProperty("--pc-y","0px")})}
+})();

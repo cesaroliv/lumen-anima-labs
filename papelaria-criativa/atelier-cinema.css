@@ -1,0 +1,83 @@
+/* PAPELERÍA CREATIVA — CELEBRATION ATELIER · 2026 */
+:root{--pc-paper:#fcf7ed;--pc-ink:#23203c;--pc-blue:#2b3ccf;--pc-pink:#f4648a;--pc-peach:#ffc2a6;--pc-lime:#dcfa92;--pc-violet:#6951bf}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:86px}body{margin:0;background:var(--pc-paper);color:var(--pc-ink);font-family:"DM Sans",Arial,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid #2b3ccf;outline-offset:4px}.pc-skip{position:absolute;top:-100px;left:12px;z-index:999;background:#fff;padding:13px}.pc-skip:focus{top:12px}
+.pc-marquee{background:#2b3ccf;color:white;padding:10px 20px;overflow:hidden;text-align:center;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.pc-marquee span{margin:0 17px;color:#f8f3da}
+.pc-header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px clamp(20px,5vw,90px);position:relative;z-index:30;background:#fffaf2;border-bottom:1px solid rgba(42,38,84,.10)}
+.pc-brand{font-family:"Fraunces",Georgia,serif;font-weight:700;font-size:clamp(20px,2.2vw,32px);letter-spacing:-.055em;line-height:.92}.pc-brand span{color:#e65d83}.pc-brand small{display:block;font-family:"DM Sans",sans-serif;font-size:8px;letter-spacing:.24em;margin-top:7px;color:#766b82;text-transform:uppercase}.pc-nav{display:flex;align-items:center;gap:clamp(13px,2.6vw,35px);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.11em}.pc-nav a:not(.pc-nav-cta):hover{color:#d6517c}.pc-nav-cta{padding:14px 19px;border-radius:40px;background:#29265e;color:white!important;white-space:nowrap}.pc-nav-cta:hover{background:#4638b2}
+.pc-wrap{width:min(1500px,calc(100% - clamp(40px,9vw,140px)));margin-inline:auto}
+.pc-hero{position:relative;isolation:isolate;min-height:770px;overflow:hidden;background:radial-gradient(circle at 86% 17%,#fae4ef,transparent 34%),linear-gradient(120deg,#fffaf0,#f9ede5 62%,#e8dffb)}
+.pc-hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.1;background-image:repeating-linear-gradient(0deg,transparent 0,transparent 6px,#886898 7px,transparent 8px)}
+.pc-hero-grid{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);gap:clamp(20px,4vw,80px);align-items:center;min-height:770px;padding-block:95px 125px;position:relative}
+.pc-eyebrow{display:inline-flex;align-items:center;gap:11px;text-transform:uppercase;font-size:10px;letter-spacing:.19em;font-weight:800;color:#54459a}
+.pc-eyebrow::before{content:"✳";font-size:23px;line-height:0;color:#f4648a}
+.pc-hero h1,.pc-section-title,.pc-immersive h2,.pc-pricing h2,.pc-final h2{font-family:"Fraunces",Georgia,serif;letter-spacing:-.055em;font-weight:600}
+.pc-hero h1{font-size:clamp(60px,6.75vw,114px);line-height:.97;margin:24px 0 26px}
+.pc-hero h1 em{font-weight:600;font-style:italic;color:#e75a86}
+.pc-hero-copy{max-width:490px;font-size:clamp(15px,1.35vw,19px);line-height:1.75;color:#645d71;margin:0 0 34px}
+.pc-buttons{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.pc-button{display:inline-flex;gap:22px;align-items:center;justify-content:space-between;background:#2b3ccf;color:white;padding:19px 24px;border-radius:99px;font:800 11px "DM Sans",sans-serif;letter-spacing:.09em;text-transform:uppercase;box-shadow:0 15px 32px rgba(43,60,207,.16);transition:transform .3s,background .3s}
+.pc-button:hover{background:#1728a2;transform:translateY(-3px)}.pc-button.alt{background:#f4648a;color:#301d41}
+.pc-price-note{font-size:11px;color:#675e6e}.pc-price-note strong{font-size:16px;color:#293dc6}
+.pc-hero-art{position:relative;min-width:0;aspect-ratio:5/5;display:grid;place-items:center;perspective:1000px}
+.pc-hero-orbit{position:absolute;width:92%;aspect-ratio:1;border-radius:49% 51% 53% 47%;background:#f7a7c5;transform:rotate(-13deg);box-shadow:inset 0 0 0 16px rgba(255,255,255,.19);animation:pc-orbit 18s ease-in-out infinite alternate}
+.pc-hero-orbit::before{content:"";position:absolute;inset:12%;border:2px dashed #e97aa1;border-radius:50%;transform:rotate(14deg)}
+.pc-hero-main{position:relative;width:100%;max-height:660px;object-fit:contain;filter:drop-shadow(0 35px 30px rgba(59,28,79,.16));transform:rotate(-3deg);animation:pc-float 8s ease-in-out infinite alternate}
+.pc-spark{position:absolute;color:#ffbd4f;text-shadow:0 8px 20px rgba(232,98,115,.16);font-size:70px;z-index:2;animation:pc-float 6s ease-in-out infinite alternate}.pc-spark.s1{left:-4%;top:10%}.pc-spark.s2{right:-5%;bottom:7%;font-size:54px;color:#5a52c8;animation-delay:-3s}
+.pc-hero-side{position:absolute;bottom:25px;left:0;right:0;display:flex;justify-content:space-between;gap:20px;font:800 10px "DM Sans";letter-spacing:.19em;color:#807187;text-transform:uppercase}
+@keyframes pc-float{to{transform:translateY(-17px) rotate(1deg)}}@keyframes pc-orbit{to{transform:rotate(5deg) scale(1.045)}}
+.pc-ribbon{overflow:hidden;background:#29255c;color:#eee2fb;padding:22px 0;white-space:nowrap;font:800 11px "DM Sans";letter-spacing:.21em;text-align:center}.pc-ribbon span{color:#fabf72;margin-inline:28px}
+.pc-section{padding:clamp(80px,10vw,145px) 0}.pc-section-kicker{font:800 11px "DM Sans";letter-spacing:.22em;color:#ea6088;text-transform:uppercase;margin:0 0 17px}.pc-section-title{font-size:clamp(55px,6.8vw,110px);line-height:.99;max-width:920px;margin:0 0 25px}.pc-section-title em{font-style:italic;color:#6951bf}.pc-section-lede{font-size:16px;max-width:570px;line-height:1.85;color:#726b78}
+.pc-occasions{background:#fff9f1}.pc-occ-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:55px}
+.pc-occ{display:flex;flex-direction:column;min-width:0;overflow:hidden;border-radius:24px;background:#f5e8e8;transition:transform .35s,box-shadow .35s}
+.pc-occ:hover{transform:translateY(-8px);box-shadow:0 22px 55px #38245026}
+.pc-occ:nth-child(2){background:#eae5fc}.pc-occ:nth-child(3){background:#e8f0dc}.pc-occ:nth-child(4){background:#ffe7d5}
+.pc-occ-photo{display:grid;place-items:center;aspect-ratio:4/4.6;position:relative;padding:14px;overflow:hidden}
+.pc-occ-photo img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 14px 15px #51314720);transition:transform .8s cubic-bezier(.2,.7,.2,1)}.pc-occ:hover img{transform:scale(1.06) rotate(-2deg)}
+.pc-occ-caption{padding:20px 22px 25px}.pc-occ h3{font:600 clamp(27px,2.4vw,44px)/1 "Fraunces",Georgia,serif;letter-spacing:-.04em;margin:0 0 9px}.pc-occ p{font-size:12px;line-height:1.6;color:#61556a;margin:0}
+.pc-immersive{position:relative;background:#2d2558;color:#fff8ec;isolation:isolate;overflow:hidden;padding:110px 0}
+.pc-immersive::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 24%,#955fa9 0%,transparent 39%),radial-gradient(circle at 6% 90%,#573a98 0%,transparent 32%);z-index:-1}
+.pc-immersive-grid{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:8vw}
+.pc-immersive h2{font-size:clamp(58px,7.7vw,124px);line-height:.94;margin:20px 0 26px}.pc-immersive h2 em{color:#fac0a5}
+.pc-immersive p{font-size:16px;line-height:1.8;color:#e5d5e9;max-width:430px}
+.pc-immersive-stage{position:relative;min-height:620px;display:grid;place-items:center}
+.pc-immersive-stage::before{content:"";position:absolute;inset:7%;border-radius:50%;background:#f0b9d2;transform:scale(.95)}
+.pc-immersive-stage img{z-index:1;position:relative;width:100%;max-height:610px;object-fit:contain;filter:drop-shadow(0 24px 30px #0e062258);animation:pc-float 9s ease-in-out infinite alternate}
+.pc-immersive strong{display:block;color:#f7ca80;font:800 11px "DM Sans";letter-spacing:.18em;text-transform:uppercase;margin-top:45px}
+.pc-steps{background:#eff1fb}.pc-steps-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #b5b3d5;margin-top:48px}
+.pc-step{padding:35px 32px 35px 0;border-bottom:1px solid #b5b3d5}.pc-step+.pc-step{padding-left:34px;border-left:1px solid #b5b3d5}
+.pc-step span{font-size:12px;color:#694dba;font-weight:900}.pc-step h3{font:600 clamp(35px,3vw,53px)/1.1 "Fraunces",Georgia,serif;letter-spacing:-.04em;margin:35px 0 15px}.pc-step p{max-width:300px;font-size:14px;line-height:1.7;color:#59576e}
+.pc-pricing{background:#fffaf3}.pc-price-panel{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center;border-radius:38px;background:#fff0d9;padding:clamp(35px,6vw,90px);position:relative;overflow:hidden}
+.pc-price-panel::after{content:"✳";position:absolute;right:-35px;bottom:-100px;font:400 380px "Fraunces";color:#f2d8c5;pointer-events:none;opacity:.5}
+.pc-pricing h2{font-size:clamp(60px,7vw,114px);line-height:.97;margin:18px 0 23px}.pc-price-panel ul{list-style:none;padding:0;margin:0;display:grid;gap:18px}.pc-price-panel li{font-size:15px;line-height:1.55;border-bottom:1px solid #ddc9b9;padding-bottom:15px}.pc-price-panel li::before{content:"✳";color:#db5f85;margin-right:13px}
+.pc-price-card{position:relative;z-index:1;border-radius:30px;background:#29255c;color:white;padding:45px;text-align:center;box-shadow:0 30px 65px #51477333}
+.pc-price-card .old{color:#c4b4d7;text-decoration:line-through}.pc-price-card .big{font:600 clamp(64px,7vw,114px)/1 "Fraunces";letter-spacing:-.05em;margin:13px 0 25px}.pc-price-card .big small{font:600 14px "DM Sans";letter-spacing:0}.pc-price-card .pc-button{background:#f6ce70;color:#251a38;justify-content:center;width:100%}.pc-price-card .pc-button:hover{background:#f9dc92}.pc-price-card p{font-size:12px;color:#cfc6e7;margin:17px 0 0}
+.pc-faq{background:#faf6f1}.pc-faq details{border-bottom:1px solid #d9d1cf;padding:20px 0}.pc-faq summary{cursor:pointer;list-style:none;font-size:16px;font-weight:700;display:flex;justify-content:space-between;gap:25px}.pc-faq summary::after{content:"+";font-size:24px;color:#7059c4}.pc-faq details[open] summary::after{content:"−"}.pc-faq details p{font-size:14px;color:#6c6072;line-height:1.8;max-width:760px}
+.pc-final{padding:105px 0;background:#f9b7cf;text-align:center}.pc-final h2{font-size:clamp(60px,8vw,122px);line-height:.98;max-width:1090px;margin:0 auto 30px}.pc-final .pc-button{background:#29255c}
+.pc-footer{background:#211e43;color:#e5dbf3;padding:48px clamp(20px,5vw,90px);display:flex;justify-content:space-between;gap:24px;align-items:center;font-size:12px}.pc-footer a{text-decoration:underline;text-underline-offset:4px}
+.pc-reveal{opacity:1;transform:none}
+@media(prefers-reduced-motion:no-preference){.pc-motion .pc-reveal{opacity:0;transform:translateY(25px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.75,.2,1)}.pc-motion .pc-reveal.pc-in{opacity:1;transform:none}}
+@media(max-width:1100px){.pc-occ-grid{grid-template-columns:repeat(2,1fr)}.pc-hero-grid{min-height:660px}.pc-immersive-stage{min-height:480px}}
+@media(max-width:760px){.pc-header{padding:13px 19px}.pc-nav{gap:12px}.pc-nav>a:not(.pc-nav-cta){display:none}.pc-nav-cta{padding:12px 14px}.pc-wrap{width:calc(100% - 38px)}.pc-hero-grid{grid-template-columns:1fr;gap:10px;min-height:0;padding:74px 0 69px}.pc-hero h1{font-size:clamp(59px,13vw,98px)}.pc-hero-art{aspect-ratio:5/4.8;max-width:520px;margin:auto}.pc-hero-main{max-height:480px}.pc-hero-side{position:static;margin-top:15px;gap:12px;align-items:center}.pc-hero-side span:last-child{display:none}.pc-section{padding:80px 0}.pc-section-title{font-size:clamp(52px,11vw,80px)}.pc-occasions{padding-bottom:85px}.pc-occ-grid{gap:10px;margin-top:30px}.pc-occ h3{font-size:31px}.pc-occ-caption{padding:16px 13px 22px}.pc-occ-photo{aspect-ratio:4/5;padding:5px}.pc-occ p{font-size:11px}.pc-immersive-grid{grid-template-columns:1fr}.pc-immersive{padding:77px 0}.pc-immersive h2{font-size:clamp(65px,12vw,91px)}.pc-immersive-stage{min-height:0;aspect-ratio:5/5}.pc-steps-grid{grid-template-columns:1fr}.pc-step{padding:28px 0}.pc-step+.pc-step{padding:28px 0;border-left:0}.pc-step h3{margin:19px 0 11px}.pc-price-panel{grid-template-columns:1fr;padding:30px 22px;gap:35px;border-radius:24px}.pc-price-card{padding:30px 23px}.pc-footer{display:block;padding:39px 19px}.pc-footer p{margin-bottom:20px}}
+@media(max-width:370px){.pc-hero h1{font-size:54px}.pc-occ h3{font-size:27px}.pc-button{padding:17px 19px;font-size:10px}.pc-brand{font-size:21px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pc-hero-orbit,.pc-hero-main,.pc-spark,.pc-immersive-stage img{animation:none!important}.pc-reveal{opacity:1!important;transform:none!important}}
+
+/* Original art direction for the four occasions, not four copies of the pack render. */
+.pc-occ-photo{padding:clamp(13px,2.2vw,33px);perspective:900px}
+.pc-artboard{position:relative;width:100%;height:94%;min-height:245px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;box-shadow:0 16px 30px rgba(51,36,83,.13);transform:rotate(-5deg);transition:transform .8s cubic-bezier(.18,.7,.2,1),box-shadow .6s}
+.pc-occ:nth-child(2) .pc-artboard{transform:rotate(4deg)}.pc-occ:nth-child(3) .pc-artboard{transform:rotate(-3deg)}.pc-occ:nth-child(4) .pc-artboard{transform:rotate(6deg)}
+.pc-occ:hover .pc-artboard,.pc-occ:nth-child(n):hover .pc-artboard{transform:rotate(0deg) translateY(-7px) scale(1.035);box-shadow:0 26px 45px rgba(51,36,83,.19)}
+.pc-artboard::before{content:"";position:absolute;inset:12px;border:1px solid currentColor;opacity:.28;pointer-events:none}
+.pc-artboard::after{content:"";position:absolute;top:15%;left:-11%;width:40%;aspect-ratio:1;background:rgba(255,255,255,.28);border-radius:50%;filter:blur(4px)}
+.pc-artboard strong{position:relative;z-index:2;font:600 clamp(36px,4vw,66px)/.94 "Fraunces",Georgia,serif;letter-spacing:-.07em}
+.pc-artboard strong em{font-weight:500}.pc-artboard .pc-stamp,.pc-artboard .pc-art-base{z-index:2;font:800 9px "DM Sans",sans-serif;letter-spacing:.14em;max-width:90%}.pc-artboard .pc-stamp{position:absolute;top:8%}.pc-artboard .pc-art-base{position:absolute;bottom:8%}.pc-art-decor{z-index:1;font-size:clamp(34px,4vw,64px);letter-spacing:.16em;margin-top:21px}
+.pc-art-birthday{color:#801b59;background:radial-gradient(circle at 86% 28%,#ffc5aa 0%,transparent 34%),linear-gradient(135deg,#ffdd9d,#ff9bbb);border-radius:24px 65px 24px 24px}
+.pc-art-birthday .pc-art-decor{color:#fef7d0}
+.pc-art-wedding{color:#5c3874;background:linear-gradient(135deg,#faf6e9,#cdb9df);border-radius:3px 3px 100px 100px}
+.pc-art-wedding .pc-art-decor{font-size:92px;color:#b28d6b}
+.pc-art-baby{color:#345d68;background:radial-gradient(circle at 85% 20%,#faf0aa,transparent 35%),linear-gradient(160deg,#f5f4dd,#b3e4de);border-radius:110px 110px 18px 18px}
+.pc-art-baby .pc-art-decor{color:#6d9f9b}
+.pc-art-school{color:#423f83;background:repeating-linear-gradient(-45deg,rgba(255,255,255,.16) 0,rgba(255,255,255,.16) 6px,transparent 6px,transparent 20px),linear-gradient(135deg,#b9b3f0,#eddb8c);border-radius:22px}
+.pc-art-school .pc-art-decor{color:#fff4ca}
+.pc-category-note{font:500 11px/1.7 "DM Sans",sans-serif;max-width:850px;color:#8e8191;margin:20px 0 0}
+@media(max-width:760px){.pc-occ-photo{padding:12px;aspect-ratio:4/5.4}.pc-artboard{min-height:170px}.pc-artboard strong{font-size:clamp(29px,8vw,45px)}.pc-artboard .pc-stamp,.pc-artboard .pc-art-base{font-size:7px;letter-spacing:.07em}.pc-art-decor{font-size:28px;margin-top:12px}.pc-art-wedding .pc-art-decor{font-size:47px}}
