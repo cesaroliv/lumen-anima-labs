@@ -135,3 +135,41 @@ html.arts-motion .arts-reveal.arts-visible{opacity:1;transform:translateY(0)}
  .cinema-hero .hero-frame.bottom{bottom:32px}
  .cinema-hero .cinema-film::before{inset:-8px;filter:blur(16px) brightness(.55)}
 }
+
+/* FULL SOURCE ART 2026-11-01: every original image is preserved in the v2 films. */
+@media(min-width:741px){
+ .cinema-hero{min-height:0!important;height:auto!important;aspect-ratio:16/9}
+ .cinema-hero .hero-inner{position:absolute;inset:0;min-height:0!important;height:100%;padding:76px 0 54px;justify-content:center}
+ .cinema-hero .cinema-film{inset:0}
+ .cinema-hero .cinema-film video{width:100%;height:100%;object-fit:contain;object-position:center;transform:none}
+ .cinema-hero .cinema-shade{background:linear-gradient(90deg,rgba(5,5,5,.3) 0%,rgba(5,5,5,.2) 43%,transparent 71%)}
+}
+.cinema-hero .cinema-film::before{display:none!important}
+@media(max-width:740px){
+ .cinema-hero{display:flex;flex-direction:column;aspect-ratio:auto!important;min-height:0!important;height:auto!important}
+ .cinema-hero .cinema-film{position:relative;inset:auto!important;width:100%;height:auto!important;aspect-ratio:4/5;order:0;z-index:0}
+ .cinema-hero .cinema-film video{width:100%;height:100%;object-fit:contain!important;object-position:center;transform:none}
+ .cinema-hero .hero-inner{position:relative;inset:auto;width:calc(100% - 38px);height:auto;min-height:0!important;padding:35px 0 85px!important;order:1;justify-content:flex-start}
+ .cinema-hero .cinema-shade{display:none}
+ .cinema-hero .hero-frame.top{top:16px}
+ .cinema-hero .hero-frame.bottom{bottom:19px}
+ .cinema-hero h1{margin:21px 0}
+}
+/* Closing chapter is a side-by-side gallery diptych instead of a zoomed wallpaper. */
+.arts-cinema-interlude{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;justify-items:stretch;min-height:0!important;overflow:visible!important;background:linear-gradient(120deg,#0b0b0a,#21180f)!important;padding:0 clamp(18px,4vw,80px)}
+.arts-cinema-interlude::before,.arts-cinema-interlude::after{display:none!important}
+.arts-cinema-interlude .interlude-inner{grid-column:1;grid-row:1;width:100%;padding:80px 4vw 85px 0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;text-align:left}
+.arts-cinema-interlude .interlude-art{position:relative!important;inset:auto!important;grid-column:2;grid-row:1;width:100%;height:auto;min-height:0;max-height:none;aspect-ratio:1122/1402;background-size:contain!important;background-position:center;background-repeat:no-repeat}
+.arts-cinema-interlude .interlude-inner h2{font-size:clamp(55px,6vw,111px)}
+@media(max-width:740px){
+ .arts-cinema-interlude{grid-template-columns:minmax(0,1fr);padding:0}
+ .arts-cinema-interlude .interlude-art{grid-row:1;grid-column:1;min-height:0;aspect-ratio:1122/1402;max-height:none;background-size:contain!important}
+ .arts-cinema-interlude .interlude-inner{grid-row:2;grid-column:1;padding:36px 19px 74px;align-items:center;text-align:center}
+ .arts-cinema-interlude .interlude-inner h2{font-size:clamp(56px,12vw,86px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .cinema-hero .cinema-film{background:url('/assets/cinema/lumen-arts-gallery-v2-poster.jpg') center/contain no-repeat!important}
+}
+/* Keep the closing headline visible during rapid scroll and screen captures. */
+.arts-cinema-interlude h2.arts-reveal{opacity:1!important;transform:none!important}
+@media(max-width:740px) and (prefers-reduced-motion:reduce){.cinema-hero .cinema-film{background:url('/assets/gallery/new-interiors-20261010/obsidian/interior-03-view.webp') center/contain no-repeat!important}}
