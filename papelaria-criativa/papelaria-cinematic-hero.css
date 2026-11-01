@@ -1,0 +1,71 @@
+/* Cinematic first fold approved 2026-11-01. Lower funnel stylesheet remains untouched. */
+.pc-cinematic-hero{position:relative;isolation:isolate;height:100vh;height:100svh;min-height:620px;width:100%;overflow:hidden;background:#171017;color:#fff6ef}
+.pc-cinematic-hero::before{display:none}
+.pc-cinematic-hero .pc-film,.pc-cinematic-hero .pc-film video,.pc-cinematic-hero .pc-cine-shade,.pc-cinematic-hero .pc-cine-grain{position:absolute;inset:0;width:100%;height:100%}
+.pc-cinematic-hero .pc-film{z-index:-3;overflow:hidden}
+.pc-cinematic-hero .pc-film video{display:block;object-fit:cover;object-position:59% center;background:#18101a}
+.pc-cinematic-hero .pc-cine-shade{z-index:-2;pointer-events:none;background:linear-gradient(90deg,#120a12e5 0%,#160c13bb 21%,#160e146e 49%,#120b1116 78%),linear-gradient(0deg,#0c070ddc 0%,#0f0a1038 27%,transparent 58%,#0c090e8c 100%)}
+.pc-cinematic-hero .pc-cine-grain{z-index:-1;opacity:.15;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E")}
+.pc-cinematic-hero .pc-header{position:absolute;z-index:8;left:0;right:0;top:0;min-height:91px;padding:23px clamp(24px,5.2vw,88px);border:0;border-bottom:1px solid #fff7ef46;background:transparent;color:white;display:flex;align-items:center;justify-content:space-between}
+.pc-cinematic-hero .pc-brand{font-family:"Playfair Display","Fraunces",Georgia,serif;font-size:clamp(23px,2.1vw,31px);font-weight:500;line-height:1;letter-spacing:-.055em;text-shadow:0 2px 15px #1b0d18}
+.pc-cinematic-hero .pc-brand span{color:#ffc7d6}
+.pc-cinematic-hero .pc-brand small{color:#fff6f1bd;font-size:8px;margin-top:7px}
+.pc-cinematic-hero .pc-nav{gap:clamp(12px,2vw,30px);color:#fff6f1e0;font-size:10px}
+.pc-cinematic-hero .pc-nav a:not(.pc-nav-cta):hover{color:#ffced9}
+.pc-cinematic-hero .pc-nav-cta{padding:13px 19px;border:1px solid #fff6f198;background:#ffffff16;color:#fff!important;border-radius:0}
+.pc-cinematic-hero .pc-nav-cta:hover{background:#ffffff30;color:#fff!important}
+.pc-cinematic-hero .pc-cine-copy{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;height:100%;width:min(820px,70%);padding:119px 0 130px clamp(24px,8vw,150px)}
+.pc-cinematic-hero .pc-cine-eyebrow{display:flex;align-items:center;gap:15px;color:#ffced9;font-weight:700;font-size:10px;letter-spacing:.2em;margin-bottom:20px;text-shadow:0 2px 8px #120912}
+.pc-cinematic-hero .pc-cine-eyebrow i{display:block;width:33px;height:1px;background:currentColor}
+.pc-cinematic-hero h1{font-family:"Playfair Display","Fraunces",Georgia,serif;font-weight:500;font-size:clamp(73px,9.2vw,164px);line-height:.93;letter-spacing:-.078em;margin:0;color:#fff6ef;text-shadow:0 5px 35px #1f0e20a6}
+.pc-cinematic-hero h1 em{font-weight:500;font-style:italic;color:#ffced9}
+.pc-cinematic-hero .pc-cine-period{color:#f0d4b7}
+.pc-cinematic-hero .pc-hero-copy{max-width:475px;margin:26px 0 27px;color:#fff4eee8;font-size:clamp(15px,1.2vw,18px);line-height:1.68;text-shadow:0 2px 15px #0c070e}
+.pc-cinematic-hero .pc-buttons{gap:22px;align-items:center}
+.pc-cinematic-hero .pc-button{min-height:56px;padding:0 22px;background:#f8e9e0;border-radius:0;color:#281720;box-shadow:none;font-size:10px;letter-spacing:.13em;gap:30px}
+.pc-cinematic-hero .pc-button:hover{background:white;color:#281720}
+.pc-cinematic-hero .pc-film-watch{background:transparent;border:0;display:inline-flex;align-items:center;gap:12px;font-size:10px;font-weight:700;letter-spacing:.12em;color:#fff;cursor:pointer}
+.pc-cinematic-hero .pc-watch-icon{width:46px;height:46px;border:1px solid #ffffffac;border-radius:50%;display:grid;place-items:center;font-size:11px}
+.pc-cinematic-hero .pc-film-watch:hover .pc-watch-icon{background:#ffffff2b}
+.pc-cinematic-hero .pc-cine-offer{margin:18px 0 0;font-size:10px;letter-spacing:.1em;color:#fff6f1c8}
+.pc-cinematic-hero .pc-cine-offer strong{color:#ffe1cc}
+.pc-cinematic-hero .pc-cine-side{position:absolute;z-index:2;right:21px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;color:#fff8eab3;letter-spacing:.22em;font-size:9px}
+.pc-cinematic-hero .pc-cine-footer{position:absolute;z-index:3;left:clamp(24px,5.2vw,88px);right:clamp(24px,5.2vw,88px);bottom:32px;display:flex;align-items:center;gap:23px;padding-top:16px;border-top:1px solid #fff6f17b}
+.pc-cinematic-hero .pc-cine-scene{display:flex;align-items:center;gap:12px;white-space:nowrap;font-size:10px;letter-spacing:.12em;min-width:200px}
+.pc-cinematic-hero .pc-cine-scene i{display:block;width:6px;height:6px;border-radius:50%;background:#ffced9;box-shadow:0 0 0 5px #ffced924}
+.pc-cinematic-hero .pc-cine-scene em{font:italic 19px "Playfair Display","Fraunces",serif;color:#ffced9;letter-spacing:0}
+.pc-cinematic-hero .pc-cine-progress{height:2px;flex:1;min-width:40px;background:#fff7ef62}
+.pc-cinematic-hero .pc-cine-progress span{height:100%;display:block;width:0%;background:#ffcbd7}
+.pc-cinematic-hero .pc-cine-controls{display:flex;align-items:center;gap:10px}
+.pc-cinematic-hero #pc-film-clock{white-space:nowrap;font-size:10px;letter-spacing:.05em;color:#fff6efdd;margin-right:5px}
+.pc-cinematic-hero .pc-cine-controls button{display:grid;place-items:center;width:34px;height:34px;background:#100b1299;border:1px solid #fff8ef8c;border-radius:50%;font-size:13px;color:white;cursor:pointer}
+.pc-cinematic-hero .pc-cine-controls button:hover{background:#ffffff35}
+.pc-cinematic-hero .pc-cine-scroll{position:absolute;z-index:2;bottom:109px;right:clamp(24px,5.2vw,88px);display:flex;align-items:center;gap:12px;font-size:9px;font-weight:700;letter-spacing:.16em;color:#fff6efdc}
+.pc-cinematic-hero .pc-cine-scroll span{font-size:21px}
+.pc-cinematic-hero a:focus-visible,.pc-cinematic-hero button:focus-visible{outline:2px solid white;outline-offset:4px}
+@media(max-width:1150px){.pc-cinematic-hero .pc-cine-copy{width:min(780px,86%);padding-left:clamp(30px,6vw,70px)}.pc-cinematic-hero h1{font-size:clamp(72px,10vw,125px)}.pc-cinematic-hero .pc-cine-shade{background:linear-gradient(90deg,#170c18e6 0%,#180e17bd 34%,#150c149a 57%,#1a0f191b 100%),linear-gradient(0deg,#100811b8,transparent 50%,#0c080d8f)}}
+@media(max-width:760px){
+.pc-cinematic-hero{min-height:620px}
+.pc-cinematic-hero .pc-film video{object-position:64% center}
+.pc-cinematic-hero .pc-cine-shade{background:linear-gradient(0deg,#110a11f5 0%,#170c16e9 23%,#1e1016a6 47%,#1a0e1540 73%,#160e17a8 100%)}
+.pc-cinematic-hero .pc-header{min-height:72px;padding:15px 23px;gap:9px}
+.pc-cinematic-hero .pc-brand{font-size:23px}.pc-cinematic-hero .pc-brand small{font-size:6px;letter-spacing:.15em}
+.pc-cinematic-hero .pc-nav a:not(.pc-nav-cta){display:none}
+.pc-cinematic-hero .pc-nav{gap:0}.pc-cinematic-hero .pc-nav-cta{padding:11px 12px;font-size:9px;letter-spacing:.04em}
+.pc-cinematic-hero .pc-cine-copy{width:100%;padding:143px 24px 139px;justify-content:flex-end}
+.pc-cinematic-hero h1{font-size:clamp(60px,14vw,90px);line-height:.94}
+.pc-cinematic-hero .pc-cine-eyebrow{font-size:9px;letter-spacing:.13em;margin-bottom:15px;gap:9px}.pc-cinematic-hero .pc-cine-eyebrow i{width:25px}
+.pc-cinematic-hero .pc-hero-copy{font-size:14px;line-height:1.58;margin:18px 0 19px;max-width:355px}
+.pc-cinematic-hero .pc-buttons{gap:9px 16px}.pc-cinematic-hero .pc-button{min-height:48px;padding:0 17px;font-size:9px;gap:15px}
+.pc-cinematic-hero .pc-film-watch{font-size:9px;gap:8px}.pc-cinematic-hero .pc-watch-icon{width:39px;height:39px}
+.pc-cinematic-hero .pc-cine-offer{font-size:9px;margin-top:12px}
+.pc-cinematic-hero .pc-cine-side,.pc-cinematic-hero .pc-cine-scroll{display:none}
+.pc-cinematic-hero .pc-cine-footer{left:24px;right:24px;bottom:19px;padding-top:13px;gap:11px;flex-wrap:wrap}
+.pc-cinematic-hero .pc-cine-scene{min-width:auto;gap:6px;font-size:8px}.pc-cinematic-hero .pc-cine-scene em{font-size:15px}
+.pc-cinematic-hero .pc-cine-progress{order:3;flex-basis:100%;margin-top:1px}
+.pc-cinematic-hero .pc-cine-controls{margin-left:auto;gap:6px}.pc-cinematic-hero #pc-film-clock{font-size:8px;margin-right:2px}
+.pc-cinematic-hero .pc-cine-controls button{width:28px;height:28px;font-size:11px}
+}
+@media(max-width:390px){.pc-cinematic-hero .pc-brand{font-size:20px}.pc-cinematic-hero .pc-nav-cta{font-size:8px;padding:9px 8px}.pc-cinematic-hero .pc-cine-copy{padding-bottom:127px}.pc-cinematic-hero h1{font-size:clamp(55px,14vw,72px)}.pc-cinematic-hero .pc-hero-copy{font-size:13px}.pc-cinematic-hero .pc-buttons{gap:9px}.pc-cinematic-hero .pc-button{font-size:8px;padding:0 12px;gap:8px}.pc-cinematic-hero .pc-film-watch{font-size:8px}}
+@media(max-height:710px) and (min-width:761px){.pc-cinematic-hero .pc-cine-copy{padding-top:104px;padding-bottom:108px}.pc-cinematic-hero h1{font-size:clamp(65px,7.4vw,122px)}.pc-cinematic-hero .pc-hero-copy{margin:18px 0}.pc-cinematic-hero .pc-cine-scroll{display:none}.pc-cinematic-hero .pc-cine-footer{bottom:17px}}
+@media(prefers-reduced-motion:reduce){.pc-cinematic-hero *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
