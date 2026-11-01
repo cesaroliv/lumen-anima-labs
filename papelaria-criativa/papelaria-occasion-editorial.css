@@ -1,0 +1,69 @@
+/* CINEMA EDITORIAL / Section 01 product collection, authored from the actual customer photo.
+   No invented category mockups. Scoped to .pc-world-section only. */
+.pc-occasions.pc-world-section{padding:0;background:#1b1731;color:#fcf6ef;overflow:hidden;position:relative}
+.pc-world-section .pc-world-cover{width:100%;min-height:690px;display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);position:relative}
+.pc-world-section .pc-world-copy{position:relative;z-index:2;padding:clamp(72px,7.4vw,135px) clamp(20px,2.1vw,42px) 72px clamp(38px,6.7vw,145px);background:radial-gradient(ellipse at 4% 50%,rgba(108,73,143,.28),transparent 72%),linear-gradient(119deg,#1c182e,#292049 70%,#332754);display:flex;flex-direction:column;justify-content:center}
+.pc-world-section .pc-world-kicker{color:#f9aa9e;font:800 11px/1.4 "DM Sans",sans-serif;letter-spacing:.24em;margin:0 0 38px;text-transform:uppercase}
+.pc-world-section .pc-world-title{font:600 clamp(63px,6.6vw,124px)/.92 "Fraunces",Georgia,serif;letter-spacing:-.07em;margin:0;color:#fff9ef;max-width:730px}
+.pc-world-section .pc-world-title em{color:#f5b7a5;font-weight:600;font-style:italic}
+.pc-world-section .pc-world-description{font:400 clamp(15px,1.2vw,19px)/1.8 "DM Sans",sans-serif;color:#d9cddd;margin:42px 0 0;max-width:425px}
+.pc-world-section .pc-world-proof{display:flex;align-items:center;gap:14px;margin-top:48px;color:#fbd6a1;font:800 10px "DM Sans";letter-spacing:.18em;text-transform:uppercase}
+.pc-world-section .pc-world-proof::before{content:"";display:block;width:40px;height:1px;background:#f1b6aa}
+.pc-world-section .pc-world-visual{position:relative;min-width:0;min-height:690px;background:linear-gradient(145deg,#faf5ef,#dcd7d4);overflow:hidden}
+.pc-world-section .pc-world-photo{position:absolute;width:100%;height:100%;inset:0;display:block;object-fit:cover;object-position:center 51%;filter:saturate(1.02);animation:pc-world-photo-zoom 17s ease-in-out infinite alternate}
+.pc-world-section .pc-world-visual::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,#29204922,transparent 16%),linear-gradient(0deg,#2d273687,transparent 27%);mix-blend-mode:multiply}
+.pc-world-section .pc-world-image-caption{position:absolute;bottom:28px;left:31px;right:31px;z-index:3;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;color:white;font:800 10px "DM Sans";letter-spacing:.17em;text-shadow:0 2px 9px #20102b95}
+.pc-world-section .pc-world-image-caption b{font:500 21px "Fraunces",serif;letter-spacing:-.025em}
+.pc-world-section .pc-world-moments{background:#211b38;padding:33px clamp(38px,8vw,180px) 40px;border-top:1px solid #fffbef25}
+.pc-world-section .pc-world-moments-header{display:flex;align-items:center;gap:16px;margin-bottom:22px;font:800 10px "DM Sans";letter-spacing:.2em;color:#f3c2aa}
+.pc-world-section .pc-world-moments-header::after{content:"";height:1px;flex:1;background:#fcf3e02b}
+.pc-world-section .pc-world-moments-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.pc-world-section .pc-world-moment{border-right:1px solid #f8efe12e;padding:14px 27px 9px}
+.pc-world-section .pc-world-moment:first-child{padding-left:0}
+.pc-world-section .pc-world-moment:last-child{border-right:0}
+.pc-world-section .pc-world-moment-number{display:block;color:#e3a69f;letter-spacing:.12em;font:800 11px "DM Sans";margin-bottom:13px}
+.pc-world-section .pc-world-moment-name{font:600 clamp(24px,2.2vw,39px)/1.08 "Fraunces",Georgia,serif;letter-spacing:-.055em;color:#fff9f1;margin:0 0 13px}
+.pc-world-section .pc-world-moment p{color:#baafc3;font:400 12px/1.55 "DM Sans";max-width:240px;margin:0}
+.pc-world-section .pc-world-note{margin:0;padding:13px clamp(38px,8vw,180px) 21px;background:#211b38;color:#a99eb4;font:400 10px/1.6 "DM Sans";letter-spacing:.01em}
+@keyframes pc-world-photo-zoom{from{transform:scale(1.012)}to{transform:scale(1.05)}}
+@media(max-width:1100px){
+ .pc-world-section .pc-world-copy{padding:80px 44px}
+ .pc-world-section .pc-world-cover{min-height:550px;grid-template-columns:1fr 1fr}
+ .pc-world-section .pc-world-visual{min-height:550px}
+ .pc-world-section .pc-world-title{font-size:clamp(53px,6.7vw,88px)}
+ .pc-world-section .pc-world-description{margin-top:28px}
+ .pc-world-section .pc-world-proof{margin-top:25px}
+ .pc-world-section .pc-world-moments{padding:28px 40px 35px}
+ .pc-world-section .pc-world-note{padding-left:40px;padding-right:40px}
+ .pc-world-section .pc-world-moment{padding-right:16px;padding-left:16px}
+}
+@media(max-width:760px){
+ .pc-occasions.pc-world-section{padding:0}
+ .pc-world-section .pc-world-cover{grid-template-columns:1fr;min-height:0}
+ .pc-world-section .pc-world-copy{padding:64px 25px 48px}
+ .pc-world-section .pc-world-kicker{font-size:10px;margin-bottom:24px}
+ .pc-world-section .pc-world-title{font-size:clamp(62px,13vw,98px);line-height:.95;max-width:560px}
+ .pc-world-section .pc-world-description{font-size:15px;margin-top:26px;line-height:1.7}
+ .pc-world-section .pc-world-proof{margin-top:27px;font-size:10px}
+ .pc-world-section .pc-world-visual{min-height:0;height:auto;aspect-ratio:1.18;background:#f3ede7}
+ .pc-world-section .pc-world-photo{object-fit:cover;object-position:center 52%}
+ .pc-world-section .pc-world-image-caption{left:18px;right:18px;bottom:14px}
+ .pc-world-section .pc-world-image-caption b{font-size:16px}
+ .pc-world-section .pc-world-moments{padding:34px 25px 22px}
+ .pc-world-section .pc-world-moments-list{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:26px}
+ .pc-world-section .pc-world-moment{padding:12px 16px}
+ .pc-world-section .pc-world-moment:nth-child(odd){padding-left:0}
+ .pc-world-section .pc-world-moment:nth-child(even){border-right:0}
+ .pc-world-section .pc-world-moment-name{font-size:clamp(25px,5.8vw,35px)}
+ .pc-world-section .pc-world-note{padding:5px 25px 25px}
+}
+@media(max-width:370px){
+ .pc-world-section .pc-world-copy{padding:55px 19px 42px}
+ .pc-world-section .pc-world-title{font-size:56px}
+ .pc-world-section .pc-world-moments{padding-left:19px;padding-right:19px}
+ .pc-world-section .pc-world-moment{padding-left:10px;padding-right:10px}
+ .pc-world-section .pc-world-note{padding-left:19px;padding-right:19px}
+}
+@media(prefers-reduced-motion:reduce){
+ .pc-world-section .pc-world-photo{animation:none!important;transform:none!important}
+}
