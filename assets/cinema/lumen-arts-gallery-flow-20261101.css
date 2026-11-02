@@ -1,0 +1,116 @@
+/* Lumen Arts | Original gallery fly-through hero — full-bleed 2026-11-01
+   Only this hero is affected. Gallery, artwork links, commerce, languages stay intact. */
+.cinema-hero.cinema-hero--gallery-film{
+  position:relative!important;display:block!important;isolation:isolate;
+  aspect-ratio:auto!important;
+  min-height:clamp(700px,calc(100svh - 83px),990px)!important;
+  height:clamp(700px,calc(100svh - 83px),990px)!important;
+  padding:0!important;overflow:hidden;background:#15110d!important
+}
+.cinema-hero.cinema-hero--gallery-film .cinema-film{
+  position:absolute!important;inset:0!important;
+  width:100%!important;height:100%!important;aspect-ratio:auto!important;
+  z-index:0;overflow:hidden;background:#19150f;
+}
+.cinema-hero.cinema-hero--gallery-film .cinema-film video{
+  display:block;width:100%;height:100%;object-fit:cover!important;object-position:53% center!important;
+  transform:none!important;filter:saturate(.92) contrast(1.04) brightness(.85)!important
+}
+.cinema-hero.cinema-hero--gallery-film .cinema-shade{
+  display:block!important;position:absolute;inset:0!important;z-index:1;
+  background:linear-gradient(90deg,rgba(9,8,7,.93) 0%,rgba(10,9,8,.84) 21%,rgba(10,9,8,.5) 42%,rgba(11,10,9,.09) 78%),
+  linear-gradient(0deg,rgba(11,9,7,.85),rgba(11,9,7,.15) 22%,transparent 62%,rgba(8,8,7,.22))!important;
+  pointer-events:none
+}
+.cinema-hero.cinema-hero--gallery-film .cinema-texture{z-index:2}
+.cinema-hero.cinema-hero--gallery-film .hero-inner{
+  position:absolute!important;inset:0!important;z-index:4;
+  width:min(1500px,calc(100% - 100px))!important;
+  height:100%!important;min-height:0!important;margin:auto!important;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center!important;
+  padding:105px 0 126px!important
+}
+.cinema-hero.cinema-hero--gallery-film .hero-serial{color:#e6c492;letter-spacing:.2em;font-size:10px}
+.cinema-hero.cinema-hero--gallery-film h1{
+  max-width:770px;font-size:clamp(75px,8.2vw,136px);line-height:.83;
+  letter-spacing:-.047em;margin:30px 0 32px;color:#fff6e7
+}
+.cinema-hero.cinema-hero--gallery-film h1 .hero-accent{color:#e4c18d}
+.cinema-hero.cinema-hero--gallery-film .hero-subtitle{
+  max-width:435px;font-size:clamp(14px,1.09vw,17px);line-height:1.72;color:#f3e8d8
+}
+.cinema-hero.cinema-hero--gallery-film .hero-actions{gap:17px;margin-top:33px}
+.cinema-hero.cinema-hero--gallery-film .hero-action-primary{
+  min-height:51px;gap:45px;padding:15px 19px;background:#dfb986;color:#22170e
+}
+.cinema-hero.cinema-hero--gallery-film .hero-action-secondary{
+  min-height:45px;display:inline-flex;align-items:center;border:1px solid rgba(229,198,155,.61);
+  padding:12px 17px;color:#fff0d8;gap:17px;letter-spacing:.11em;
+  background:rgba(9,7,6,.22);backdrop-filter:blur(8px);text-decoration:none
+}
+.cinema-hero.cinema-hero--gallery-film .hero-action-secondary:hover{background:#d7b383;color:#17110a}
+.cinema-hero.cinema-hero--gallery-film .hero-actions a:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.cinema-hero.cinema-hero--gallery-film .hero-frame{z-index:5;color:#f1d9b7;letter-spacing:.17em}
+.cinema-hero.cinema-hero--gallery-film .hero-frame.top{top:29px}
+.cinema-hero.cinema-hero--gallery-film .hero-frame.bottom{bottom:24px}
+.cinema-hero.cinema-hero--gallery-film .hero-chapter{z-index:5;bottom:26px;color:#e3c18d}
+.cinema-hero.cinema-hero--gallery-film .cinema-film::before{display:none!important}
+@media(max-width:1100px){
+ .cinema-hero.cinema-hero--gallery-film .hero-inner{width:calc(100% - 64px)!important}
+ .cinema-hero.cinema-hero--gallery-film h1{font-size:clamp(71px,10vw,116px)}
+}
+@media(max-width:740px){
+ .cinema-hero.cinema-hero--gallery-film{
+   height:max(730px,calc(100svh - 70px))!important;
+   min-height:700px!important;display:block!important
+ }
+ .cinema-hero.cinema-hero--gallery-film .cinema-film{inset:0!important;position:absolute!important;height:100%!important;order:initial!important}
+ .cinema-hero.cinema-hero--gallery-film .cinema-film video{object-fit:cover!important;object-position:center!important;filter:saturate(.96) contrast(1.07) brightness(.78)!important}
+ .cinema-hero.cinema-hero--gallery-film .cinema-shade{
+   display:block!important;
+   background:linear-gradient(0deg,rgba(8,7,7,.99) 0%,rgba(8,7,7,.94) 23%,rgba(8,7,7,.78) 43%,rgba(8,7,7,.08) 72%,rgba(8,7,7,.19) 100%)!important
+ }
+ .cinema-hero.cinema-hero--gallery-film .hero-inner{
+   position:absolute!important;inset:0!important;height:100%!important;
+   width:calc(100% - 42px)!important;
+   min-height:0!important;padding:65px 0 87px!important;order:initial!important;
+   display:flex!important;flex-direction:column;justify-content:flex-end!important
+ }
+ .cinema-hero.cinema-hero--gallery-film .hero-serial{font-size:9px;letter-spacing:.08em}
+ .cinema-hero.cinema-hero--gallery-film h1{
+   margin:17px 0 20px;max-width:550px;
+   font-size:clamp(68px,15vw,95px);line-height:.79
+ }
+ .cinema-hero.cinema-hero--gallery-film .hero-subtitle{font-size:13px;line-height:1.56;max-width:375px}
+ .cinema-hero.cinema-hero--gallery-film .hero-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+ .cinema-hero.cinema-hero--gallery-film .hero-action-primary,
+ .cinema-hero.cinema-hero--gallery-film .hero-action-secondary{
+   min-height:48px;gap:12px;justify-content:space-between;
+   font-size:10px;padding:12px 13px;width:auto
+ }
+ .cinema-hero.cinema-hero--gallery-film .hero-frame.top{left:20px;right:20px;top:19px}
+ .cinema-hero.cinema-hero--gallery-film .hero-frame.bottom{left:20px;right:20px;bottom:17px}
+ .cinema-hero.cinema-hero--gallery-film .hero-chapter{display:none}
+}
+@media(max-width:390px){
+ .cinema-hero.cinema-hero--gallery-film{min-height:710px!important;height:max(710px,calc(100svh - 70px))!important}
+ .cinema-hero.cinema-hero--gallery-film .hero-inner{width:calc(100% - 34px)!important;padding-bottom:75px!important}
+ .cinema-hero.cinema-hero--gallery-film h1{font-size:clamp(61px,16.2vw,75px)}
+ .cinema-hero.cinema-hero--gallery-film .hero-actions{flex-direction:column;align-items:stretch;max-width:340px;width:100%}
+ .cinema-hero.cinema-hero--gallery-film .hero-action-primary,
+ .cinema-hero.cinema-hero--gallery-film .hero-action-secondary{width:100%;justify-content:space-between}
+ .cinema-hero.cinema-hero--gallery-film .hero-subtitle{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .cinema-hero.cinema-hero--gallery-film .cinema-film video{display:none!important}
+ .cinema-hero.cinema-hero--gallery-film .cinema-film{
+   background:#15120e url('/assets/cinema/lumen-arts-gallery-flow-20261101-poster.webp') center/cover no-repeat!important
+ }
+ .cinema-hero.cinema-hero--gallery-film .hero-action-primary,
+ .cinema-hero.cinema-hero--gallery-film .hero-action-secondary{transition:none}
+}
+@media(max-width:740px) and (prefers-reduced-motion:reduce){
+ .cinema-hero.cinema-hero--gallery-film .cinema-film{
+   background-image:url('/assets/cinema/lumen-arts-gallery-flow-20261101-mobile-poster.webp')!important
+ }
+}
