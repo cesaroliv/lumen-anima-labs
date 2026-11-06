@@ -8,7 +8,7 @@ if(!info||!title||!originalImage)return;
 const params=new URLSearchParams(location.search),pt=params.get("lang")==="pt"||(!params.has("lang")&&(navigator.language||"").toLowerCase().startsWith("pt"));
 const copy=pt?{
   selection:"ESCOLHA COMO QUER SUA OBRA",
-  digital:"Arte digital",digitalSub:"Download · R$ 14,90",
+  digital:"Arte digital",digitalSub:"Download · R$ 24,90",
   physical:"Arte impressa",physicalSub:"Quadros, placas e pôsteres",
   lead:"Personalize tamanho, acabamento e cor quando houver moldura. O passe-partout marfim e o filete fino em tom bronze suave fazem parte da impressão.",
   size:"Tamanho",finish:"Acabamento",color:"Cor da moldura",summarySize:"Medidas",frame:"Acabamento",price:"Preço",frameValue:"Filete",
@@ -16,7 +16,7 @@ const copy=pt?{
   defaultStatus:"Carregando opções do quadro…"
 }:{
   selection:"CHOOSE YOUR ARTWORK FORMAT",
-  digital:"Digital artwork",digitalSub:"Download · R$ 14.90",
+  digital:"Digital artwork",digitalSub:"Download · R$ 24.90",
   physical:"Printed artwork",physicalSub:"Frames, panels and posters",
   lead:"Choose size, finish and frame color when applicable. The ivory mat and subtle warm-bronze hairline are part of the printed artwork.",
   size:"Size",finish:"Finish",color:"Frame color",summarySize:"Dimensions",frame:"Finish",price:"Price",frameValue:"Slim frame",
@@ -29,13 +29,13 @@ for(let n=title.nextSibling;n;){const next=n.nextSibling;digital.appendChild(n);
 info.appendChild(digital);
 if(pt){
  const paras=[...digital.querySelectorAll(":scope > p")];
- if(paras[0])paras[0].textContent="Coleção Justiça Dourada: edição digital com PNG original, composição A2 ampliada (300 dpi, não nativa em 16K) e licença de uso não exclusiva, entregues em ZIP após aprovação do pagamento.";
+ if(paras[0])paras[0].textContent="Coleção Justiça Dourada: edição digital premium com master PNG de 16.000 pixels ampliado por IA e licença não exclusiva, entregues em ZIP protegido após aprovação do pagamento.";
  if(paras.length>1)paras[paras.length-1].textContent="Licença de uso não exclusiva. A prévia é ilustrativa; a ampliação digital não equivale a uma captura nativa em 16K.";
  const labels=[...digital.querySelectorAll("dl dt")],values=[...digital.querySelectorAll("dl dd")];
  if(labels[0])labels[0].textContent="Coleção";
  if(labels[1])labels[1].textContent="Formato";
  if(labels[2])labels[2].textContent="Preço";
- if(values[1])values[1].textContent="PNG original + composição A2 ampliada + licença, em ZIP";
+ if(values[1])values[1].textContent="Master PNG 16K ampliado por IA + licença, em ZIP";
  const back=digital.querySelector(".actions a.secondary");if(back)back.textContent="Voltar à galeria";
  const links=[...document.querySelectorAll(".head .links a")];
  if(links[1])links[1].textContent="Coleções";if(links[2])links[2].textContent="Suporte";
