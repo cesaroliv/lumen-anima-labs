@@ -60,7 +60,7 @@ Promise.all([
 ]).then(([list,cfg])=>{
  if(!cfg.individualSalesEnabled)throw Error("digital sales disabled");
  if(!Array.isArray(list))throw Error("invalid catalog");
- products=list.filter(p=>p&&typeof p.sku==="string"&&typeof p.name==="string"&&classify(p.sku)&&/^art-(?:[0-9]{2}|gesso-[0-9]{2}|justice-[0-9]{2})-[a-z0-9-]+$/.test(p.sku)&&Number(cfg.products?.[p.sku]?.price)===14.9).map(p=>({sku:p.sku,name:p.name,collection:classify(p.sku),price:Number(cfg.products[p.sku].price)}));
+ products=list.filter(p=>p&&typeof p.sku==="string"&&typeof p.name==="string"&&classify(p.sku)&&/^art-(?:[0-9]{2}|gesso-[0-9]{2}|justice-[0-9]{2})-[a-z0-9-]+$/.test(p.sku)&&Number.isFinite(Number(cfg.products?.[p.sku]?.price))&&Number(cfg.products?.[p.sku]?.price)>0).map(p=>({sku:p.sku,name:p.name,collection:classify(p.sku),price:Number(cfg.products[p.sku].price)}));
  if(!products.length)throw Error("no purchasable artworks");
  available=true;setCollection(category);
 }).catch(()=>{

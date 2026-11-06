@@ -11,12 +11,13 @@ if(!/^art-(?:[0-9]{2}|gesso-[0-9]{2}|justice-[0-9]{2})-[a-z0-9-]+$/.test(sku)){s
 const configLink=$("#printileConfigLink");if(configLink){configLink.href="/artworks/"+sku.slice(4)+".html?lang="+(pt?"pt":"en")+"&formato=quadro";configLink.hidden=false;configLink.textContent=pt?"PERSONALIZAR QUADRO IMPRESSO →":"CUSTOMIZE PRINTED ART →";}
 let entry=null,serverProduct=null,checkoutReady=Boolean(window.LUMEN_CHECKOUT_READY);
 let autoOpened=false;
-function activate(){if(!entry||!serverProduct||!checkoutReady)return;btn.dataset.product=sku;btn.disabled=false;btn.textContent=phrases.buy;status.textContent=phrases.features;if(params.get('auto')==='1'&&!autoOpened){autoOpened=true;queueMicrotask(()=>btn.click());}}
+function activate(){if(!entry||!serverProduct||!checkoutReady)return;btn.dataset.product=sku;btn.disabled=false;btn.textContent=(pt?"Comprar obra · ":"Buy artwork · ")+Number(serverProduct.price).toLocaleString(pt?"pt-BR":"en-US",{style:"currency",currency:"BRL"});status.textContent=phrases.features;if(params.get('auto')==='1'&&!autoOpened){autoOpened=true;queueMicrotask(()=>btn.click());}}
 window.addEventListener("lumen:checkout-ready",()=>{checkoutReady=true;activate()});
 Promise.all([fetch("/assets/gallery/artworks.json").then(r=>r.ok?r.json():[]),fetch(String(window.LUMEN_CHECKOUT_API||"").replace(/\/$/,"")+"/api/config").then(r=>r.ok?r.json():null)]).then(([items,config])=>{
 entry=items.find(x=>x.sku===sku)||null;serverProduct=config?.individualSalesEnabled?config?.products?.[sku]:null;
 if(entry){name.textContent=entry.name;picture.src=entry.preview;picture.alt=entry.name+" — Lumen Arts";const physical=$("#printileConfigLink");if(physical){physical.href="/artworks/"+sku.slice(4)+".html?lang="+(pt?"pt":"en")+"&formato=quadro";physical.hidden=false;physical.textContent=pt?"PERSONALIZAR QUADRO IMPRESSO →":"CUSTOMIZE PRINTED ART →";}}
-if(!entry||!serverProduct||Number(serverProduct.price)!==14.90){status.textContent=phrases.notReady;return;}
+if(!entry||!serverProduct||!Number.isFinite(Number(serverProduct.price))||Number(serverProduct.price)<=0){status.textContent=phrases.notReady;return;}
+$(".price strong").textContent=Number(serverProduct.price).toLocaleString(pt?"pt-BR":"en-US",{style:"currency",currency:"BRL"});
 activate();
 }).catch(()=>{status.textContent=phrases.notReady});
 })();

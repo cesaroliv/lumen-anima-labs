@@ -86,8 +86,8 @@
     if(!r.ok||!data.publicKey)throw new Error(data.error||"checkout_config_error");
     cfg=data;
     for(const [id,p] of Object.entries(data.products||{})){
-      if(/^art-(?:[0-9]{2}|gesso-[0-9]{2}|justice-[0-9]{2})-[a-z0-9-]+$/.test(id)&&p&&Number(p.price)===14.90){
-        products[id]={name:String(p.name||id),price:14.90};
+      if(/^art-(?:[0-9]{2}|gesso-[0-9]{2}|justice-[0-9]{2})-[a-z0-9-]+$/.test(id)&&p&&Number.isFinite(Number(p.price))&&Number(p.price)>0){
+        products[id]={name:String(p.name||id),price:Number(p.price)};
       }
     }
     if(!mp){
@@ -157,6 +157,10 @@
 
     try{
       await loadConfig();
+      current=products[productId];
+      if(!current)throw new Error("PRODUCT_NOT_AVAILABLE");
+      $("#checkoutProductName").textContent=current.name;
+      $("#checkoutProductPrice").textContent=money(current.price);
       setMessage("");
       await unmount();
       $("#paymentBrick_container")?.classList.remove("hidden");
