@@ -15,7 +15,7 @@
 
   const T={
     pt:{
-      title:"Seu pedido Obsidian Regalia — Lumen Arts",store:"Loja",support:"Suporte",
+      title:"Seu pedido — Lumen Arts",store:"Loja",support:"Suporte",
       confirmed:"Pagamento confirmado",thanks:"Obrigado pela sua compra.",
       success:"Seu pedido foi aprovado e seus arquivos já estão prontos. Organizamos a entrega em pacotes para você baixar sem aquela lista interminável de arquivos soltos.",
       loading:"Preparando seu pedido…",loadingP:"Estamos confirmando o pagamento com o Mercado Pago e gerando seus links protegidos.",
@@ -32,7 +32,7 @@
       package:"Pacote",protected:"ZIP protegido"
     },
     en:{
-      title:"Your Obsidian Regalia order — Lumen Arts",store:"Store",support:"Support",
+      title:"Your order — Lumen Arts",store:"Store",support:"Support",
       confirmed:"Payment confirmed",thanks:"Thank you for your purchase.",
       success:"Your order has been approved and your files are ready. We organized the delivery into packages so you can download them without dealing with an endless list of loose files.",
       loading:"Preparing your order…",loadingP:"We are confirming the payment with Mercado Pago and generating your protected download links.",
@@ -49,7 +49,7 @@
       package:"Package",protected:"Protected ZIP"
     },
     es:{
-      title:"Tu pedido Obsidian Regalia — Lumen Arts",store:"Tienda",support:"Soporte",
+      title:"Tu pedido — Lumen Arts",store:"Tienda",support:"Soporte",
       confirmed:"Pago confirmado",thanks:"Gracias por tu compra.",
       success:"Tu pedido fue aprobado y tus archivos ya están listos. Organizamos la entrega en paquetes para que puedas descargarlos sin enfrentarte a una lista interminable de archivos sueltos.",
       loading:"Preparando tu pedido…",loadingP:"Estamos confirmando el pago con Mercado Pago y generando tus enlaces de descarga protegidos.",
@@ -101,7 +101,11 @@
   const visuals={
     "obsidian-regalia":"/assets/digital-art/v5/artworks/imperial-lion.webp",
     "luxury-wallpapers":"/assets/digital-art/v2/mockup-wallpapers-grid.webp",
-    "professional-office":"/assets/digital-art/v2/mockup-professional-law.webp"
+    "professional-office":"/assets/digital-art/v2/mockup-professional-law.webp",
+    "art-justice-01-dama-em-relevo":"/assets/gallery/justice-four-v3/art-justice-01-dama-em-relevo_A2.webp",
+    "art-justice-02-equilibrio-dourado":"/assets/gallery/justice-four-v3/art-justice-02-equilibrio-dourado_A2.webp",
+    "art-justice-03-guardia-da-lei":"/assets/gallery/justice-four-v3/art-justice-03-guardia-da-lei_A2.webp",
+    "art-justice-04-justica-soberana":"/assets/gallery/justice-four-v3/art-justice-04-justica-soberana_A2.webp"
   };
 
   function show(id){$(id)?.classList.remove("hidden")}
@@ -121,11 +125,14 @@
       hide("#loadingCard");
       if(!r.ok){show("#errorCard");$("#errorText").textContent=T.queryFail;return;}
       if(data.status==="approved"&&data.product){
-        $("#productName").textContent=data.product.id==="obsidian-regalia"?T.digital:(data.product.name||"Digital product");
+        const purchasedName=data.product.id==="obsidian-regalia"?T.digital:(data.product.name||"Digital product");
+        $("#productName").textContent=purchasedName;
+        document.title=(lang==="en"?"Your order — ":lang==="es"?"Tu pedido — ":"Seu pedido — ")+purchasedName+" — Lumen Arts";
         $("#amount").textContent=money(data.amount||data.product.price||0);
         $("#orderId").textContent=data.order_id||"—";
         $("#paymentId").textContent=String(data.id||paymentId);
         $("#productVisual").src=visuals[data.product.id]||visuals["obsidian-regalia"];
+        $("#productVisual").alt=purchasedName+" — Lumen Arts";
         const bundles=Array.isArray(data.bundles)?data.bundles:[];
         if(!bundles.length){show("#errorCard");$("#errorText").textContent=T.approvedNoBundle+paymentId+(lang==="en"?" to support.":lang==="es"?" a soporte.":" ao suporte.");return;}
         $("#downloadButtons").innerHTML=bundles.map((b,i)=>'<a class="download" href="'+String(b.url).replace(/"/g,"&quot;")+'" rel="nofollow"><div><b>'+T.package+" "+(i+1)+'</b><span>'+sizeLabel(b.size)+" · "+T.protected+'</span></div><span class="arrow">↓</span></a>').join("");
