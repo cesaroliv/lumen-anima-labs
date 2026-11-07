@@ -10,6 +10,17 @@
   }
   const lang = query.get('lang');
   const locale = lang === 'pt' || lang === 'en' ? lang : null;
+  const bundleLink = document.querySelector('a[data-legal-bundle-referral]');
+  if (bundleLink) {
+    try {
+      const target = new URL(bundleLink.href, location.href);
+      if (target.origin === 'https://juridica.lumenanima.com' && target.pathname === '/') {
+        for (const [key, value] of values) target.searchParams.set(key, value);
+        if (!target.searchParams.has('utm_term')) target.searchParams.set('utm_term', 'owned_legal_gallery');
+        bundleLink.href = target.toString();
+      }
+    } catch (_) { /* Preserve the valid static link. */ }
+  }
   if (values.length === 0 && !locale) return;
   document.querySelectorAll('#legal-digital-shop a[href^="/checkout-artwork.html?"]').forEach(link => {
     try {
