@@ -7,7 +7,7 @@
 .site-header--cinema .saved-button[aria-pressed=true]{color:#ffe0a1}
 .hero.hero--cinema{position:relative;display:flex;flex-direction:row;align-items:center;margin:0 auto;max-width:none;width:100%;min-height:88vh;min-height:88svh;padding:126px clamp(24px,7vw,115px) 155px;background:#24251d;color:#fbf2e5;isolation:isolate;overflow:hidden}
 .hero--cinema .hero__film{position:absolute;inset:0;z-index:-3;width:100%;height:100%;min-height:0;max-height:none;aspect-ratio:auto;overflow:hidden;background:#3a3227}
-.hero--cinema .hero__poster,.hero--cinema .hero__video{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:58% center;transform:scale(1.006)}
+.hero--cinema .hero__poster,.hero--cinema .hero__video{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:58% center;transform:scale(1.1)}
 .hero--cinema .hero__video{z-index:1;background:#3a3227}
 .hero--cinema .hero__film::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(10,16,13,.83) 0%,rgba(12,17,14,.72) 21%,rgba(12,18,14,.4) 50%,rgba(10,15,12,.12) 85%),linear-gradient(0deg,rgba(8,14,11,.83) 0%,transparent 34%,rgba(9,12,9,.22) 100%)}
 .hero--cinema .hero__copy{position:relative;inset:auto;z-index:4;width:min(790px,60vw);max-width:none;margin:0;padding:0;align-self:auto;background:transparent}

@@ -1,4 +1,4 @@
-/* Lumen / 3Print — static catalogue interactions. No checkout or analytics requests. */
+/* Lumen Arts — static catalogue interactions. No checkout or analytics requests. */
 (() => {
   'use strict';
 

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "project": "Lumen Arts / 3Print — coleções",
+  "project": "Lumen Arts — coleções",
   "status": "READY_FOR_PUBLICATION",
   "reference_use": "quality-only",
   "design_name": "Quatro universos — galeria em capítulos",
-  "brand_source": "Acervo e ambientações existentes da Lumen Arts; códigos, coleções, acabamentos e estado de preparação mantidos do catálogo real. Filme da fábrica 3Print escolhido e aprovado pelo proprietário.",
+  "brand_source": "Acervo, ambientações e mídias escolhidas pelo proprietário. Referências técnicas e origem dos materiais mantidas na documentação operacional.",
   "user_intent": "Explorar as obras separadas por coleção, reconhecer a qualidade da apresentação, comparar configurações reais e consultar a escolha.",
   "emotion": "Presença, descoberta, identificação pessoal e clareza para escolher.",
   "proof_assets": [
@@ -12,7 +12,7 @@
     "assets/catalog-67219-editorial.webp",
     "assets/black-aguia-editorial.webp",
     "assets/catalog-67231-native-02.webp",
-    "assets/3print-producao-montagem-20261119.webp"
+    "assets/producao-montagem-20261119.webp"
   ],
   "design": {
     "primary": "#171712",
@@ -65,42 +65,25 @@
   ],
   "visual_review": {
     "status": "PASS",
-    "screenshot_desktop": "artifacts/3print-collections-20261119/screenshots/final-desktop-obsidian-regalia-opening.jpg",
-    "screenshot_mobile": "artifacts/3print-collections-20261119/screenshots/final-mobile-gallery.jpg",
     "reviewer": "assistant_visual_review",
+    "reviewedAt": "2026-11-19T22:35:20.653Z",
+    "screenshot_desktop": "artifacts/lumen-arts-brand-20261119/screenshots/desktop-production.jpg",
+    "screenshot_mobile": "artifacts/lumen-arts-brand-20261119/screenshots/mobile-production.jpg",
     "evidence": [
-      "preview-qa.json",
-      "refinement-qa.json"
+      "preview-qa.json"
     ],
     "reviewed_views": [
-      "desktop intro",
-      "Obsidian opening",
-      "Gesso opening",
-      "Justiça opening",
-      "Arte Black opening",
-      "finish comparison",
-      "choice guide",
-      "mobile intro",
-      "mobile gallery",
-      "mobile finish options"
+      "desktop production",
+      "mobile production",
+      "desktop film near native aspect ratio",
+      "mobile hero"
     ],
-    "notes": "Capturas finais examinadas: composições distintas, imagens inteiras, contraste claro/escuro, galerias separadas e navegação persistente. Movimento refinado para não apagar a imagem durante entradas. Rótulos essenciais de ao menos 12px no celular. Aprovação visual do proprietário para o novo corpo ainda pendente.",
-    "informationRevision": {
-      "version": "20261119-information1",
-      "status": "PASS",
-      "reviewedAt": "2026-11-19T22:20:41.818Z",
-      "screenshots": [
-        "artifacts/3print-information-20261119/screenshots/desktop-production.jpg",
-        "artifacts/3print-information-20261119/screenshots/desktop-questions.jpg",
-        "artifacts/3print-information-20261119/screenshots/mobile-production.jpg",
-        "artifacts/3print-information-20261119/screenshots/mobile-questions.jpg"
-      ]
-    }
+    "notes": "No displayed supplier name, link or corner mark. Width and height preserved; uniform image crop."
   },
   "publication": "AUTHORIZED",
-  "publication_source": "Pedido de explorar o site oficial da 3Print e acrescentar informações úteis à página, na continuação autorizada de edição e publicação da loja.",
+  "publication_source": "Pedido explícito de remover todas as menções e links do fornecedor da página pública.",
   "design_stylesheet": "collections-20261119.css",
-  "hero_video_asset": "assets/hero-3print-factory-20261119.mp4",
+  "hero_video_asset": "assets/hero-producao-20261119.mp4",
   "cinematic": true,
   "interaction_mode": "consultation",
   "commercial_state": {
@@ -109,66 +92,11 @@
     "configured": 27,
     "inPreparation": 72
   },
-  "owner_visual_approval": {
-    "hero": "Aprovada pelo proprietário antes deste pedido.",
-    "collections": "Pendente da avaliação do resultado publicado."
-  },
-  "hero_refinement": {
-    "version": "20261119-clean1",
-    "requestedChange": "Remover o parágrafo e os dois botões destacados na captura; reduzir moderadamente a altura sem alterar a largura.",
-    "height": "min-height:88svh",
-    "width": "100%",
-    "mediaFit": "cover",
-    "remainingCopy": "O quadro que faltava. A casa mais sua.",
-    "visualReview": {
-      "status": "PASS",
-      "reviewer": "assistant",
-      "reviewedAt": "2026-11-19T21:59:03.554Z",
-      "screenshots": [
-        "H:\\REMOTE_MCP_LAB\\artifacts\\3print-hero-clean-20261119\\screenshots\\desktop-hero.jpg",
-        "H:\\REMOTE_MCP_LAB\\artifacts\\3print-hero-clean-20261119\\screenshots\\mobile-hero.jpg"
-      ],
-      "observations": [
-        "Desktop e celular inspecionados visualmente nas capturas reais.",
-        "Parágrafo e dois botões removidos; título inteiro e legível abaixo do cabeçalho.",
-        "Hero com largura total e altura reduzida; vídeo sem deformação."
-      ]
-    }
-  },
-  "information_revision": {
-    "version": "20261119-information1",
-    "scope": "Informações de produção, embalagem, rastreio e escolha com base no site oficial da 3Print",
-    "sources": [
-      "https://www.3print.com.br/",
-      "https://www.3print.com.br/producao-e-entrega",
-      "https://www.3print.com.br/termos-de-uso",
-      "https://www.3print.com.br/products",
-      "https://www.3print.com.br/artigos/api-integracao-plataforma-propria"
-    ],
-    "visualReview": {
-      "status": "PASS",
-      "reviewer": "assistant_visual_review",
-      "reviewedAt": "2026-11-19T22:20:41.818Z",
-      "screenshots": [
-        "artifacts/3print-information-20261119/screenshots/desktop-production.jpg",
-        "artifacts/3print-information-20261119/screenshots/desktop-questions.jpg",
-        "artifacts/3print-information-20261119/screenshots/mobile-production.jpg",
-        "artifacts/3print-information-20261119/screenshots/mobile-questions.jpg"
-      ],
-      "observations": [
-        "Capturas finais de produção e perguntas conferidas em desktop e celular.",
-        "Imagem real da fábrica atribuída à 3Print, proporção preservada e conteúdo legível.",
-        "Perguntas expansíveis funcionam por teclado; texto distingue opções disponíveis e obras em preparação.",
-        "Embalagem descrita conforme fonte oficial; prazo por CEP e rastreio, sem promessa de troca automática."
-      ]
-    },
-    "commercialMode": "consultation",
-    "fixedDeliveryPromise": false,
-    "media": "Still do vídeo real da 3Print já escolhido pelo proprietário.",
-    "exclusions": [
-      "Clientes da fabricante não apresentados como endosso à Lumen",
-      "Sem garantia de troca automática ou prazo fixo",
-      "Sem alegações novas de FSC, gramatura, durabilidade, relevo físico ou instalação"
-    ]
+  "brand_revision": {
+    "version": "20261119-brand1",
+    "supplierPublicReferences": false,
+    "heroHeight": "88svh",
+    "uniformMediaScale": 1.1,
+    "sourceFilesPreserved": true
   }
 }

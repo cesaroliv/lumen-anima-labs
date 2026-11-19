@@ -75,3 +75,7 @@
 }
 @media(max-width:360px){.production-story,.purchase-questions{padding-inline:19px}.production-visual{margin-inline:-19px}.production-visual figcaption{padding-inline:19px}.production-copy h2{font-size:37px}.production-steps h3{font-size:28px}.purchase-question summary{font-size:23px}}
 @media(prefers-reduced-motion:reduce){.question-toggle::after{transition:none}}
+
+/* Keep the displayed production scene focused on the work. */
+.production-visual__image{overflow:hidden}
+.production-visual__image img{transform:scale(1.1);transform-origin:center}
