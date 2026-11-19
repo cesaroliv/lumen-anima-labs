@@ -5,13 +5,13 @@
 .site-header--cinema .main-nav a,.site-header--cinema .saved-button{color:#fff0d5;text-shadow:0 2px 12px #0008;white-space:nowrap}
 .site-header--cinema .main-nav a:hover{color:#ffe0a1;border-color:#ffe0a1}
 .site-header--cinema .saved-button[aria-pressed=true]{color:#ffe0a1}
-.hero.hero--cinema{position:relative;display:flex;flex-direction:row;align-items:center;margin:0 auto;max-width:none;width:100%;min-height:820px;min-height:100svh;padding:126px clamp(24px,7vw,115px) 155px;background:#24251d;color:#fbf2e5;isolation:isolate;overflow:hidden}
+.hero.hero--cinema{position:relative;display:flex;flex-direction:row;align-items:center;margin:0 auto;max-width:none;width:100%;min-height:88vh;min-height:88svh;padding:126px clamp(24px,7vw,115px) 155px;background:#24251d;color:#fbf2e5;isolation:isolate;overflow:hidden}
 .hero--cinema .hero__film{position:absolute;inset:0;z-index:-3;width:100%;height:100%;min-height:0;max-height:none;aspect-ratio:auto;overflow:hidden;background:#3a3227}
 .hero--cinema .hero__poster,.hero--cinema .hero__video{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:58% center;transform:scale(1.006)}
 .hero--cinema .hero__video{z-index:1;background:#3a3227}
 .hero--cinema .hero__film::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(10,16,13,.83) 0%,rgba(12,17,14,.72) 21%,rgba(12,18,14,.4) 50%,rgba(10,15,12,.12) 85%),linear-gradient(0deg,rgba(8,14,11,.83) 0%,transparent 34%,rgba(9,12,9,.22) 100%)}
 .hero--cinema .hero__copy{position:relative;inset:auto;z-index:4;width:min(790px,60vw);max-width:none;margin:0;padding:0;align-self:auto;background:transparent}
-.hero--cinema h1{font:normal clamp(67px,7.6vw,114px)/.96 Georgia,'Times New Roman',serif;letter-spacing:-.055em;margin:0 0 30px;max-width:870px;text-shadow:0 8px 35px #0006;text-wrap:wrap}
+.hero--cinema h1{font:normal clamp(67px,7.6vw,114px)/.96 Georgia,'Times New Roman',serif;letter-spacing:-.055em;margin:0;max-width:870px;text-shadow:0 8px 35px #0006;text-wrap:wrap}
 .hero--cinema h1 em{color:#f2d19b;font-weight:400;font-style:italic}
 .hero--cinema .hero__actions{display:flex;gap:18px;align-items:center;flex-wrap:wrap;width:auto;max-width:none;margin-top:33px}
 .hero--cinema .button--light{display:inline-flex;align-items:center;justify-content:space-between;border:1px solid #f2d59f;margin:0;min-width:285px;min-height:0;padding:20px 24px;font-size:14px;font-weight:700;letter-spacing:.02em;gap:24px;background:#e8c58c;color:#171e18;box-shadow:0 8px 42px rgba(0,0,0,.25);transition:transform .2s,background-color .2s}
@@ -24,7 +24,7 @@
 @media(max-width:860px){
  .site-header.site-header--cinema{height:85px;padding-inline:25px}
  .site-header--cinema .main-nav{gap:15px}
- .hero.hero--cinema{min-height:790px;min-height:100svh;padding:130px 30px 160px;align-items:flex-end}
+ .hero.hero--cinema{min-height:88vh;min-height:88svh;padding:130px 30px 160px;align-items:flex-end}
  .hero--cinema .hero__poster,.hero--cinema .hero__video{object-position:35% center}
  .hero--cinema .hero__film::after{background:linear-gradient(0deg,#0d1713ed 0%,#111914be 45%,#1420184b 100%),linear-gradient(90deg,#10181291,transparent 80%)}
  .hero--cinema .hero__copy{width:min(740px,100%)}
@@ -35,10 +35,10 @@
  .site-header--cinema .wordmark{font-size:24px}
  .site-header--cinema .main-nav{gap:0;margin-left:auto}
  .site-header--cinema .main-nav a:first-child,.site-header--cinema .main-nav a:last-child{display:none}
- .hero.hero--cinema{min-height:710px;min-height:100svh;padding:105px 22px 138px;align-items:flex-end}
+ .hero.hero--cinema{min-height:88vh;min-height:88svh;padding:105px 22px 138px;align-items:flex-end}
  .hero--cinema .hero__poster,.hero--cinema .hero__video{object-position:35% center}
  .hero--cinema .hero__film::after{background:linear-gradient(0deg,#0e1713fb 2%,#131914df 38%,#1018167a 68%,#111a144b 100%),linear-gradient(90deg,#0b17135e,transparent 100%)}
- .hero--cinema h1{font-size:clamp(47px,11.3vw,69px);letter-spacing:-.055em;margin-bottom:17px}
+ .hero--cinema h1{font-size:clamp(47px,11.3vw,69px);letter-spacing:-.055em;margin-bottom:0}
  .hero--cinema .hero__actions{gap:8px;margin-top:22px}
  .hero--cinema .button--light{width:100%;min-width:0;justify-content:space-between;padding:16px 18px;font-size:13px}
  .hero--cinema .hero__work-link{padding:12px 6px;font-size:12px}

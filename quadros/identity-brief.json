@@ -98,5 +98,27 @@
   "owner_visual_approval": {
     "hero": "Aprovada pelo proprietário antes deste pedido.",
     "collections": "Pendente da avaliação do resultado publicado."
+  },
+  "hero_refinement": {
+    "version": "20261119-clean1",
+    "requestedChange": "Remover o parágrafo e os dois botões destacados na captura; reduzir moderadamente a altura sem alterar a largura.",
+    "height": "min-height:88svh",
+    "width": "100%",
+    "mediaFit": "cover",
+    "remainingCopy": "O quadro que faltava. A casa mais sua.",
+    "visualReview": {
+      "status": "PASS",
+      "reviewer": "assistant",
+      "reviewedAt": "2026-11-19T21:59:03.554Z",
+      "screenshots": [
+        "H:\\REMOTE_MCP_LAB\\artifacts\\3print-hero-clean-20261119\\screenshots\\desktop-hero.jpg",
+        "H:\\REMOTE_MCP_LAB\\artifacts\\3print-hero-clean-20261119\\screenshots\\mobile-hero.jpg"
+      ],
+      "observations": [
+        "Desktop e celular inspecionados visualmente nas capturas reais.",
+        "Parágrafo e dois botões removidos; título inteiro e legível abaixo do cabeçalho.",
+        "Hero com largura total e altura reduzida; vídeo sem deformação."
+      ]
+    }
   }
 }
