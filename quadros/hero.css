@@ -1,4 +1,4 @@
-/* Cinematic gallery: preserve the full 16:9 film and the existing catalog. */
+/* Cinematic gallery and playback, isolated from catalog layout. */
 .hero.hero--cinema{position:relative;display:block;width:100%;max-width:none;min-height:0;margin:0;background:#241c16;color:#fff8ee;isolation:isolate}
 .hero--cinema .hero__film{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden}
 .hero--cinema .hero__poster,.hero--cinema .hero__video{position:absolute;inset:0;display:block;width:100%;height:100%;max-height:none;object-fit:contain;object-position:center}
@@ -37,4 +37,13 @@
  .hero--cinema .hero__film-note{display:none}
  .hero--cinema .hero__playback{min-width:44px;min-height:44px;padding:12px;border-radius:50%;gap:0}
  .hero--cinema .hero__playback span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+}
+
+/* Desktop hero fits the window with uniform scaling and an upper crop anchor. */
+@media(min-width:1101px){
+ .hero--cinema .hero__film{height:min(56.25vw,calc(100svh - 92px));max-height:880px;aspect-ratio:auto}
+ .hero--cinema .hero__poster,.hero--cinema .hero__video{object-fit:cover;object-position:50% 0%}
+ .hero--cinema .hero__copy{bottom:clamp(22px,2vw,36px)}
+ .hero--cinema h1{font-size:clamp(36px,3vw,56px);margin-bottom:18px}
+ .hero--cinema .hero__film-controls{bottom:clamp(22px,2vw,36px)}
 }
