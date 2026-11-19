@@ -2,7 +2,33 @@
 (() => {
   'use strict';
 
-  const PAGE_SIZE = 12;
+  const COLLECTION_PAGE_SIZE = 6;
+  const COLLECTIONS = [
+    {
+      name: 'Obsidian Regalia', slug: 'obsidian-regalia', theme: 'obsidian',
+      statement: 'O contraste que faz o olhar ficar.',
+      description: 'Panteras, leões e figuras ornamentais em preto e dourado. Composições para dar destaque à parede e descobrir novos detalhes de perto.',
+      featured: ['catalog-67231', 'catalog-67232'],
+    },
+    {
+      name: 'Gesso e Ouro', slug: 'gesso-e-ouro', theme: 'gesso',
+      statement: 'Clareza nas formas. Dourado nos detalhes.',
+      description: 'Flores, curvas e referências de arquitetura em tons claros. Luz e sombra desenham a aparência de relevo de cada imagem.',
+      featured: ['catalog-67219', 'catalog-67218'],
+    },
+    {
+      name: 'Justiça Dourada', slug: 'justica-dourada', theme: 'justica',
+      statement: 'Uma escolha com significado.',
+      description: 'Balanças, figuras clássicas e símbolos do Direito. Encontre a imagem que representa algo para você e para o espaço que está criando.',
+      featured: ['catalog-67246', 'catalog-67248'],
+    },
+    {
+      name: 'Arte Black', slug: 'arte-black', theme: 'black',
+      statement: 'O preto como ponto de partida.',
+      description: 'Animais e símbolos emergem do fundo escuro em detalhes de aparência metálica. Da águia à rosa negra, o contraste transforma a imagem em presença.',
+      featured: ['black-aguia', 'black-rosa-negra'],
+    },
+  ];
   const STORAGE_KEY = 'lumen:shop:favorites:v1';
   const HISTORY_KEY = '__lumenShopArt';
   const HISTORY_OWNER = `shop-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
@@ -21,7 +47,7 @@
   ];
   const state = {
     products: [], byKey: new Map(), sizes: [], whatsapp: '', ready: false, loading: false,
-    favorites: readFavorites(), visible: PAGE_SIZE, activeKey: null, opener: null,
+    favorites: readFavorites(), collectionVisible: new Map(), activeKey: null, opener: null,
     selections: new Map(), gallery: 'editorial', previousOverflow: null,
     filters: { collection: 'all', mood: 'all', orientation: 'all', query: '', saved: false },
   };
@@ -223,7 +249,7 @@
     return /^[1-9]\d{7,14}$/.test(digits) ? digits : '';
   }
 
-  function columnsForWidth(width) { return width > 1100 ? 3 : width > 760 ? 2 : 1; }
+  function columnsForWidth(width) { return width > 1100 ? 3 : 2; }
 
   function gridColumns() { return columnsForWidth(window.innerWidth || document.documentElement.clientWidth); }
 
@@ -262,6 +288,8 @@
     });
     const geometry = rowGeometry(ratios, gridColumns());
     row.style.gridTemplateColumns = geometry.template;
+    row.style.setProperty('--row-template', geometry.template);
+    row.style.setProperty('--row-max-width', `${geometry.maxWidth}%`);
     row.style.maxWidth = `${geometry.maxWidth}%`;
   }
 
@@ -269,18 +297,20 @@
     if (!ui.related) return;
     const ratios = [...ui.related.querySelectorAll('.related-card img')]
       .map(image => Number(image.dataset.ratio) || 1);
-    ui.related.style.gridTemplateColumns = gridColumns() === 1 ? '1fr' : rowGeometry(ratios, 3).template;
+    ui.related.style.gridTemplateColumns = (window.innerWidth || document.documentElement.clientWidth) <= 760
+      ? '1fr' : rowGeometry(ratios, 3).template;
   }
 
-  function cardImage(product) {
+  function cardImage(product, { large = false } = {}) {
     const images = product.images;
+    const editorial = [images.editorial, 'editorial', images.editorialWidth, images.editorialHeight];
+    const small = [images.editorialSmall, 'editorial', images.editorialSmallWidth, images.editorialSmallHeight];
     const options = [
-      [images.editorialSmall, 'editorial', images.editorialSmallWidth, images.editorialSmallHeight],
-      [images.editorial, 'editorial', images.editorialWidth, images.editorialHeight],
+      ...(large ? [editorial, small] : [small, editorial]),
       [images.original, 'original', 0, 0],
       [product.native.cover, 'native', 0, 0],
     ].filter(([src]) => src);
-    const image = el('img', 'product-card__image');
+    const image = el('img', large ? 'collection-feature__image' : 'product-card__image');
     image.loading = 'lazy';
     image.decoding = 'async';
     image.style.width = '100%';
@@ -334,6 +364,7 @@
   function createCard(product) {
     const card = el('article', 'product-card');
     card.dataset.key = product.key;
+    card.dataset.collectionName = product.collection;
     const open = el('a', 'product-card__open');
     open.href = productURL(product.key);
     open.dataset.open = product.key;
@@ -397,13 +428,117 @@
     }
   }
 
-  function renderGrid() {
-    if (!ui.grid || !state.ready) return;
-    const products = filteredProducts();
-    const shown = products.slice(0, state.visible);
-    const focused = document.activeElement;
-    const preserveFocus = ui.grid.contains(focused);
-    const fragment = document.createDocumentFragment();
+  function collectionConfig(name) {
+    const known = COLLECTIONS.find(item => fold(item.name) === fold(name));
+    if (known) return known;
+    return {
+      name, slug: fold(name).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'outras-obras',
+      theme: 'additional', statement: 'Encontre a sua próxima escolha.',
+      description: 'Explore as obras desta coleção e veja cada composição em detalhe.', featured: [],
+    };
+  }
+
+  function collectionGroups(products) {
+    const byCollection = new Map();
+    products.forEach(product => {
+      if (!byCollection.has(product.collection)) byCollection.set(product.collection, []);
+      byCollection.get(product.collection).push(product);
+    });
+    const orderedNames = [
+      ...COLLECTIONS.map(item => item.name),
+      ...byCollection.keys(),
+    ].filter((name, index, names) => names.indexOf(name) === index);
+    return orderedNames.filter(name => byCollection.has(name)).map(name => ({
+      config: collectionConfig(name), products: byCollection.get(name),
+    }));
+  }
+
+  function hasSpecificFilters() {
+    return Boolean(plain(state.filters.query) || state.filters.saved
+      || !isAll(state.filters.mood) || !isAll(state.filters.orientation));
+  }
+
+  function createCollectionFeature(product, placement) {
+    const figure = el('figure', `collection-feature collection-feature--${placement}`);
+    figure.dataset.featuredKey = product.key;
+    const open = el('a', 'collection-feature__open');
+    open.href = productURL(product.key);
+    open.dataset.open = product.key;
+    open.setAttribute('aria-label', `Ver obra ${product.name}`);
+    open.append(cardImage(product, { large: true }));
+    const caption = el('figcaption', 'collection-feature__caption');
+    const label = el('span', 'collection-feature__label');
+    label.append(el('span', 'collection-feature__name', product.name));
+    if (product.status !== 'configured') label.append(el('span', 'collection-feature__status', 'Em preparação'));
+    const action = el('a', 'collection-feature__action', 'Ver obra ↗');
+    action.href = productURL(product.key);
+    action.dataset.open = product.key;
+    action.setAttribute('aria-label', `Ver obra ${product.name}`);
+    caption.append(label, action);
+    figure.append(open, caption);
+    return figure;
+  }
+
+  function createCollectionChapter(config, products, compact) {
+    const chapter = el('section', `collection-chapter collection-chapter--${config.theme}${compact ? ' collection-chapter--compact' : ''}`);
+    chapter.id = `colecao-${config.slug}`;
+    chapter.dataset.collectionChapter = config.name;
+    chapter.dataset.collectionSlug = config.slug;
+    chapter.setAttribute('aria-labelledby', `collection-title-${config.slug}`);
+    const index = COLLECTIONS.findIndex(item => item.name === config.name);
+    const heading = el('header', 'collection-chapter__heading');
+    const number = el('p', 'collection-chapter__index', `COLEÇÃO ${String(index < 0 ? COLLECTIONS.length + 1 : index + 1).padStart(2, '0')}`);
+    const title = el('h2', 'collection-chapter__title', config.name);
+    title.id = `collection-title-${config.slug}`;
+    const count = el('p', 'collection-chapter__count', `${products.length} ${products.length === 1 ? 'obra' : 'obras'}${compact ? ' na seleção' : ''}`);
+    heading.append(number, title, count);
+    chapter.append(heading);
+
+    if (!compact) {
+      const opening = el('div', 'collection-opening');
+      const story = el('div', 'collection-story');
+      const configured = products.filter(product => product.status === 'configured').length;
+      const availability = configured === products.length
+        ? 'Explore as obras e compare os acabamentos na ficha de cada uma.'
+        : configured === 0
+          ? 'Coleção em preparação. Salve suas favoritas para encontrá-las depois.'
+          : `${configured} obras com acabamentos para consultar. As demais estão em preparação.`;
+      const jump = el('a', 'collection-chapter__jump', 'Explorar as obras ↓');
+      jump.href = `#obras-${config.slug}`;
+      story.append(
+        el('h3', 'collection-chapter__statement', config.statement),
+        el('p', 'collection-chapter__description', config.description),
+        jump,
+        el('p', 'collection-chapter__meta', availability),
+      );
+      opening.append(story);
+      const chosen = [];
+      for (const key of config.featured) {
+        const product = products.find(item => item.key === key);
+        if (product && !chosen.includes(product)) chosen.push(product);
+      }
+      for (const product of products) {
+        if (chosen.length >= 2) break;
+        if (!chosen.includes(product)) chosen.push(product);
+      }
+      chosen.slice(0, 2).forEach((product, position) => {
+        opening.append(createCollectionFeature(product, position ? 'secondary' : 'primary'));
+      });
+      chapter.append(opening);
+    }
+
+    const visible = state.collectionVisible.get(config.name) || COLLECTION_PAGE_SIZE;
+    const shown = products.slice(0, visible);
+    const gallery = el('div', 'collection-gallery');
+    gallery.id = `obras-${config.slug}`;
+    const galleryHeading = el('header', 'collection-gallery__heading');
+    galleryHeading.append(
+      el('h3', 'collection-gallery__title', compact ? 'Obras encontradas' : 'As obras da coleção'),
+      el('p', 'collection-gallery__count', `${shown.length} de ${products.length} ${products.length === 1 ? 'obra' : 'obras'}`),
+    );
+    const grid = el('div', 'collection-products');
+    grid.id = `collection-products-${config.slug}`;
+    grid.setAttribute('aria-label', `Obras de ${config.name}`);
     const columns = gridColumns();
     for (let offset = 0; offset < shown.length; offset += columns) {
       const row = el('div', 'product-row');
@@ -414,8 +549,41 @@
         row.append(card);
       });
       updateRowRatios(row);
-      fragment.append(row);
+      grid.append(row);
     }
+    gallery.append(galleryHeading, grid);
+    const remaining = products.length - shown.length;
+    const footer = el('div', 'collection-gallery__footer');
+    if (remaining > 0) {
+      const next = Math.min(COLLECTION_PAGE_SIZE, remaining);
+      const expand = el('button', 'collection-expand', `Ver mais ${next} ${next === 1 ? 'obra' : 'obras'}`);
+      expand.type = 'button';
+      expand.dataset.expandCollection = config.name;
+      expand.setAttribute('aria-controls', grid.id);
+      expand.setAttribute('aria-expanded', String(shown.length > COLLECTION_PAGE_SIZE));
+      footer.append(expand, el('p', 'collection-gallery__remaining', `${remaining} ${remaining === 1 ? 'obra para explorar' : 'obras para explorar'} em ${config.name}.`));
+    } else {
+      footer.append(el('p', 'collection-gallery__complete', compact ? 'Todas as obras desta seleção estão acima.' : 'Você chegou ao fim desta coleção.'));
+    }
+    gallery.append(footer);
+    chapter.append(gallery);
+    return { chapter, shown: shown.length };
+  }
+
+  function renderGrid() {
+    if (!ui.grid || !state.ready) return;
+    const products = filteredProducts();
+    const groups = collectionGroups(products);
+    const compact = hasSpecificFilters();
+    const focused = document.activeElement;
+    const preserveFocus = ui.grid.contains(focused);
+    const fragment = document.createDocumentFragment();
+    let shownCount = 0;
+    groups.forEach(({ config, products: collectionProducts }) => {
+      const result = createCollectionChapter(config, collectionProducts, compact);
+      shownCount += result.shown;
+      fragment.append(result.chapter);
+    });
     if (!products.length) {
       const empty = el('div', 'catalog-empty');
       empty.append(el('p', '', state.filters.saved
@@ -427,24 +595,57 @@
       empty.append(clear);
       fragment.append(empty);
     }
+    ui.grid.classList.add('collection-chapters');
+    ui.grid.dataset.view = compact ? 'filtered' : 'collections';
     ui.grid.replaceChildren(fragment);
     if (preserveFocus && focused?.isConnected && document.activeElement !== focused) focused.focus({ preventScroll: true });
     ui.grid.setAttribute('aria-busy', 'false');
     const filterContext = [!isAll(state.filters.mood) ? state.filters.mood : '', state.filters.saved ? 'minha seleção' : ''].filter(Boolean);
     const countLabel = products.length
-      ? `${shown.length} de ${products.length} ${products.length === 1 ? 'obra' : 'obras'}`
+      ? `${shownCount} de ${products.length} ${products.length === 1 ? 'obra' : 'obras'} · ${groups.length} ${groups.length === 1 ? 'coleção' : 'coleções'}`
       : '0 obras';
     setText(ui.count, countLabel + (filterContext.length ? ` · ${filterContext.join(' · ')}` : ''));
-    if (ui.loadMore) {
-      ui.loadMore.hidden = shown.length >= products.length;
-      ui.loadMore.disabled = shown.length >= products.length;
-    }
+    if (ui.loadMore) { ui.loadMore.hidden = true; ui.loadMore.disabled = true; }
     updateFilterButtons();
+    emit('catalog_rendered', { resultCount: products.length, collectionCount: groups.length, shown: shownCount, compact });
+  }
+
+  function expandCollection(name) {
+    const products = filteredProducts().filter(product => product.collection === name);
+    if (!products.length) return;
+    const previous = Math.min(state.collectionVisible.get(name) || COLLECTION_PAGE_SIZE, products.length);
+    state.collectionVisible.set(name, previous + COLLECTION_PAGE_SIZE);
+    renderGrid();
+    const config = collectionConfig(name);
+    const chapter = document.getElementById(`colecao-${config.slug}`);
+    const firstNew = chapter?.querySelectorAll('.product-card__open')[previous];
+    if (firstNew) {
+      firstNew.focus({ preventScroll: true });
+      const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+      firstNew.scrollIntoView({ block: 'nearest', behavior: reduced ? 'auto' : 'smooth' });
+    }
+    const shown = Math.min(previous + COLLECTION_PAGE_SIZE, products.length);
+    announce(`${shown} de ${products.length} obras de ${name} exibidas.`);
+    emit('load_more', { collection: name, shown, resultCount: products.length });
+  }
+
+  function syncCollectionAnchor() {
+    if (!state.ready || state.activeKey) return;
+    const hash = window.location.hash.slice(1);
+    const config = COLLECTIONS.find(item => `colecao-${item.slug}` === hash);
+    if (!config) return;
+    // Direct chapter links reveal the complete collection context; product URLs stay independent.
+    if (hasSpecificFilters() || !isAll(state.filters.collection)) resetFilters();
+    window.requestAnimationFrame(() => {
+      const chapter = document.getElementById(hash);
+      if (!chapter) return;
+      chapter.scrollIntoView({ block: 'start', behavior: 'auto' });
+    });
   }
 
   function resetFilters() {
     state.filters = { collection: 'all', mood: 'all', orientation: 'all', query: '', saved: false };
-    state.visible = PAGE_SIZE;
+    state.collectionVisible.clear();
     if (ui.search) ui.search.value = '';
     if (ui.orientation) {
       const allOption = [...ui.orientation.options].find(option => isAll(option.value));
@@ -458,20 +659,27 @@
   function setFilter(type, value) {
     if (!state.ready) return;
     state.filters[type] = value;
-    state.visible = PAGE_SIZE;
+    state.collectionVisible.clear();
     renderGrid();
     emit('filter_changed', { filter: type, resultCount: filteredProducts().length });
-    if (type === 'mood' || type === 'saved') scrollToCatalog();
+    if (type === 'mood' || type === 'saved' || type === 'collection') {
+      scrollToCatalog(type === 'collection' && !isAll(value) ? value : null);
+    }
   }
 
-  function scrollToCatalog() {
-    const catalog = document.getElementById('acervo');
-    if (!catalog) return;
-    const heading = document.getElementById('catalog-title') || catalog;
-    if (!heading.hasAttribute('tabindex')) heading.tabIndex = -1;
-    heading.focus({ preventScroll: true });
+  function scrollToCatalog(collection = null) {
+    const chapter = collection
+      ? document.getElementById(`colecao-${collectionConfig(collection).slug}`) : null;
+    const target = chapter || ui.grid;
+    if (!target) return;
+    const focusTarget = chapter?.querySelector('.collection-chapter__title') || target;
+    if (!focusTarget.hasAttribute('tabindex')) focusTarget.tabIndex = -1;
+    if (target === ui.grid && !target.hasAttribute('aria-label')) {
+      target.setAttribute('aria-label', 'Obras por coleção');
+    }
+    focusTarget.focus({ preventScroll: true });
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    catalog.scrollIntoView({ block: 'start', behavior: reduced ? 'auto' : 'smooth' });
+    target.scrollIntoView({ block: 'start', behavior: reduced ? 'auto' : 'smooth' });
   }
 
   function findDataNode(container, attribute, value) {
@@ -529,6 +737,22 @@
     const selected = { finish, color, size };
     state.selections.set(product.key, selected);
     return selected;
+  }
+
+  function applyPreviewSelection(product, preview) {
+    if (product.status !== 'configured' || (!preview?.finish && !preview?.color)) return false;
+    const selected = selectionFor(product);
+    const finish = availableFinishes(product).find(item => item.key === preview.finish);
+    const color = availableColors(product, finish?.key || selected.finish)
+      .find(item => item.key === preview.color);
+    if (!finish && !color) return false;
+    state.selections.set(product.key, {
+      ...selected,
+      ...(finish ? { finish: finish.key } : {}),
+      ...(color ? { color: color.key } : {}),
+    });
+    selectionFor(product);
+    return true;
   }
 
   function dimensionsFor(product, selected) {
@@ -769,7 +993,7 @@
 
   function renderRelated(product) {
     if (!ui.related) return;
-    const ranked = state.products.filter(item => item.key !== product.key).map((item, index) => ({
+    const ranked = state.products.filter(item => item.key !== product.key && item.collection === product.collection).map((item, index) => ({
       item, index,
       score: (item.collection === product.collection ? 2 : 0) +
         (item.mood.some(mood => product.mood.some(other => fold(other) === fold(mood))) ? 1 : 0),
@@ -797,13 +1021,13 @@
     renderRelated(product);
   }
 
-  function openArt(key, { historyMode = 'push', opener = null, source = 'catalog' } = {}) {
+  function openArt(key, { historyMode = 'push', opener = null, source = 'catalog', preview = null } = {}) {
     const product = state.byKey.get(key);
     if (!product || !ui.dialog) return;
     const wasOpen = Boolean(state.activeKey);
     if (!wasOpen && opener && !ui.dialog.contains(opener)) state.opener = opener;
     state.activeKey = key;
-    state.gallery = 'editorial';
+    state.gallery = applyPreviewSelection(product, preview) ? 'native' : 'editorial';
     renderDialog(product);
     if (historyMode !== 'none') updateProductURL(key, wasOpen || historyMode === 'replace');
     if (state.previousOverflow === null) {
@@ -905,6 +1129,8 @@
   function handleClick(event) {
     const target = event.target instanceof Element ? event.target : event.target?.parentElement;
     if (!target) return;
+    const expand = target.closest('[data-expand-collection]');
+    if (expand) { event.preventDefault(); expandCollection(expand.dataset.expandCollection); return; }
     const save = target.closest('[data-save]');
     if (save) {
       event.preventDefault();
@@ -919,7 +1145,11 @@
     if (open) {
       if (open.tagName === 'A' && (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0)) return;
       event.preventDefault();
-      openArt(open.dataset.open, { opener: open, source: ui.dialog?.contains(open) ? 'related' : 'catalog' });
+      openArt(open.dataset.open, {
+        opener: open,
+        source: ui.dialog?.contains(open) ? 'related' : 'catalog',
+        preview: { finish: open.dataset.previewFinish, color: open.dataset.previewColor },
+      });
       return;
     }
     const gallery = target.closest('[data-gallery]');
@@ -992,6 +1222,7 @@
       // commerce.checkoutEnabled never enables billing here: this page is consultation-only.
       renderGrid();
       syncFromURL();
+      syncCollectionAnchor();
       emit('catalog_loaded', { productCount: state.products.length });
     } catch {
       state.ready = false;
@@ -1063,7 +1294,7 @@
     document.addEventListener('click', handleClick);
     ui.search?.addEventListener('input', () => {
       state.filters.query = ui.search.value.slice(0, 200);
-      state.visible = PAGE_SIZE;
+      state.collectionVisible.clear();
       renderGrid();
       window.clearTimeout(searchTimer);
       searchTimer = window.setTimeout(() => emit('search_changed', {
@@ -1075,19 +1306,6 @@
       event.preventDefault(); setFilter('saved', !state.filters.saved);
     });
     ui.clear?.addEventListener('click', event => { event.preventDefault(); resetFilters(); });
-    ui.loadMore?.addEventListener('click', event => {
-      event.preventDefault();
-      const previous = Math.min(state.visible, filteredProducts().length);
-      state.visible += PAGE_SIZE;
-      renderGrid();
-      const firstNew = ui.grid.querySelectorAll('.product-card__open')[previous];
-      if (firstNew) {
-        firstNew.focus({ preventScroll: true });
-        const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-        firstNew.scrollIntoView({ block: 'nearest', behavior: reduced ? 'auto' : 'smooth' });
-      }
-      emit('load_more', { shown: Math.min(state.visible, filteredProducts().length), resultCount: filteredProducts().length });
-    });
     ui.save?.addEventListener('click', event => {
       event.preventDefault();
       if (state.activeKey) setFavorite(state.activeKey, !state.favorites.has(state.activeKey), 'dialog');
@@ -1134,6 +1352,7 @@
       });
     }
     window.addEventListener('popstate', syncFromURL);
+    window.addEventListener('hashchange', syncCollectionAnchor);
     window.addEventListener('storage', event => {
       if (event.key !== STORAGE_KEY && event.key !== null) return;
       state.favorites = event.key === null ? new Set() : parseFavorites(event.newValue);

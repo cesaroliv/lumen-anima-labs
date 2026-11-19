@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "project": "Lumen Arts / 3Print — coleções",
+  "status": "READY_FOR_PUBLICATION",
+  "reference_use": "quality-only",
+  "design_name": "Quatro universos — galeria em capítulos",
+  "brand_source": "Acervo e ambientações existentes da Lumen Arts; códigos, coleções, acabamentos e estado de preparação mantidos do catálogo real. Filme da fábrica 3Print escolhido e aprovado pelo proprietário.",
+  "user_intent": "Explorar as obras separadas por coleção, reconhecer a qualidade da apresentação, comparar configurações reais e consultar a escolha.",
+  "emotion": "Presença, descoberta, identificação pessoal e clareza para escolher.",
+  "proof_assets": [
+    "assets/catalog-67231-editorial.webp",
+    "assets/catalog-67219-editorial.webp",
+    "assets/black-aguia-editorial.webp",
+    "assets/catalog-67231-native-02.webp"
+  ],
+  "design": {
+    "primary": "#171712",
+    "surface": "#f3efe7",
+    "accent": "#b5905e",
+    "heading_font": "Georgia",
+    "body_font": "Segoe UI",
+    "composition": "Hero da fábrica preservada; índice tipográfico de quatro coleções; aberturas assimétricas com obras reais em proporção natural; galerias independentes; comparação interativa de cinco cores de moldura; orientação de escolha e encerramento.",
+    "motion": "Entradas breves por seção e foco no conteúdo, sem sequestrar a rolagem; navegação aderente e preferência de movimento reduzido respeitada.",
+    "mood": "Galeria de arte editorial, contraste entre carvão e papel quente"
+  },
+  "reference_profiles": [
+    {
+      "id": "papelaria-flow-hero",
+      "quality_reference": "Execução de mídia, legibilidade e cuidado responsivo; perfil confirmado no CSS local, não utilizado como identidade.",
+      "primary": "#171018",
+      "surface": "#fff8ef",
+      "accent": "#ffced9",
+      "heading_font": "Playfair Display",
+      "body_font": "DM Sans",
+      "composition": "Hero dramática editorial central/esquerda"
+    },
+    {
+      "id": "clinica-dental-cinema",
+      "quality_reference": "Brief de diferenciação e clareza funcional; sem apropriar a identidade clínica.",
+      "primary": "#093b46",
+      "surface": "#f4f9f8",
+      "accent": "#a6e3d5",
+      "heading_font": "Sora",
+      "body_font": "IBM Plex Sans",
+      "composition": "Hero documental de atendimento; tipografia geométrica compacta no terço inferior esquerdo; tratamento como lista clínica editorial; agendamento em painel verde-petróleo"
+    }
+  ],
+  "originality_decisions": [
+    "Cada coleção recebe uma abertura própria e uma galeria independente; a separação também permanece na busca, nos favoritos e nos relacionados da ficha.",
+    "O ritmo claro e escuro acompanha os ativos de Obsidian Regalia, Gesso e Ouro, Justiça Dourada e Arte Black, sem reutilizar os tons rosa da papelaria ou o verde clínico.",
+    "As imagens mantêm sua proporção original em composições assimétricas e linhas calculadas; nenhum quadro é cortado para preencher caixas iguais.",
+    "A comparação de molduras usa as cinco visualizações reais da Pantera Eclipse e altera a imagem, oferecendo uma interação ligada à decisão de compra.",
+    "A hero da fábrica permanece com a configuração já aprovada pelo proprietário; a nova composição pertence ao corpo da loja e conserva os fluxos de consulta existentes."
+  ],
+  "semantic_structure": [
+    "approved factory hero",
+    "four collection index",
+    "independent editorial collection chapters",
+    "real finish comparison",
+    "choice guide",
+    "closing invitation"
+  ],
+  "visual_review": {
+    "status": "PASS",
+    "screenshot_desktop": "artifacts/3print-collections-20261119/screenshots/final-desktop-obsidian-regalia-opening.jpg",
+    "screenshot_mobile": "artifacts/3print-collections-20261119/screenshots/final-mobile-gallery.jpg",
+    "reviewer": "assistant_visual_review",
+    "evidence": [
+      "preview-qa.json",
+      "refinement-qa.json"
+    ],
+    "reviewed_views": [
+      "desktop intro",
+      "Obsidian opening",
+      "Gesso opening",
+      "Justiça opening",
+      "Arte Black opening",
+      "finish comparison",
+      "choice guide",
+      "mobile intro",
+      "mobile gallery",
+      "mobile finish options"
+    ],
+    "notes": "Capturas finais examinadas: composições distintas, imagens inteiras, contraste claro/escuro, galerias separadas e navegação persistente. Movimento refinado para não apagar a imagem durante entradas. Rótulos essenciais de ao menos 12px no celular. Aprovação visual do proprietário para o novo corpo ainda pendente."
+  },
+  "publication": "AUTHORIZED",
+  "publication_source": "Pedido explícito de reorganizar a loja por coleção e melhorar seu corpo visual; continuação da edição e publicação autorizadas.",
+  "design_stylesheet": "collections-20261119.css",
+  "hero_video_asset": "assets/hero-3print-factory-20261119.mp4",
+  "cinematic": true,
+  "interaction_mode": "consultation",
+  "commercial_state": {
+    "checkoutEnabled": false,
+    "catalogProducts": 99,
+    "configured": 27,
+    "inPreparation": 72
+  },
+  "owner_visual_approval": {
+    "hero": "Aprovada pelo proprietário antes deste pedido.",
+    "collections": "Pendente da avaliação do resultado publicado."
+  }
+}
