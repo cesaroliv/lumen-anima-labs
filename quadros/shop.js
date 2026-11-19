@@ -28,6 +28,9 @@
   let ui = {};
   let liveRegion;
   let searchTimer;
+  let reflowFrame;
+  const cardCache = new Map();
+  const decodedDimensions = new Map();
 
   function plain(value, max = 500) {
     return typeof value === 'string' || typeof value === 'number'
@@ -145,6 +148,11 @@
     return output;
   }
 
+  function imageDimension(value) {
+    const number = Number(value);
+    return Number.isFinite(number) && number > 0 && number <= 100000 ? Math.round(number) : 0;
+  }
+
   function normalizeProduct(value) {
     if (!value || typeof value !== 'object') return null;
     const key = plain(value.key, 200);
@@ -167,6 +175,10 @@
         editorial: safeImageURL(images.editorial),
         editorialSmall: safeImageURL(images.editorialSmall),
         original: safeImageURL(images.original),
+        editorialWidth: imageDimension(images.editorialWidth),
+        editorialHeight: imageDimension(images.editorialHeight),
+        editorialSmallWidth: imageDimension(images.editorialSmallWidth),
+        editorialSmallHeight: imageDimension(images.editorialSmallHeight),
       },
       native: {
         cover: safeImageURL(native.cover),
@@ -211,20 +223,84 @@
     return /^[1-9]\d{7,14}$/.test(digits) ? digits : '';
   }
 
+  function columnsForWidth(width) { return width > 1100 ? 3 : width > 760 ? 2 : 1; }
+
+  function gridColumns() { return columnsForWidth(window.innerWidth || document.documentElement.clientWidth); }
+
+  function preferredRatio(product) {
+    const images = product.images;
+    const sources = [
+      [images.editorialSmall, images.editorialSmallWidth, images.editorialSmallHeight],
+      [images.editorial, images.editorialWidth, images.editorialHeight],
+      [images.original, 0, 0], [product.native.cover, 0, 0],
+    ];
+    for (const [url, width, height] of sources) {
+      if (!url) continue;
+      const decoded = decodedDimensions.get(url);
+      if (decoded) return decoded.width / decoded.height;
+      if (width && height) return width / height;
+      // An unknown source stays neutral until its real dimensions are decoded.
+      return 1;
+    }
+    return 1;
+  }
+
+  function rowGeometry(ratios, columns) {
+    const safe = ratios.map(ratio => Number.isFinite(ratio) && ratio > 0 ? ratio : 1);
+    return {
+      template: safe.map(ratio => `${ratio}fr`).join(' '),
+      maxWidth: columns === 1 || safe.length >= columns
+        ? 100 : Math.min(100, safe.reduce((sum, ratio) => sum + ratio, 0) / (columns * 1.05) * 100),
+    };
+  }
+
+  function updateRowRatios(row) {
+    if (!row) return;
+    const ratios = [...row.children].map(card => {
+      const image = card.querySelector('.product-card__image');
+      return Number(image?.dataset.ratio) || preferredRatio(state.byKey.get(card.dataset.key));
+    });
+    const geometry = rowGeometry(ratios, gridColumns());
+    row.style.gridTemplateColumns = geometry.template;
+    row.style.maxWidth = `${geometry.maxWidth}%`;
+  }
+
+  function updateRelatedRatios() {
+    if (!ui.related) return;
+    const ratios = [...ui.related.querySelectorAll('.related-card img')]
+      .map(image => Number(image.dataset.ratio) || 1);
+    ui.related.style.gridTemplateColumns = gridColumns() === 1 ? '1fr' : rowGeometry(ratios, 3).template;
+  }
+
   function cardImage(product) {
+    const images = product.images;
     const options = [
-      [product.images.editorialSmall, 'editorial'],
-      [product.images.editorial, 'editorial'],
-      [product.images.original, 'original'],
-      [product.native.cover, 'native'],
+      [images.editorialSmall, 'editorial', images.editorialSmallWidth, images.editorialSmallHeight],
+      [images.editorial, 'editorial', images.editorialWidth, images.editorialHeight],
+      [images.original, 'original', 0, 0],
+      [product.native.cover, 'native', 0, 0],
     ].filter(([src]) => src);
     const image = el('img', 'product-card__image');
     image.loading = 'lazy';
     image.decoding = 'async';
-    image.width = 1000;
-    image.height = 800;
-    image.style.objectFit = 'contain';
+    image.style.width = '100%';
+    image.style.height = 'auto';
+    image.style.aspectRatio = 'auto';
     let index = 0;
+    let currentSource = '';
+    function setDimensions(width, height) {
+      if (width && height) {
+        image.width = width;
+        image.height = height;
+        image.dataset.ratio = String(width / height);
+      } else {
+        image.removeAttribute('width');
+        image.removeAttribute('height');
+        image.dataset.ratio = '1';
+      }
+      updateRowRatios(image.closest('.product-row'));
+      if (image.closest('.related-card')) updateRelatedRatios();
+    }
     function useNext() {
       const item = options[index++];
       if (!item) {
@@ -234,12 +310,22 @@
         }
         return;
       }
+      currentSource = item[0];
+      const decoded = decodedDimensions.get(currentSource);
+      setDimensions(decoded?.width || item[2], decoded?.height || item[3]);
+      image.hidden = false;
       image.alt = item[1] === 'editorial'
         ? `Ambientação ilustrativa da obra ${product.name}`
         : item[1] === 'original' ? `Arte ${product.name}, composição completa`
           : `Visualização digital da obra ${product.name}`;
-      image.src = item[0];
+      image.src = currentSource;
     }
+    image.addEventListener('load', () => {
+      if (!image.naturalWidth || !image.naturalHeight) return;
+      const dimensions = { width: image.naturalWidth, height: image.naturalHeight };
+      decodedDimensions.set(currentSource, dimensions);
+      setDimensions(dimensions.width, dimensions.height);
+    });
     image.addEventListener('error', useNext);
     useNext();
     return image;
@@ -315,8 +401,21 @@
     if (!ui.grid || !state.ready) return;
     const products = filteredProducts();
     const shown = products.slice(0, state.visible);
+    const focused = document.activeElement;
+    const preserveFocus = ui.grid.contains(focused);
     const fragment = document.createDocumentFragment();
-    shown.forEach(product => fragment.append(createCard(product)));
+    const columns = gridColumns();
+    for (let offset = 0; offset < shown.length; offset += columns) {
+      const row = el('div', 'product-row');
+      shown.slice(offset, offset + columns).forEach(product => {
+        let card = cardCache.get(product.key);
+        if (!card) { card = createCard(product); cardCache.set(product.key, card); }
+        updateSaveButton(card.querySelector('[data-save]'), product);
+        row.append(card);
+      });
+      updateRowRatios(row);
+      fragment.append(row);
+    }
     if (!products.length) {
       const empty = el('div', 'catalog-empty');
       empty.append(el('p', '', state.filters.saved
@@ -329,6 +428,7 @@
       fragment.append(empty);
     }
     ui.grid.replaceChildren(fragment);
+    if (preserveFocus && focused?.isConnected && document.activeElement !== focused) focused.focus({ preventScroll: true });
     ui.grid.setAttribute('aria-busy', 'false');
     const filterContext = [!isAll(state.filters.mood) ? state.filters.mood : '', state.filters.saved ? 'minha seleção' : ''].filter(Boolean);
     const countLabel = products.length
@@ -379,6 +479,13 @@
       .find(node => node.getAttribute(attribute) === value) : null;
   }
 
+  function refreshFavoriteButtons(key = null) {
+    for (const [cardKey, card] of cardCache) {
+      if (key !== null && cardKey !== key) continue;
+      updateSaveButton(card.querySelector('[data-save]'), state.byKey.get(cardKey));
+    }
+  }
+
   function setFavorite(key, desired, source = 'card') {
     const product = state.byKey.get(key);
     if (!product) return;
@@ -386,7 +493,7 @@
     const restoreCard = focused?.getAttribute?.('data-save') === key;
     if (desired) state.favorites.add(key); else state.favorites.delete(key);
     const persisted = persistFavorites();
-    renderGrid();
+    if (state.filters.saved) renderGrid(); else refreshFavoriteButtons(key);
     if (state.activeKey === key) {
       updateSaveButton(ui.save, product, true);
       updateAction(product);
@@ -675,6 +782,7 @@
       link.append(cardImage(item), el('span', 'related-card__name', item.name));
       return link;
     }));
+    updateRelatedRatios();
   }
 
   function renderDialog(product) {
@@ -1004,11 +1112,32 @@
       ui.dialog.addEventListener('close', () => { if (state.activeKey) requestClose('native'); });
       ui.dialog.addEventListener('keydown', trapDialogKeys);
     }
+    const scheduleReflow = () => {
+      if (reflowFrame) return;
+      reflowFrame = window.requestAnimationFrame(() => {
+        reflowFrame = null;
+        renderGrid();
+        updateRelatedRatios();
+      });
+    };
+    if (window.matchMedia) {
+      ['(max-width: 760px)', '(max-width: 1100px)'].forEach(query => {
+        const media = window.matchMedia(query);
+        if (media.addEventListener) media.addEventListener('change', scheduleReflow);
+        else media.addListener(scheduleReflow);
+      });
+    } else {
+      let previousColumns = gridColumns();
+      window.addEventListener('resize', () => {
+        const nextColumns = gridColumns();
+        if (nextColumns !== previousColumns) { previousColumns = nextColumns; scheduleReflow(); }
+      });
+    }
     window.addEventListener('popstate', syncFromURL);
     window.addEventListener('storage', event => {
       if (event.key !== STORAGE_KEY && event.key !== null) return;
       state.favorites = event.key === null ? new Set() : parseFavorites(event.newValue);
-      renderGrid();
+      if (state.filters.saved) renderGrid(); else refreshFavoriteButtons();
       if (activeProduct()) { updateSaveButton(ui.save, activeProduct(), true); updateAction(activeProduct()); }
     });
     updateFilterButtons();
