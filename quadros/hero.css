@@ -11,7 +11,7 @@
 .hero--cinema .hero__video{z-index:1;background:#3a3227}
 .hero--cinema .hero__film::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(10,16,13,.83) 0%,rgba(12,17,14,.72) 21%,rgba(12,18,14,.4) 50%,rgba(10,15,12,.12) 85%),linear-gradient(0deg,rgba(8,14,11,.83) 0%,transparent 34%,rgba(9,12,9,.22) 100%)}
 .hero--cinema .hero__copy{position:relative;inset:auto;z-index:4;width:min(790px,60vw);max-width:none;margin:0;padding:0;align-self:auto;background:transparent}
-.hero--cinema h1{font:normal clamp(67px,7.6vw,130px)/.96 Georgia,'Times New Roman',serif;letter-spacing:-.055em;margin:0 0 30px;max-width:870px;text-shadow:0 8px 35px #0006;text-wrap:wrap}
+.hero--cinema h1{font:normal clamp(67px,7.6vw,114px)/.96 Georgia,'Times New Roman',serif;letter-spacing:-.055em;margin:0 0 30px;max-width:870px;text-shadow:0 8px 35px #0006;text-wrap:wrap}
 .hero--cinema h1 em{color:#f2d19b;font-weight:400;font-style:italic}
 .hero--cinema .hero__actions{display:flex;gap:18px;align-items:center;flex-wrap:wrap;width:auto;max-width:none;margin-top:33px}
 .hero--cinema .button--light{display:inline-flex;align-items:center;justify-content:space-between;border:1px solid #f2d59f;margin:0;min-width:285px;min-height:0;padding:20px 24px;font-size:14px;font-weight:700;letter-spacing:.02em;gap:24px;background:#e8c58c;color:#171e18;box-shadow:0 8px 42px rgba(0,0,0,.25);transition:transform .2s,background-color .2s}
@@ -47,3 +47,7 @@
  .hero--cinema .hero__video{display:none}
  .hero--cinema .button--light{transition:none}
 }
+
+/* Copy revision: legible supporting sentence, preserving the approved film layout. */
+.hero--cinema .hero__intro{max-width:570px;margin:0;color:#f5ead9;font-size:17px;line-height:1.65;text-shadow:0 2px 18px #0009}
+@media(max-width:630px){.hero--cinema .hero__intro{max-width:34ch;font-size:13px;line-height:1.65}}
