@@ -11,7 +11,8 @@
     "assets/catalog-67231-editorial.webp",
     "assets/catalog-67219-editorial.webp",
     "assets/black-aguia-editorial.webp",
-    "assets/catalog-67231-native-02.webp"
+    "assets/catalog-67231-native-02.webp",
+    "assets/3print-producao-montagem-20261119.webp"
   ],
   "design": {
     "primary": "#171712",
@@ -19,7 +20,7 @@
     "accent": "#b5905e",
     "heading_font": "Georgia",
     "body_font": "Segoe UI",
-    "composition": "Hero da fábrica preservada; índice tipográfico de quatro coleções; aberturas assimétricas com obras reais em proporção natural; galerias independentes; comparação interativa de cinco cores de moldura; orientação de escolha e encerramento.",
+    "composition": "Hero da fábrica preservada; índice tipográfico de quatro coleções; aberturas assimétricas com obras reais em proporção natural; galerias independentes; comparação interativa de cinco cores de moldura; orientação de escolha e encerramento. Produção real com três etapas e FAQ acessível de entrega e escolha.",
     "motion": "Entradas breves por seção e foco no conteúdo, sem sequestrar a rolagem; navegação aderente e preferência de movimento reduzido respeitada.",
     "mood": "Galeria de arte editorial, contraste entre carvão e papel quente"
   },
@@ -57,7 +58,9 @@
     "four collection index",
     "independent editorial collection chapters",
     "real finish comparison",
+    "verified production and protective packaging",
     "choice guide",
+    "purchase and delivery questions",
     "closing invitation"
   ],
   "visual_review": {
@@ -81,10 +84,21 @@
       "mobile gallery",
       "mobile finish options"
     ],
-    "notes": "Capturas finais examinadas: composições distintas, imagens inteiras, contraste claro/escuro, galerias separadas e navegação persistente. Movimento refinado para não apagar a imagem durante entradas. Rótulos essenciais de ao menos 12px no celular. Aprovação visual do proprietário para o novo corpo ainda pendente."
+    "notes": "Capturas finais examinadas: composições distintas, imagens inteiras, contraste claro/escuro, galerias separadas e navegação persistente. Movimento refinado para não apagar a imagem durante entradas. Rótulos essenciais de ao menos 12px no celular. Aprovação visual do proprietário para o novo corpo ainda pendente.",
+    "informationRevision": {
+      "version": "20261119-information1",
+      "status": "PASS",
+      "reviewedAt": "2026-11-19T22:20:41.818Z",
+      "screenshots": [
+        "artifacts/3print-information-20261119/screenshots/desktop-production.jpg",
+        "artifacts/3print-information-20261119/screenshots/desktop-questions.jpg",
+        "artifacts/3print-information-20261119/screenshots/mobile-production.jpg",
+        "artifacts/3print-information-20261119/screenshots/mobile-questions.jpg"
+      ]
+    }
   },
   "publication": "AUTHORIZED",
-  "publication_source": "Pedido explícito de reorganizar a loja por coleção e melhorar seu corpo visual; continuação da edição e publicação autorizadas.",
+  "publication_source": "Pedido de explorar o site oficial da 3Print e acrescentar informações úteis à página, na continuação autorizada de edição e publicação da loja.",
   "design_stylesheet": "collections-20261119.css",
   "hero_video_asset": "assets/hero-3print-factory-20261119.mp4",
   "cinematic": true,
@@ -120,5 +134,41 @@
         "Hero com largura total e altura reduzida; vídeo sem deformação."
       ]
     }
+  },
+  "information_revision": {
+    "version": "20261119-information1",
+    "scope": "Informações de produção, embalagem, rastreio e escolha com base no site oficial da 3Print",
+    "sources": [
+      "https://www.3print.com.br/",
+      "https://www.3print.com.br/producao-e-entrega",
+      "https://www.3print.com.br/termos-de-uso",
+      "https://www.3print.com.br/products",
+      "https://www.3print.com.br/artigos/api-integracao-plataforma-propria"
+    ],
+    "visualReview": {
+      "status": "PASS",
+      "reviewer": "assistant_visual_review",
+      "reviewedAt": "2026-11-19T22:20:41.818Z",
+      "screenshots": [
+        "artifacts/3print-information-20261119/screenshots/desktop-production.jpg",
+        "artifacts/3print-information-20261119/screenshots/desktop-questions.jpg",
+        "artifacts/3print-information-20261119/screenshots/mobile-production.jpg",
+        "artifacts/3print-information-20261119/screenshots/mobile-questions.jpg"
+      ],
+      "observations": [
+        "Capturas finais de produção e perguntas conferidas em desktop e celular.",
+        "Imagem real da fábrica atribuída à 3Print, proporção preservada e conteúdo legível.",
+        "Perguntas expansíveis funcionam por teclado; texto distingue opções disponíveis e obras em preparação.",
+        "Embalagem descrita conforme fonte oficial; prazo por CEP e rastreio, sem promessa de troca automática."
+      ]
+    },
+    "commercialMode": "consultation",
+    "fixedDeliveryPromise": false,
+    "media": "Still do vídeo real da 3Print já escolhido pelo proprietário.",
+    "exclusions": [
+      "Clientes da fabricante não apresentados como endosso à Lumen",
+      "Sem garantia de troca automática ou prazo fixo",
+      "Sem alegações novas de FSC, gramatura, durabilidade, relevo físico ou instalação"
+    ]
   }
 }
