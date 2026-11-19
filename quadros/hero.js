@@ -2,32 +2,30 @@
   "use strict";
   const video = document.getElementById("hero-video");
   if (!video) return;
-  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const saveData = Boolean(navigator.connection && navigator.connection.saveData);
-  let inView = !("IntersectionObserver" in window);
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const connection = navigator.connection;
+  let inView = true;
   let failed = false;
-  const allowed = () => !failed && !document.hidden && inView && !motion.matches && !saveData;
+  video.muted = true;
+  video.playsInline = true;
+  const allowed = () => !failed && !document.hidden && inView && !reduced.matches && !connection?.saveData;
   const play = async () => {
-    if (!allowed()) return;
-    video.muted = true;
-    if (!video.getAttribute("src")) {
-      video.src = video.dataset.src;
-      video.load();
-    }
+    if (!allowed()) { video.pause(); return; }
     try {
       await video.play();
       if (!allowed()) video.pause();
-    } catch (_) { /* The separate poster remains visible if playback is blocked. */ }
+    } catch (_) { /* The poster remains available when autoplay is blocked. */ }
   };
   const update = () => { if (allowed()) void play(); else video.pause(); };
-  video.addEventListener("error", () => { failed = true; video.hidden = true; });
   document.addEventListener("visibilitychange", update);
-  motion.addEventListener("change", update);
+  reduced.addEventListener("change", update);
+  connection?.addEventListener?.("change", update);
+  video.addEventListener("error", () => { failed = true; video.hidden = true; });
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(entries => {
-      inView = entries[0].isIntersecting;
+      inView = entries.some(entry => entry.isIntersecting);
       update();
-    }, { threshold: 0.05 }).observe(video.closest(".hero__film"));
+    }, { threshold: 0.06 }).observe(video);
   }
   update();
 })();
