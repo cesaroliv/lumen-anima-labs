@@ -12,10 +12,12 @@
   <meta property="og:title" content="Lumen Arts — O seu olhar também mora aqui">
   <meta property="og:description" content="Quadros, encontros e um espaço com a sua presença. Descubra uma arte com a qual você queira conviver.">
   <meta property="og:url" content="https://lumenanima.com/quadros/">
-  <meta property="og:image" content="https://lumenanima.com/quadros/assets/catalog-67231-editorial.webp">
+  <meta property="og:image" content="https://lumenanima.com/quadros/assets/hero-gallery-poster-20261118.webp">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="preload" as="image" href="assets/catalog-67231-editorial.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero-gallery-poster-20261118.webp" fetchpriority="high">
   <link rel="stylesheet" href="shop.css?v=20261118-2">
+  <link rel="stylesheet" href="hero.css?v=20261118-3">
+  <script defer src="hero.js?v=20261118-3"></script>
   <script defer src="shop.js?v=20261118-2"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Lumen Arts","url":"https://lumenanima.com/quadros/","inLanguage":"pt-BR","description":"Quadros e curadoria para espaços com identidade."}</script>
 </head>
@@ -35,20 +37,25 @@
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__copy">
-        <p class="eyebrow hero__eyebrow">OBSIDIAN REGALIA · OBRA EM DESTAQUE</p>
-        <h1 id="hero-title">Pantera<br><em>Eclipse.</em></h1>
-        <p class="hero__description">Um olhar frontal entre folhagens e arcos dourados. Observe de perto o desenho que emerge do fundo negro.</p>
-        <button class="button button--light" type="button" data-open="catalog-67231">Conhecer esta obra</button>
-        <a class="hero__secondary" href="#acervo">Explorar as 99 obras</a>
-        <p class="hero__footnote">O seu olhar também mora aqui.</p>
+    <section class="hero hero--cinema" aria-labelledby="hero-title">
+      <div class="hero__film">
+        <img class="hero__poster" src="assets/hero-gallery-poster-20261118.webp" width="1600" height="900" alt="Galeria com Pantera Eclipse, Flor de Lótus Dourada e Dama em Relevo, sob a luz do entardecer" fetchpriority="high" decoding="async">
+        <video id="hero-video" class="hero__video" width="1600" height="900" autoplay muted loop playsinline preload="none" poster="assets/hero-gallery-poster-20261118.webp" data-src="assets/hero-gallery-20261118.mp4" aria-hidden="true"></video>
+        <div class="hero__film-controls">
+          <button id="hero-playback" class="hero__playback" type="button" aria-controls="hero-video" aria-label="Reproduzir vídeo" data-state="paused" hidden>
+            <svg class="hero__play-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 3.5 16 10 6 16.5Z" fill="currentColor"/></svg>
+            <svg class="hero__pause-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 4h3v12H5zm7 0h3v12h-3z" fill="currentColor"/></svg>
+            <span>Reproduzir</span>
+          </button>
+          <span class="hero__film-note">Ambientação ilustrativa</span>
+        </div>
       </div>
-      <div class="hero__visual">
-        <button class="hero__image-button" type="button" data-open="catalog-67231" aria-label="Conhecer Pantera Eclipse">
-          <img src="assets/catalog-67231-editorial.webp" width="1402" height="1122" alt="Pantera Eclipse em uma ambientação com luz lateral, parede escura e móveis de madeira" fetchpriority="high" decoding="async">
-        </button>
-        <div class="hero__caption"><span>Pantera Eclipse</span><span>Obsidian Regalia · ambientação ilustrativa</span></div>
+      <div class="hero__copy">
+        <h1 id="hero-title">O seu olhar também <em>mora aqui.</em></h1>
+        <div class="hero__actions">
+          <a class="button button--light" href="#acervo">Explorar as obras</a>
+          <button class="hero__work-link" type="button" data-open="catalog-67231">Conhecer Pantera Eclipse <span aria-hidden="true">↗</span></button>
+        </div>
       </div>
     </section>
 
