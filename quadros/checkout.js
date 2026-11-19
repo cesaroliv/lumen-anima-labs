@@ -149,7 +149,7 @@
   function timeNote(quote = state.quote, shipping = state.shipping) {
     if (!shipping) return '';
     const days = Number.isInteger(quote?.productionDays) && quote.productionDays > 0 ? quote.productionDays : null;
-    return (days ? 'Produção: até ' + days + ' dias úteis após confirmação do pagamento. ' : 'O prazo de produção precisa ser confirmado. ') +
+    return (days ? 'Produção estimada: ' + days + ' dias úteis após confirmação do pagamento. ' : 'O prazo de produção precisa ser confirmado. ') +
       'Transporte estimado: ' + shipping.deadlineDays + ' dias úteis após a postagem. Os períodos são contados separadamente.';
   }
   function shippingPrices() {
