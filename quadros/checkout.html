@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#1c271e">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Seu quadro — Lumen Arts</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="checkout.css?v=20261119-1">
+  <script defer src="checkout.js?v=20261119-1"></script>
+</head>
+<body>
+  <a class="skip-link" href="#checkout-content">Ir para os detalhes do pedido</a>
+  <header class="checkout-header">
+    <a class="wordmark" href="./" aria-label="Lumen Arts, início"><span>LUMEN</span><span class="wordmark__arts">ARTS</span></a>
+    <a class="back-link" id="back-to-art" href="./#acervo"><span aria-hidden="true">←</span> Voltar às obras</a>
+  </header>
+  <main class="checkout-shell" id="checkout-content">
+    <div class="checkout-intro">
+      <p class="eyebrow">UM NOVO LUGAR PARA A SUA OBRA</p>
+      <h1>Seu quadro.<br><em>Nos seus detalhes.</em></h1>
+      <p>Da escolha da moldura ao endereço de entrega, confira cada detalhe antes de finalizar.</p>
+    </div>
+    <div class="checkout-layout">
+      <aside class="artwork-panel" aria-labelledby="artwork-name">
+        <div class="artwork-image-wrap"><img id="artwork-image" alt="" hidden></div>
+        <div class="artwork-caption">
+          <p class="eyebrow" id="artwork-collection">LUMEN ARTS</p>
+          <h2 id="artwork-name">Sua próxima obra</h2>
+          <p id="artwork-reference" class="reference"></p>
+        </div>
+        <dl class="selection-details">
+          <div><dt>Tamanho nominal</dt><dd id="selection-size">—</dd></div>
+          <div><dt>Acabamento</dt><dd id="selection-finish">—</dd></div>
+          <div><dt>Moldura</dt><dd id="selection-color">—</dd></div>
+          <div><dt>Quantidade</dt><dd>1 quadro</dd></div>
+        </dl>
+        <p class="artwork-note">Visualização digital. Os detalhes dourados e a aparência de relevo pertencem à imagem impressa. As cores podem variar entre a tela e a impressão.</p>
+      </aside>
+      <div class="purchase-panel">
+        <ol class="checkout-steps" aria-label="Etapas da compra">
+          <li data-step="shipping"><span>01</span> Entrega</li>
+          <li data-step="details"><span>02</span> Seus dados</li>
+          <li data-step="payment"><span>03</span> Pagamento</li>
+        </ol>
+        <p id="test-notice" class="test-notice" hidden>Ambiente de teste. Esta etapa não está liberada para compras reais.</p>
+        <div id="checkout-notice" class="checkout-notice" role="status" aria-live="polite">Conferindo os detalhes da sua escolha…</div>
+        <section id="unavailable-screen" class="checkout-section" hidden aria-labelledby="unavailable-title">
+          <span class="section-number" aria-hidden="true">LA</span>
+          <h2 id="unavailable-title">Vamos cuidar<br>dos próximos detalhes.</h2>
+          <p id="unavailable-copy">Antes de fechar o pedido, confirme com a Lumen Arts o valor, o acabamento e a entrega desta obra.</p>
+          <a id="consultation-link" class="button button--primary" href="https://wa.me/5511978230487" target="_blank" rel="noopener noreferrer">Consultar minha escolha <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="./#acervo">Continuar explorando as coleções</a>
+        </section>
+        <section id="shipping-screen" class="checkout-section" hidden aria-labelledby="shipping-title">
+          <p class="section-kicker">01 / ENTREGA</p>
+          <h2 id="shipping-title">Para onde<br>a sua obra vai?</h2>
+          <p class="section-description">Informe o CEP para consultar o frete desta configuração.</p>
+          <form id="shipping-form">
+            <label class="field-label" for="cep">CEP de entrega</label>
+            <div class="cep-row"><input id="cep" name="cep" type="text" inputmode="numeric" autocomplete="shipping postal-code" pattern="[0-9]{5}-?[0-9]{3}" maxlength="9" placeholder="00000-000" required><button class="button button--outline" id="quote-button" type="submit">Calcular entrega</button></div>
+          </form>
+          <div id="shipping-result" hidden>
+            <fieldset class="shipping-options"><legend>Entrega disponível</legend><div id="shipping-options"></div></fieldset>
+            <p id="shipping-time-note" class="small-note"></p>
+            <dl class="price-breakdown"><div><dt>Seu quadro</dt><dd id="quote-product-price">—</dd></div><div><dt>Entrega</dt><dd id="quote-shipping-price">—</dd></div><div class="total-line"><dt>Total</dt><dd id="quote-total">—</dd></div></dl>
+            <button class="button button--primary" id="continue-details" type="button">Continuar <span aria-hidden="true">→</span></button>
+          </div>
+        </section>
+        <section id="details-screen" class="checkout-section" hidden aria-labelledby="details-title">
+          <p class="section-kicker">02 / SEUS DADOS</p>
+          <h2 id="details-title">Tudo certo<br>para receber.</h2>
+          <p class="section-description">Usaremos estas informações para o pagamento, o pedido e a entrega.</p>
+          <form id="details-form">
+            <div class="field"><label for="buyer-name">Nome completo</label><input id="buyer-name" name="name" autocomplete="name" minlength="3" maxlength="110" required></div>
+            <div class="field"><label for="buyer-email">E-mail de contato</label><input id="buyer-email" name="email" type="email" autocomplete="email" maxlength="130" required></div>
+            <div class="field-grid">
+              <div class="field"><label for="buyer-phone">Celular com DDD</label><input id="buyer-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required></div>
+              <div class="field"><label for="buyer-document">CPF ou CNPJ</label><input id="buyer-document" name="document" inputmode="numeric" maxlength="18" required></div>
+            </div>
+            <div class="form-divider"><h3>Endereço de entrega</h3><button type="button" id="edit-delivery" class="text-button">Alterar CEP</button></div>
+            <div class="field field--short"><label for="address-cep">CEP</label><input id="address-cep" readonly autocomplete="shipping postal-code"></div>
+            <div class="field-grid field-grid--street">
+              <div class="field"><label for="address-street">Rua / avenida</label><input id="address-street" name="street" autocomplete="shipping address-line1" maxlength="130" required></div>
+              <div class="field"><label for="address-number">Número</label><input id="address-number" name="number" maxlength="20" required></div>
+            </div>
+            <div class="field"><label for="address-complement">Complemento <span class="optional">(opcional)</span></label><input id="address-complement" name="complement" autocomplete="shipping address-line2" maxlength="80"></div>
+            <div class="field"><label for="address-district">Bairro</label><input id="address-district" name="district" maxlength="80" required></div>
+            <div class="field-grid field-grid--city">
+              <div class="field"><label for="address-city">Cidade</label><input id="address-city" name="city" autocomplete="shipping address-level2" maxlength="80" required></div>
+              <div class="field"><label for="address-state">Estado</label><select id="address-state" name="state" autocomplete="shipping address-level1" required><option value="">UF</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div>
+            </div>
+            <button class="button button--primary" type="submit">Revisar meu pedido <span aria-hidden="true">→</span></button>
+          </form>
+        </section>
+        <section id="review-screen" class="checkout-section" hidden aria-labelledby="review-title">
+          <p class="section-kicker">03 / REVISÃO E PAGAMENTO</p>
+          <h2 id="review-title">A sua escolha,<br>em cada detalhe.</h2>
+          <div class="review-address"><div class="review-address__heading"><h3>Entrega</h3><button type="button" id="edit-details" class="text-button">Editar dados</button></div><p id="review-address"></p><p id="review-contact" class="small-note"></p></div>
+          <dl class="price-breakdown"><div><dt>Seu quadro</dt><dd id="review-product-price">—</dd></div><div><dt>Entrega</dt><dd id="review-shipping-price">—</dd></div><div class="total-line"><dt>Total em reais</dt><dd id="review-total">—</dd></div></dl>
+          <p id="review-time-note" class="small-note"></p>
+          <label class="confirmation-check"><input id="review-confirm" type="checkbox"><span>Conferi a obra, o tamanho, o acabamento e o endereço de entrega.</span></label>
+          <button id="create-order-button" type="button" class="button button--primary">Escolher forma de pagamento <span aria-hidden="true">→</span></button>
+          <p class="payment-note">Você escolhe como pagar na próxima etapa. Nenhuma cobrança acontece ao clicar neste botão.</p>
+        </section>
+        <section id="payment-screen" class="checkout-section" hidden aria-labelledby="payment-title">
+          <p class="section-kicker">03 / PAGAMENTO</p>
+          <h2 id="payment-title">Escolha como<br>prefere pagar.</h2>
+          <div class="payment-total"><span>Total do pedido</span><strong id="payment-total">—</strong></div>
+          <p id="payment-order-reference" class="reference"></p>
+          <div id="payment-brick" class="brick-container"></div>
+          <p class="payment-note">Pagamento processado pelo Mercado Pago. Os dados do cartão são informados no formulário seguro do provedor.</p>
+        </section>
+        <section id="status-screen" class="checkout-section" hidden aria-labelledby="status-title">
+          <p class="section-kicker">SEU PEDIDO</p>
+          <h2 id="status-title">Conferindo<br>seu pagamento.</h2>
+          <p id="status-description"></p>
+          <p id="status-order-reference" class="reference"></p>
+          <div class="payment-total"><span>Total do pedido</span><strong id="status-total">—</strong></div>
+          <div id="status-brick" class="brick-container" hidden></div>
+          <div id="pix-fallback" class="pix-fallback" hidden><img id="pix-image" alt="QR Code para pagamento com Pix" hidden><label for="pix-code">Pix Copia e Cola</label><textarea id="pix-code" rows="3" readonly></textarea><button id="copy-pix" type="button" class="button button--outline">Copiar código Pix</button></div>
+          <button id="refresh-status" class="button button--outline" type="button">Atualizar status</button>
+          <a id="status-help" class="text-link" href="https://wa.me/5511978230487" target="_blank" rel="noopener noreferrer">Falar com a Lumen Arts ↗</a>
+          <a id="restart-checkout" class="text-link" href="./#acervo" hidden>Escolher novamente</a>
+        </section>
+        <noscript><p class="checkout-notice">Ative o JavaScript para consultar os detalhes do pedido, ou <a href="https://wa.me/5511978230487" target="_blank" rel="noopener noreferrer">fale com a Lumen Arts</a>.</p></noscript>
+      </div>
+    </div>
+  </main>
+  <footer class="checkout-footer"><span>LUMEN ARTS</span><span>Uma escolha para fazer parte do seu espaço.</span><a href="https://wa.me/5511978230487" target="_blank" rel="noopener noreferrer">Precisa de ajuda? ↗</a></footer>
+</body>
+</html>

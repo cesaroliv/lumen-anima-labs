@@ -5,7 +5,7 @@
   "reference_use": "quality-only",
   "design_name": "Quatro universos — galeria em capítulos",
   "brand_source": "Acervo, ambientações e mídias escolhidas pelo proprietário. Referências técnicas e origem dos materiais mantidas na documentação operacional.",
-  "user_intent": "Explorar as obras separadas por coleção, reconhecer a qualidade da apresentação, comparar configurações reais e consultar a escolha.",
+  "user_intent": "Explorar obras separadas por coleção, comparar configurações reais e consultar a escolha. Quando uma variante estiver liberada comercialmente pelo servidor, seguir com a mesma obra, medida, acabamento e cor para o checkout.",
   "emotion": "Presença, descoberta, identificação pessoal e clareza para escolher.",
   "proof_assets": [
     "assets/catalog-67231-editorial.webp",
@@ -20,7 +20,7 @@
     "accent": "#b5905e",
     "heading_font": "Georgia",
     "body_font": "Segoe UI",
-    "composition": "Hero da fábrica preservada; índice tipográfico de quatro coleções; aberturas assimétricas com obras reais em proporção natural; galerias independentes; comparação interativa de cinco cores de moldura; orientação de escolha e encerramento. Produção real com três etapas e FAQ acessível de entrega e escolha.",
+    "composition": "Hero da fábrica preservada; índice tipográfico de quatro coleções; aberturas assimétricas com obras reais em proporção natural; galerias independentes; comparação interativa de cinco cores de moldura; orientação de escolha e encerramento. Produção real com três etapas e FAQ acessível de entrega e escolha. Checkout utilitário em página própria, com imagem nativa da configuração escolhida, entrega, dados, revisão e pagamento, preservando a identidade da galeria.",
     "motion": "Entradas breves por seção e foco no conteúdo, sem sequestrar a rolagem; navegação aderente e preferência de movimento reduzido respeitada.",
     "mood": "Galeria de arte editorial, contraste entre carvão e papel quente"
   },
@@ -51,7 +51,8 @@
     "O ritmo claro e escuro acompanha os ativos de Obsidian Regalia, Gesso e Ouro, Justiça Dourada e Arte Black, sem reutilizar os tons rosa da papelaria ou o verde clínico.",
     "As imagens mantêm sua proporção original em composições assimétricas e linhas calculadas; nenhum quadro é cortado para preencher caixas iguais.",
     "A comparação de molduras usa as cinco visualizações reais da Pantera Eclipse e altera a imagem, oferecendo uma interação ligada à decisão de compra.",
-    "A hero da fábrica permanece com a configuração já aprovada pelo proprietário; a nova composição pertence ao corpo da loja e conserva os fluxos de consulta existentes."
+    "A hero da fábrica permanece com a configuração já aprovada pelo proprietário; a nova composição pertence ao corpo da loja e conserva os fluxos de consulta existentes.",
+    "O checkout mantém a obra e sua moldura como referência visual durante a compra. O catálogo só oferece o botão de compra para a configuração liberada pelo servidor; as demais permanecem em consulta."
   ],
   "semantic_structure": [
     "approved factory hero",
@@ -61,31 +62,36 @@
     "verified production and protective packaging",
     "choice guide",
     "purchase and delivery questions",
-    "closing invitation"
+    "closing invitation",
+    "configuration-specific checkout with server-authorized availability"
   ],
   "visual_review": {
     "status": "PASS",
     "reviewer": "assistant_visual_review",
-    "reviewedAt": "2026-11-19T22:35:20.653Z",
-    "screenshot_desktop": "artifacts/lumen-arts-brand-20261119/screenshots/desktop-production.jpg",
-    "screenshot_mobile": "artifacts/lumen-arts-brand-20261119/screenshots/mobile-production.jpg",
+    "reviewedAt": "2026-11-19T23:31:23.804Z",
+    "screenshot_desktop": "artifacts/lumen-arts-checkout-20261119/front-real-sdk-1440.jpg",
+    "screenshot_mobile": "artifacts/lumen-arts-checkout-20261119/front-review-mobile.jpg",
     "evidence": [
-      "preview-qa.json"
+      "artifacts/lumen-arts-checkout-20261119/front-qa.json",
+      "artifacts/lumen-arts-checkout-20261119/front-real-sdk.json",
+      "artifacts/lumen-arts-checkout-20261119/front-entry-qa.json",
+      "artifacts/lumen-arts-checkout-20261119/front-visual-review.json"
     ],
     "reviewed_views": [
-      "desktop production",
-      "mobile production",
-      "desktop film near native aspect ratio",
-      "mobile hero"
+      "checkout review desktop",
+      "checkout review mobile",
+      "real payment SDK desktop",
+      "real payment SDK mobile"
     ],
-    "notes": "No displayed supplier name, link or corner mark. Width and height preserved; uniform image crop."
+    "notes": "Capturas reais do navegador revisadas pelo agente de interface e pelo agente principal. Arte e configuração proporcionais, informações legíveis e sem overflow observado. Testes de interface usam pedidos e valores fictícios locais; não são oferta comercial aprovada nem prova de pagamento real.",
+    "creative_owner_approval": false
   },
   "publication": "AUTHORIZED",
-  "publication_source": "Pedido explícito de remover todas as menções e links do fornecedor da página pública.",
+  "publication_source": "Pedido do proprietário para implementar o checkout Mercado Pago na loja existente. Escopo desta publicação: integração técnica com vendas físicas desligadas; não representa aprovação de preço, prazo ou abertura comercial.",
   "design_stylesheet": "collections-20261119.css",
   "hero_video_asset": "assets/hero-producao-20261119.mp4",
   "cinematic": true,
-  "interaction_mode": "consultation",
+  "interaction_mode": "consultation-with-gated-checkout",
   "commercial_state": {
     "checkoutEnabled": false,
     "catalogProducts": 99,
@@ -98,5 +104,18 @@
     "heroHeight": "88svh",
     "uniformMediaScale": 1.1,
     "sourceFilesPreserved": true
+  },
+  "checkout_revision": {
+    "version": "20261119-checkout1",
+    "public_files": [
+      "checkout.html",
+      "checkout.css",
+      "checkout.js"
+    ],
+    "display_rule": "Somente configuração PROD e variante aprovada pelo servidor habilitam o botão de compra no catálogo.",
+    "fallback": "Consulta existente quando indisponível, desligado ou ainda em preparação.",
+    "payment_testing": "Fluxo de dados simulado e renderização do SDK real sem envio de cobrança.",
+    "real_payment_tested": false,
+    "owner_creative_approval_received": false
   }
 }

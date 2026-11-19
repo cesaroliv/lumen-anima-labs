@@ -17,3 +17,7 @@ O fluxo físico é de consulta. `commerce.checkoutEnabled` permanece `false`; al
 ## Verificação
 
 Servir a raiz do repositório por HTTP e abrir `/quadros/`. Conferir descoberta, favoritos persistidos, referências, proporção nominal, acabamento/cor, links compartilháveis, navegação por teclado e tela móvel. Os assets de cada família devem apontar para a mesma referência de arte. A pesquisa editorial orienta a experiência; não constitui prova de aumento de conversão.
+
+## Checkout Mercado Pago
+
+A página checkout.html reúne entrega, dados do comprador, revisão e pagamento por Mercado Pago. A disponibilidade vem de /api/quadros/config; o catálogo visual não autoriza cobranças. Apenas variantes aprovadas no servidor podem mostrar preço e compra. Sem disponibilidade confirmada, a loja oferece consulta. A confirmação de pagamento é consultada no servidor e não se baseia em redirecionamento ou comprovante. Nenhum arquivo de impressão é publicado por esse fluxo.

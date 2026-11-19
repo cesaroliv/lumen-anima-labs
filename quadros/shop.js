@@ -1,8 +1,9 @@
-/* Lumen Arts — static catalogue interactions. No checkout or analytics requests. */
+/* Lumen Arts — catalogue and server-authorized checkout discovery. No analytics requests. */
 (() => {
   'use strict';
 
   const COLLECTION_PAGE_SIZE = 6;
+  const CHECKOUT_API = 'https://lumen-digital-checkout.ccoliveira1.workers.dev/api/quadros';
   const COLLECTIONS = [
     {
       name: 'Obsidian Regalia', slug: 'obsidian-regalia', theme: 'obsidian',
@@ -46,7 +47,7 @@
     { key: 'infinity', label: 'Borda infinita', family: 'infinity' },
   ];
   const state = {
-    products: [], byKey: new Map(), sizes: [], whatsapp: '', ready: false, loading: false,
+    products: [], byKey: new Map(), sizes: [], whatsapp: '', ready: false, loading: false, commerce: null,
     favorites: readFavorites(), collectionVisible: new Map(), activeKey: null, opener: null,
     selections: new Map(), gallery: 'editorial', previousOverflow: null,
     filters: { collection: 'all', mood: 'all', orientation: 'all', query: '', saved: false },
@@ -959,8 +960,79 @@
     return url.href;
   }
 
+  function checkoutOffer(product) {
+    if (product?.status !== 'configured' || !state.commerce) return null;
+    const selected = selectionFor(product);
+    return state.commerce.find(offer =>
+      offer.artworkKey === product.key && offer.size === selected.size &&
+      offer.finish === selected.finish && offer.color === (selected.color || '')) || null;
+  }
+
+  function checkoutURL(product) {
+    const selected = selectionFor(product);
+    const url = new URL('./checkout.html', window.location.href);
+    url.searchParams.set('obra', product.key);
+    url.searchParams.set('tamanho', selected.size);
+    url.searchParams.set('acabamento', selected.finish);
+    if (selected.color) url.searchParams.set('cor', selected.color);
+    return url.href;
+  }
+
+  async function loadCheckoutConfig() {
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 5000);
+    try {
+      const response = await fetch(CHECKOUT_API + '/config', {
+        credentials: 'omit', cache: 'no-store', signal: controller.signal,
+      });
+      if (!response.ok) throw new Error('checkout-unavailable');
+      const config = await response.json();
+      state.commerce = config.checkoutEnabled === true && config.mode === 'PROD' &&
+        config.currency === 'BRL' && Array.isArray(config.readySelections)
+        ? config.readySelections.filter(offer => offer && typeof offer.artworkKey === 'string' &&
+          typeof offer.size === 'string' && typeof offer.finish === 'string' &&
+          typeof offer.color === 'string' && Number.isSafeInteger(offer.priceCents) && offer.priceCents > 0)
+        : null;
+    } catch {
+      state.commerce = null;
+    } finally {
+      window.clearTimeout(timeout);
+      if (activeProduct()) updateAction(activeProduct());
+    }
+  }
+
   function updateAction(product) {
     if (!ui.action) return;
+    const offer = checkoutOffer(product);
+    let price = document.getElementById('art-checkout-price');
+    if (offer) {
+      if (!price) {
+        price = el('p', 'art-checkout-price');
+        price.id = 'art-checkout-price';
+        ui.action.before(price);
+      }
+      price.hidden = false;
+      price.textContent = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
+        .format(offer.priceCents / 100) + ' · frete calculado no próximo passo';
+      ui.action.textContent = 'Comprar este quadro';
+      ui.action.dataset.action = 'checkout';
+      ui.action.removeAttribute('aria-pressed');
+      ui.action.removeAttribute('aria-disabled');
+      ui.action.removeAttribute('disabled');
+      if ('disabled' in ui.action) ui.action.disabled = false;
+      ui.action.setAttribute('aria-label', 'Comprar ' + product.name + ' na configuração selecionada');
+      if (ui.action.tagName === 'A') {
+        ui.action.href = checkoutURL(product);
+        ui.action.removeAttribute('target');
+        ui.action.removeAttribute('rel');
+        ui.action.removeAttribute('role');
+      }
+      setText(ui.availability, 'Esta configuração está disponível para compra. Confira a entrega pelo seu CEP no próximo passo.');
+      ui.dialog?.querySelectorAll('.consultation-note').forEach(node => { node.hidden = true; });
+      return;
+    }
+    if (price) price.hidden = true;
+    ui.dialog?.querySelectorAll('.consultation-note').forEach(node => { node.hidden = product.status !== 'configured'; });
     const configured = product.status === 'configured';
     const saved = state.favorites.has(product.key);
     ui.action.textContent = configured ? 'Consultar valor e entrega' : saved ? 'Salvo para depois' : 'Salvar para depois';
@@ -1117,6 +1189,14 @@
       setFavorite(product.key, true, 'preparation');
       return;
     }
+    if (checkoutOffer(product)) {
+      emit('checkout_open', { key: product.key });
+      if (ui.action.tagName !== 'A') {
+        event.preventDefault();
+        window.location.assign(checkoutURL(product));
+      }
+      return;
+    }
     emit('consultation_open', { key: product.key, destination: state.whatsapp ? 'whatsapp' : 'support' });
     if (ui.action.tagName !== 'A') {
       event.preventDefault();
@@ -1219,7 +1299,7 @@
       state.sizes = normalizeSizes(catalog.sizes);
       state.whatsapp = normalizeWhatsApp(catalog.contact?.whatsapp);
       state.ready = true;
-      // commerce.checkoutEnabled never enables billing here: this page is consultation-only.
+      // Only the server's approved variant list can make a purchase action available.
       renderGrid();
       syncFromURL();
       syncCollectionAnchor();
@@ -1361,6 +1441,7 @@
     });
     updateFilterButtons();
     loadCatalog();
+    loadCheckoutConfig();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
