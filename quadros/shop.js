@@ -257,7 +257,12 @@
     return {
       sizes: sizes.map(size => size.key), layouts, objectPosition: position,
       preferredSize: sizes.find(size => size.key === value.preferredSize)?.key || sizes[0].key,
+      nativePreviewAvailable: value.nativePreviewAvailable !== false,
     };
+  }
+
+  function nativePreviewAvailable(product) {
+    return product.framing?.nativePreviewAvailable !== false;
   }
 
   function availableSizes(product) {
@@ -289,7 +294,7 @@
     const sources = [
       [images.editorialSmall, images.editorialSmallWidth, images.editorialSmallHeight],
       [images.editorial, images.editorialWidth, images.editorialHeight],
-      [images.original, 0, 0], [product.native.cover, 0, 0],
+      [images.original, 0, 0], [nativePreviewAvailable(product) ? product.native.cover : '', 0, 0],
     ];
     for (const [url, width, height] of sources) {
       if (!url) continue;
@@ -339,7 +344,7 @@
     const options = [
       ...(large ? [editorial, small] : [small, editorial]),
       [images.original, 'original', 0, 0],
-      [product.native.cover, 'native', 0, 0],
+      [nativePreviewAvailable(product) ? product.native.cover : '', 'native', 0, 0],
     ].filter(([src]) => src);
     const image = el('img', large ? 'collection-feature__image' : 'product-card__image');
     image.loading = 'lazy';
@@ -799,6 +804,7 @@
   function colorLabel(key) { return COLORS.find(color => color.key === key)?.label || ''; }
 
   function selectedNative(product, selected) {
+    if (!nativePreviewAvailable(product)) return '';
     const finish = FINISHES.find(item => item.key === selected?.finish);
     if (!finish) return product.native.cover;
     if (finish.family === 'infinity') return product.native.infinity;
@@ -840,7 +846,7 @@
           : 'Referência de acabamento, com proporção ilustrativa. Veja o enquadramento em “No seu tamanho”.',
       });
     }
-    if (product.status === 'configured' && product.native.cover) items.push({
+    if (product.status === 'configured' && nativePreviewAvailable(product) && product.native.cover) items.push({
       key: 'cover', label: 'Vista no ambiente', src: product.native.cover, thumbnail: product.native.cover,
       alt: `Visualização digital de ${product.name} no ambiente`,
       caption: 'Simulação digital no ambiente, com proporção ilustrativa. Confira as medidas e o acabamento da opção escolhida.',
@@ -1149,7 +1155,8 @@
     const wasOpen = Boolean(state.activeKey);
     if (!wasOpen && opener && !ui.dialog.contains(opener)) state.opener = opener;
     state.activeKey = key;
-    state.gallery = applyPreviewSelection(product, preview) ? 'native' : 'editorial';
+    state.gallery = applyPreviewSelection(product, preview)
+      ? (nativePreviewAvailable(product) ? 'native' : 'framing') : 'editorial';
     renderDialog(product);
     if (historyMode !== 'none') updateProductURL(key, wasOpen || historyMode === 'replace');
     if (state.previousOverflow === null) {
@@ -1224,7 +1231,7 @@
     selected[type] = value;
     state.selections.set(product.key, selected);
     selectionFor(product);
-    if (type === 'finish' || type === 'color') state.gallery = 'native';
+    if (type === 'finish' || type === 'color') state.gallery = nativePreviewAvailable(product) ? 'native' : 'framing';
     else if (type === 'size' && product.images.original) state.gallery = 'framing';
     renderOptions(product);
     renderGallery(product);
@@ -1336,7 +1343,7 @@
     const controller = typeof AbortController === 'function' ? new AbortController() : null;
     const timer = controller ? window.setTimeout(() => controller.abort(), 20000) : null;
     try {
-      const response = await fetch('./catalog.json?v=20261119-framing1', { credentials: 'same-origin', signal: controller?.signal });
+      const response = await fetch('./catalog.json?v=20261120-native1', { credentials: 'same-origin', signal: controller?.signal });
       if (!response.ok) throw new Error('catalog-request-failed');
       const catalog = await response.json();
       if (!catalog || !Array.isArray(catalog.products)) throw new Error('invalid-catalog');
