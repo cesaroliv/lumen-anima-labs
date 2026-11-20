@@ -355,6 +355,21 @@
       throw new Error('Pagamento em verificação. Consulte o status do pedido.');
     }
   }
+  function canRestartExpiredOrder(order) {
+    return order?.status === 'awaiting_payment' && order.paymentAttempted === false && order.canStartNewCheckout === true;
+  }
+  function canRestartCheckout(order) {
+    return ['approved', 'rejected', 'cancelled', 'refunded'].includes(order?.status) || canRestartExpiredOrder(order);
+  }
+  function restartHref(order) {
+    if (!canRestartExpiredOrder(order) || !order.artwork?.key || !order.selection) return './#acervo';
+    const url = new URL('./checkout.html', window.location.href);
+    url.searchParams.set('obra', order.artwork.key);
+    url.searchParams.set('tamanho', order.selection.size);
+    url.searchParams.set('acabamento', order.selection.finish);
+    if (order.selection.color) url.searchParams.set('cor', order.selection.color);
+    return url.href;
+  }
   function statusCopy(order) {
     switch (order.status) {
       case 'approved': return ['Pagamento confirmado.', 'Seu pedido foi registrado. A Lumen Arts acompanhará os próximos passos da produção e da entrega.'];
@@ -418,12 +433,13 @@
       text('status-title', title); text('status-description', description);
       text('status-order-reference', 'Pedido ' + order.orderId); text('status-total', money(order.totalCents));
       const help = new URL('https://wa.me/5511978230487'); help.searchParams.set('text', 'Olá! Gostaria de acompanhar meu pedido Lumen Arts ' + order.orderId + '.'); $('status-help').href = help.href;
-      $('restart-checkout').hidden = !['approved', 'rejected', 'cancelled', 'refunded'].includes(order.status);
-      $('restart-checkout').textContent = order.status === 'approved' ? 'Voltar às coleções' : 'Escolher novamente';
+      $('restart-checkout').hidden = !canRestartCheckout(order);
+      $('restart-checkout').href = restartHref(order);
+      $('restart-checkout').textContent = canRestartExpiredOrder(order) ? 'Calcular novamente' : order.status === 'approved' ? 'Voltar às coleções' : 'Escolher novamente';
       screen('status', focus); notice('');
       if (order.status === 'awaiting_payment' && order.paymentAttempted === false) {
-        text('status-description', Date.parse(order.expiresAt) <= Date.now()
-          ? 'O prazo deste pedido expirou. Fale com a Lumen Arts para confirmar uma nova cotação.'
+        text('status-description', canRestartExpiredOrder(order)
+          ? 'A cotação expirou antes de qualquer tentativa de pagamento. Calcule a entrega novamente para continuar com a mesma obra e configuração.'
           : 'O pedido foi salvo e ainda não houve pagamento. A finalização está indisponível no momento.');
       }
       if (['pending', 'processing'].includes(order.status)) await mountStatus();
@@ -446,7 +462,16 @@
     $('edit-details').addEventListener('click', () => { if (!state.createStarted) { screen('details', true); notice(''); } });
     $('create-order-button').addEventListener('click', createOrder);
     $('refresh-status').addEventListener('click', () => { state.pollCount = 0; refreshOrder({ allowPayment: true }); });
-    $('restart-checkout').addEventListener('click', () => { if (['approved', 'rejected', 'cancelled', 'refunded'].includes(state.order?.status)) { try { sessionStorage.removeItem(STORAGE_KEY); } catch {} } });
+    $('restart-checkout').addEventListener('click', event => {
+      if (!canRestartCheckout(state.order)) { event.preventDefault(); return; }
+      try {
+        sessionStorage.removeItem(STORAGE_KEY);
+        if (sessionStorage.getItem(STORAGE_KEY) !== null) throw new Error('RECOVERY_STORAGE_UNAVAILABLE');
+      } catch {
+        event.preventDefault();
+        notice('Não conseguimos preparar uma nova cotação neste navegador. Seu pedido foi preservado; fale com a Lumen Arts para continuar.', true);
+      }
+    });
     $('copy-pix').addEventListener('click', async () => {
       try { await navigator.clipboard.writeText($('pix-code').value); text('copy-pix', 'Código copiado'); }
       catch { $('pix-code').focus(); $('pix-code').select(); notice('Selecione e copie o código Pix exibido.'); }

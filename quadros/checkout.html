@@ -10,7 +10,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="checkout.css?v=20261119-1">
   <link rel="stylesheet" href="framing.css?v=20261119-framing1">
-  <script defer src="checkout.js?v=20261119-framing1"></script>
+  <script defer src="checkout.js?v=20261119-recovery1"></script>
 </head>
 <body>
   <a class="skip-link" href="#checkout-content">Ir para os detalhes do pedido</a>
@@ -74,7 +74,7 @@
         <section id="details-screen" class="checkout-section" hidden aria-labelledby="details-title">
           <p class="section-kicker">02 / SEUS DADOS</p>
           <h2 id="details-title">Tudo certo<br>para receber.</h2>
-          <p class="section-description">Usaremos estas informações para o pagamento, o pedido e a entrega.</p>
+          <p class="section-description">Usaremos estas informações para o pagamento, o pedido e a entrega. <a href="privacidade.html" target="_blank" rel="noopener noreferrer">Veja como tratamos seus dados.</a></p>
           <form id="details-form">
             <div class="field"><label for="buyer-name">Nome completo</label><input id="buyer-name" name="name" autocomplete="name" minlength="3" maxlength="110" required></div>
             <div class="field"><label for="buyer-email">E-mail de contato</label><input id="buyer-email" name="email" type="email" autocomplete="email" maxlength="130" required></div>
@@ -104,6 +104,7 @@
           <dl class="price-breakdown"><div><dt>Seu quadro</dt><dd id="review-product-price">—</dd></div><div><dt>Entrega</dt><dd id="review-shipping-price">—</dd></div><div class="total-line"><dt>Total em reais</dt><dd id="review-total">—</dd></div></dl>
           <p id="review-time-note" class="small-note"></p>
           <label class="confirmation-check"><input id="review-confirm" type="checkbox"><span>Conferi a obra, o tamanho, o acabamento e o endereço de entrega.</span></label>
+          <p class="small-note">Antes de continuar, consulte as <a href="condicoes.html" target="_blank" rel="noopener noreferrer">condições de compra, entrega e devolução</a>.</p>
           <button id="create-order-button" type="button" class="button button--primary">Escolher forma de pagamento <span aria-hidden="true">→</span></button>
           <p class="payment-note">Você escolhe como pagar na próxima etapa. Nenhuma cobrança acontece ao clicar neste botão.</p>
         </section>
@@ -131,6 +132,6 @@
       </div>
     </div>
   </main>
-  <footer class="checkout-footer"><span>LUMEN ARTS</span><span>Uma escolha para fazer parte do seu espaço.</span><a href="https://wa.me/5511978230487" target="_blank" rel="noopener noreferrer">Precisa de ajuda? ↗</a></footer>
+  <footer class="checkout-footer"><span>LUMEN ARTS</span><span>Lumen Arts · CNPJ 69.630.725/0001-60</span><a href="condicoes.html" target="_blank" rel="noopener noreferrer">Condições de compra</a><a href="privacidade.html" target="_blank" rel="noopener noreferrer">Privacidade</a><a href="https://wa.me/5511978230487" target="_blank" rel="noopener noreferrer">Precisa de ajuda? ↗</a></footer>
 </body>
 </html>
