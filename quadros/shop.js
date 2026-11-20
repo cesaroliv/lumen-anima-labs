@@ -187,8 +187,8 @@
     if (!key || !name) return null;
     const width = Number(value.width);
     const height = Number(value.height);
-    const orientation = ['horizontal', 'vertical'].includes(value.orientation)
-      ? value.orientation : (width > height ? 'horizontal' : 'vertical');
+    const orientation = ['horizontal', 'vertical', 'square'].includes(value.orientation)
+      ? value.orientation : (width === height ? 'square' : width > height ? 'horizontal' : 'vertical');
     const images = value.images || {};
     const native = value.native || {};
     const product = {
@@ -198,6 +198,7 @@
       description: plain(value.description, 6000),
       status: value.status === 'configured' ? 'configured' : 'preparation',
       orientation,
+      framing: normalizeFraming(value.framing),
       images: {
         editorial: safeImageURL(images.editorial),
         editorialSmall: safeImageURL(images.editorialSmall),
@@ -233,6 +234,35 @@
       seen.add(key);
       return [{ key, short: dimensions[0], long: dimensions[1] }];
     });
+  }
+
+  function framingPosition(value) {
+    const match = plain(value).match(/^(\d+(?:\.\d+)?)%\s+(\d+(?:\.\d+)?)%$/);
+    return match && match.slice(1).every(part => Number(part) <= 100) ? match[0] : '50% 50%';
+  }
+
+  function normalizeFraming(value) {
+    if (!value || value.layoutApproved !== true) return null;
+    const sizes = normalizeSizes(value.sizes);
+    if (!sizes.length || !Array.isArray(value.layouts)) return null;
+    const position = framingPosition(value.objectPosition);
+    const layouts = sizes.flatMap(size => {
+      const layout = value.layouts.find(item => item?.size === size.key);
+      const width = Number(layout?.widthCm), height = Number(layout?.heightCm);
+      if (!Number.isFinite(width) || !Number.isFinite(height) ||
+        Math.min(width, height) !== size.short || Math.max(width, height) !== size.long) return [];
+      return [{ size: size.key, width, height, objectPosition: framingPosition(layout.objectPosition || position) }];
+    });
+    if (layouts.length !== sizes.length) return null;
+    return {
+      sizes: sizes.map(size => size.key), layouts, objectPosition: position,
+      preferredSize: sizes.find(size => size.key === value.preferredSize)?.key || sizes[0].key,
+    };
+  }
+
+  function availableSizes(product) {
+    if (product.status !== 'configured' || !product.framing) return [];
+    return product.framing.sizes.map(key => state.sizes.find(size => size.key === key)).filter(Boolean);
   }
 
   function normalizeWhatsApp(value) {
@@ -734,7 +764,9 @@
     const finish = finishes.find(item => item.key === saved.finish)?.key || finishes[0]?.key || '';
     const colors = availableColors(product, finish);
     const color = colors.find(item => item.key === saved.color)?.key || colors[0]?.key || '';
-    const size = state.sizes.find(item => item.key === saved.size)?.key || state.sizes[0]?.key || '';
+    const sizes = availableSizes(product);
+    const size = sizes.find(item => item.key === saved.size)?.key
+      || sizes.find(item => item.key === product.framing?.preferredSize)?.key || sizes[0]?.key || '';
     const selected = { finish, color, size };
     state.selections.set(product.key, selected);
     return selected;
@@ -757,11 +789,11 @@
   }
 
   function dimensionsFor(product, selected) {
-    const size = state.sizes.find(item => item.key === selected?.size);
-    if (!size) return null;
-    const width = product.orientation === 'horizontal' ? size.long : size.short;
-    const height = product.orientation === 'horizontal' ? size.short : size.long;
-    return { width, height, label: `${width} × ${height} cm` };
+    if (!availableSizes(product).some(size => size.key === selected?.size)) return null;
+    const layout = product.framing.layouts.find(item => item.size === selected.size);
+    if (!layout) return null;
+    const { width, height, objectPosition } = layout;
+    return { width, height, objectPosition, label: `${width} × ${height} cm` };
   }
 
   function colorLabel(key) { return COLORS.find(color => color.key === key)?.label || ''; }
@@ -789,6 +821,13 @@
       alt: `Arte digital ${product.name}, composição completa`,
       caption: 'Arte digital completa. Esta imagem não é uma fotografia da impressão física.',
     });
+    const dimensions = dimensionsFor(product, selected);
+    if (product.images.original && dimensions) items.push({
+      key: 'framing', label: 'No seu tamanho', src: product.images.original,
+      thumbnail: product.images.original, dimensions,
+      alt: `${product.name} — enquadramento em ${dimensions.label}`,
+      caption: `Enquadramento da arte em ${dimensions.label}.`,
+    });
     const native = product.status === 'configured' ? selectedNative(product, selected) : '';
     if (native) {
       const finish = FINISHES.find(item => item.key === selected?.finish);
@@ -797,8 +836,8 @@
         key: 'native', label: 'Acabamento', src: native, thumbnail: native,
         alt: `Visualização digital de ${product.name}: ${frameDescription}`,
         caption: finish?.family === 'box'
-          ? 'Visualização digital da moldura caixa. O vidro não é demonstrado nesta imagem. Enquadramento e acabamento final serão confirmados na consulta.'
-          : 'Visualização digital do acabamento. Enquadramento final e dimensões externas serão confirmados na consulta.',
+          ? 'Referência de acabamento, com proporção ilustrativa. O vidro não é demonstrado nesta imagem.'
+          : 'Referência de acabamento, com proporção ilustrativa. Veja o enquadramento em “No seu tamanho”.',
       });
     }
     if (product.status === 'configured' && product.native.cover) items.push({
@@ -819,7 +858,13 @@
         setText(ui.caption, 'Não foi possível carregar esta imagem. Escolha outra visualização.');
       };
       ui.image.hidden = !selected;
-      ui.image.style.objectFit = 'contain';
+      const dimensions = selected?.dimensions;
+      const wrap = ui.image.closest('.art-image-wrap');
+      wrap?.classList.toggle('is-framing', Boolean(dimensions));
+      if (dimensions) wrap?.style.setProperty('--framing-ratio', String(dimensions.width / dimensions.height));
+      else wrap?.style.removeProperty('--framing-ratio');
+      ui.image.style.objectFit = dimensions ? 'cover' : 'contain';
+      ui.image.style.objectPosition = dimensions?.objectPosition || '50% 50%';
       ui.image.decoding = 'async';
       if (selected) {
         ui.image.alt = selected.alt;
@@ -844,6 +889,11 @@
         image.alt = '';
         image.loading = 'lazy';
         image.decoding = 'async';
+        if (item.dimensions) {
+          image.classList.add('framing-thumbnail');
+          image.style.aspectRatio = `${item.dimensions.width} / ${item.dimensions.height}`;
+          image.style.objectPosition = item.dimensions.objectPosition;
+        }
         image.addEventListener('error', () => { image.hidden = true; }, { once: true });
         button.append(image, el('span', 'thumbnail-button__label', item.label));
         fragment.append(button);
@@ -866,7 +916,7 @@
     const selected = selectionFor(product);
     const finishes = availableFinishes(product);
     if (ui.sizes) {
-      const buttons = configured ? state.sizes.map(size => {
+      const buttons = configured ? availableSizes(product).map(size => {
         const dimensions = dimensionsFor(product, { size: size.key });
         return optionButton(dimensions.label, 'data-size', size.key, selected.size === size.key);
       }) : [];
@@ -1170,11 +1220,12 @@
     const selected = selectionFor(product);
     if (type === 'finish' && !availableFinishes(product).some(item => item.key === value)) return;
     if (type === 'color' && !availableColors(product, selected.finish).some(item => item.key === value)) return;
-    if (type === 'size' && !state.sizes.some(item => item.key === value)) return;
+    if (type === 'size' && !availableSizes(product).some(item => item.key === value)) return;
     selected[type] = value;
     state.selections.set(product.key, selected);
     selectionFor(product);
     if (type === 'finish' || type === 'color') state.gallery = 'native';
+    else if (type === 'size' && product.images.original) state.gallery = 'framing';
     renderOptions(product);
     renderGallery(product);
     findDataNode(ui.dialog, focusAttribute, value)?.focus({ preventScroll: true });
@@ -1285,7 +1336,7 @@
     const controller = typeof AbortController === 'function' ? new AbortController() : null;
     const timer = controller ? window.setTimeout(() => controller.abort(), 20000) : null;
     try {
-      const response = await fetch('./catalog.json', { credentials: 'same-origin', signal: controller?.signal });
+      const response = await fetch('./catalog.json?v=20261119-framing1', { credentials: 'same-origin', signal: controller?.signal });
       if (!response.ok) throw new Error('catalog-request-failed');
       const catalog = await response.json();
       if (!catalog || !Array.isArray(catalog.products)) throw new Error('invalid-catalog');

@@ -67,18 +67,30 @@
     if (typeof path !== 'string' || !/^assets\/[a-zA-Z0-9_.-]+\.(webp|png|jpg|jpeg)$/.test(path)) return null;
     return new URL(path, window.location.href).href;
   }
+  function selectionLayout(product, size) {
+    if (!product?.framing?.layoutApproved || !product.framing.sizes?.includes(size) ||
+      !state.catalog?.sizes?.includes(size)) return null;
+    const layout = product.framing.layouts?.find(item => item.size === size);
+    const dimensions = size.split('x').map(Number).sort((a, b) => a - b);
+    if (!layout || dimensions.length !== 2 || dimensions.some(value => !Number.isFinite(value) || value <= 0) ||
+      Math.min(layout.widthCm, layout.heightCm) !== dimensions[0] ||
+      Math.max(layout.widthCm, layout.heightCm) !== dimensions[1]) return null;
+    return layout;
+  }
   function readSelection(product, params) {
     if (!product || product.status !== 'configured') return null;
     const size = params.get('tamanho') || '';
     const finish = params.get('acabamento') || '';
     const color = params.get('cor') || '';
-    if (!state.catalog.sizes.includes(size) || !FINISHES[finish]) return null;
+    if (!state.catalog.sizes.includes(size) || !selectionLayout(product, size) || !FINISHES[finish]) return null;
     const family = FINISHES[finish].family;
     if (family === 'infinity') return color === '' && product.native?.infinity ? { size, finish, color: '' } : null;
     return COLORS[color] && product.native?.[family]?.[color] ? { size, finish, color } : null;
   }
   function selectionLabel(selection = state.selection, art = state.art) {
     if (!selection) return '';
+    const layout = selectionLayout(art, selection.size);
+    if (layout) return `${layout.widthCm} × ${layout.heightCm} cm`;
     const [short, long] = selection.size.split('x');
     return (art?.orientation === 'horizontal' ? long + ' × ' + short : short + ' × ' + long) + ' cm';
   }
@@ -112,8 +124,21 @@
       text('selection-finish', FINISHES[state.selection.finish].label);
       text('selection-color', state.selection.color ? COLORS[state.selection.color] : 'Sem moldura');
     }
+    const layout = state.selection ? selectionLayout(art, state.selection.size) : null;
+    const framed = Boolean(layout && safeAsset(art.images?.original));
+    if (framed) image = art.images.original;
+    const picture = $('artwork-image');
+    const wrap = picture.closest('.artwork-image-wrap');
+    wrap.classList.toggle('is-framing', framed);
+    if (framed) wrap.style.setProperty('--framing-ratio', String(layout.widthCm / layout.heightCm));
+    else wrap.style.removeProperty('--framing-ratio');
+    picture.style.objectFit = framed ? 'cover' : 'contain';
+    picture.style.objectPosition = framed && /^\d+(?:\.\d+)?%\s+\d+(?:\.\d+)?%$/.test(layout.objectPosition || '')
+      ? layout.objectPosition : '50% 50%';
+    $('artwork-framing-caption').hidden = !framed;
+    text('artwork-framing-caption', framed ? `Enquadramento da arte em ${selectionLabel()}.` : '');
     const src = safeAsset(image);
-    if (src) { $('artwork-image').src = src; $('artwork-image').alt = art.name + ' — visualização da sua escolha'; $('artwork-image').hidden = false; }
+    if (src) { picture.src = src; picture.alt = art.name + (framed ? ' — enquadramento em ' + selectionLabel() : ' — visualização da sua escolha'); picture.hidden = false; }
     updateConsultation();
   }
   function unavailable(message, title) {
@@ -140,7 +165,8 @@
     catch { return false; }
   }
   function readySelection() {
-    return state.config?.checkoutEnabled === true && state.config?.currency === 'BRL' &&
+    return Boolean(selectionLayout(state.art, state.selection?.size)) &&
+      state.config?.checkoutEnabled === true && state.config?.currency === 'BRL' &&
       typeof state.config.publicKey === 'string' && state.config.publicKey.length > 10 &&
       Array.isArray(state.config.readySelections) && state.config.readySelections.some(item =>
         item.artworkKey === state.art?.key && item.size === state.selection?.size && item.finish === state.selection?.finish &&
@@ -436,7 +462,7 @@
     window.addEventListener('pagehide', () => { state.disposed = true; clearTimeout(state.poll); });
     window.addEventListener('pageshow', event => { if (event.persisted) { state.disposed = false; if (state.saved) refreshOrder({ allowPayment: true }).catch(() => {}); } });
     const results = await Promise.allSettled([
-      fetch('./catalog.json', { credentials: 'same-origin', cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error('CATALOG_UNAVAILABLE'); return r.json(); }),
+      fetch('./catalog.json?v=20261119-framing1', { credentials: 'same-origin', cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error('CATALOG_UNAVAILABLE'); return r.json(); }),
       request('/config'),
     ]);
     if (results[0].status === 'fulfilled' && Array.isArray(results[0].value.products) && Array.isArray(results[0].value.sizes)) state.catalog = results[0].value;
