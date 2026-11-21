@@ -180,6 +180,19 @@
     return Number.isFinite(number) && number > 0 && number <= 100000 ? Math.round(number) : 0;
   }
 
+  // Photo approval is independent from whether an artwork can be purchased.
+  function normalizeApprovedPreviews(value) {
+    const seen = new Set();
+    return (Array.isArray(value) ? value : []).slice(0, 20).flatMap((photo, index) => {
+      if (photo?.previewApproved !== true) return [];
+      const src = safeImageURL(photo.image);
+      const label = plain(photo.label || photo.association, 160);
+      if (!src || !label || seen.has(src)) return [];
+      seen.add(src);
+      return [{ key: `preview-${index}`, src, label, defaultPreview: photo.defaultPreview === true }];
+    });
+  }
+
   function normalizeProduct(value) {
     if (!value || typeof value !== 'object') return null;
     const key = plain(value.key, 200);
@@ -213,6 +226,7 @@
         box: normalizeColorMap(native.box),
         canvas: normalizeColorMap(native.canvas),
         infinity: safeImageURL(native.infinity),
+        approvedPreviews: normalizeApprovedPreviews(native.gallery),
       },
     };
     product.searchText = fold([
@@ -846,11 +860,22 @@
           : 'Referência de acabamento, com proporção ilustrativa. Veja o enquadramento em “No seu tamanho”.',
       });
     }
+    if (product.status === 'preparation' && nativePreviewAvailable(product)) {
+      for (const photo of product.native.approvedPreviews) items.push({
+        key: photo.key, label: photo.label, src: photo.src, thumbnail: photo.src,
+        alt: `Visualização digital de ${product.name}: ${photo.label}`,
+        caption: `Simulação digital — ${photo.label}. Medidas e disponibilidade em preparação.`,
+      });
+    }
     if (product.status === 'configured' && nativePreviewAvailable(product) && product.native.cover) items.push({
       key: 'cover', label: 'Vista no ambiente', src: product.native.cover, thumbnail: product.native.cover,
       alt: `Visualização digital de ${product.name} no ambiente`,
       caption: 'Simulação digital no ambiente, com proporção ilustrativa. Confira as medidas e o acabamento da opção escolhida.',
     });
+    const lead = product.status === 'preparation'
+      ? product.native.approvedPreviews.find(photo => photo.defaultPreview)?.key : '';
+    const leadIndex = lead ? items.findIndex(item => item.key === lead) : -1;
+    if (leadIndex > 0) items.unshift(items.splice(leadIndex, 1)[0]);
     return items;
   }
 
@@ -1156,7 +1181,10 @@
     if (!wasOpen && opener && !ui.dialog.contains(opener)) state.opener = opener;
     state.activeKey = key;
     state.gallery = applyPreviewSelection(product, preview)
-      ? (nativePreviewAvailable(product) ? 'native' : 'framing') : 'editorial';
+      ? (nativePreviewAvailable(product) ? 'native' : 'framing')
+      : product.status === 'preparation'
+        ? product.native.approvedPreviews.find(photo => photo.defaultPreview)?.key || 'editorial'
+        : 'editorial';
     renderDialog(product);
     if (historyMode !== 'none') updateProductURL(key, wasOpen || historyMode === 'replace');
     if (state.previousOverflow === null) {
@@ -1343,7 +1371,7 @@
     const controller = typeof AbortController === 'function' ? new AbortController() : null;
     const timer = controller ? window.setTimeout(() => controller.abort(), 20000) : null;
     try {
-      const response = await fetch('./catalog.json?v=20261120-native1', { credentials: 'same-origin', signal: controller?.signal });
+      const response = await fetch('./catalog.json?v=20261120-approved55', { credentials: 'same-origin', signal: controller?.signal });
       if (!response.ok) throw new Error('catalog-request-failed');
       const catalog = await response.json();
       if (!catalog || !Array.isArray(catalog.products)) throw new Error('invalid-catalog');
