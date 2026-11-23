@@ -455,7 +455,7 @@
     if(ui.matrixPrice){
       const price=product.status==='configured'?retailForSelection(product):null;
       setHidden(ui.matrixPrice,price==null);
-      if(price!=null)ui.matrixPrice.textContent='Preço do quadro: '+brl.format(price/100)+' · frete conforme CEP';
+      if(price!=null)ui.matrixPrice.textContent=MANUAL_SALE_HOLDS.has(Number(product.id)) ? 'Preço de referência: '+brl.format(price/100)+' · formato em validação' : 'Preço do quadro: '+brl.format(price/100)+' · frete conforme CEP';
     }
     if(!ui.preparationPrices||!ui.preparationPriceRows)return;
     const sizes=state.priceMatrix?.artworks.get(product.key);
@@ -499,7 +499,7 @@
     );
     const lowest=lowestMirroredRetail(product);
     if(lowest!=null)content.append(el('p','product-card__price',
-      (product.status==='configured'?'A partir de ':'Referência desde ')+brl.format(lowest/100)+' · sem frete'));
+      (product.status==='configured'&&!MANUAL_SALE_HOLDS.has(Number(product.id))?'A partir de ':'Referência desde ')+brl.format(lowest/100)+' · sem frete'));
     open.append(media);
     const save = el('button', 'product-card__save');
     save.type = 'button';
@@ -592,7 +592,7 @@
     action.setAttribute('aria-label', `Ver obra ${product.name}`);
     const lowest=lowestMirroredRetail(product);
     if(lowest!=null)label.append(el('span','collection-feature__price',
-      (product.status==='configured'?'A partir de ':'Referência desde ')+brl.format(lowest/100)+' · sem frete'));
+      (product.status==='configured'&&!MANUAL_SALE_HOLDS.has(Number(product.id))?'A partir de ':'Referência desde ')+brl.format(lowest/100)+' · sem frete'));
     caption.append(label, action);
     figure.append(open, caption);
     return figure;
