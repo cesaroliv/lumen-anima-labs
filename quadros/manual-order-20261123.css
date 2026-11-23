@@ -1,0 +1,19 @@
+/* Lumen Arts — compra assistida; isto não cria pedidos ou pagamentos. */
+.manual-order-field{
+  display:grid;gap:9px;margin:18px 0 15px;padding:19px 18px;
+  border:1px solid #d9d0c1;background:#f8f5ef;color:#28271f;
+}
+.manual-order-field[hidden],.manual-order-field__error[hidden]{display:none!important}
+.manual-order-field label{font-weight:600;font-size:14px;letter-spacing:.01em}
+.manual-order-field input{
+  display:block;box-sizing:border-box;width:100%;max-width:260px;min-height:47px;
+  padding:10px 13px;border:1px solid #afa797;background:#fff;color:#24251e;
+  border-radius:2px;font:inherit;font-size:16px;letter-spacing:.07em;
+}
+.manual-order-field input:focus-visible{outline:2px solid #886c3b;outline-offset:2px}
+.manual-order-field p{margin:0;font-size:12px;line-height:1.65;color:#58544b}
+.manual-order-field .manual-order-field__error{color:#9b2929;font-weight:600}
+@media(max-width:600px){
+ .manual-order-field{padding:15px 14px}
+ .manual-order-field input{max-width:none}
+}

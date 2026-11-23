@@ -40,6 +40,8 @@
     { key: 'Tabaco', label: 'Tabaco' },
     { key: 'Freijo', label: 'Freijó' },
   ];
+  // The native supplier screen still has unresolved square-size mismatches.
+  const MANUAL_SALE_HOLDS = new Set([67253, 67257]);
   const FINISHES = [
     { key: 'box-no-glass', label: 'Caixa sem vidro', family: 'box' },
     { key: 'box-glass', label: 'Caixa com vidro', family: 'box' },
@@ -1022,6 +1024,36 @@
     updateAction(product);
   }
 
+  // Order assistance never charges a customer: the exact total is confirmed by a human first.
+  function manualSaleAvailable(product) {
+    return product?.status === 'configured' && !MANUAL_SALE_HOLDS.has(Number(product.id)) && !checkoutOffer(product);
+  }
+
+  function deliveryCep() {
+    return String(ui.manualCep?.value || '').replace(/\D/g, '').slice(0, 8);
+  }
+
+  function manualPurchaseURL(product) {
+    if (!state.whatsapp) return new URL('/support.html', window.location.origin).href;
+    const selected = selectionFor(product);
+    const dimensions = dimensionsFor(product, selected);
+    const finish = FINISHES.find(item => item.key === selected?.finish);
+    const cep = deliveryCep();
+    const message = [
+      'Olá! Quero comprar um quadro da Lumen Arts. Pode confirmar o valor final e o frete?',
+      'Obra: ' + product.name,
+      'ID da obra: ' + (product.id || product.key),
+      'Tamanho nominal: ' + (dimensions?.label || 'a confirmar'),
+      'Acabamento: ' + (finish?.label || 'a confirmar'),
+      'Cor: ' + (selected?.color ? colorLabel(selected.color) : finish?.family === 'infinity' ? 'não se aplica' : 'a confirmar'),
+      'CEP de entrega: ' + (cep.length === 8 ? cep.slice(0,5) + '-' + cep.slice(5) : 'a confirmar'),
+      'Por favor confirme a fabricação, o enquadramento, o preço e o frete antes de cobrar.',
+      'Após confirmar o total comigo, envie um link seguro do Mercado Pago para concluir a compra.'
+    ].join('\n');
+    const url = new URL('https://wa.me/' + state.whatsapp);
+    url.searchParams.set('text', message);
+    return url.href;
+  }
   function consultationURL(product) {
     if (!state.whatsapp) return new URL('/support.html', window.location.origin).href;
     const selected = selectionFor(product);
@@ -1085,6 +1117,9 @@
   function updateAction(product) {
     if (!ui.action) return;
     const offer = checkoutOffer(product);
+    const manual = manualSaleAvailable(product);
+    setHidden(ui.manualOrder, !manual);
+    if (!manual) setHidden(ui.manualError, true);
     let price = document.getElementById('art-checkout-price');
     if (offer) {
       if (!price) {
@@ -1116,18 +1151,18 @@
     ui.dialog?.querySelectorAll('.consultation-note').forEach(node => { node.hidden = product.status !== 'configured'; });
     const configured = product.status === 'configured';
     const saved = state.favorites.has(product.key);
-    ui.action.textContent = configured ? 'Consultar valor e entrega' : saved ? 'Salvo para depois' : 'Salvar para depois';
-    ui.action.dataset.action = configured ? 'consult' : 'save';
+    ui.action.textContent = manual ? 'Quero comprar — confirmar frete' : configured ? 'Consultar disponibilidade' : saved ? 'Salvo para depois' : 'Salvar para depois';
+    ui.action.dataset.action = manual ? 'manual' : configured ? 'consult' : 'save';
     ui.action.removeAttribute('disabled');
     if ('disabled' in ui.action) ui.action.disabled = false;
     ui.action.removeAttribute('aria-disabled');
     if (configured) {
       ui.action.removeAttribute('aria-pressed');
-      ui.action.setAttribute('aria-label', state.whatsapp
-        ? 'Consultar valor e entrega no WhatsApp, abre em nova aba'
-        : 'Consultar valor e entrega no suporte');
+      ui.action.setAttribute('aria-label', manual ? 'Solicitar compra de ' + product.name + ' com frete confirmado antes do pagamento' : state.whatsapp
+        ? 'Consultar disponibilidade no WhatsApp, abre em nova aba'
+        : 'Consultar disponibilidade no suporte');
       if (ui.action.tagName === 'A') {
-        ui.action.href = consultationURL(product);
+        ui.action.href = manual ? manualPurchaseURL(product) : consultationURL(product);
         ui.action.target = state.whatsapp ? '_blank' : '_self';
         ui.action.rel = 'noopener noreferrer';
         ui.action.removeAttribute('role');
@@ -1179,6 +1214,8 @@
     if (!product || !ui.dialog) return;
     const wasOpen = Boolean(state.activeKey);
     if (!wasOpen && opener && !ui.dialog.contains(opener)) state.opener = opener;
+    if (state.activeKey !== key && ui.manualCep) ui.manualCep.value = '';
+    setHidden(ui.manualError, true);
     state.activeKey = key;
     state.gallery = applyPreviewSelection(product, preview)
       ? (nativePreviewAvailable(product) ? 'native' : 'framing')
@@ -1281,6 +1318,22 @@
         event.preventDefault();
         window.location.assign(checkoutURL(product));
       }
+      return;
+    }
+    if (manualSaleAvailable(product)) {
+      if (deliveryCep().length !== 8) {
+        event.preventDefault();
+        setHidden(ui.manualError, false);
+        ui.manualCep?.focus();
+        return;
+      }
+      setHidden(ui.manualError, true);
+      emit('manual_purchase_request', { key: product.key }); // Never collect CEP/PII in analytics.
+      const link = manualPurchaseURL(product);
+      if (ui.action.tagName === 'A') { ui.action.href = link; return; }
+      event.preventDefault();
+      if (state.whatsapp) window.open(link, '_blank', 'noopener,noreferrer');
+      else window.location.assign(link);
       return;
     }
     emit('consultation_open', { key: product.key, destination: state.whatsapp ? 'whatsapp' : 'support' });
@@ -1438,6 +1491,7 @@
       image: 'art-image', caption: 'art-caption', thumbnails: 'art-thumbnails', materials: 'art-materials',
       sizes: 'art-size-options', frames: 'art-frame-options', colors: 'art-color-options',
       summary: 'art-summary', availability: 'art-availability', action: 'art-action', save: 'art-save',
+      manualOrder: 'art-manual-order', manualCep: 'art-delivery-cep', manualError: 'art-delivery-error',
       related: 'art-related', measureWidth: 'art-measure-width', measureHeight: 'art-measure-height', measureShape: 'art-measure-shape',
     };
     ui = Object.fromEntries(Object.entries(ids).map(([key, id]) => [key, document.getElementById(id)]));
@@ -1477,6 +1531,13 @@
       if (state.activeKey) setFavorite(state.activeKey, !state.favorites.has(state.activeKey), 'dialog');
     });
     ui.action?.addEventListener('click', onAction);
+    ui.manualCep?.addEventListener('input', () => {
+      const digits = deliveryCep();
+      ui.manualCep.value = digits.length > 5 ? digits.slice(0,5) + '-' + digits.slice(5) : digits;
+      setHidden(ui.manualError, true);
+      const product = activeProduct();
+      if (product && manualSaleAvailable(product) && ui.action?.tagName === 'A') ui.action.href = manualPurchaseURL(product);
+    });
     ui.action?.addEventListener('keydown', event => {
       if (ui.action.tagName === 'A' && !ui.action.hasAttribute('href') && [' ', 'Enter'].includes(event.key)) {
         event.preventDefault(); ui.action.click();
