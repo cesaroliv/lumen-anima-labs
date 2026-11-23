@@ -999,7 +999,7 @@
       parts.push(finish?.label || 'Acabamento a confirmar');
       if (selected?.color) parts.push(colorLabel(selected.color));
       setText(ui.summary, parts.join(' · '));
-      setText(ui.availability, 'Seleção para consulta. Valor, entrega e enquadramento serão confirmados antes do pedido.');
+      setText(ui.availability, selected?.finish === 'box-glass' ? 'A opção com vidro não está liberada para pedidos. Compare outros acabamentos disponíveis.' : 'Seleção para consulta. Valor, entrega e enquadramento serão confirmados antes do pedido.');
     } else {
       setText(ui.summary, 'Salve esta obra para encontrá-la depois.');
       setText(ui.availability, 'Em preparação. Ainda sem opções de compra ou prazo confirmado.');
@@ -1026,7 +1026,7 @@
 
   // Order assistance never charges a customer: the exact total is confirmed by a human first.
   function manualSaleAvailable(product) {
-    return product?.status === 'configured' && !MANUAL_SALE_HOLDS.has(Number(product.id)) && !checkoutOffer(product);
+    return product?.status === 'configured' && !MANUAL_SALE_HOLDS.has(Number(product.id)) && selectionFor(product)?.finish !== 'box-glass' && !checkoutOffer(product);
   }
 
   function deliveryCep() {
