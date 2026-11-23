@@ -17,3 +17,18 @@
  .manual-order-field{padding:15px 14px}
  .manual-order-field input{max-width:none}
 }
+
+/* Preço comercial do quadro, sem custo de produção interno e sem frete */
+.product-card__price{font-size:13px;line-height:1.4;font-weight:600;color:#51452e;margin:8px 0 0}
+.collection-feature__price{display:block;font-size:13px;line-height:1.5;opacity:.9;margin-top:6px}
+.art-matrix-price{margin:13px 0 12px;padding:12px 14px;background:#f0ede5;color:#25291e;font-size:14px;font-weight:700;line-height:1.6;border-left:3px solid #a48a57}
+.art-matrix-price[hidden],.art-preparation-prices[hidden]{display:none!important}
+.art-preparation-prices{margin:18px 0;border:1px solid #d8d0c0;padding:15px;background:#faf7f1;color:#24251f}
+.art-preparation-prices summary{cursor:pointer;font-size:13px;font-weight:650;line-height:1.5}
+.art-preparation-prices .price-reference-notice{font-size:12px;line-height:1.65;color:#60594d;margin:12px 0}
+.art-price-table-scroll{overflow-x:auto;max-width:100%}
+.art-preparation-prices table{width:100%;border-collapse:collapse;font-size:11px;line-height:1.5;min-width:350px}
+.art-preparation-prices th,.art-preparation-prices td{padding:9px 6px;text-align:left;white-space:nowrap;border-bottom:1px solid #e0dacd}
+.art-preparation-prices thead th{font-weight:700;color:#343229}
+.art-preparation-prices tbody th{font-weight:600;color:#403b32}
+@media(max-width:600px){.art-preparation-prices{padding:12px}.art-matrix-price{font-size:13px}.product-card__price{font-size:12px}}

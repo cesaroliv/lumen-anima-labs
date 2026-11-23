@@ -1,0 +1,1408 @@
+{
+  "version": "20261123-price1",
+  "currency": "BRL",
+  "observedOn": "2026-11-23",
+  "commercialBasis": "seller-retail-excluding-delivery",
+  "readyPriceRows": 76,
+  "artworksWithPriceReference": 99,
+  "priceCents": [
+    {
+      "size": "40x40",
+      "finish": "box-no-glass",
+      "priceCents": 18480
+    },
+    {
+      "size": "40x50",
+      "finish": "box-no-glass",
+      "priceCents": 27720
+    },
+    {
+      "size": "40x60",
+      "finish": "box-no-glass",
+      "priceCents": 27720
+    },
+    {
+      "size": "50x50",
+      "finish": "box-no-glass",
+      "priceCents": 26556
+    },
+    {
+      "size": "45x60",
+      "finish": "box-no-glass",
+      "priceCents": 37422
+    },
+    {
+      "size": "50x70",
+      "finish": "box-no-glass",
+      "priceCents": 37180
+    },
+    {
+      "size": "60x60",
+      "finish": "box-no-glass",
+      "priceCents": 32853
+    },
+    {
+      "size": "50x90",
+      "finish": "box-no-glass",
+      "priceCents": 57365
+    },
+    {
+      "size": "60x75",
+      "finish": "box-no-glass",
+      "priceCents": 57365
+    },
+    {
+      "size": "60x80",
+      "finish": "box-no-glass",
+      "priceCents": 61186
+    },
+    {
+      "size": "60x90",
+      "finish": "box-no-glass",
+      "priceCents": 49280
+    },
+    {
+      "size": "80x80",
+      "finish": "box-no-glass",
+      "priceCents": 54267
+    },
+    {
+      "size": "60x108",
+      "finish": "box-no-glass",
+      "priceCents": 70963
+    },
+    {
+      "size": "80x100",
+      "finish": "box-no-glass",
+      "priceCents": 87608
+    },
+    {
+      "size": "70x126",
+      "finish": "box-no-glass",
+      "priceCents": 96589
+    },
+    {
+      "size": "80x120",
+      "finish": "box-no-glass",
+      "priceCents": 81400
+    },
+    {
+      "size": "100x100",
+      "finish": "box-no-glass",
+      "priceCents": 80667
+    },
+    {
+      "size": "90x120",
+      "finish": "box-no-glass",
+      "priceCents": 109890
+    },
+    {
+      "size": "100x150",
+      "finish": "box-no-glass",
+      "priceCents": 121000
+    },
+    {
+      "size": "40x40",
+      "finish": "box-glass",
+      "priceCents": 21853
+    },
+    {
+      "size": "40x50",
+      "finish": "box-glass",
+      "priceCents": 32780
+    },
+    {
+      "size": "40x60",
+      "finish": "box-glass",
+      "priceCents": 32780
+    },
+    {
+      "size": "50x50",
+      "finish": "box-glass",
+      "priceCents": 35356
+    },
+    {
+      "size": "45x60",
+      "finish": "box-glass",
+      "priceCents": 44255
+    },
+    {
+      "size": "50x70",
+      "finish": "box-glass",
+      "priceCents": 49500
+    },
+    {
+      "size": "60x60",
+      "finish": "box-glass",
+      "priceCents": 43853
+    },
+    {
+      "size": "50x90",
+      "finish": "box-glass",
+      "priceCents": 76373
+    },
+    {
+      "size": "60x75",
+      "finish": "box-glass",
+      "priceCents": 76373
+    },
+    {
+      "size": "60x80",
+      "finish": "box-glass",
+      "priceCents": 81462
+    },
+    {
+      "size": "60x90",
+      "finish": "box-glass",
+      "priceCents": 65780
+    },
+    {
+      "size": "80x80",
+      "finish": "box-glass",
+      "priceCents": 72453
+    },
+    {
+      "size": "60x108",
+      "finish": "box-glass",
+      "priceCents": 94723
+    },
+    {
+      "size": "80x100",
+      "finish": "box-glass",
+      "priceCents": 116941
+    },
+    {
+      "size": "70x126",
+      "finish": "box-glass",
+      "priceCents": 128929
+    },
+    {
+      "size": "80x120",
+      "finish": "box-glass",
+      "priceCents": 108680
+    },
+    {
+      "size": "100x100",
+      "finish": "box-glass",
+      "priceCents": 107653
+    },
+    {
+      "size": "90x120",
+      "finish": "box-glass",
+      "priceCents": 146718
+    },
+    {
+      "size": "100x150",
+      "finish": "box-glass",
+      "priceCents": 161480
+    },
+    {
+      "size": "40x40",
+      "finish": "infinity",
+      "priceCents": 18480
+    },
+    {
+      "size": "40x50",
+      "finish": "infinity",
+      "priceCents": 27720
+    },
+    {
+      "size": "40x60",
+      "finish": "infinity",
+      "priceCents": 27720
+    },
+    {
+      "size": "50x50",
+      "finish": "infinity",
+      "priceCents": 26556
+    },
+    {
+      "size": "45x60",
+      "finish": "infinity",
+      "priceCents": 37422
+    },
+    {
+      "size": "50x70",
+      "finish": "infinity",
+      "priceCents": 37180
+    },
+    {
+      "size": "60x60",
+      "finish": "infinity",
+      "priceCents": 32853
+    },
+    {
+      "size": "50x90",
+      "finish": "infinity",
+      "priceCents": 57365
+    },
+    {
+      "size": "60x75",
+      "finish": "infinity",
+      "priceCents": 57365
+    },
+    {
+      "size": "60x80",
+      "finish": "infinity",
+      "priceCents": 61186
+    },
+    {
+      "size": "60x90",
+      "finish": "infinity",
+      "priceCents": 49280
+    },
+    {
+      "size": "80x80",
+      "finish": "infinity",
+      "priceCents": 54267
+    },
+    {
+      "size": "60x108",
+      "finish": "infinity",
+      "priceCents": 70963
+    },
+    {
+      "size": "80x100",
+      "finish": "infinity",
+      "priceCents": 87608
+    },
+    {
+      "size": "70x126",
+      "finish": "infinity",
+      "priceCents": 96589
+    },
+    {
+      "size": "80x120",
+      "finish": "infinity",
+      "priceCents": 81400
+    },
+    {
+      "size": "100x100",
+      "finish": "infinity",
+      "priceCents": 80667
+    },
+    {
+      "size": "90x120",
+      "finish": "infinity",
+      "priceCents": 109890
+    },
+    {
+      "size": "100x150",
+      "finish": "infinity",
+      "priceCents": 121000
+    },
+    {
+      "size": "40x40",
+      "finish": "canvas-frame",
+      "priceCents": 21853
+    },
+    {
+      "size": "40x50",
+      "finish": "canvas-frame",
+      "priceCents": 32780
+    },
+    {
+      "size": "40x60",
+      "finish": "canvas-frame",
+      "priceCents": 32780
+    },
+    {
+      "size": "50x50",
+      "finish": "canvas-frame",
+      "priceCents": 35356
+    },
+    {
+      "size": "45x60",
+      "finish": "canvas-frame",
+      "priceCents": 44255
+    },
+    {
+      "size": "50x70",
+      "finish": "canvas-frame",
+      "priceCents": 49500
+    },
+    {
+      "size": "60x60",
+      "finish": "canvas-frame",
+      "priceCents": 43853
+    },
+    {
+      "size": "50x90",
+      "finish": "canvas-frame",
+      "priceCents": 76373
+    },
+    {
+      "size": "60x75",
+      "finish": "canvas-frame",
+      "priceCents": 76373
+    },
+    {
+      "size": "60x80",
+      "finish": "canvas-frame",
+      "priceCents": 81462
+    },
+    {
+      "size": "60x90",
+      "finish": "canvas-frame",
+      "priceCents": 65780
+    },
+    {
+      "size": "80x80",
+      "finish": "canvas-frame",
+      "priceCents": 72453
+    },
+    {
+      "size": "60x108",
+      "finish": "canvas-frame",
+      "priceCents": 94723
+    },
+    {
+      "size": "80x100",
+      "finish": "canvas-frame",
+      "priceCents": 116941
+    },
+    {
+      "size": "70x126",
+      "finish": "canvas-frame",
+      "priceCents": 128929
+    },
+    {
+      "size": "80x120",
+      "finish": "canvas-frame",
+      "priceCents": 108680
+    },
+    {
+      "size": "100x100",
+      "finish": "canvas-frame",
+      "priceCents": 107653
+    },
+    {
+      "size": "90x120",
+      "finish": "canvas-frame",
+      "priceCents": 146718
+    },
+    {
+      "size": "100x150",
+      "finish": "canvas-frame",
+      "priceCents": 161480
+    }
+  ],
+  "artworkSizes": [
+    {
+      "key": "catalog-67231",
+      "id": 67231,
+      "status": "configured",
+      "sizes": [
+        "45x60",
+        "60x80",
+        "90x120",
+        "50x70"
+      ]
+    },
+    {
+      "key": "catalog-67219",
+      "id": 67219,
+      "status": "configured",
+      "sizes": [
+        "40x60",
+        "50x70",
+        "60x90",
+        "80x120",
+        "100x150"
+      ]
+    },
+    {
+      "key": "catalog-67246",
+      "id": 67246,
+      "status": "configured",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "catalog-67232",
+      "id": 67232,
+      "status": "configured",
+      "sizes": [
+        "45x60",
+        "60x80",
+        "90x120",
+        "50x70"
+      ]
+    },
+    {
+      "key": "catalog-67218",
+      "id": 67218,
+      "status": "configured",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "catalog-67247",
+      "id": 67247,
+      "status": "configured",
+      "sizes": [
+        "40x60",
+        "60x90",
+        "80x120",
+        "100x150"
+      ]
+    },
+    {
+      "key": "catalog-67233",
+      "id": 67233,
+      "status": "configured",
+      "sizes": [
+        "45x60",
+        "60x80",
+        "90x120",
+        "50x70"
+      ]
+    },
+    {
+      "key": "catalog-67243",
+      "id": 67243,
+      "status": "configured",
+      "sizes": [
+        "40x60",
+        "60x90",
+        "80x120",
+        "100x150"
+      ]
+    },
+    {
+      "key": "catalog-67248",
+      "id": 67248,
+      "status": "configured",
+      "sizes": [
+        "40x60",
+        "60x90",
+        "80x120",
+        "100x150"
+      ]
+    },
+    {
+      "key": "catalog-67234",
+      "id": 67234,
+      "status": "configured",
+      "sizes": [
+        "45x60",
+        "60x80",
+        "90x120",
+        "50x70"
+      ]
+    },
+    {
+      "key": "catalog-67241",
+      "id": 67241,
+      "status": "configured",
+      "sizes": [
+        "40x60",
+        "50x70",
+        "60x90",
+        "80x120",
+        "100x150"
+      ]
+    },
+    {
+      "key": "catalog-67249",
+      "id": 67249,
+      "status": "configured",
+      "sizes": [
+        "40x60",
+        "60x90",
+        "80x120",
+        "100x150"
+      ]
+    },
+    {
+      "key": "catalog-67235",
+      "id": 67235,
+      "status": "configured",
+      "sizes": [
+        "45x60",
+        "60x80",
+        "90x120",
+        "50x70"
+      ]
+    },
+    {
+      "key": "catalog-67236",
+      "id": 67236,
+      "status": "configured",
+      "sizes": [
+        "45x60",
+        "60x80",
+        "90x120"
+      ]
+    },
+    {
+      "key": "catalog-67237",
+      "id": 67237,
+      "status": "configured",
+      "sizes": [
+        "45x60",
+        "60x80",
+        "90x120"
+      ]
+    },
+    {
+      "key": "catalog-67238",
+      "id": 67238,
+      "status": "configured",
+      "sizes": [
+        "45x60",
+        "60x80",
+        "90x120"
+      ]
+    },
+    {
+      "key": "catalog-67239",
+      "id": 67239,
+      "status": "configured",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "catalog-67242",
+      "id": 67242,
+      "status": "configured",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "catalog-67245",
+      "id": 67245,
+      "status": "configured",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "catalog-67240",
+      "id": 67240,
+      "status": "configured",
+      "sizes": [
+        "40x60",
+        "50x70",
+        "60x90",
+        "80x120",
+        "100x150"
+      ]
+    },
+    {
+      "key": "catalog-67244",
+      "id": 67244,
+      "status": "configured",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "catalog-67251",
+      "id": 67251,
+      "status": "configured",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "catalog-67252",
+      "id": 67252,
+      "status": "configured",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "catalog-67253",
+      "id": 67253,
+      "status": "configured",
+      "sizes": [
+        "40x40",
+        "50x50",
+        "60x60",
+        "80x80",
+        "100x100"
+      ]
+    },
+    {
+      "key": "catalog-67255",
+      "id": 67255,
+      "status": "configured",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "catalog-67256",
+      "id": 67256,
+      "status": "configured",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "catalog-67257",
+      "id": 67257,
+      "status": "configured",
+      "sizes": [
+        "40x40",
+        "50x50",
+        "60x60",
+        "80x80",
+        "100x100"
+      ]
+    },
+    {
+      "key": "black-aguia",
+      "id": 67536,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-akita",
+      "id": 67537,
+      "status": "preparation",
+      "sizes": [
+        "40x60",
+        "60x90",
+        "80x120",
+        "100x150"
+      ]
+    },
+    {
+      "key": "black-american-bully",
+      "id": 67538,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-bufalo",
+      "id": 67539,
+      "status": "preparation",
+      "sizes": [
+        "45x60",
+        "60x80",
+        "90x120"
+      ]
+    },
+    {
+      "key": "black-cane-corso",
+      "id": 67540,
+      "status": "preparation",
+      "sizes": [
+        "40x60",
+        "60x90",
+        "80x120",
+        "100x150"
+      ]
+    },
+    {
+      "key": "black-cavalo",
+      "id": 67541,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-cavalo1",
+      "id": 67542,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-caveira",
+      "id": 67543,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-cobra",
+      "id": 67544,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-coruja",
+      "id": 67545,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-dobermanm",
+      "id": 67546,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-dragao",
+      "id": 67548,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-harpia",
+      "id": 67549,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-husky",
+      "id": 67550,
+      "status": "preparation",
+      "sizes": [
+        "45x60",
+        "60x80",
+        "90x120"
+      ]
+    },
+    {
+      "key": "black-leao",
+      "id": 67551,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-lobo",
+      "id": 67552,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-pantera",
+      "id": 67553,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-pastor-alemao",
+      "id": 67554,
+      "status": "preparation",
+      "sizes": [
+        "40x60",
+        "60x90",
+        "80x120",
+        "100x150"
+      ]
+    },
+    {
+      "key": "black-rinoceronte",
+      "id": 67555,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-rosa-negra",
+      "id": 67556,
+      "status": "preparation",
+      "sizes": [
+        "40x60",
+        "60x90",
+        "80x120",
+        "100x150"
+      ]
+    },
+    {
+      "key": "black-rottweiller",
+      "id": 67557,
+      "status": "preparation",
+      "sizes": [
+        "40x60",
+        "60x90",
+        "80x120",
+        "100x150"
+      ]
+    },
+    {
+      "key": "black-tigre",
+      "id": 67558,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-touro",
+      "id": 67559,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "black-touro1",
+      "id": 67560,
+      "status": "preparation",
+      "sizes": [
+        "40x50",
+        "60x75",
+        "80x100"
+      ]
+    },
+    {
+      "key": "gesso-colmeia-fluida",
+      "id": 67561,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-drapeado-seda-molhada",
+      "id": 67562,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-dunas-de-vento",
+      "id": 67563,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-erosao-fluxo-lava",
+      "id": 67564,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-fluxo-sonoro",
+      "id": 67565,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-kintsugi-abstrato-rachaduras-douradas",
+      "id": 67566,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-ondas-concentricas-efeito-gota-d-agua",
+      "id": 67567,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-topografia-organica-curvas-de-nivel",
+      "id": 67568,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-bambu-estilizado-zen",
+      "id": 67569,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-cactos-e-suculentas-geometria-natural",
+      "id": 67570,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-folha-de-palmeira-leque-fan-palm",
+      "id": 67571,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-folhas-de-ginkgo-biloba",
+      "id": 67572,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-ramo-de-oliveira-simbolo-de-paz",
+      "id": 67573,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-ramos-de-eucalipto-folhas-redondas",
+      "id": 67574,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-ramos-de-trigo",
+      "id": 67575,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-samambaia-silvestre-fern",
+      "id": 67576,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-videira-de-hera-ivy",
+      "id": 67577,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-arvore-da-vida",
+      "id": 67578,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-constelacoes-conectadas",
+      "id": 67579,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-eclipse-o-encontro",
+      "id": 67580,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-estrela-cadente",
+      "id": 67581,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-maos-misticas-segurando-uma-esfera",
+      "id": 67582,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-nuvens-renascentistas-com-estrelas",
+      "id": 67583,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-o-olho-da-providencia-olho-mistico",
+      "id": 67584,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-o-sol-radiante-estilo-tarovintage",
+      "id": 67585,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-planeta-saturno-e-seus-aneis",
+      "id": 67586,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-cavalo-marinho-ornamentado",
+      "id": 67587,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-concha-buzio-gigante-queen-conch",
+      "id": 67588,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-concha-de-nautilus-com-tentaculos-polvonautilus-vivo",
+      "id": 67589,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-concha-nautilus-corte-transversal",
+      "id": 67590,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-conjunto-de-conchas-vieira-scallop-shells",
+      "id": 67591,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-coral-leque-gorgonia",
+      "id": 67592,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-estrela-do-mar-texturizada-knobby-starfish",
+      "id": 67593,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-folhas-de-alga-marinha-kelp-fluido",
+      "id": 67594,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-textura-abstrata-de-areia-ondulada",
+      "id": 67595,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-fauna-delicada-e-simbolica-1",
+      "id": 67596,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-fauna-delicada-e-simbolica-10",
+      "id": 67597,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-fauna-delicada-e-simbolica-12",
+      "id": 67598,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-fauna-delicada-e-simbolica-13",
+      "id": 67599,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-fauna-delicada-e-simbolica-14",
+      "id": 67600,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-fauna-delicada-e-simbolica-4",
+      "id": 67601,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-fauna-delicada-e-simbolica-5",
+      "id": 67602,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-fauna-delicada-e-simbolica-6",
+      "id": 67603,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-fauna-delicada-e-simbolica-8",
+      "id": 67604,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-fauna-delicada-e-simbolica-aguia-imperial-detalhes-ouro",
+      "id": 67605,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-fauna-delicada-e-simbolica-aguia-relevo-branco-e-dourado",
+      "id": 67606,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-bastao-de-asclepio",
+      "id": 67607,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    },
+    {
+      "key": "gesso-ouroboros",
+      "id": 67608,
+      "status": "preparation",
+      "sizes": [
+        "50x90",
+        "60x108",
+        "70x126"
+      ]
+    }
+  ],
+  "checkoutAuthorized": false,
+  "finalShippingIncluded": false
+}

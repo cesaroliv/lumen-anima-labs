@@ -49,7 +49,7 @@
     { key: 'infinity', label: 'Borda infinita', family: 'infinity' },
   ];
   const state = {
-    products: [], byKey: new Map(), sizes: [], whatsapp: '', ready: false, loading: false, commerce: null,
+    products: [], byKey: new Map(), sizes: [], whatsapp: '', ready: false, loading: false, commerce: null, priceMatrix: null,
     favorites: readFavorites(), collectionVisible: new Map(), activeKey: null, opener: null,
     selections: new Map(), gallery: 'editorial', previousOverflow: null,
     filters: { collection: 'all', mood: 'all', orientation: 'all', query: '', saved: false },
@@ -413,6 +413,67 @@
     return image;
   }
 
+  const brl = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+  const SELLABLE_FINISHES = ['box-no-glass','canvas-frame','infinity'];
+  function normalizePriceMatrix(value) {
+    if (!value || value.currency !== 'BRL' || !/^20\d{6}-price\d+$/.test(value.version) || value.checkoutAuthorized !== false) return null;
+    const rows=new Map(),artworks=new Map();
+    for(const row of Array.isArray(value.priceCents)?value.priceCents:[]){
+      if(!/^\d+x\d+$/.test(row.size)||!['box-no-glass','box-glass','canvas-frame','infinity'].includes(row.finish)
+         ||!Number.isSafeInteger(row.priceCents)||row.priceCents<=0)return null;
+      rows.set(row.size+'|'+row.finish,row.priceCents);
+    }
+    if(rows.size!==76)return null;
+    for(const item of Array.isArray(value.artworkSizes)?value.artworkSizes:[]){
+      if(typeof item.key!=='string'||!Array.isArray(item.sizes)||item.sizes.length<1)return null;
+      const sizes=new Set(item.sizes);
+      if(sizes.size!==item.sizes.length||[...sizes].some(size=>!rows.has(size+'|box-no-glass')))return null;
+      artworks.set(item.key,sizes);
+    }
+    if(artworks.size!==99)return null;
+    return {rows,artworks,observedOn:value.observedOn};
+  }
+  function mirroredRetail(product,size,finish){
+    if(!product||!state.priceMatrix||!state.priceMatrix.artworks.get(product.key)?.has(size))return null;
+    const cents=state.priceMatrix.rows.get(size+'|'+finish);
+    return Number.isSafeInteger(cents)&&cents>0?cents:null;
+  }
+  function lowestMirroredRetail(product){
+    if(!product)return null;
+    const sizes=state.priceMatrix?.artworks.get(product.key);if(!sizes)return null;
+    let min=Infinity;
+    for(const size of sizes)for(const finish of SELLABLE_FINISHES){
+      const cents=mirroredRetail(product,size,finish);if(cents!=null)min=Math.min(min,cents);
+    }
+    return Number.isFinite(min)?min:null;
+  }
+  function retailForSelection(product){
+    const selected=selectionFor(product);
+    return selected&&selected.finish!=='box-glass'?mirroredRetail(product,selected.size,selected.finish):null;
+  }
+  function renderPriceReferences(product){
+    if(ui.matrixPrice){
+      const price=product.status==='configured'?retailForSelection(product):null;
+      setHidden(ui.matrixPrice,price==null);
+      if(price!=null)ui.matrixPrice.textContent='Preço do quadro: '+brl.format(price/100)+' · frete conforme CEP';
+    }
+    if(!ui.preparationPrices||!ui.preparationPriceRows)return;
+    const sizes=state.priceMatrix?.artworks.get(product.key);
+    const show=product.status==='preparation'&&sizes?.size>0;
+    ui.preparationPrices.hidden=!show;
+    if(!show){ui.preparationPriceRows.replaceChildren();return;}
+    const frag=document.createDocumentFragment();
+    for(const size of sizes){
+      const tr=document.createElement('tr');
+      const title=document.createElement('th');title.scope='row';title.textContent=size.replace('x',' × ')+' cm';tr.append(title);
+      for(const finish of SELLABLE_FINISHES){
+        const td=document.createElement('td'),cents=mirroredRetail(product,size,finish);
+        td.textContent=cents!=null?brl.format(cents/100):'—';tr.append(td);
+      }
+      frag.append(tr);
+    }
+    ui.preparationPriceRows.replaceChildren(frag);
+  }
   function createCard(product) {
     const card = el('article', 'product-card');
     card.dataset.key = product.key;
@@ -436,6 +497,9 @@
       title,
       badge,
     );
+    const lowest=lowestMirroredRetail(product);
+    if(lowest!=null)content.append(el('p','product-card__price',
+      (product.status==='configured'?'A partir de ':'Referência desde ')+brl.format(lowest/100)+' · sem frete'));
     open.append(media);
     const save = el('button', 'product-card__save');
     save.type = 'button';
@@ -526,6 +590,9 @@
     action.href = productURL(product.key);
     action.dataset.open = product.key;
     action.setAttribute('aria-label', `Ver obra ${product.name}`);
+    const lowest=lowestMirroredRetail(product);
+    if(lowest!=null)label.append(el('span','collection-feature__price',
+      (product.status==='configured'?'A partir de ':'Referência desde ')+brl.format(lowest/100)+' · sem frete'));
     caption.append(label, action);
     figure.append(open, caption);
     return figure;
@@ -1021,12 +1088,13 @@
     }
     document.querySelectorAll('[data-art-measure-section]').forEach(node => { node.hidden = !dimensions; });
     ui.dialog?.querySelectorAll('.consultation-note').forEach(node => { node.hidden = product.status !== 'configured'; });
+    renderPriceReferences(product);
     updateAction(product);
   }
 
   // Order assistance never charges a customer: the exact total is confirmed by a human first.
   function manualSaleAvailable(product) {
-    return product?.status === 'configured' && !MANUAL_SALE_HOLDS.has(Number(product.id)) && selectionFor(product)?.finish !== 'box-glass' && !checkoutOffer(product);
+    return product?.status === 'configured' && !MANUAL_SALE_HOLDS.has(Number(product.id)) && retailForSelection(product)!=null && !checkoutOffer(product);
   }
 
   function deliveryCep() {
@@ -1047,6 +1115,7 @@
       'Acabamento: ' + (finish?.label || 'a confirmar'),
       'Cor: ' + (selected?.color ? colorLabel(selected.color) : finish?.family === 'infinity' ? 'não se aplica' : 'a confirmar'),
       'CEP de entrega: ' + (cep.length === 8 ? cep.slice(0,5) + '-' + cep.slice(5) : 'a confirmar'),
+      'Preço exibido do quadro (sem frete): ' + (retailForSelection(product)!=null ? brl.format(retailForSelection(product)/100) : 'a confirmar'),
       'Por favor confirme a fabricação, o enquadramento, o preço e o frete antes de cobrar.',
       'Após confirmar o total comigo, envie um link seguro do Mercado Pago para concluir a compra.'
     ].join('\n');
@@ -1117,6 +1186,8 @@
   function updateAction(product) {
     if (!ui.action) return;
     const offer = checkoutOffer(product);
+    renderPriceReferences(product);
+    setHidden(ui.matrixPrice,Boolean(offer)||product.status!=='configured'||retailForSelection(product)==null);
     const manual = manualSaleAvailable(product);
     setHidden(ui.manualOrder, !manual);
     if (!manual) setHidden(ui.manualError, true);
@@ -1424,9 +1495,12 @@
     const controller = typeof AbortController === 'function' ? new AbortController() : null;
     const timer = controller ? window.setTimeout(() => controller.abort(), 20000) : null;
     try {
-      const response = await fetch('./catalog.json?v=20261120-approved55', { credentials: 'same-origin', signal: controller?.signal });
-      if (!response.ok) throw new Error('catalog-request-failed');
-      const catalog = await response.json();
+      const [response, priceResponse] = await Promise.all([
+        fetch('./catalog.json?v=20261120-approved55', { credentials: 'same-origin', cache: 'no-store', signal: controller?.signal }),
+        fetch('./prices.json?v=20261123-price1', { credentials: 'same-origin', cache: 'no-store', signal: controller?.signal }),
+      ]);
+      if (!response.ok || !priceResponse.ok) throw new Error('catalog-or-prices-unavailable');
+      const [catalog, priceData] = await Promise.all([response.json(), priceResponse.json()]);
       if (!catalog || !Array.isArray(catalog.products)) throw new Error('invalid-catalog');
       const unique = new Map();
       catalog.products.forEach(value => {
@@ -1436,6 +1510,8 @@
       state.byKey = unique;
       state.products = [...unique.values()];
       state.sizes = normalizeSizes(catalog.sizes);
+      state.priceMatrix = normalizePriceMatrix(priceData);
+      if(!state.priceMatrix)throw new Error('price-matrix-missing');
       state.whatsapp = normalizeWhatsApp(catalog.contact?.whatsapp);
       state.ready = true;
       // Only the server's approved variant list can make a purchase action available.
@@ -1492,6 +1568,7 @@
       sizes: 'art-size-options', frames: 'art-frame-options', colors: 'art-color-options',
       summary: 'art-summary', availability: 'art-availability', action: 'art-action', save: 'art-save',
       manualOrder: 'art-manual-order', manualCep: 'art-delivery-cep', manualError: 'art-delivery-error',
+      matrixPrice: 'art-matrix-price', preparationPrices: 'art-preparation-prices', preparationPriceRows: 'art-preparation-price-rows',
       related: 'art-related', measureWidth: 'art-measure-width', measureHeight: 'art-measure-height', measureShape: 'art-measure-shape',
     };
     ui = Object.fromEntries(Object.entries(ids).map(([key, id]) => [key, document.getElementById(id)]));
